@@ -1,0 +1,1479 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ResolveGuard audit ? November 1, 2026</title><style>body{font:16px/1.65 system-ui;color:#173b40;max-width:1500px;margin:24px auto;padding:20px}table{border-collapse:collapse;width:100%;font-size:13px;margin:20px 0}td,th{border:1px solid #ccd8d4;text-align:left;vertical-align:top;padding:8px}th{background:#e8f3ee}pre{overflow:auto;background:#f4f6f5;padding:16px}a{color:#08695c}h1,h2,h3{line-height:1.3}</style><p><a href="ResolveGuard_Audit.xlsx">Download audit workbook</a> ? <a href="Requirement_Matrix.csv">Requirement matrix CSV</a> ? <a href="ResolveGuard_Audit.md">Full Markdown report</a> ? <a href="Audit_Verification.json">Verification summary</a></p><h1>ResolveGuard AI — implementation, architecture and evaluation audit</h1>
+<p>Audit date: November 1, 2026 (America/Los_Angeles). Scope: repository at <code>.</code>.</p>
+<h2>Decision</h2>
+<p><strong>Mandatory work is not all complete. The project is a substantial synthetic prototype, not a qualified banking system or a completed evaluation submission.</strong> Backend permissions, durable intake, idempotency, controlled case submission, local review, bounded live reply framing, semantic evaluators and dashboards exist. Current end-to-end defects, incomplete human qualification, incomplete trace linkage and governance approvals prevent a completion claim.</p>
+<p>No application, test, prompt, dependency or configuration code was changed during this audit. Only audit documents and new evaluation artifacts were written. Existing reports were retained. Fresh accepted checks used process-local reply mode <code>off</code> and both cloud tracing switches <code>false</code>; these settings did not change <code>.env</code> or the running app. An initial unit-test launch inherited live reply configuration, was interrupted and is excluded from accepted evidence; provider activity from that interrupted launch was not independently reconciled. No cloud publishing, deployment or real bank action was performed.</p>
+<p>The supplied PRD is headed <strong>proposed for stakeholder review / not launch approval</strong>, and the BRD is a stakeholder-review draft. Repository evidence does not establish that either is formally approved. They are treated here as the requested target baseline, not proof of institutional sign-off. The user previously deferred LangSmith Cloud, Replit deployment and real bank integrations; those remain intentional exclusions from local completion, while still missing for requirements that explicitly demand them. The current audit prompt ends midway through Part 6; later acceptance conditions were not supplied.</p>
+<h2>Evidence and fresh verification</h2>
+<table>
+<thead>
+<tr>
+<th>Evidence</th>
+<th>Actual finding</th>
+<th>Limits</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Main unit/integration suite, fresh</td>
+<td>309 run: 308 passed, 1 skipped, 71.088 seconds</td>
+<td>Reply generation disabled in this accepted run; no broad live-model qualification</td>
+</tr>
+<tr>
+<td>Synthetic fixture suite, fresh</td>
+<td>13/13 passed</td>
+<td>Synthetic API scope, not real IAM</td>
+</tr>
+<tr>
+<td>Original 100-case runner, fresh</td>
+<td>99/100 passed; 83/84 critical case runs passed; intent and fraud recall 100% under implemented assertions</td>
+<td>RG-087 fails; all 100 references remain human-review pending</td>
+</tr>
+<tr>
+<td>BOW 100-case runner, fresh</td>
+<td>100/100 local assertion passes; 16 contradictory source tool contracts; qualification BLOCKED</td>
+<td>Structured selectors supplied by harness; not full natural-language UX or semantic correctness</td>
+</tr>
+<tr>
+<td>Adversarial suite, fresh</td>
+<td>8/8 passed</td>
+<td>Bounded attack cases, not comprehensive penetration testing</td>
+</tr>
+<tr>
+<td>Targeted API checks, fresh</td>
+<td>Stale own-transaction substitution, account-only non-denial, unfocused charge inquiry and transfer response reproduced</td>
+<td>Seven controlled synthetic observations; complete outputs retained</td>
+</tr>
+<tr>
+<td>BOW trace file, fresh</td>
+<td>78 trace objects for 100 results; result rows lack explicit trace ID links</td>
+<td>Missing linkage prevents claiming one reconstructable trace per case</td>
+</tr>
+<tr>
+<td>Original trace file, fresh</td>
+<td>102 trace objects for 100 cases, including repeated attempts</td>
+<td>Extra attempts are not extra unique cases</td>
+</tr>
+<tr>
+<td>Saved semantic run</td>
+<td>12 actual RAGAS results and 12 judge grades</td>
+<td>Public deterministic answers, not current all-feature live reply evaluation</td>
+</tr>
+<tr>
+<td>Saved calibration run</td>
+<td>12 actual GLM judge grades</td>
+<td>No independently approved human labels for those exact examples</td>
+</tr>
+<tr>
+<td>Human feedback</td>
+<td>22 cumulative observations: 14 PASS, 2 PARTIAL PASS, 6 FAIL</td>
+<td>Not the historical 40 cases or CAL examples; run/version IDs unavailable</td>
+</tr>
+<tr>
+<td>Read-only local review DB snapshot</td>
+<td>0 dataset label reviews, 0 review notes; 339 customer reviews, 84 audit jobs</td>
+<td>Activity counts are not successful resolutions or audit-job completion counts</td>
+</tr>
+</tbody>
+</table>
+<p>Fresh files: <code>original100/{summary.json,results.json,traces.jsonl,proposed_bindings.json}</code>, <code>bow100/{summary.json,results.json,traces.jsonl}</code>, <code>security.json</code>, <code>targeted_observations.json</code> in this audit directory. Summary <code>p95_local_mock_latency_ms</code>: original 102.680 ms; BOW 372.084 ms. Both are local synthetic measurements with reply generation disabled, not customer-facing live-model p95 or production service objectives.</p>
+<p>The original runner's summary says <code>PROVIDER_EVALUATION_DRAFT_LABELS</code>. This is <strong>incorrect for this run</strong>: 99 results have <code>execution_mode=MOCK</code>, one has <code>SYNTHETIC_EMERGENCY</code>, and no provider model was selected by this runner. <code>evaluation.summarize</code> treats any non-MOCK mode as provider execution. Preserve the original artifact and correct reporting in a later code change; do not infer real LLM quality from it.</p>
+<p>Current Python-code fingerprint recorded by both full runners: <code>6341215c1822d7c726fc461161b2300976290439e0883c1e67807f33078340b9</code>. Historical release-check fingerprint differs (<code>c215be3f...</code>); its older 100/100 result does not qualify current code.</p>
+<h2>Actual architecture</h2>
+<pre><code class="language-mermaid">flowchart TD
+    UI[Browser chat: greeting, guest mode, topic buttons, product/payment selection]
+    API[FastAPI web.py: session binding, validation, rate limits, request routing]
+    SEC[Deterministic security assessment]
+    EM[Active theft interception: deterministic synthetic emergency workflow]
+    PUB[Public Python conversation handler: product clarification and comparison]
+    RAG[BOW approved-for-test chunks: bank/product/access/date filters and keyword ranking]
+    AUTH[Demo sign-in and step-up; save and resume original request]
+    CONV[ConversationService: customer-bound SQLite LangGraph checkpoints]
+    GRAPH[Request LangGraph: security, classify, capture, conditional lookup, retrieve, handoff, compose, verify]
+    BANK[Permission-checked synthetic transaction and case APIs]
+    DB[(SQLite events, drafts, retries, reports, handoffs and review records)]
+    BASE[Controlled evidence-backed reply]
+    GEN[Optional second LangGraph: GLM framing, validation, template fallback]
+    QA[Deterministic pre-send QA and Resolution next-step record]
+    OUT[Approved customer reply; QA never chats separately]
+    JOB[Session end/reset/idle: durable post-session audit jobs]
+    STAFF[Local staff reviewer: scoped playback, notes, encrypted exports]
+    OPS[Operations dashboard and poll-evaluated local alert rules]
+    EVAL[Separate evaluators: original100, BOW100, security, semantic and calibration]
+    NEB[Nebius: GLM judge; Qwen embeddings for answer-relevance evaluation]
+    CLOUD[Optional LangSmith export and verification harness: cloud not verified]
+    UI --&gt; API --&gt; SEC
+    SEC --&gt;|active theft| EM
+    SEC --&gt;|public| PUB --&gt; RAG --&gt; BASE
+    SEC --&gt;|blocked| BASE
+    SEC --&gt;|private| AUTH --&gt; CONV --&gt; GRAPH
+    GRAPH --&gt; BANK --&gt; DB
+    GRAPH --&gt; RAG
+    GRAPH --&gt; BASE
+    EM --&gt; BANK
+    EM --&gt; DB
+    EM --&gt;|no LLM| QA
+    BASE --&gt; GEN --&gt; QA --&gt; OUT --&gt; UI
+    QA --&gt; DB
+    DB --&gt; JOB --&gt; STAFF
+    DB --&gt; OPS
+    EVAL --&gt; BANK
+    EVAL --&gt; RAG
+    EVAL --&gt;|explicit semantic calls| NEB
+    EVAL -. optional .-&gt; CLOUD
+    GRAPH -. minimized opt-in traces .-&gt; CLOUD
+</code></pre>
+<p>Interpretation: there is one customer-facing assistant, not a set of independent conversational agents. Most specialist roles are deterministic Python services. <code>workflow.Workflow.build_graph</code> creates eight nodes with a conditional restricted-lookup edge; <code>conversation.ConversationService.send</code> wraps turns with durable SQLite checkpoints. <code>reply_generation.ReplyGenerator.run</code> constructs a separate generation/validation/fallback graph. Public BOW conversations, emergency interception and customer QA are not all nodes inside the main request graph.</p>
+<h3>Actual versus target</h3>
+<table>
+<thead>
+<tr>
+<th>Target</th>
+<th>Actual</th>
+<th>Architectural gap</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identity/authority gateway before restricted resources</td>
+<td>Demo profile sessions and FixtureBank permissions</td>
+<td>No real identity provider or signed acting-principal context; typed account target can be ignored</td>
+</tr>
+<tr>
+<td>Approved, scoped RAG</td>
+<td>BOW immutable snapshot, hashes, filters and keyword ranking</td>
+<td>Test-only approval; imported chunks, no institutional refresh approval or hosted vector index</td>
+</tr>
+<tr>
+<td>One consistent observable workflow</td>
+<td>Several direct web branches plus two graphs</td>
+<td>Some branches lack full spans and consistent case-level correlation</td>
+</tr>
+<tr>
+<td>Resolution then pre-response QA, plus post-session audit</td>
+<td>Active deterministic QA/Resolution records and durable background audit queue</td>
+<td>No independent semantic customer-journey checker or real operational ownership</td>
+</tr>
+<tr>
+<td>Evidence-based action confirmation</td>
+<td>Durable synthetic commit and relookup checks</td>
+<td>Real banking receipts, queues and legal semantics are excluded</td>
+</tr>
+<tr>
+<td>Natural dynamic replies</td>
+<td>GLM chooses allowlisted openings/closing and immutable passage references</td>
+<td>Cannot change or repair factual body; no arbitrary prose generation or raw streaming</td>
+</tr>
+<tr>
+<td>Verified monitoring and release gates</td>
+<td>Local metrics, alert rules and blocked reports</td>
+<td>Incomplete trace coverage, no enforced CI/pilot deployment gate or signed decision</td>
+</tr>
+</tbody>
+</table>
+<h3>RAG and data processing</h3>
+<p><code>bow_data.load_dataset</code> validates source counts, schemas, relationships and content hashes. The active BOW source contains 11 products, 19 policies, 61 chunks, 12 customers, 12 accounts, 48 transactions, 12 sessions, 12 cases, 2 delegations, 1 intake fixture and 100 evaluation scenarios. Archives remain separate.</p>
+<p>BOW uses the workbook's <strong>existing source-linked chunks</strong>, not automatic rechunking on each request. <code>BowKnowledge.retrieve</code> requires BOW identity, known product, PUBLIC scope, explicit test allowance, matching test-only approval, eligible dates and product applicability. It ranks exact-product matches plus query word overlap. <code>BowPolicyIndex</code> adapts those chunks to the main graph. Private customer/transaction tables are queried through authorized backend tools, not embedded as public policy context.</p>
+<p>The legacy <code>retrieval.chunk_document</code> uses a roughly 400-whitespace-token target and 50-word overlap, preserves lists/tables/exception blocks, flags oversize units and splits ordinary long prose on sentences. This is not a billing tokenizer. There is <strong>no Pinecone, deployed vector store, hybrid reranker or production embedding search in customer RAG</strong>. Qwen3-Embedding-8B is used by RAGAS answer relevance; it does not generate customer answers. GLM-5.3-Flash supplies optional reply framing and evaluation judgments.</p>
+<h2>Priority findings</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Finding and reproduced evidence</th>
+<th>Risk/priority</th>
+<th>Required next check/change</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A01</td>
+<td>Typing ACC-003 while selected own payment BOW-TXN-001-01 returns that own Coffee Shop payment, NO_ACTION</td>
+<td>P0 privacy-sensitive request binding; no foreign disclosure observed</td>
+<td>Bind explicit requested account before lookup, reject conflict with stale selection, recheck actual session authority</td>
+</tr>
+<tr>
+<td>A02</td>
+<td>ACC-005 typed without selectors returns generic payment clarification, not an ownership decision</td>
+<td>P1; authorization expectation needs real principal precondition</td>
+<td>Resolve resource and prove deny/allow against actual session; do not label an identifier adversarial by itself</td>
+</tr>
+<tr>
+<td>A03</td>
+<td>Original RG-087 now returns EMERGENCY_FRAUD, forced human flag and a pending-payment candidate outside original selection; fails human_flag, response_state, no_unexpected_record</td>
+<td>P0 qualification block; behavior/contract drift, not proven unauthorized disclosure</td>
+<td>Review emergency contract and candidate-display scope; update expectations only with justified approval, then rerun unchanged versioned suites</td>
+</tr>
+<tr>
+<td>A04</td>
+<td>Mixed MOCK/SYNTHETIC_EMERGENCY summary mislabeled as provider evaluation</td>
+<td>P1 evidence integrity</td>
+<td>Define execution modes explicitly and separate no-provider versus provider measures</td>
+</tr>
+<tr>
+<td>A05</td>
+<td>BOW harness injects account_id and transaction_ids for cross-account tests; normal chat does not reliably derive those from text</td>
+<td>P0 test coverage gap</td>
+<td>Add message-only and stale-selection end-to-end tests, not only structured API selectors</td>
+</tr>
+<tr>
+<td>A06</td>
+<td>BOW result rows lack trace IDs; only 78 trace objects saved for 100 rows</td>
+<td>P1 observability</td>
+<td>Trace every branch and save explicit result-to-attempt/trace/span links</td>
+</tr>
+<tr>
+<td>A07</td>
+<td>Fresh APY question clarifies correctly; reward follow-up after YOLO reuses YOLO; product context remains confirmed</td>
+<td>P1 clarification scope</td>
+<td>Define topic-switch/product carry-over UX; test fresh, follow-up, ambiguous and reset states independently</td>
+</tr>
+<tr>
+<td>A08</td>
+<td>'transfer the fund to my account' gives generic SAFE_GUIDANCE, although no transfer tool exists</td>
+<td>P1 unsupported-action communication</td>
+<td>Tailored explicit transfer limitation; no sign-in promise that enables unsupported action</td>
+</tr>
+<tr>
+<td>A09</td>
+<td>'18 dollars last month' returns generic selection; phrase/amount/date parsing limited</td>
+<td>P1 customer journey</td>
+<td>Recognize charge wording, currency text and relative date; search only permitted records and handle no/multiple matches</td>
+</tr>
+<tr>
+<td>A10</td>
+<td>Guest report captures without a useful payment-linking next step</td>
+<td>P1 human FAIL retained</td>
+<td>Preserve first, then minimal merchant/date follow-up or secure payment selection; never make secrets/auth a prerequisite to intake</td>
+</tr>
+<tr>
+<td>A11</td>
+<td>16 BOW source rows require and forbid the same tool; some fixture/product labels disagree</td>
+<td>P1 qualification block</td>
+<td>Version coherent pre/post-auth expectations and approve fixture mapping; never silently discard contradictions</td>
+</tr>
+<tr>
+<td>A12</td>
+<td>Human calibration pairs absent; 22 BOW observations not linked to CAL cases or historical40</td>
+<td>P1 evaluation qualification</td>
+<td>Independently label exact evaluated outputs with case/version/evidence and calculate agreement/false passes/failures</td>
+</tr>
+<tr>
+<td>A13</td>
+<td>Alerts evaluate when endpoint is polled, not at event ingestion; limited last-N rules; latency rule uses QA review duration</td>
+<td>P2 operations</td>
+<td>Ingestion-driven worker, real time windows and explicit end-to-end latency metric; add delivery receipts if destinations approved</td>
+</tr>
+<tr>
+<td>A14</td>
+<td>Masking, append-only SQLite and encryption of exports exist, but do not establish bank-grade retention/immutable archival or universal PII removal</td>
+<td>Production blocker</td>
+<td>Institutional controls/approvals, legal hold/deletion and independent archive protection</td>
+</tr>
+</tbody>
+</table>
+<h2>Mandatory PRD requirement matrix</h2>
+<p>Statuses refer to the <strong>synthetic agreed scope</strong>. An implemented demo is not a real-bank integration. P0 means blocks security-sensitive qualification; P1 means required completion/quality evidence; P2 means operational hardening. No requirement is marked fully verified solely on documentation.</p>
+<table>
+<thead>
+<tr>
+<th>Requirement ID</th>
+<th>Expected functionality</th>
+<th>Actual implementation</th>
+<th>File/function evidence</th>
+<th>Test evidence</th>
+<th>Status</th>
+<th>Gap</th>
+<th>Priority</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FR-01</td>
+<td>Actor and authority workflow</td>
+<td>Session/profile to principal; backend authority checks</td>
+<td>backend.owner/assurance_error; FixtureBank._permit</td>
+<td>test_guest_first; test_family_privacy; test_bow</td>
+<td>IMPLEMENTED &amp; VERIFIED</td>
+<td>Synthetic identity only; real IAM excluded</td>
+<td>P1</td>
+</tr>
+<tr>
+<td>FR-02</td>
+<td>Resource/action/field permissions</td>
+<td>Backend denies foreign resources and allowlists fields</td>
+<td>backend.transaction/case_status/allowed_account; bow_backend</td>
+<td>test_bow cross_customer; guest_first successful_sign_in; A01/A02</td>
+<td>PARTIALLY IMPLEMENTED</td>
+<td>Typed requested account not reliably bound; old selected resource can be substituted</td>
+<td>P0</td>
+</tr>
+<tr>
+<td>FR-03</td>
+<td>Applicable grounded explanations</td>
+<td>Controlled facts reconstructed and compared with policy/backend</td>
+<td>answer_evidence.verify_answer; bow_knowledge.answer; workflow.verify</td>
+<td>test_customer_review wrong_answer; test_product_verification; semantic12</td>
+<td>PARTIALLY IMPLEMENTED</td>
+<td>Topic ambiguity, charge context, two faithfulness flags and independent reference review</td>
+<td>P1</td>
+</tr>
+<tr>
+<td>FR-04</td>
+<td>Canonical case continuity</td>
+<td>Scoped fixture and durable case lookup</td>
+<td>backend.case_status; conversation cached reauthorization</td>
+<td>test_bow case_status; test_continuity</td>
+<td>IMPLEMENTED &amp; VERIFIED</td>
+<td>Real CRM absent; handoff confirmation separately checked</td>
+<td>P1</td>
+</tr>
+<tr>
+<td>FR-05</td>
+<td>Confirmed duplicate-safe case creation/recovery</td>
+<td>Draft confirm/cancel, stable keys, payload conflict and lookup after unknown</td>
+<td>conversation._perform; storage.commit; backend.create_case/lookup_request</td>
+<td>test_conversation; test_continuity; test_pydantic_contracts</td>
+<td>IMPLEMENTED &amp; VERIFIED</td>
+<td>One-process synthetic deployment; not distributed crash certification</td>
+<td>P1</td>
+</tr>
+<tr>
+<td>FR-06</td>
+<td>Detect and preserve fraud/error; separate receipt</td>
+<td>Durable original statement and independent states before private lookup</td>
+<td>backend.capture; intake_signals; workflow.capture; web guest_report</td>
+<td>test_error_triage; test_guest_first report; original100 fraud recall</td>
+<td>PARTIALLY IMPLEMENTED</td>
+<td>Human-reported follow-up gap; legal workflow approval and current emergency oracle unresolved</td>
+<td>P1</td>
+</tr>
+<tr>
+<td>FR-07</td>
+<td>Verified human route with minimal context</td>
+<td>Synthetic queues/acknowledgement, alternate queue, reconcile</td>
+<td>backend.handoff/lookup_handoff</td>
+<td>test_resolveguard; test_demo_operations; original100</td>
+<td>IMPLEMENTED &amp; VERIFIED</td>
+<td>No real staffed queue; user case PASS did not verify handoff receipt</td>
+<td>P1</td>
+</tr>
+<tr>
+<td>FR-08</td>
+<td>No transfer/refund/credential/adjudication execution</td>
+<td>No executable banking tools for these actions</td>
+<td>workflow lookup branches; model; backend tool surface</td>
+<td>test_security_routing; security8; targeted transfer</td>
+<td>PARTIALLY IMPLEMENTED</td>
+<td>Execution boundary verified; ordinary transfer wording not consistently refused explicitly</td>
+<td>P1</td>
+</tr>
+<tr>
+<td>FR-09</td>
+<td>Data minimization and isolation</td>
+<td>Field allowlists, customer bindings, minimized model/trace exports</td>
+<td>backend; telemetry.sanitize; cloud_privacy; reviewer.masked</td>
+<td>test_guest_first; test_observability; test_family_privacy</td>
+<td>PARTIALLY IMPLEMENTED</td>
+<td>Regex masking not universal; raw original reports intentionally stored; retention/encryption approvals absent</td>
+<td>P1</td>
+</tr>
+<tr>
+<td>FR-10</td>
+<td>Reconstruct route/evidence/auth/tool/state</td>
+<td>Local nested spans and reviewer timelines</td>
+<td>telemetry.Trace; reviewer.timeline/details; customer_review</td>
+<td>test_trace_identity; test_reviewer; A06</td>
+<td>PARTIALLY IMPLEMENTED</td>
+<td>Some direct paths untraced, no per-BOW-case trace linkage, incomplete exact rule/filter/version fields</td>
+<td>P1</td>
+</tr>
+<tr>
+<td>FR-11</td>
+<td>Typed route and independent safety flags/fallback</td>
+<td>Pydantic routes; security independent; deterministic fraud override</td>
+<td>contracts.Route; workflow.classify; security_routing</td>
+<td>test_pydantic_contracts; test_security_routing</td>
+<td>PARTIALLY IMPLEMENTED</td>
+<td>Forced emergency human flag differs from expected user-request semantics; BOW intent accuracy unmeasured</td>
+<td>P1</td>
+</tr>
+<tr>
+<td>FR-12</td>
+<td>UI action states match authoritative outcomes</td>
+<td>Pre-send invariant checks and backend receipt matching</td>
+<td>customer_review._review; presentation; verify_emergency</td>
+<td>test_customer_review; test_fraud_triage; test_presentation</td>
+<td>IMPLEMENTED &amp; VERIFIED</td>
+<td>Bounded controlled outputs; delivered-over-network acknowledgement not independently established</td>
+<td>P1</td>
+</tr>
+<tr>
+<td>FR-13</td>
+<td>Versioned executable deterministic harness</td>
+<td>Original/BOW/security runners, isolated stores, results</td>
+<td>evaluation; full_evaluation; security_evaluation</td>
+<td>Fresh original99/100, BOW100/100, security8</td>
+<td>IMPLEMENTED &amp; VERIFIED</td>
+<td>Harness exists; failures and missing evidence still block qualification</td>
+<td>P1</td>
+</tr>
+<tr>
+<td>FR-14</td>
+<td>Regression and fail-closed release change control</td>
+<td>Version/hash reports and comparisons; reports remain BLOCKED</td>
+<td>evaluation.summarize; compare_mock; full_evaluation</td>
+<td>Historical matched results; fresh changed-code rerun</td>
+<td>PARTIALLY IMPLEMENTED</td>
+<td>No repository CI enforcement, signed release or automatic current human-feedback gate</td>
+<td>P0</td>
+</tr>
+<tr>
+<td>FR-15</td>
+<td>Timeout/outage/conflict resilience</td>
+<td>UNKNOWN/reconcile/fallback and retained jobs</td>
+<td>workflow.call; backend; conversation; reply_generation</td>
+<td>test_continuity; test_reply_generation; test_customer_review worker</td>
+<td>IMPLEMENTED &amp; VERIFIED</td>
+<td>Production concurrency/load and real outages not qualified</td>
+<td>P1</td>
+</tr>
+<tr>
+<td>FR-16</td>
+<td>Session assurance, expiry/revocation and step-up</td>
+<td>Fixture assurance and rechecks on tools/cache/delivery</td>
+<td>backend.assurance_error; web auth/resume; gate_output</td>
+<td>test_guest_first; test_bow step_up; test_family_privacy</td>
+<td>IMPLEMENTED &amp; VERIFIED</td>
+<td>Demo verification is not bank-approved authentication</td>
+<td>P1</td>
+</tr>
+<tr>
+<td>FR-17</td>
+<td>Delegation lifecycle and narrow permissions</td>
+<td>Scope/action/expiry/revocation checks</td>
+<td>FixtureBank._permit; backend; bow_backend</td>
+<td>test_family_privacy; test_demo_operations revoked_callback</td>
+<td>IMPLEMENTED &amp; VERIFIED</td>
+<td>Actual legal authorization instruments excluded</td>
+<td>P1</td>
+</tr>
+<tr>
+<td>FR-18</td>
+<td>Institution-defined notice preservation and clocks</td>
+<td>Separate captured/notice/verification/investigation/confirmation state</td>
+<td>contracts; backend.capture/notice_status</td>
+<td>test_guest_first; original100 receipt cases</td>
+<td>PARTIALLY IMPLEMENTED</td>
+<td>Approved legal receipt event, retention and regulatory clock integration not available</td>
+<td>P0 production</td>
+</tr>
+<tr>
+<td>FR-19</td>
+<td>Urgent protection route; verified actions only</td>
+<td>New deterministic demo lock, pending audit, ticket and handoff</td>
+<td>fraud_triage.active_theft/triage/EmergencyCards</td>
+<td>15 test_fraud_triage cases; original RG-087 fails old contract</td>
+<td>PARTIALLY IMPLEMENTED</td>
+<td>Later user-authorized synthetic feature changes PRD contract; no real lock or approved legal timings</td>
+<td>P0</td>
+</tr>
+<tr>
+<td>FR-20</td>
+<td>Minimize all boundaries and incident response</td>
+<td>Safe field projections, secret scrubbing, privacy incident signal</td>
+<td>telemetry; cloud_privacy; customer_review; security_routing</td>
+<td>test_observability projection; emergency sensitive_input</td>
+<td>PARTIALLY IMPLEMENTED</td>
+<td>Complete privacy scanner coverage, incident SOP/retention approvals and archive protection not verified</td>
+<td>P1</td>
+</tr>
+<tr>
+<td>FR-21</td>
+<td>Handoff ownership, entitlement and acknowledgement</td>
+<td>Scoped durable ACK/reconciliation; callback evidence</td>
+<td>backend.handoff/lookup_handoff; demo_operations</td>
+<td>test_demo_operations; test_continuity; reviewer tests</td>
+<td>IMPLEMENTED &amp; VERIFIED</td>
+<td>Synthetic ownership and callback only, not real availability</td>
+<td>P1</td>
+</tr>
+<tr>
+<td>FR-22</td>
+<td>Service least privilege with signed actor context</td>
+<td>Service allowlists intersect with customer permissions</td>
+<td>backend.service/allowed_account; FixtureBank._check_agent</td>
+<td>test_family_privacy case_create; original service_only</td>
+<td>PARTIALLY IMPLEMENTED</td>
+<td>No signed production acting-principal context or workload identity</td>
+<td>P1</td>
+</tr>
+<tr>
+<td>FR-23</td>
+<td>All critical assertions and independent attestation</td>
+<td>Full runners execute and report blocks</td>
+<td>full_evaluation; evaluation.summarize</td>
+<td>Fresh 83/84 original critical passes; 16 BOW conflicts</td>
+<td>PARTIALLY IMPLEMENTED</td>
+<td>Current critical failure, human approvals, broader qualification and signed gates missing</td>
+<td>P0</td>
+</tr>
+</tbody>
+</table>
+<h3>Other PRD acceptance obligations</h3>
+<table>
+<thead>
+<tr>
+<th>Requirement ID</th>
+<th>Expected functionality</th>
+<th>Actual implementation</th>
+<th>File/function evidence</th>
+<th>Test evidence</th>
+<th>Status</th>
+<th>Gap</th>
+<th>Priority</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PRD-7 screens</td>
+<td>Support home, chat, submission review, case, handoff and workspace</td>
+<td>All local views/routes present</td>
+<td>static/index/app; reviewer; dashboard</td>
+<td>Unit API tests; saved browser artifacts</td>
+<td>PARTIALLY IMPLEMENTED</td>
+<td>New audit did not rerun full browser/accessibility suite; known context failures remain</td>
+<td>P1</td>
+</tr>
+<tr>
+<td>PRD-8 encryption/retention</td>
+<td>Institutional encryption, controlled retention/deletion and access</td>
+<td>Authenticated encrypted reviewer export; plain local SQLite</td>
+<td>review_export; storage; reviewer</td>
+<td>test_reviewer export/tamper</td>
+<td>PARTIALLY IMPLEMENTED</td>
+<td>Storage encryption, legal hold/deletion and institution schedule unimplemented/unapproved</td>
+<td>P0 production</td>
+</tr>
+<tr>
+<td>PRD-9 rollout/sign-off</td>
+<td>Shadow/pilot/staffed fallback, risk/finance/service approvals</td>
+<td>Documentation and blocked reports</td>
+<td>PRD; evaluation.summarize</td>
+<td>No executed approval record found</td>
+<td>BLOCKED / REQUIRES APPROVAL</td>
+<td>No formal sign-off, cost business case, staffed operating model or pilot approval</td>
+<td>P0 production</td>
+</tr>
+<tr>
+<td>PRD-12 gates</td>
+<td>Critical zero-failure veto and current evidence</td>
+<td>Report-level block exists</td>
+<td>full_evaluation/evaluation</td>
+<td>Current original failure retained</td>
+<td>PARTIALLY IMPLEMENTED</td>
+<td>No deployment-enforced gate with incident/approval inputs</td>
+<td>P0</td>
+</tr>
+<tr>
+<td>SCOPE-EXTERNAL</td>
+<td>LangSmith Cloud, Replit, real bank integration</td>
+<td>Deliberately not activated</td>
+<td>cloud_verify; .replit; synthetic backends</td>
+<td>Cloud mocked adapter tests only</td>
+<td>BLOCKED / REQUIRES APPROVAL</td>
+<td>User-deferred integrations; not a local implementation failure</td>
+<td>Deferred</td>
+</tr>
+<tr>
+<td>SCOPE-NONGOALS</td>
+<td>Voice, money movement, refunds, credentials, adjudication, credit servicing</td>
+<td>No allowed execution; public credit information is supported</td>
+<td>web credit boundary; tool surface</td>
+<td>Security and BOW tests</td>
+<td>NOT APPLICABLE</td>
+<td>Do not expand scope or infer servicing approval from public YOLO answers</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<h2>Customer UX and Agent Review Admin matrix</h2>
+<table>
+<thead>
+<tr>
+<th>Requirement ID</th>
+<th>Expected functionality</th>
+<th>Actual implementation</th>
+<th>File/function evidence</th>
+<th>Test evidence</th>
+<th>Status</th>
+<th>Gap</th>
+<th>Priority</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>UI-FR-01</td>
+<td>Authorized fee event with applicable source</td>
+<td>Exact source and amount validation</td>
+<td>answer_evidence; presentation</td>
+<td>test_bow fee_guidance; customer_review</td>
+<td>PARTIALLY IMPLEMENTED</td>
+<td>Natural-language personal-charge matching fails</td>
+<td>P1</td>
+</tr>
+<tr>
+<td>UI-FR-02</td>
+<td>Trusted step-up; never accept chat identity</td>
+<td>Demo separate flow and backend recheck</td>
+<td>web.verify_demo/resume; backend</td>
+<td>guest_first step_up tests</td>
+<td>IMPLEMENTED &amp; VERIFIED</td>
+<td>Production provider excluded</td>
+<td>P1</td>
+</tr>
+<tr>
+<td>UI-FR-03</td>
+<td>Five independent report states</td>
+<td>Customer progress cards from durable results</td>
+<td>contracts; presentation; static/app.progress</td>
+<td>test_presentation; customer_review</td>
+<td>IMPLEMENTED &amp; VERIFIED</td>
+<td>Formal receipt not institution-approved</td>
+<td>P1</td>
+</tr>
+<tr>
+<td>UI-FR-04</td>
+<td>Case success only after commit</td>
+<td>Confirm and reconcile states</td>
+<td>backend.create_case; conversation; presentation</td>
+<td>test_continuity; test_web</td>
+<td>IMPLEMENTED &amp; VERIFIED</td>
+<td>Synthetic only</td>
+<td>P1</td>
+</tr>
+<tr>
+<td>UI-FR-05</td>
+<td>Decimal-safe amount, date and direction</td>
+<td>Integer cents, explicit labels and unknown-direction note</td>
+<td>presentation.format_money/customer_cards</td>
+<td>test_presentation</td>
+<td>IMPLEMENTED &amp; VERIFIED</td>
+<td>BOW source does not always provide debit/credit direction; disclosed, not invented</td>
+<td>P2</td>
+</tr>
+<tr>
+<td>UI-FR-06</td>
+<td>No unauthorized fields displayed</td>
+<td>Backend scope and final card reauthorization</td>
+<td>customer_review; backend</td>
+<td>guest_first cross_customer; A01</td>
+<td>PARTIALLY IMPLEMENTED</td>
+<td>Wrong own-resource substitution still violates requested scope</td>
+<td>P0</td>
+</tr>
+<tr>
+<td>UI-FR-07</td>
+<td>Entitled handoff and truthful status</td>
+<td>Local ACK/unknown/unavailable</td>
+<td>backend.handoff; presentation</td>
+<td>continuity/demo_operations</td>
+<td>IMPLEMENTED &amp; VERIFIED</td>
+<td>Real queue absent</td>
+<td>P1</td>
+</tr>
+<tr>
+<td>UI-FR-08</td>
+<td>Protect UI/context</td>
+<td>DOM text rendering, masking, hidden private views</td>
+<td>static/app; telemetry; reviewer</td>
+<td>test_guest_first; reviewer; saved browser checks</td>
+<td>PARTIALLY IMPLEMENTED</td>
+<td>Full PII coverage/retention and customer confusion remain</td>
+<td>P1</td>
+</tr>
+<tr>
+<td>UI-FR-09</td>
+<td>Injection cannot grant permission</td>
+<td>Security precheck plus backend authority</td>
+<td>security_routing; web; backend</td>
+<td>Fresh security8; test_security_routing</td>
+<td>IMPLEMENTED &amp; VERIFIED</td>
+<td>Bounded detector; general attacks not proven impossible</td>
+<td>P1</td>
+</tr>
+<tr>
+<td>UI-FR-10</td>
+<td>Hide restricted content on expiry/revocation</td>
+<td>Polling/session marker/private clearing and API rechecks</td>
+<td>static/app.refreshAccess/clearPrivate; conversation</td>
+<td>test_guest_first expiry; saved browser tests</td>
+<td>IMPLEMENTED &amp; VERIFIED</td>
+<td>UI clearing is polling-based, not instantaneous remote push</td>
+<td>P1</td>
+</tr>
+<tr>
+<td>UX-GUEST</td>
+<td>Guest entry/public policy/auth on demand/resume/cancel</td>
+<td>Active default guest reset and saved request continuation</td>
+<td>onboarding; web.session/resume; static/app.reset</td>
+<td>test_onboarding; test_guest_first</td>
+<td>IMPLEMENTED &amp; VERIFIED</td>
+<td>Demo sign-in explicitly labelled</td>
+<td>P1</td>
+</tr>
+<tr>
+<td>UX-CLARIFY</td>
+<td>Clarify exact product and answer follow-up in same chat</td>
+<td>Pending public question and confirmed product state</td>
+<td>BowKnowledge.converse</td>
+<td>test_product_verification/public_conversation; A07</td>
+<td>PARTIALLY IMPLEMENTED</td>
+<td>Confirmed product carry-over can bypass desired clarification after topic switch</td>
+<td>P1</td>
+</tr>
+<tr>
+<td>RESOLUTION</td>
+<td>Unresolved next step, priority and evidence-based callback</td>
+<td>Deterministic ResolutionOutcome plus demo operation receipts</td>
+<td>customer_review._review; resolution_contracts; demo_operations</td>
+<td>test_resolution_contracts; test_demo_operations</td>
+<td>IMPLEMENTED &amp; VERIFIED</td>
+<td>Callback explicitly simulated; no real call booked; not autonomous resolution</td>
+<td>P1</td>
+</tr>
+<tr>
+<td>QA-PRE</td>
+<td>Review every reply before delivery</td>
+<td>Checks authorized records, sources, action truth; safe fallback</td>
+<td>CustomerReview.gate/_review; review_flow</td>
+<td>test_customer_review; test_fraud_triage forgery</td>
+<td>IMPLEMENTED &amp; VERIFIED</td>
+<td>Online intent NOT_EVALUABLE; controlled checker misses some wrong-resource/UX behavior</td>
+<td>P1</td>
+</tr>
+<tr>
+<td>QA-POST</td>
+<td>Separate end-session audit, no customer interaction</td>
+<td>Durable jobs on reset/end/idle; retry and revisions</td>
+<td>CustomerReview.close/process_pending/expire_idle; session_quality</td>
+<td>test_customer_review end/restart/late/failure</td>
+<td>IMPLEMENTED &amp; VERIFIED</td>
+<td>Deterministic trajectory audit, not an independent semantic agent</td>
+<td>P1</td>
+</tr>
+<tr>
+<td>US-01</td>
+<td>Search and full trace playback</td>
+<td>Bank-scoped session search, timeline, masked replies</td>
+<td>reviewer.sessions/timeline/details; static/reviewer</td>
+<td>test_reviewer playback/scope; saved browser10</td>
+<td>PARTIALLY IMPLEMENTED</td>
+<td>Not all requested filters/versions/payloads captured; direct paths incomplete</td>
+<td>P1</td>
+</tr>
+<tr>
+<td>US-02</td>
+<td>Exact safe tool inputs/results, prompts, policy and deny reasons</td>
+<td>Some masked workflow payloads and tool outcomes</td>
+<td>workflow.call; CustomerReview.capture_workflow; reviewer.details</td>
+<td>reviewer/observability tests</td>
+<td>PARTIALLY IMPLEMENTED</td>
+<td>Not every parameter/system prompt/auth rule recorded; no hidden reasoning logs promised</td>
+<td>P1</td>
+</tr>
+<tr>
+<td>US-03</td>
+<td>Append-only attributable notes/encrypted exports</td>
+<td>Roles, revisions, hash chain, triggers, AES-GCM packages</td>
+<td>reviewer.note/export; review_export</td>
+<td>test_reviewer append_only/export; dataset_review</td>
+<td>PARTIALLY IMPLEMENTED</td>
+<td>Not independently immutable; no legal hold; purpose/destination/download controls incomplete</td>
+<td>P1</td>
+</tr>
+<tr>
+<td>US-04</td>
+<td>Timely configurable anomaly alerts/delivery</td>
+<td>Local last-N rules, polling trigger, persisted alerts/ack</td>
+<td>reviewer.alerts/alert_rule; dashboard</td>
+<td>test_reviewer alert; observability alert tests</td>
+<td>PARTIALLY IMPLEMENTED</td>
+<td>No ingestion timer, real-time SLA, destination outbox, Slack/Teams delivery or sentiment detector</td>
+<td>P2</td>
+</tr>
+</tbody>
+</table>
+<h2>Agent Observability BRD audit</h2>
+<p>M/S/C are the source's Must/Should/Could design priorities. They are separate from remediation priority. Grouped cells still identify every source requirement ID; proposed values and institutional approvals remain pending.</p>
+<table>
+<thead>
+<tr>
+<th>Requirement ID</th>
+<th>Expected functionality</th>
+<th>Actual implementation</th>
+<th>File/function evidence</th>
+<th>Test evidence</th>
+<th>Status</th>
+<th>Gap</th>
+<th>Priority</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>T1.1 (M)</td>
+<td>Sanitized versioned replay</td>
+<td>Frozen datasets, local traces and safe recorded playback</td>
+<td>conversation; reviewer.timeline; evaluation</td>
+<td>continuity/reviewer tests</td>
+<td>PARTIALLY IMPLEMENTED</td>
+<td>Some model/tool/fixture trace linkage absent; no full staff reexecution product</td>
+<td>P1</td>
+</tr>
+<tr>
+<td>T1.2 (M)</td>
+<td>Identical-fixture version comparison</td>
+<td>v0–v4 matched40 with per-case outputs/regressions</td>
+<td>compare_mock; comparison.json</td>
+<td>Saved 3 repeats/version</td>
+<td>IMPLEMENTED &amp; VERIFIED</td>
+<td>Mock rules only; not live GLM comparison</td>
+<td>P1</td>
+</tr>
+<tr>
+<td>T1.3 (M)</td>
+<td>Full multi-turn lifecycle</td>
+<td>Bound threads, linked auth sessions, post-session trajectory</td>
+<td>conversation; session_quality; reviewer.timeline</td>
+<td>customer_review/continuity tests</td>
+<td>PARTIALLY IMPLEMENTED</td>
+<td>No independent complete-span coverage report; direct-path missing data</td>
+<td>P1</td>
+</tr>
+<tr>
+<td>T1.4 (S)</td>
+<td>Non-sensitive risk/product/version tags</td>
+<td>Some metadata and hashed refs</td>
+<td>telemetry; security_routing; reviewer</td>
+<td>trace_identity/observability tests</td>
+<td>PARTIALLY IMPLEMENTED</td>
+<td>Inconsistent tags across public/emergency/generation runs</td>
+<td>P2</td>
+</tr>
+<tr>
+<td>T1.5 (S)</td>
+<td>Reviewed failure promotion</td>
+<td>Historical regression cases and source-hash review interfaces</td>
+<td>compare_mock; dataset_review</td>
+<td>test_review_and_integration</td>
+<td>PARTIALLY IMPLEMENTED</td>
+<td>New22 failures not yet approved, trace-bound automated regression cases</td>
+<td>P1</td>
+</tr>
+<tr>
+<td>T2.1 (M)</td>
+<td>Approved retention and tested TTL</td>
+<td>Observation cap only, no institution schedule</td>
+<td>monitoring.record_observation</td>
+<td>No approved TTL/deletion test found</td>
+<td>BLOCKED / REQUIRES APPROVAL</td>
+<td>Retention implementation and Legal/Privacy decision missing</td>
+<td>P0 production</td>
+</tr>
+<tr>
+<td>T2.2 (M)</td>
+<td>Mask before storage/export</td>
+<td>Recursive filters and cloud allowlist</td>
+<td>telemetry.sanitize; cloud_privacy; reviewer.masked</td>
+<td>observability projection and seeded tests</td>
+<td>PARTIALLY IMPLEMENTED</td>
+<td>Seeded coverage does not establish universal PII removal</td>
+<td>P1</td>
+</tr>
+<tr>
+<td>T2.3 (M)</td>
+<td>Scoped reviewer access and read/export audit</td>
+<td>Bank/role checks, staff activity and export log</td>
+<td>reviewer.staff/staff_activity/export</td>
+<td>test_reviewer; test_dataset_review</td>
+<td>IMPLEMENTED &amp; VERIFIED</td>
+<td>Demo identity; separate production IAM prerequisite</td>
+<td>P1</td>
+</tr>
+<tr>
+<td>T2.4 (S)</td>
+<td>Deletion and legal holds across derived data</td>
+<td>No cross-dataset lifecycle service</td>
+<td>storage/reviewer inventory</td>
+<td>No executed evidence</td>
+<td>NOT IMPLEMENTED</td>
+<td>Legal decision and lifecycle tooling needed</td>
+<td>P0 production</td>
+</tr>
+<tr>
+<td>T2.5 (S)</td>
+<td>Approved critical-aware sampling</td>
+<td>Bounded 10,000 observations/200 read window</td>
+<td>monitoring</td>
+<td>No sampling policy test</td>
+<td>PARTIALLY IMPLEMENTED</td>
+<td>Cap is not critical-event preservation policy</td>
+<td>P2</td>
+</tr>
+<tr>
+<td>T3.1 (M)</td>
+<td>Trace/assert all original100 paths</td>
+<td>Original100 executed; BOW100 executed</td>
+<td>full_evaluation; evaluation</td>
+<td>Fresh results and trace files</td>
+<td>PARTIALLY IMPLEMENTED</td>
+<td>Original critical failure, BOW missing traces/correlation</td>
+<td>P0</td>
+</tr>
+<tr>
+<td>T3.2 (S)</td>
+<td>Vendor-neutral schema and two sinks</td>
+<td>Local JSON/SQLite and prepared LangSmith adapter</td>
+<td>telemetry; langsmith_integration</td>
+<td>Fake SDK tests</td>
+<td>PARTIALLY IMPLEMENTED</td>
+<td>Hosted sink not verified, deferred</td>
+<td>Deferred</td>
+</tr>
+<tr>
+<td>T3.3 (S)</td>
+<td>Tool permission/resource/outcome spans</td>
+<td>Wrapper and some authorization events</td>
+<td>workflow.call/lookup; backend</td>
+<td>test_trace_identity</td>
+<td>PARTIALLY IMPLEMENTED</td>
+<td>Incomplete parameters/resource rule/version capture on direct branches</td>
+<td>P1</td>
+</tr>
+<tr>
+<td>T4.1 (M)</td>
+<td>Node errors/cost/latency/retries/completeness</td>
+<td>Spans, local run trends, tokens, generation budget</td>
+<td>telemetry; monitoring; dashboard</td>
+<td>observability tests and saved artifacts</td>
+<td>PARTIALLY IMPLEMENTED</td>
+<td>Live price unknown; no full completeness or per-risk p95 evidence</td>
+<td>P1</td>
+</tr>
+<tr>
+<td>T4.2 (S)</td>
+<td>Detect telemetry loss/outage/denial spikes</td>
+<td>Fail-safe logging and local threshold rules</td>
+<td>monitoring.observe; runtime_export; reviewer.alerts</td>
+<td>observability failure test</td>
+<td>PARTIALLY IMPLEMENTED</td>
+<td>In-memory export queue may drop; no delivery-loss drill or independent alarm</td>
+<td>P2</td>
+</tr>
+<tr>
+<td>T4.3 (C)</td>
+<td>Instrumentation schema pinned</td>
+<td>Various metadata versions, no universal trace schema pin</td>
+<td>telemetry.Trace</td>
+<td>No schema compatibility test found</td>
+<td>PARTIALLY IMPLEMENTED</td>
+<td>Pin unified schema and migration contract</td>
+<td>P2</td>
+</tr>
+<tr>
+<td>E1.1 (M)</td>
+<td>Signed Helpful/Honest/Harmless rubric</td>
+<td>Banking rubric/code checks authored</td>
+<td>judges; human-review workbook</td>
+<td>judge schema tests</td>
+<td>BLOCKED / REQUIRES APPROVAL</td>
+<td>Owner sign-off absent</td>
+<td>P1</td>
+</tr>
+<tr>
+<td>E1.2 (M)</td>
+<td>Binary criterion questions with evidence</td>
+<td>Deterministic assertions, judge threshold binary plus 1–5 dimensions</td>
+<td>evaluation; judges.JudgeGrade</td>
+<td>tests and actual12 judge outputs</td>
+<td>IMPLEMENTED &amp; VERIFIED</td>
+<td>Judge not sufficient for authorization/state truth</td>
+<td>P1</td>
+</tr>
+<tr>
+<td>E1.3 (M)</td>
+<td>Human-reviewed exemplars per criterion</td>
+<td>Blank52 review workbook; actual22 independent BOW observations</td>
+<td>human_review_20261101; feedback batch02</td>
+<td>DB labels0; review40 pending40</td>
+<td>PARTIALLY IMPLEMENTED</td>
+<td>Required per-criterion exact-output labels/agreement absent</td>
+<td>P1</td>
+</tr>
+<tr>
+<td>E1.4 (M)</td>
+<td>PM-ranked failure taxonomy</td>
+<td>Assertion failure labels and impact narratives; human feedback</td>
+<td>failure_analysis; submission report; batch02</td>
+<td>Historical8 failed cases categorized</td>
+<td>PARTIALLY IMPLEMENTED</td>
+<td>Not every root-cause annotation independently human verified; ownership/cost ranking incomplete</td>
+<td>P1</td>
+</tr>
+<tr>
+<td>E1.5 (S)</td>
+<td>Expanded regression per failure mode</td>
+<td>40/100/security suites</td>
+<td>data and evaluation tools</td>
+<td>Fresh regression runs</td>
+<td>PARTIALLY IMPLEMENTED</td>
+<td>20–50 independently labelled examples per mode not established</td>
+<td>P2</td>
+</tr>
+<tr>
+<td>E2.1 (M)</td>
+<td>Risk-covered100 benchmark</td>
+<td>All100 original executed</td>
+<td>original_bindings; evaluation</td>
+<td>Fresh99/100</td>
+<td>PARTIALLY IMPLEMENTED</td>
+<td>Critical fail and proposed bindings need approval</td>
+<td>P0</td>
+</tr>
+<tr>
+<td>E2.2 (M)</td>
+<td>Origin, fixture, scope and approvals</td>
+<td>Source hashes, immutable snapshot, pending metadata</td>
+<td>bow_data; original_bindings; prepare_dataset</td>
+<td>tests source hash/review validation</td>
+<td>PARTIALLY IMPLEMENTED</td>
+<td>Prompt authorship/LLM-generated fraction unknown; approvals incomplete</td>
+<td>P1</td>
+</tr>
+<tr>
+<td>E2.3 (M)</td>
+<td>Approved internal testing/staging</td>
+<td>Synthetic local only</td>
+<td>FixtureBank; web</td>
+<td>No approved real-data staging evidence</td>
+<td>BLOCKED / REQUIRES APPROVAL</td>
+<td>Real-data dogfooding intentionally excluded</td>
+<td>Deferred</td>
+</tr>
+<tr>
+<td>E2.4 (S)</td>
+<td>Controlled identical-fixture V1/V2</td>
+<td>Matched historical40 across5 stages</td>
+<td>compare_mock/comparison.json</td>
+<td>120 executions/version</td>
+<td>IMPLEMENTED &amp; VERIFIED</td>
+<td>Rules improvement, not live generation improvement</td>
+<td>P1</td>
+</tr>
+<tr>
+<td>E3.1 (M)</td>
+<td>Human judge calibration with TPR/TNR</td>
+<td>Agreement/false pass/failure calculator exists</td>
+<td>dataset_review.calibration_report</td>
+<td>test_dataset_review; actual CAL12</td>
+<td>PARTIALLY IMPLEMENTED</td>
+<td>No human pairs; TPR/TNR by model/risk not implemented</td>
+<td>P1</td>
+</tr>
+<tr>
+<td>E3.2 (M)</td>
+<td>Review disagreements and corrections</td>
+<td>Review UI/source-bound label decisions</td>
+<td>dataset_review</td>
+<td>tests only, DB reviews0</td>
+<td>PARTIALLY IMPLEMENTED</td>
+<td>No executed disagreement review or cadence</td>
+<td>P1</td>
+</tr>
+<tr>
+<td>E3.3 (M)</td>
+<td>Uncalibrated judges cannot gate release</td>
+<td>Qualification stays blocked; deterministic checks dominate</td>
+<td>evaluation.summarize; semantic report</td>
+<td>Blocked saved/fresh reports</td>
+<td>IMPLEMENTED &amp; VERIFIED</td>
+<td>Formal Risk/PM calibration thresholds absent</td>
+<td>P1</td>
+</tr>
+<tr>
+<td>E3.4 (M)</td>
+<td>At least3 repeats/pass^k for unstable paths</td>
+<td>Historical40 three deterministic repeats; all-repeat scoring</td>
+<td>compare_mock; submission rubric</td>
+<td>Saved240 paired baseline/improved records</td>
+<td>PARTIALLY IMPLEMENTED</td>
+<td>No repeated live LLM multi-turn stability qualification</td>
+<td>P1</td>
+</tr>
+<tr>
+<td>E3.5 (S)</td>
+<td>Response, step, trajectory scores</td>
+<td>Exact checks, semantic suite, session audits separate</td>
+<td>evaluation; semantic_evaluation; session_quality</td>
+<td>tests and saved results</td>
+<td>IMPLEMENTED &amp; VERIFIED</td>
+<td>Different suites/versions must not be merged as one score</td>
+<td>P1</td>
+</tr>
+<tr>
+<td>E3.6 (S)</td>
+<td>Approved production outcome sampling</td>
+<td>No production pilot</td>
+<td>—</td>
+<td>No production evidence</td>
+<td>NOT APPLICABLE</td>
+<td>Not in current synthetic scope</td>
+<td>—</td>
+</tr>
+<tr>
+<td>E4.1 (M)</td>
+<td>Zero failed critical assertions and100 baseline</td>
+<td>Fail-closed reports, full executed set</td>
+<td>evaluation/full_evaluation</td>
+<td>Fresh RG-087 fail</td>
+<td>PARTIALLY IMPLEMENTED</td>
+<td>Current critical gate not satisfied</td>
+<td>P0</td>
+</tr>
+<tr>
+<td>E4.2 (M)</td>
+<td>Signed progression gates</td>
+<td>Technical stages exist without signed records</td>
+<td>docs and blocked reports</td>
+<td>No executed signed stage record</td>
+<td>BLOCKED / REQUIRES APPROVAL</td>
+<td>Domain-owner acceptance missing</td>
+<td>P0</td>
+</tr>
+<tr>
+<td>E4.3 (S)</td>
+<td>Verified session-success north star</td>
+<td>Deterministic trajectory checks</td>
+<td>session_quality</td>
+<td>customer_review tests</td>
+<td>PARTIALLY IMPLEMENTED</td>
+<td>Approved numerator/denominator and actual business measurements absent</td>
+<td>P2</td>
+</tr>
+<tr>
+<td>E4.4 (S)</td>
+<td>Signed noncritical exceptions/no critical waiver</td>
+<td>Reports block qualification</td>
+<td>evaluation.summarize</td>
+<td>Current BLOCKED</td>
+<td>BLOCKED / REQUIRES APPROVAL</td>
+<td>Signed exception process absent</td>
+<td>P1</td>
+</tr>
+<tr>
+<td>G1.1 (M)</td>
+<td>Approved AI usage policy</td>
+<td>Runtime support boundaries, draft policy docs</td>
+<td>backend/workflow/docs</td>
+<td>Tool boundary tests</td>
+<td>BLOCKED / REQUIRES APPROVAL</td>
+<td>Institutional publication/signature absent</td>
+<td>P1</td>
+</tr>
+<tr>
+<td>G1.2 (M)</td>
+<td>Weekly disallowed/intervention reporting</td>
+<td>Security events/last-N alert counts</td>
+<td>security_routing; reviewer</td>
+<td>security tests</td>
+<td>PARTIALLY IMPLEMENTED</td>
+<td>No weekly risk-class reporting workflow</td>
+<td>P2</td>
+</tr>
+<tr>
+<td>G1.3 (M)</td>
+<td>Backend deny/step-up/escalation</td>
+<td>Implemented synthetic checks</td>
+<td>backend; web</td>
+<td>guest/delegation/security suites</td>
+<td>IMPLEMENTED &amp; VERIFIED</td>
+<td>Resource binding remains separately open</td>
+<td>P0</td>
+</tr>
+<tr>
+<td>G1.4 (S)</td>
+<td>Named policy owners/review cycle</td>
+<td>Role names in target docs</td>
+<td>PRD/BRD</td>
+<td>No accountable sign-off evidence</td>
+<td>BLOCKED / REQUIRES APPROVAL</td>
+<td>Named organizational owners absent</td>
+<td>P1</td>
+</tr>
+<tr>
+<td>G1.5 (S)</td>
+<td>Per-tool least privilege/service identity</td>
+<td>Allowlists and fixture delegated scopes</td>
+<td>backend.service; FixtureBank</td>
+<td>family/privacy/service tests</td>
+<td>PARTIALLY IMPLEMENTED</td>
+<td>Production workload identity and signed context absent</td>
+<td>P1</td>
+</tr>
+<tr>
+<td>G2.1 (M)</td>
+<td>Seven-category signed red-team register</td>
+<td>Eight attack journeys plus security tests</td>
+<td>security_evaluation; adversarial_evaluation</td>
+<td>Fresh8/8</td>
+<td>PARTIALLY IMPLEMENTED</td>
+<td>No signed full-category register; fairness/unequal-treatment coverage not established</td>
+<td>P1</td>
+</tr>
+<tr>
+<td>G2.2 (S)</td>
+<td>Confirmed attacks promoted to regression</td>
+<td>Security regression fixtures exist</td>
+<td>data/adversarial_evaluation; compare_mock</td>
+<td>security tests</td>
+<td>PARTIALLY IMPLEMENTED</td>
+<td>New human findings need exact evidence/owner/case promotion</td>
+<td>P1</td>
+</tr>
+<tr>
+<td>G3.1 (M)</td>
+<td>Risk-stratified cycle report</td>
+<td>Reports with failure metrics and snapshots</td>
+<td>evaluation; completion/submission/audit artifacts</td>
+<td>Fresh suites</td>
+<td>PARTIALLY IMPLEMENTED</td>
+<td>Full affected-FR/owner/trace linkage inconsistent</td>
+<td>P1</td>
+</tr>
+<tr>
+<td>G3.2 (M)</td>
+<td>Bank-domain cross-functional bug bash</td>
+<td>Single-user manual review exists</td>
+<td>human feedback22</td>
+<td>User observations</td>
+<td>PARTIALLY IMPLEMENTED</td>
+<td>Security/Fraud/Support/Compliance participation not established</td>
+<td>P1</td>
+</tr>
+<tr>
+<td>G3.3 (S)</td>
+<td>Standard evidence-backed defect template</td>
+<td>Human findings and structured result checks</td>
+<td>batch02; evaluation</td>
+<td>Audit targeted reproduction</td>
+<td>PARTIALLY IMPLEMENTED</td>
+<td>Many observations lack actual complete reply/version/trace/precondition</td>
+<td>P1</td>
+</tr>
+<tr>
+<td>G3.4 (C)</td>
+<td>Remediation SLA/reopen metrics</td>
+<td>No lifecycle/SLA tracker</td>
+<td>—</td>
+<td>No evidence</td>
+<td>NOT IMPLEMENTED</td>
+<td>Add only after ownership/SLA decisions</td>
+<td>P2</td>
+</tr>
+<tr>
+<td>G4.1 (M)</td>
+<td>Gates agreed before evaluation</td>
+<td>Retrospective teaching bars and draft institutional gates</td>
+<td>submission report; BRD</td>
+<td>No pre-registered signed acceptance</td>
+<td>BLOCKED / REQUIRES APPROVAL</td>
+<td>Formal gate approval missing</td>
+<td>P0</td>
+</tr>
+<tr>
+<td>G4.2 (M)</td>
+<td>Combined auditable go/no-go</td>
+<td>Machine-readable BLOCKED reports</td>
+<td>evaluation/full_evaluation</td>
+<td>Fresh summaries</td>
+<td>PARTIALLY IMPLEMENTED</td>
+<td>No signed complete multi-owner decision record</td>
+<td>P0</td>
+</tr>
+<tr>
+<td>G4.3 (M)</td>
+<td>Critical issue prevents pilot/deploy</td>
+<td>Reports block failed suites</td>
+<td>evaluation.summarize</td>
+<td>RG-087 blocked</td>
+<td>PARTIALLY IMPLEMENTED</td>
+<td>No CI/deployment enforcement or open-incident linkage</td>
+<td>P0</td>
+</tr>
+<tr>
+<td>G4.4 (S)</td>
+<td>Versioned sign-off/exceptions/rollback</td>
+<td>Versions retained, no signed approvals</td>
+<td>artifacts/docs</td>
+<td>No signed record</td>
+<td>BLOCKED / REQUIRES APPROVAL</td>
+<td>Decision owner, rollback drill and acceptance record absent</td>
+<td>P1</td>
+</tr>
+</tbody>
+</table>
+<h2>Gen Academy audit</h2>
+<h3>Which submission track applies?</h3>
+<p>The saved <code>Submission_Status.json</code> selects <strong>Own use case / spreadsheet</strong>. The Academy handout permits this route without hosted LangSmith evidence. The supplied Customer Support classification track instead requires executed customer-support notebook and hosted baseline/improved trace evidence. A custom banking support agent is not automatically the supplied e-commerce track. Under the spreadsheet route, cloud omission is acceptable; under the supplied Customer Support/LangSmith route, it remains an unmet mandatory item. Both are assessed below rather than silently switching tracks.</p>
+<table>
+<thead>
+<tr>
+<th>Part / requirement</th>
+<th>Verified evidence</th>
+<th>Assessment / remaining work</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 baseline executed</td>
+<td>mock_iterations_final v0 results:40 unique,3 repeats; predicted routes/checks and outputs saved</td>
+<td>IMPLEMENTED &amp; VERIFIED for historical mock agent</td>
+</tr>
+<tr>
+<td>1 expected/predicted saved</td>
+<td>Each results row contains expected and actual.route; CSV/Excel paired outputs</td>
+<td>IMPLEMENTED &amp; VERIFIED</td>
+</tr>
+<tr>
+<td>1 failed cases filterable</td>
+<td>passed booleans, Excel filters, failure categories</td>
+<td>IMPLEMENTED &amp; VERIFIED</td>
+</tr>
+<tr>
+<td>1 human cause annotations for important failures</td>
+<td>Eight baseline failures have automated assertion labels and authored cause narrative; review_40 has40 PENDING/empty reviewer fields</td>
+<td>PARTIALLY IMPLEMENTED; actual22 human observations are a different BOW suite</td>
+</tr>
+<tr>
+<td>2 consistent categories/definitions/counts/impact</td>
+<td>Assertion-key categories and top-three impact groups exist; historical groups overlap</td>
+<td>PARTIALLY IMPLEMENTED; no fully approved exclusive taxonomy or measured dollar costs; human failures not all normalized to one category field</td>
+</tr>
+<tr>
+<td>3 baseline V1</td>
+<td>v0 is baseline (name can be mapped clearly; do not rename history)</td>
+<td>IMPLEMENTED &amp; VERIFIED</td>
+</tr>
+<tr>
+<td>3 targeted changes</td>
+<td>Indirect fraud, human wording, ticket/retry and primary intent rules in TunedMockModel</td>
+<td>IMPLEMENTED &amp; VERIFIED for rule changes</td>
+</tr>
+<tr>
+<td>3 comparable rerun/delta/regressions</td>
+<td>Same40/hash;3 repeats; v0 throughv4; no recorded regressions</td>
+<td>IMPLEMENTED &amp; VERIFIED historically; not live-model or current full-app comparison</td>
+</tr>
+<tr>
+<td>4 binary rubric OPTIONAL Academy</td>
+<td>JudgeGrade boolean requires all dimensions &gt;=4; rejects inconsistencies</td>
+<td>IMPLEMENTED &amp; VERIFIED</td>
+</tr>
+<tr>
+<td>4 human comparison standard OPTIONAL Academy</td>
+<td>No exact CAL human labels approved, no human pairs</td>
+<td>PARTIALLY IMPLEMENTED; required for ResolveGuard BRD judge qualification</td>
+</tr>
+<tr>
+<td>4 judge executed OPTIONAL Academy</td>
+<td>GLM model returned valid12 calibration and12 semantic grades</td>
+<td>IMPLEMENTED &amp; VERIFIED from saved actual outputs</td>
+</tr>
+<tr>
+<td>4 predictions/disagreements/invalid outputs OPTIONAL Academy</td>
+<td>Predictions saved; technical errors and truncated earlier outputs retained; comparison calculator exists</td>
+<td>PARTIALLY IMPLEMENTED; real human disagreements not calculated</td>
+</tr>
+<tr>
+<td>5 two-model comparison OPTIONAL Academy</td>
+<td>Only GLM judge execution identified; embedding model is not a second judge</td>
+<td>NOT IMPLEMENTED; optional path not established as selected</td>
+</tr>
+<tr>
+<td>5 human agreement/false positives/negatives OPTIONAL Academy</td>
+<td>Calculator for agreement/false passes/failures exists; no actual calibrated pairs or TPR/TNR slices</td>
+<td>PARTIALLY IMPLEMENTED; neither 12/12 judge PASS nor mean score equals human agreement</td>
+</tr>
+<tr>
+<td>5 calibration changes/model rationale OPTIONAL Academy</td>
+<td>Rubric/structured output and token-limit changes documented; model selected by user</td>
+<td>PARTIALLY IMPLEMENTED; no empirical two-judge selection study or human-reviewed calibration closure</td>
+</tr>
+<tr>
+<td>6 each evaluation linked to trace</td>
+<td>Original attempts embed traces; BOW rows not explicitly linked,78 trace objects; semantic verdict files are separate</td>
+<td>PARTIALLY IMPLEMENTED locally</td>
+</tr>
+<tr>
+<td>6 LangSmith projects/datasets/experiments</td>
+<td>SDK adapter and verification harness; LANGSMITH_API_KEY absent, both switches false</td>
+<td>BLOCKED / REQUIRES APPROVAL, intentionally deferred; no verified remote run links</td>
+</tr>
+<tr>
+<td>Own-use-case report/rubric/pass bars</td>
+<td>Submission PDF/Markdown/workbook</td>
+<td>PREPARED; bars retrospective, not institutional go/no-go</td>
+</tr>
+<tr>
+<td>30–50 golden labelled cases</td>
+<td>40 cases:20 happy,12 edge,6 anticipated failure,2 adversarial</td>
+<td>PARTIALLY IMPLEMENTED; expected behavior authored, independent review/provenance incomplete</td>
+</tr>
+<tr>
+<td>Supporting prompts/code/notebook</td>
+<td>Prompts, code snapshot and executed Evidence_Analysis.ipynb</td>
+<td>PREPARED; notebook analyzes saved results, not executed live agent notebook; snapshot not exact recovered historical source</td>
+</tr>
+<tr>
+<td>Demo Loom</td>
+<td>Script only, Loom_URL null</td>
+<td>NOT IMPLEMENTED</td>
+</tr>
+<tr>
+<td>Final upload</td>
+<td>ZIP exists, uploaded false</td>
+<td>NOT IMPLEMENTED; no authorized portal action taken</td>
+</tr>
+</tbody>
+</table>
+<p>Historical mock metrics are genuine for that versioned comparison: intent85% to100%, journey80% to97.5%, fraud recall80% to100%; deltas +15, +17.5 and +20 percentage points. p95 local mock latency30.950 to30.577 ms, model cost0 because no provider calls. Eight baseline unique failures, seven repaired, remaining RG-056. That old retrieval defect was addressed later; never replace the historical result with a newer pass. Deterministic repeats do not measure stochastic model robustness.</p>
+<p>The 22 human observations give 63.6% fully passed, with partial marks not converted to binary. This is not a regression from100/100 BOW harness scores: scenarios, preconditions, assertions and versions differ. It demonstrates that broad user outcomes were not covered by narrow automated checks. Eight prior observations were included once, not counted again as30 reviews.</p>
+<h2>Semantic evaluation and monitoring findings</h2>
+<p>Saved <code>artifacts/local_completion/semantic_expanded_final.json</code> contains twelve actual outputs with current public references pending approval. Mean context recall1.000; context precision approximately1.000; faithfulness0.9167; answer relevance0.9100. SEM-003 andSEM-011 faithfulness0.5 are retained; semantic judge passes12/12. Their coexistence is disagreement between automated measures, not evidence that either grader is the human standard. The final file combines eleven identical-input measurements and one corrected/re-measured binding, with provenance; this is not a clean matched agent-quality improvement experiment. Earlier incomplete judge outputs remain in the earlier artifacts.</p>
+<p><code>judges.py</code> requests strict JSON, checks dimension scores/boolean consistency, rejects incomplete finish/tool output, supplies safe authorization facts and stores brief evidence explanations. It does not authorize actions. <code>ragas_eval.py</code> uses four real metrics, retains verdict evidence, handles invalid/NaN/errors, and retries technical failures only, never valid low scores. These are substantive implemented evaluators, not fake numeric placeholders. They do not score every current customer journey or establish human calibration.</p>
+<p>The operations dashboard reads saved run summaries and local API/workflow/generation observations. It exposes trends, error counts, generation fallback/over-budget counts and p95. Online intent accuracy is not independently observable without labels; the QA gate records INTENT_ROUTING as NOT_EVALUABLE. Live generation has5-second default timeout,8-second configured budget, concurrency cap2 and fallback. This is configuration, not proof p95 meets a service target. Current runtime cost is UNKNOWN_PRICING, not a verified zero-cost live app.</p>
+<p>The reviewer supports VIEWER/REVIEWER/ADMIN demo roles, bank scopes, one-hour generated staff tokens, revocation, masked timeline, append-only notes and encrypted JSON/CSV packages. SQLite triggers/hash chains resist application edits, not privileged database replacement. Alert rules use bounded last-N records and evaluate on GET; they are not a real-time notification pipeline. External notifications, sentiment scoring, suppression/delivery retries, retention/legal hold and independent archive immutability are not complete.</p>
+<p>LangSmith setup is prepared but not remotely verified. Cloud projection intentionally omits customer question text, source payloads and financial records, so even a future successful cloud smoke would not show full question/answer evidence requested by the Academy LangSmith track. Approved synthetic content projection or a documented privacy-safe alternative and verified read-back would be needed. Runtime export is bounded in-memory asynchronous best effort, not a durable delivery guarantee.</p>
+<h2>Recommended sequence and exit checks</h2>
+<ol>
+<li><strong>Resolve contract drift before a completion claim (P0).</strong> Review RG-087's emergency intent/human flag/state/candidate display and the summary execution-mode bug. Preserve original expectations; version any approved changes. Exit: all original critical assertions pass under an approved coherent contract, no unsupported action claim, no unexpected unauthorized records.</li>
+<li><strong>Correct account/request binding (P0).</strong> Bind typed account/case/transaction references, compare against stale selections, use actual backend principal and verify each resource. Exit: raw-text foreign-account requests explicitly denied, own requests correct, delegation scope retained, stale own-record substitution absent.</li>
+<li><strong>Fix remaining customer journey gaps (P1).</strong> Clarification scope for APY/rewards, explicit unsupported-transfer reply, amount/date charge matching and optional guest-report next steps. Exit: identical versioned22 scenarios tested with recorded session/product state; human observations and automated traces linked; no delayed report preservation.</li>
+<li><strong>Complete local trace coverage (P1).</strong> Add spans/correlation for every direct branch and save trace IDs in every evaluation row. Exit:100 BOW rows each map to required complete attempt evidence, no missing case links; distinguish QA duration from full journey latency.</li>
+<li><strong>Complete reference and human qualification (P1).</strong> Resolve16 tool conflicts and product bindings; approve exact40 outputs and CAL examples; assess SEM-003/011. Exit: signed/source-bound labels, agreement/false pass/failure plus TPR/TNR/risk slices, no judge gate until approved; optional second-judge comparison only if selected.</li>
+<li><strong>Rerun current matched tests and publish an honest report (P1).</strong> Use identical cases/fixtures/clock for baseline and improved; separate deterministic, live framing and semantic grader metrics; retain errors, cost unknowns and regressions. Exit: current-code fingerprints and relevant full-path tests; no attribution of mock gains to GLM.</li>
+<li><strong>Finish submission (P1).</strong> Record Loom and upload approved report/spreadsheet/notebook/evidence. Exit: actual video URL and submission receipt. Keep spreadsheet-vs-LangSmith track choice explicit.</li>
+<li><strong>Keep deferred/production work separate.</strong> LangSmith Cloud, Replit and real banking remain excluded unless reauthorized. Legal receipt, staffed queues, real identity, approved policies, retention/encryption, operating objectives and signed go/no-go remain prerequisites for real use, not missing cosmetic buttons.</li>
+</ol>
+<h2>Source register and audit limitations</h2>
+<ul>
+<li>PRD PDF SHA256 <code>6bfae84f97c62d0a1def027dc4f0156bbbb84c4b62215ba05a5b09d5859b4b30</code>; BRD PDF SHA256 <code>858907219ea31e7297423a57e7c4642afaffebce196e302dfd41bf19ba2c00d6</code>. Requirements read from repository-preserved text extractions in <code>artifacts/alignment_review_20261031/</code>; PDFs retained unchanged. No new PDF extractor was installed.</li>
+<li>UX source <code>docs/CUSTOMER_CHAT_UI_SPEC.md</code>; admin <code>docs/AGENT_REVIEW_ADMIN_SPEC.md</code>; resolution <code>docs/RESOLUTION_AND_QA_WORKFLOW.md</code>. Later explicit user scope changes take precedence over earlier proposals, without implying institutional approval.</li>
+<li>Academy source: attachment <code>96782d09-42e1-41d3-a2ee-f2fbb7823879/Pasted text.txt</code>; example solution attachment <code>c52892c1-e616-4123-8f9c-e5be06e72ed5/Pasted text.txt</code> is a reference example, not implemented ResolveGuard functionality.</li>
+<li>Active BOW snapshot/source SHA256 <code>13ffcfdc9eb020e8bcd8e0908445eeda6384aba71d0da02ef9f5433686a48ff8</code>; load_dataset validation executed successfully.</li>
+<li>Human observations: <code>artifacts/human_feedback_20261101_batch02/</code>; historical mock evidence: <code>artifacts/mock_iterations_final/</code>; current evaluator reports under <code>artifacts/local_completion/</code>.</li>
+<li>No new browser/accessibility/load/penetration test or remote-provider evaluation was conducted. Existing browser checks are historical evidence, not fresh proof of all UI paths. No legal conclusion or bank compliance certification is made.</li>
+<li>No capability was counted as implemented solely from README or design text. Negative findings mean no sufficient code/executed evidence found in the inspected repository, not proof that an external organization lacks that capability.</li>
+</ul>
+<p><strong>Conclusion:</strong> continue as a synthetic learning/demo project. Do not describe all mandatory requirements as completed. The immediate priority is current contract/resource-binding correctness and evidence coverage, followed by human qualification and matched reruns—not adding more agents or changing models.</p>
+</html>

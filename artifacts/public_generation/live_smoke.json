@@ -1,0 +1,14 @@
+{
+  "response_state": "PUBLIC_GUIDANCE",
+  "response": "Here are the details for your question.\n\nWhatever Plus Checking has a monthly maintenance fee of $12.00 USD. Fee and waiver conditions: waive with monthly direct deposit of at least $2,000 or combined eligible balance of at least $10,000.\n\nDemo terms, effective October 1, 2026.",
+  "generation": {
+    "outcome": "APPROVED",
+    "failure_code": null,
+    "error_type": null,
+    "generation_latency_ms": 2532.517,
+    "requested_model": "zai-org/GLM-5.3-Flash",
+    "returned_model": "zai-org/GLM-5.3-Flash",
+    "input_tokens": 621,
+    "output_tokens": 312
+  }
+}

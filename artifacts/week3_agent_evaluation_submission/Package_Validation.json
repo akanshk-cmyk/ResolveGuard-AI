@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "checks": [
+    "Valid OOXML workbook: 40 unique case rows and 240 raw observations; formula-free literal cells.",
+    "CSV and workbook cases: baseline 32/40, improved 39/40, RG-056 retained.",
+    "Dataset fingerprint and all five metrics independently recomputed; 120 traces per version.",
+    "Four executed evidence-analysis cells contain outputs and no errors; agent was not rerun.",
+    "PDF and case screenshot created; missing Loom/human approval remains explicit.",
+    "Package contains no environment credentials or runtime banking databases."
+  ]
+}

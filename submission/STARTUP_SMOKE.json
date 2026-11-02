@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "scope": "Actual extracted ZIP; existing installed environment; local TestClient only",
+  "checks": [
+    "imports",
+    "BOW hashes/schema",
+    "static assets",
+    "guest APY clarification and answer",
+    "foreign-account denial"
+  ],
+  "provider_calls": false
+}

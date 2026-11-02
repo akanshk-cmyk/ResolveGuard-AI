@@ -1,0 +1,18 @@
+﻿session_id,principal_id,actor_type,authenticated,assurance,expires_at,revoked,review_origin,requires_step_up
+SESS-001,CUST-001,CUSTOMER,True,AAL2,2026-12-01T00:00:00Z,False,Originally supplied fixture,
+SESS-002,CUST-002,CUSTOMER,True,AAL2,2026-12-01T00:00:00Z,False,Originally supplied fixture,
+SESS-003,CUST-003,CUSTOMER,True,AAL2,2026-12-01T00:00:00Z,False,Originally supplied fixture,
+SESS-004,CUST-004,CUSTOMER,True,AAL2,2026-12-01T00:00:00Z,False,Originally supplied fixture,
+SESS-005,CUST-005,CUSTOMER,True,AAL2,2026-12-01T00:00:00Z,False,Originally supplied fixture,
+SESS-006,CUST-006,CUSTOMER,True,AAL2,2026-12-01T00:00:00Z,False,Originally supplied fixture,
+SESS-007,CUST-007,CUSTOMER,True,AAL2,2026-12-01T00:00:00Z,False,Originally supplied fixture,
+SESS-008,CUST-008,CUSTOMER,True,AAL2,2026-12-01T00:00:00Z,False,Originally supplied fixture,
+SESS-009,CUST-009,CUSTOMER,True,AAL2,2026-12-01T00:00:00Z,False,Originally supplied fixture,
+SESS-010,CUST-010,CUSTOMER,True,AAL2,2026-12-01T00:00:00Z,False,Originally supplied fixture,
+SESS-EXPIRED,CUST-001,CUSTOMER,True,AAL2,2026-01-01T00:00:00Z,False,Originally supplied fixture,
+SESS-REVOKED,CUST-001,CUSTOMER,True,AAL2,2026-12-01T00:00:00Z,True,Originally supplied fixture,
+SESS-ANON,ANON,VISITOR,False,NONE,2026-12-01T00:00:00Z,False,Originally supplied fixture,
+SESS-REP,REP-001,REPRESENTATIVE,True,AAL2,2026-12-01T00:00:00Z,False,Originally supplied fixture,
+SESS-EMP,EMP-001,EMPLOYEE,True,AAL2,2026-12-01T00:00:00Z,False,Originally supplied fixture,
+SESS-STEPUP,CUST-001,CUSTOMER,True,AAL2,2026-12-01T00:00:00Z,False,Added during implementation,True
+SESS-POA,REP-POA,REPRESENTATIVE,True,AAL2,2026-12-01T00:00:00Z,False,Added during implementation,

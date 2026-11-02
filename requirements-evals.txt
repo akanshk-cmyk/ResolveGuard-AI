@@ -1,0 +1,6 @@
+# Optional, isolated semantic-evaluation dependencies. Normal chat does not import these.
+ragas>=0.4,<0.5
+langchain-community==0.4.1
+openai>=1.100,<3
+instructor>=1.12,<2
+numpy>=2,<3

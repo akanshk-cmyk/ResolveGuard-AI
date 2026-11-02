@@ -1,0 +1,442 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>ResolveGuard Final Project Summary</title><style>@page{size:A4;margin:0}*{box-sizing:border-box}body{margin:0;color:#243b45;font:10pt/1.25 Calibri,Arial,sans-serif}section.page{width:210mm;height:297mm;padding:13mm 15mm 14mm;position:relative;break-after:page}section.page:last-child{break-after:auto}header{font-size:8pt;color:#627980;border-bottom:1px solid #d5dfe1;padding-bottom:4mm;margin-bottom:4mm;letter-spacing:.5px}footer{position:absolute;bottom:7mm;left:15mm;right:15mm;font-size:8pt;color:#627980;border-top:1px solid #d5dfe1;padding-top:2mm}h1{font-size:24pt;color:#176b63;margin:5mm 0 3mm}h2{font-size:16pt;color:#176b63;margin:4mm 0 3mm;line-height:1.14}h3{font-size:11pt;color:#176b63;margin:3mm 0 2mm}p{margin:0 0 2.5mm}table{border-collapse:collapse;width:100%;margin:2mm 0 3mm;font-size:9pt;line-height:1.15;table-layout:fixed}td,th{border:1px solid #d5dfe1;padding:1.7mm;vertical-align:top;overflow-wrap:anywhere}th{background:#e7f1ef;text-align:left}tr{break-inside:avoid}thead{display:table-header-group}ul{padding-left:5mm;margin:2mm 0 3mm}li{margin-bottom:2mm}code{font-family:Calibri,Arial,sans-serif;font-size:inherit;overflow-wrap:anywhere}img{display:block;max-width:100%;margin:2mm auto}img.architecture{width:174mm}img.lifecycle{width:174mm}img.scorecard{width:174mm}section.page:nth-of-type(4){font-size:9.5pt}section.page:nth-of-type(4) table{font-size:8.5pt}</style><section class="page"><header>RESOLVEGUARD AI | FINAL PROJECT SUMMARY | SYNTHETIC BANKING</header><h1>ResolveGuard AI</h1>
+<h2>Secure Banking Customer Support Assistant</h2>
+<p>Accurate answers. Protected customer information. Verified support outcomes.</p>
+<p>Prepared by: [Your Name] | Submission date: [Date]
+Banking portfolio adaptation of Gen Academy Week 4 | Evidence snapshot: November 1, 2026</p>
+<h3>1. Executive Summary: What, Why, and Outcome</h3>
+<p>ResolveGuard helps customers find banking terms, understand permitted account records, report unfamiliar payments, and obtain clear next steps. It was built to examine a difficult support problem: a helpful-sounding answer can still use the wrong policy, miss a fraud report, or claim an action succeeded when it did not.</p>
+<p>The prototype uses Bank of Whatever, a fictional bank with invented products, people, transactions, policies, and cases. This makes privacy boundaries, retries, and failures testable without real customer records. Customers can browse public information as guests; personal records require sign-in and backend permission checks.</p>
+<table>
+<thead>
+<tr>
+<th>Project at a glance</th>
+<th>Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Main users</td>
+<td>Banking customers and staff reviewing support quality</td>
+</tr>
+<tr>
+<td>What was built</td>
+<td>Browser chat, controlled workflows, policy search, synthetic tools, review gates, and local diagnostics</td>
+</tr>
+<tr>
+<td>AI approach</td>
+<td>Model-assisted language within explicit workflows; access and action truth enforced by Python services</td>
+</tr>
+<tr>
+<td>Evaluation approach</td>
+<td>Expected-behavior datasets, automated checks, failure analysis, human review, and model-based grading</td>
+</tr>
+<tr>
+<td>Current status</td>
+<td>Implemented synthetic prototype; local evidence available; qualification remains conditional</td>
+</tr>
+</tbody>
+</table>
+<p>Three demonstrated outcomes:</p>
+<ul>
+<li>Historical mock-rule journey pass improved from 80% to 97.5% on the same 40 cases.</li>
+<li>The BOW release run links all 100 executed cases to local trace records.</li>
+<li>Banking-response LLM judging and retrieval-quality scoring were executed; both human-review submissions were received and documented.</li>
+</ul>
+<p>These findings support an evaluation-driven learning project, not a production banking or compliance claim. The central lesson is to test what the assistant does and verifies, rather than only how convincing its answer sounds. [E1-E7]</p>
+<footer>Evidence snapshot: November 1, 2026 <span style="float:right">1 / 7</span></footer></section><section class="page"><header>RESOLVEGUARD AI | FINAL PROJECT SUMMARY | SYNTHETIC BANKING</header><h2>2. Customer Problem, Solution, and Architecture</h2>
+<p>Customers ask simple questions: &quot;What is the monthly fee?&quot;, &quot;Why was I charged?&quot;, &quot;I don't recognize this payment&quot;, and &quot;Was my report received?&quot; The correct response depends on the product, the customer's access, and the actual backend outcome.</p>
+<table>
+<thead>
+<tr>
+<th>Customer need</th>
+<th>How ResolveGuard helps</th>
+<th>Safety rule</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Public product or fee question</td>
+<td>Find current, product-specific synthetic terms</td>
+<td>No sign-in; clarify the product when needed</td>
+</tr>
+<tr>
+<td>Personal payment or case question</td>
+<td>Read the requested record through scoped tools</td>
+<td>Sign-in and permission for that specific resource</td>
+</tr>
+<tr>
+<td>Potential fraud/error report</td>
+<td>Preserve the statement; take the permitted next step</td>
+<td>Capture is separate from investigation or legal receipt</td>
+</tr>
+<tr>
+<td>Unresolved issue</td>
+<td>Record Resolution next steps and simulated escalation</td>
+<td>No invented acknowledgement or callback promise</td>
+</tr>
+</tbody>
+</table>
+<h3>Implemented architecture</h3>
+<img class="architecture" src="assets/architecture.png" alt="architecture diagram">
+<p>The browser sends requests to FastAPI, the Python service handling customer interactions. Public questions use product clarification and local policy search; protected conversations use LangGraph, which runs defined steps with saved state. Trusted services enforce identity, access, report storage, and tool outcomes; the model can select constrained framing around controlled facts. A pre-send quality gate checks the reply, while Resolution and post-session review record verified next steps and audit findings. Active theft uses an urgent deterministic path with synthetic protection actions; traces record observable execution, not hidden model reasoning. [E8]</p>
+<p>Technology in brief: Python 3.12, Pydantic for typed data checks, LangGraph for workflow state, SQLite for durable records, and HTML/CSS/JavaScript for the interface. Nebius GLM-5.3-Flash supplies optional constrained reply framing and separate judge calls. Public retrieval uses metadata filtering and keyword ranking, not a deployed vector database.</p>
+<footer>Evidence snapshot: November 1, 2026 <span style="float:right">2 / 7</span></footer></section><section class="page"><header>RESOLVEGUARD AI | FINAL PROJECT SUMMARY | SYNTHETIC BANKING</header><h2>3. How Do We Know ResolveGuard Works?</h2>
+<p>An evaluation is a test: provide a customer question, define the correct behavior, run the assistant, and compare what happened with that expectation. A golden dataset is the saved set of questions and expected outcomes used for those checks.</p>
+<img class="lifecycle" src="assets/lifecycle.png" alt="lifecycle diagram">
+<table>
+<thead>
+<tr>
+<th>Evaluation area</th>
+<th>Plain-English question</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Intent accuracy</td>
+<td>Did it identify the customer's request?</td>
+</tr>
+<tr>
+<td>Product/policy correctness</td>
+<td>Did it select the applicable terms?</td>
+</tr>
+<tr>
+<td>Authentication and authorization</td>
+<td>Did it request sign-in only when needed and protect other customers' records?</td>
+</tr>
+<tr>
+<td>Fraud/error handling</td>
+<td>Did it recognize and preserve the report?</td>
+</tr>
+<tr>
+<td>Grounding</td>
+<td>Can the answer's claims be supported by retrieved evidence?</td>
+</tr>
+<tr>
+<td>Action integrity</td>
+<td>Did it confirm only verified backend outcomes?</td>
+</tr>
+<tr>
+<td>Full journey</td>
+<td>Did all applicable checks pass across the interaction?</td>
+</tr>
+</tbody>
+</table>
+<p>Automated checks compare exact rules, records, and states. Human reviewers assess correctness, clarity, and appropriateness. An LLM-as-a-Judge is a model grading selected qualities against an explicit rubric; it does not authorize access or certify compliance. Traces are execution records that help explain routes, tools, and outcomes.</p>
+<h3>Evaluation sets: keep the denominators separate</h3>
+<table>
+<thead>
+<tr>
+<th>Evidence set</th>
+<th>Size/version</th>
+<th>What it establishes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Historical development set</td>
+<td>40 cases; saved stages v0-v4; three repeats per version</td>
+<td>Matched mock-rule improvement; 120 observations per version, not 120 unique cases</td>
+</tr>
+<tr>
+<td>Original regression</td>
+<td>100 cases; local bindings v3</td>
+<td>Synthetic workflow and safety assertions</td>
+</tr>
+<tr>
+<td>BOW regression</td>
+<td>100 cases; local v2, trace-linked</td>
+<td>Bank-specific contracts under declared expectations</td>
+</tr>
+<tr>
+<td>Semantic/judge samples</td>
+<td>Public v3: 12; curated judge examples: 12</td>
+<td>Small model-based evidence samples</td>
+</tr>
+<tr>
+<td>Human reviews</td>
+<td>22 chat and 28 overlapping Excel observations</td>
+<td>Live-app feedback, not independent holdout accuracy</td>
+</tr>
+</tbody>
+</table>
+<p>The BOW data contains 11 products, 19 policies, 61 policy chunks, 12 customers/accounts, and 48 transactions, plus session, case, delegation, and intake fixtures. These development datasets are not a population estimate or an independent holdout. [E1-E7,E9]</p>
+<footer>Evidence snapshot: November 1, 2026 <span style="float:right">3 / 7</span></footer></section><section class="page"><header>RESOLVEGUARD AI | FINAL PROJECT SUMMARY | SYNTHETIC BANKING</header><h2>4. Evaluation Results: What Did We Measure?</h2>
+<h3>A. Historical routing improvement</h3>
+<img class="scorecard" src="assets/scorecard.png" alt="scorecard diagram">
+<p>Intent: 85% to 100%. Journey pass: 80% to 97.5%. Fraud/error recall: 80% to 100%. These gains used the same 40 development cases and mock rules: they are not independent live-model accuracy results. Seven unique cases improved, zero regressed in this comparison, and RG-056 remained failed. Mock p95 was 30.950 ms versus 30.577 ms; the tiny difference is not a meaningful speed claim. [E1]</p>
+<h3>B. Current automated evidence</h3>
+<table>
+<thead>
+<tr>
+<th>Saved check</th>
+<th>Result</th>
+<th>Boundary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Main / fixture tests</td>
+<td>320 passed, one skipped / 13 passed</td>
+<td>Local tests, not rerun for this report</td>
+</tr>
+<tr>
+<td>Original100</td>
+<td>100 cases passed all applicable local checks; 84/84 critical case runs</td>
+<td>Mock/synthetic execution; reference/provenance gates remain</td>
+</tr>
+<tr>
+<td>BOW100</td>
+<td>100 cases passed local checks; 100/100 trace-linked</td>
+<td>16 conflicting source contracts remain; not full answer-quality validation</td>
+</tr>
+</tbody>
+</table>
+<p>These are passing case-level assertion bundles, not a count of individual assertions or proof that every possible safety defect is absent. [E2,E3]</p>
+<h3>C. RAGAS and LLM-as-a-Judge: completed execution</h3>
+<p>RAGAS uses model-assisted metrics to assess retrieved evidence and answer grounding. On 12 public-policy cases, mean recall was 1.000, precision approximately 1.000, faithfulness 0.9167, and answer relevance 0.9100. Faithfulness was 0.5 for SEM-003 and SEM-011; both flags remain for review. [E4]</p>
+<p>GLM-5.3-Flash via Nebius judged all 12 public answers PASS and graded curated examples six PASS/six FAIL. PASS requires scores of at least 4/5 for tone, policy compliance, and guardrails, with valid structured output. Qwen3-Embedding-8B supports relevance embeddings, not answer generation or a second judge. High scores do not prove bank-policy compliance. Live provider calls occurred; a verified total API cost is not reported. [E4,E5]</p>
+<h3>D. Human review: supplied and recorded</h3>
+<table>
+<thead>
+<tr>
+<th>Review receipt</th>
+<th>PASS</th>
+<th>FAIL</th>
+<th>PARTIAL PASS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HR-CHAT-22: 22 observations</td>
+<td>14</td>
+<td>6</td>
+<td>2</td>
+</tr>
+<tr>
+<td>HR-XLSX-28: 28 live-app observations</td>
+<td>23</td>
+<td>2</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<p>Sets overlap: do not total them into 50 independent tests. Latest findings concern two product-context failures and three denial-wording partial passes; the reviewer clarified that another customer's case was not shown. Agreement with the judge is not calculated: the human tested live replies while the judge graded different saved replies. [E6,E7]</p>
+<footer>Evidence snapshot: November 1, 2026 <span style="float:right">4 / 7</span></footer></section><section class="page"><header>RESOLVEGUARD AI | FINAL PROJECT SUMMARY | SYNTHETIC BANKING</header><h2>5. From AI Mistakes to Measurable Improvements</h2>
+<h3>RG-020: an indirect fraud report was missed</h3>
+<p>Customer: &quot;My card was used at a gas station while I was at home; that was not me.&quot; Expected: recognize potential unauthorized use and preserve the report before restricted lookup.</p>
+<table>
+<thead>
+<tr>
+<th>Stage</th>
+<th>Observed behavior and evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Initial v0</td>
+<td>OTHER_OR_UNCLEAR; fraud flag false; report-preservation and handoff checks failed</td>
+</tr>
+<tr>
+<td>Root cause</td>
+<td>Narrow mock rules missed the indirect phrase &quot;that was not me&quot;</td>
+</tr>
+<tr>
+<td>Targeted v1 change</td>
+<td>Expanded indirect unauthorized-use expressions in the mock router</td>
+</tr>
+<tr>
+<td>Improved v4</td>
+<td>FRAUD_ERROR_REPORT; intake recorded before permitted transaction lookup; handoff check passed</td>
+</tr>
+<tr>
+<td>Regression</td>
+<td>RG-020 passed all three v4 repeats; same-set comparison had seven improved cases and zero regressions</td>
+</tr>
+</tbody>
+</table>
+<p>This is a historical routing-rule result, not a live model reasoning gain. Baseline trace: <code>6c65c356-1274-4e55-93ce-7d15ea774170</code>; improved trace: <code>36be76f0-b74c-4031-b74e-23c070bdcaa3</code>. Both are embedded in the corresponding RG-020 result rows. [E1]</p>
+<h3>Remaining findings and planned ownership</h3>
+<table>
+<thead>
+<tr>
+<th>Finding</th>
+<th>Customer/evaluation impact</th>
+<th>Follow-up owner (proposed) and status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Two product-context FAIL marks</td>
+<td>Wrong context can produce misleading product advice</td>
+<td>Product/UX + engineering: clarify and retest; open</td>
+</tr>
+<tr>
+<td>Three denial-wording partial passes</td>
+<td>Refusal can confuse an already signed-in customer</td>
+<td>UX + security engineering: improve wording; open; no disclosure observed</td>
+</tr>
+<tr>
+<td>Historical RG-056 missing evidence</td>
+<td>Answer lacks required supporting policy</td>
+<td>Knowledge owner: verify applicable source; retained failure</td>
+</tr>
+<tr>
+<td>Two semantic faithfulness flags</td>
+<td>Judge and grounding metric disagree</td>
+<td>Evaluation lead: inspect exact claims; unresolved</td>
+</tr>
+</tbody>
+</table>
+<p>Privacy/access issues have high potential impact; the review did not establish a cross-customer leak. These ownership proposals are not recorded operational assignments.</p>
+<h3>Source-contract conflicts: 16 still awaiting decisions</h3>
+<table>
+<thead>
+<tr>
+<th>Recorded contradiction</th>
+<th>Cases affected</th>
+<th>Impact/status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>get_transaction both required and forbidden</td>
+<td>10</td>
+<td>Ambiguous scoring of a safe denial versus a lookup; pending</td>
+</tr>
+<tr>
+<td>get_case_status both required and forbidden</td>
+<td>6</td>
+<td>Case-access expectations conflict; pending</td>
+</tr>
+</tbody>
+</table>
+<p>The register proposes permitting an early authorization DENIED result without disclosing records. All 16 human-decision fields remain PENDING. Live-app review marks do not silently approve these expected-tool contracts. [E10]</p>
+<footer>Evidence snapshot: November 1, 2026 <span style="float:right">5 / 7</span></footer></section><section class="page"><header>RESOLVEGUARD AI | FINAL PROJECT SUMMARY | SYNTHETIC BANKING</header><h2>6. How This Project Meets Week 4 Requirements</h2>
+<p>ResolveGuard is the selected banking portfolio adaptation. A completed banking task does not automatically complete the exact supplied e-commerce exercise. Evidence paths below are repository-relative; E references resolve in the companion evidence index.</p>
+<table>
+<thead>
+<tr>
+<th>Criterion</th>
+<th>Completed work and evidence</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Baseline evaluation</td>
+<td>40-case v0 expected/predicted routes; <code>artifacts/mock_iterations_final/v0/results.json</code></td>
+<td>Completed locally</td>
+</tr>
+<tr>
+<td>Failure annotations</td>
+<td>Cause-focused workbook notes and human observations; <code>ResolveGuard_AI_Final_Evaluation_Submission.xlsx</code></td>
+<td>Completed; formal reference approval separate</td>
+</tr>
+<tr>
+<td>Failure grouping</td>
+<td>Five primary categories, eight baseline failures; same workbook</td>
+<td>Completed locally</td>
+</tr>
+<tr>
+<td>Failure labeling</td>
+<td>Primary categories and retained failed assertions; same workbook</td>
+<td>Completed locally</td>
+</tr>
+<tr>
+<td>Focused improvement</td>
+<td>Four incremental mock-rule changes; <code>resolveguard/model.py</code>, <code>prompts/</code></td>
+<td>Completed locally for routing; live LLM prompt experiment not established</td>
+</tr>
+<tr>
+<td>V1/V2 comparison</td>
+<td>Same cases/repeats; <code>artifacts/mock_iterations_final/comparison.json</code></td>
+<td>Completed locally</td>
+</tr>
+<tr>
+<td>Regression checks</td>
+<td>Paired failures and current suites; <code>artifacts/remediation_20261101/Status_Summary.json</code></td>
+<td>Completed locally; qualification blocked</td>
+</tr>
+<tr>
+<td>Banking LLM judge</td>
+<td>Saved grades and <code>artifacts/remediation_20261101/report/LLM_Judge_Analysis.xlsx</code></td>
+<td>Completed and verified</td>
+</tr>
+<tr>
+<td>Judge calibration</td>
+<td>Human feedback recorded; <code>artifacts/remediation_20261101/calibration_status.json</code></td>
+<td>Partially completed; zero matched pairs, no second judge</td>
+</tr>
+<tr>
+<td>Hosted LangSmith</td>
+<td>Local spans and SDK; <code>docs/OBSERVABILITY_RUNBOOK.md</code></td>
+<td>Not completed: cloud read-back unverified/deferred</td>
+</tr>
+</tbody>
+</table>
+<p>The handout's optional binary failure-category judge was not selected; the executed banking response-quality judge is a separate adaptation. Its calibration is distinct from completed judge execution and received human feedback. [E5,E11]</p>
+<h3>Evidence and reproducibility</h3>
+<p>The 16-tab submission workbook preserves 15 original evaluation tabs plus the Human Review Receipt. The saved analysis notebook recalculates historical evidence; it is not a newly executed live-agent notebook. Python 3.12 and the uv lockfile support local execution, but the exact historical code/fixture checkout was not recovered, so a current rerun need not reproduce historical timings. [E12]</p>
+<p>Local diagnostics provide case-linked traces, backend statuses, errors, and available timing/model metadata. Staff playback reads recorded evidence rather than repeating financial actions. Cloud experiments are not verified by local trace coverage.</p>
+<p>No new tests, model calls, cloud experiments, or application changes were performed to write this report. Existing screenshots are historical captures, not fresh remediation verification. The final demo video remains unrecorded. [E13]</p>
+<footer>Evidence snapshot: November 1, 2026 <span style="float:right">6 / 7</span></footer></section><section class="page"><header>RESOLVEGUARD AI | FINAL PROJECT SUMMARY | SYNTHETIC BANKING</header><h2>7. Outcomes, Lessons, Limitations, and Submission</h2>
+<h3>What product and engineering teams learned</h3>
+<ol>
+<li>A correct intent does not guarantee a correct banking outcome. Product acceptance must include evidence, permissions, reporting state, and useful customer language.</li>
+<li>Customer privacy and truthful action confirmations belong in trusted services outside the model. Family relationships alone grant no access; signing in does not authorize every account or action.</li>
+<li>Failures should drive specific fixes and retests. Structured routes, bank/product/date metadata, synthetic fixtures, regression checks, and traces make defects easier to isolate without rewriting everything.</li>
+</ol>
+<h3>Current limitations and next decisions</h3>
+<p>Resolve the 16 source-contract conflicts and provenance approvals; retest remaining UX findings; review semantic disagreements; obtain exact-response human labels if claiming judge agreement. Development cases are not independent holdout tests. Cloud LangSmith evidence, Replit deployment, and real bank integrations remain deferred; no real money moves, card changes, refund guarantees, or official bank cases occur.</p>
+<p>The prototype does not establish production reliability, universal masking, legal receipt compliance, or regulatory certification. Production use needs approved identity, policies, retention, service ownership, and operational monitoring. Final video, upload, public repository URL, and license are not established. Human feedback receipt is complete; resolving every comment is a different task.</p>
+<h3>Project links</h3>
+<table>
+<thead>
+<tr>
+<th>Resource</th>
+<th>Placeholder</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GitHub repository</td>
+<td>[Insert GitHub Repository Link]</td>
+</tr>
+<tr>
+<td>Live application</td>
+<td>[Insert Live Application Link]</td>
+</tr>
+<tr>
+<td>Evaluation workbook</td>
+<td>[Insert Evaluation Workbook Link]</td>
+</tr>
+<tr>
+<td>Evaluation results</td>
+<td>[Insert Evaluation Results Link]</td>
+</tr>
+<tr>
+<td>Human review evidence</td>
+<td>[Insert Human Review Link]</td>
+</tr>
+<tr>
+<td>LLM judge and RAGAS evidence</td>
+<td>[Insert LLM Judge and RAGAS Links]</td>
+</tr>
+<tr>
+<td>Architecture documentation</td>
+<td>[Insert Architecture Link]</td>
+</tr>
+<tr>
+<td>Demo video</td>
+<td>[Insert Demo Video Link]</td>
+</tr>
+<tr>
+<td>Final submission package</td>
+<td>[Insert Submission Package Link]</td>
+</tr>
+</tbody>
+</table>
+<p>What was achieved: a working synthetic banking-support prototype with controlled tools, matched mock-rule improvement, completed model-based grading, and recorded human feedback.</p>
+<p>What remains: reference decisions, UX follow-up, matched-response calibration where claimed, and final submission evidence; cloud and real banking remain deferred.</p>
+<p>Submission readiness: conditional for the adapted banking portfolio; not a claim of strict hosted-trace track completion or production readiness.</p>
+<footer>Evidence snapshot: November 1, 2026 <span style="float:right">7 / 7</span></footer></section></html>

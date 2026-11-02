@@ -1,0 +1,78 @@
+{
+  "passed": true,
+  "data_rows": 290,
+  "worksheet_count": 12,
+  "source_sha256": "13ffcfdc9eb020e8bcd8e0908445eeda6384aba71d0da02ef9f5433686a48ff8",
+  "checks": [
+    {
+      "Worksheet": "BOW Products",
+      "Records": 11,
+      "All field values matched": true,
+      "Source JSON hash matched": true
+    },
+    {
+      "Worksheet": "BOW Policies",
+      "Records": 19,
+      "All field values matched": true,
+      "Source JSON hash matched": true
+    },
+    {
+      "Worksheet": "BOW RAG Chunks",
+      "Records": 61,
+      "All field values matched": true,
+      "Source JSON hash matched": true
+    },
+    {
+      "Worksheet": "BOW Customers",
+      "Records": 12,
+      "All field values matched": true,
+      "Source JSON hash matched": true
+    },
+    {
+      "Worksheet": "BOW Accounts",
+      "Records": 12,
+      "All field values matched": true,
+      "Source JSON hash matched": true
+    },
+    {
+      "Worksheet": "BOW Transactions",
+      "Records": 48,
+      "All field values matched": true,
+      "Source JSON hash matched": true
+    },
+    {
+      "Worksheet": "BOW Sessions",
+      "Records": 12,
+      "All field values matched": true,
+      "Source JSON hash matched": true
+    },
+    {
+      "Worksheet": "BOW Cases",
+      "Records": 12,
+      "All field values matched": true,
+      "Source JSON hash matched": true
+    },
+    {
+      "Worksheet": "BOW Delegations",
+      "Records": 2,
+      "All field values matched": true,
+      "Source JSON hash matched": true
+    },
+    {
+      "Worksheet": "BOW Intake Events",
+      "Records": 1,
+      "All field values matched": true,
+      "Source JSON hash matched": true
+    },
+    {
+      "Worksheet": "BOW Eval Golden",
+      "Records": 100,
+      "All field values matched": true,
+      "Source JSON hash matched": true
+    }
+  ],
+  "original_workbook_hash_matched": true,
+  "evaluations_executed": false,
+  "human_reviews_modified": false,
+  "runtime_databases_exported": false
+}

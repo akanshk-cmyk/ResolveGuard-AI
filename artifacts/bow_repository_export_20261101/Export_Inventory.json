@@ -1,0 +1,125 @@
+[
+  {
+    "Excel tab": "BOW Products",
+    "Records": 11,
+    "What it contains": "Checking, savings and card product definitions",
+    "When you use it": "Test product selection, fees, rates and rewards",
+    "Important notes": "Amounts are integer cents. All offers and APYs are fictional.",
+    "Repository source": "data\\bow\\13ffcfdc9eb020e8bcd8e0908445eeda6384aba71d0da02ef9f5433686a48ff8\\products.json"
+  },
+  {
+    "Excel tab": "BOW Policies",
+    "Records": 19,
+    "What it contains": "Fictional product policies and support terms",
+    "When you use it": "Define which policy should answer a question",
+    "Important notes": "Not official bank policy; approval is synthetic/test-only.",
+    "Repository source": "data\\bow\\13ffcfdc9eb020e8bcd8e0908445eeda6384aba71d0da02ef9f5433686a48ff8\\policies.json"
+  },
+  {
+    "Excel tab": "BOW RAG Chunks",
+    "Records": 61,
+    "What it contains": "Source-linked retrievable policy passages",
+    "When you use it": "Check retrieved evidence, product scope and dates",
+    "Important notes": "Chunk text hashes and parent-policy metadata are preserved.",
+    "Repository source": "data\\bow\\13ffcfdc9eb020e8bcd8e0908445eeda6384aba71d0da02ef9f5433686a48ff8\\chunks.json"
+  },
+  {
+    "Excel tab": "BOW Customers",
+    "Records": 12,
+    "What it contains": "Fictional customer identities",
+    "When you use it": "Test identity and ownership",
+    "Important notes": "Synthetic KYC labels are not real identity verification.",
+    "Repository source": "data\\bow\\13ffcfdc9eb020e8bcd8e0908445eeda6384aba71d0da02ef9f5433686a48ff8\\customers.json"
+  },
+  {
+    "Excel tab": "BOW Accounts",
+    "Records": 12,
+    "What it contains": "Customer-account-product relationships",
+    "When you use it": "Check account ownership and product selection",
+    "Important notes": "Account displays are masked. Backend permissions still apply.",
+    "Repository source": "data\\bow\\13ffcfdc9eb020e8bcd8e0908445eeda6384aba71d0da02ef9f5433686a48ff8\\accounts.json"
+  },
+  {
+    "Excel tab": "BOW Transactions",
+    "Records": 48,
+    "What it contains": "Fictional payment records",
+    "When you use it": "Check exact merchant, signed amount, date and status",
+    "Important notes": "amount_cents is signed; posted_on is a source date, not a precise event timestamp.",
+    "Repository source": "data\\bow\\13ffcfdc9eb020e8bcd8e0908445eeda6384aba71d0da02ef9f5433686a48ff8\\transactions.json"
+  },
+  {
+    "Excel tab": "BOW Sessions",
+    "Records": 12,
+    "What it contains": "Synthetic authentication/session fixtures",
+    "When you use it": "Test authentication, assurance and revocation",
+    "Important notes": "These are test fixtures, not live cookies, session tokens or credentials.",
+    "Repository source": "data\\bow\\13ffcfdc9eb020e8bcd8e0908445eeda6384aba71d0da02ef9f5433686a48ff8\\sessions.json"
+  },
+  {
+    "Excel tab": "BOW Cases",
+    "Records": 12,
+    "What it contains": "Seeded support cases and states",
+    "When you use it": "Test case lookup and authorized status access",
+    "Important notes": "Runtime-created cases are not merged into this fixture export.",
+    "Repository source": "data\\bow\\13ffcfdc9eb020e8bcd8e0908445eeda6384aba71d0da02ef9f5433686a48ff8\\cases.json"
+  },
+  {
+    "Excel tab": "BOW Delegations",
+    "Records": 2,
+    "What it contains": "Representative-authority fixtures",
+    "When you use it": "Test explicit delegated action scope",
+    "Important notes": "Family relationships alone grant no access.",
+    "Repository source": "data\\bow\\13ffcfdc9eb020e8bcd8e0908445eeda6384aba71d0da02ef9f5433686a48ff8\\delegations.json"
+  },
+  {
+    "Excel tab": "BOW Intake Events",
+    "Records": 1,
+    "What it contains": "Seeded report-intake event",
+    "When you use it": "Test capture and acknowledgement states",
+    "Important notes": "Separate from runtime reports, formal notice acceptance and investigation.",
+    "Repository source": "data\\bow\\13ffcfdc9eb020e8bcd8e0908445eeda6384aba71d0da02ef9f5433686a48ff8\\intake_events.json"
+  },
+  {
+    "Excel tab": "BOW Eval Golden",
+    "Records": 100,
+    "What it contains": "Evaluation definitions and proposed expected outcomes",
+    "When you use it": "Run and review the banking evaluation suite",
+    "Important notes": "Source NOT_RUN values stay unchanged; this export does not run or approve evaluations.",
+    "Repository source": "data\\bow\\13ffcfdc9eb020e8bcd8e0908445eeda6384aba71d0da02ef9f5433686a48ff8\\evaluations.json"
+  },
+  {
+    "Excel tab": "Package scope",
+    "Records": 290,
+    "What it contains": "Repository-normalized active BOW fixtures only",
+    "When you use it": "Review the source data actually loaded by the app",
+    "Important notes": "No runtime reports, lock receipts, browser sessions, real customer data or credentials are exported."
+  },
+  {
+    "Excel tab": "Source workbook",
+    "Records": "",
+    "What it contains": "Bank_of_Whatever_ResolveGuard_Synthetic_Review_Workbook.xlsx",
+    "When you use it": "Check original worksheets and archives against Original_Source_Workbook.xlsx",
+    "Important notes": "Byte-identical original retained separately; archives are not activated as BOW data."
+  },
+  {
+    "Excel tab": "Source SHA256",
+    "Records": "",
+    "What it contains": "13ffcfdc9eb020e8bcd8e0908445eeda6384aba71d0da02ef9f5433686a48ff8",
+    "When you use it": "Verify which active source version was exported",
+    "Important notes": "Resolved from data/bow/active.json; not a guessed Downloads copy."
+  },
+  {
+    "Excel tab": "Data meanings",
+    "Records": "",
+    "What it contains": "Fictional policies, rates and synthetic approvals",
+    "When you use it": "Review bank/product scope, effective dates, expiry and approval status",
+    "Important notes": "Not real banking offers or institution-approved terms. No human review status was changed."
+  },
+  {
+    "Excel tab": "Reading full text",
+    "Records": "",
+    "What it contains": "All original repository fields and values retained",
+    "When you use it": "Expand row height to read long policy or chunk text in Excel",
+    "Important notes": "CSV blanks represent null; JSON retains exact data types. Dates are the normalized repository values."
+  }
+]

@@ -1,0 +1,13 @@
+﻿customer_id,display_name,kyc_status,synthetic,review_origin
+CUST-001,Synthetic Customer 001,VERIFIED,True,Originally supplied fixture
+CUST-002,Synthetic Customer 002,VERIFIED,True,Originally supplied fixture
+CUST-003,Synthetic Customer 003,VERIFIED,True,Originally supplied fixture
+CUST-004,Synthetic Customer 004,VERIFIED,True,Originally supplied fixture
+CUST-005,Synthetic Customer 005,VERIFIED,True,Originally supplied fixture
+CUST-006,Synthetic Customer 006,VERIFIED,True,Originally supplied fixture
+CUST-007,Synthetic Customer 007,VERIFIED,True,Originally supplied fixture
+CUST-008,Synthetic Customer 008,VERIFIED,True,Originally supplied fixture
+CUST-009,Synthetic Customer 009,VERIFIED,True,Originally supplied fixture
+CUST-010,Synthetic Customer 010,VERIFIED,True,Originally supplied fixture
+CUST-011,Synthetic Customer 011,REVIEW,True,Originally supplied fixture
+CUST-012,Synthetic Customer 012,REVIEW,True,Originally supplied fixture

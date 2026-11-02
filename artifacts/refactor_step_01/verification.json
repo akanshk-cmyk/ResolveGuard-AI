@@ -1,0 +1,43 @@
+{
+  "step": "01 - Shared review-table renderer",
+  "status": "complete; awaiting user review before the next module",
+  "baseline": {
+    "application_tests": 160,
+    "application_passed": 159,
+    "application_skipped": 1,
+    "fixture_tests_passed": 13
+  },
+  "after": {
+    "application_tests": 165,
+    "application_passed": 164,
+    "application_skipped": 1,
+    "fixture_tests_passed": 13,
+    "total_passed": 177
+  },
+  "characterisation_tests": {
+    "passed_before_extraction": 5,
+    "passed_after_extraction": 5
+  },
+  "exact_table_comparisons": 46,
+  "preserved": [
+    "table(rows) signatures in both exporters",
+    "Each exporter empty-table behaviour",
+    "HTML escaping and Unicode",
+    "Nested JSON formatting",
+    "Column order and numeric/boolean/null values",
+    "Exporter functions and main blocks outside table(): AST-identical"
+  ],
+  "application_code_changed": false,
+  "api_or_data_models_changed": false,
+  "live_review_packs_regenerated": false,
+  "changed_files": [
+    "tools/build_review_pack.py",
+    "tools/build_bow_review.py"
+  ],
+  "added_files": [
+    "tools/shared/__init__.py",
+    "tools/shared/report_rendering.py",
+    "tests/test_report_rendering.py"
+  ],
+  "next_proposed_step": "Shared low-level XLSX reader, only after review; retain inspection/import formula differences."
+}

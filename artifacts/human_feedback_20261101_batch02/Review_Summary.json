@@ -1,0 +1,16 @@
+{
+  "date": "2026-11-01",
+  "observations": 22,
+  "PASS": 14,
+  "FAIL": 6,
+  "PARTIAL_PASS": 2,
+  "fully_passed_share": 0.6363636363636364,
+  "repeated_observations": 8,
+  "additional_observations": 14,
+  "cumulative_not_additive": true,
+  "partial_pass_binary_conversion": null,
+  "matched_before_after_improvement_available": false,
+  "agent_code_changed": false,
+  "model_calls": 0,
+  "source_sha256": "13ffcfdc9eb020e8bcd8e0908445eeda6384aba71d0da02ef9f5433686a48ff8"
+}

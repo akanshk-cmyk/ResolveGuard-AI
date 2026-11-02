@@ -1,0 +1,137 @@
+[
+  {
+    "session_id": "SESS-001",
+    "principal_id": "CUST-001",
+    "actor_type": "CUSTOMER",
+    "authenticated": true,
+    "assurance": "AAL2",
+    "expires_at": "2026-12-01T00:00:00Z",
+    "revoked": false
+  },
+  {
+    "session_id": "SESS-002",
+    "principal_id": "CUST-002",
+    "actor_type": "CUSTOMER",
+    "authenticated": true,
+    "assurance": "AAL2",
+    "expires_at": "2026-12-01T00:00:00Z",
+    "revoked": false
+  },
+  {
+    "session_id": "SESS-003",
+    "principal_id": "CUST-003",
+    "actor_type": "CUSTOMER",
+    "authenticated": true,
+    "assurance": "AAL2",
+    "expires_at": "2026-12-01T00:00:00Z",
+    "revoked": false
+  },
+  {
+    "session_id": "SESS-004",
+    "principal_id": "CUST-004",
+    "actor_type": "CUSTOMER",
+    "authenticated": true,
+    "assurance": "AAL2",
+    "expires_at": "2026-12-01T00:00:00Z",
+    "revoked": false
+  },
+  {
+    "session_id": "SESS-005",
+    "principal_id": "CUST-005",
+    "actor_type": "CUSTOMER",
+    "authenticated": true,
+    "assurance": "AAL2",
+    "expires_at": "2026-12-01T00:00:00Z",
+    "revoked": false
+  },
+  {
+    "session_id": "SESS-006",
+    "principal_id": "CUST-006",
+    "actor_type": "CUSTOMER",
+    "authenticated": true,
+    "assurance": "AAL2",
+    "expires_at": "2026-12-01T00:00:00Z",
+    "revoked": false
+  },
+  {
+    "session_id": "SESS-007",
+    "principal_id": "CUST-007",
+    "actor_type": "CUSTOMER",
+    "authenticated": true,
+    "assurance": "AAL2",
+    "expires_at": "2026-12-01T00:00:00Z",
+    "revoked": false
+  },
+  {
+    "session_id": "SESS-008",
+    "principal_id": "CUST-008",
+    "actor_type": "CUSTOMER",
+    "authenticated": true,
+    "assurance": "AAL2",
+    "expires_at": "2026-12-01T00:00:00Z",
+    "revoked": false
+  },
+  {
+    "session_id": "SESS-009",
+    "principal_id": "CUST-009",
+    "actor_type": "CUSTOMER",
+    "authenticated": true,
+    "assurance": "AAL2",
+    "expires_at": "2026-12-01T00:00:00Z",
+    "revoked": false
+  },
+  {
+    "session_id": "SESS-010",
+    "principal_id": "CUST-010",
+    "actor_type": "CUSTOMER",
+    "authenticated": true,
+    "assurance": "AAL2",
+    "expires_at": "2026-12-01T00:00:00Z",
+    "revoked": false
+  },
+  {
+    "session_id": "SESS-EXPIRED",
+    "principal_id": "CUST-001",
+    "actor_type": "CUSTOMER",
+    "authenticated": true,
+    "assurance": "AAL2",
+    "expires_at": "2026-01-01T00:00:00Z",
+    "revoked": false
+  },
+  {
+    "session_id": "SESS-REVOKED",
+    "principal_id": "CUST-001",
+    "actor_type": "CUSTOMER",
+    "authenticated": true,
+    "assurance": "AAL2",
+    "expires_at": "2026-12-01T00:00:00Z",
+    "revoked": true
+  },
+  {
+    "session_id": "SESS-ANON",
+    "principal_id": "ANON",
+    "actor_type": "VISITOR",
+    "authenticated": false,
+    "assurance": "NONE",
+    "expires_at": "2026-12-01T00:00:00Z",
+    "revoked": false
+  },
+  {
+    "session_id": "SESS-REP",
+    "principal_id": "REP-001",
+    "actor_type": "REPRESENTATIVE",
+    "authenticated": true,
+    "assurance": "AAL2",
+    "expires_at": "2026-12-01T00:00:00Z",
+    "revoked": false
+  },
+  {
+    "session_id": "SESS-EMP",
+    "principal_id": "EMP-001",
+    "actor_type": "EMPLOYEE",
+    "authenticated": true,
+    "assurance": "AAL2",
+    "expires_at": "2026-12-01T00:00:00Z",
+    "revoked": false
+  }
+]

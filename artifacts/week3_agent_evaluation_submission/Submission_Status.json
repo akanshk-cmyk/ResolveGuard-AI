@@ -1,0 +1,101 @@
+{
+  "track": "Own use case / spreadsheet",
+  "unique_cases": 40,
+  "repeats_per_version": 3,
+  "historical_mock_comparison": true,
+  "metrics": {
+    "v0": {
+      "intent_accuracy": 0.85,
+      "deterministic_journey_pass_rate": 0.8,
+      "fraud_recall": 0.8,
+      "p95_local_mock_latency_ms": 30.95,
+      "model_cost_usd": 0.0
+    },
+    "v1": {
+      "intent_accuracy": 0.9,
+      "deterministic_journey_pass_rate": 0.825,
+      "fraud_recall": 1.0,
+      "p95_local_mock_latency_ms": 31.523,
+      "model_cost_usd": 0.0
+    },
+    "v2": {
+      "intent_accuracy": 0.925,
+      "deterministic_journey_pass_rate": 0.9,
+      "fraud_recall": 1.0,
+      "p95_local_mock_latency_ms": 32.824,
+      "model_cost_usd": 0.0
+    },
+    "v3": {
+      "intent_accuracy": 0.975,
+      "deterministic_journey_pass_rate": 0.95,
+      "fraud_recall": 1.0,
+      "p95_local_mock_latency_ms": 31.193,
+      "model_cost_usd": 0.0
+    },
+    "v4": {
+      "intent_accuracy": 1.0,
+      "deterministic_journey_pass_rate": 0.975,
+      "fraud_recall": 1.0,
+      "p95_local_mock_latency_ms": 30.577,
+      "model_cost_usd": 0.0
+    }
+  },
+  "regressions": [],
+  "remaining_failures": [
+    "RG-056"
+  ],
+  "human_labels": "PENDING",
+  "Loom_URL": null,
+  "uploaded": false,
+  "dataset_sha256": "8df40d76421052903381d59087af264c60fa6005ebe0dd7191cf98da1eef5f01",
+  "requirements": [
+    {
+      "Requirement": "Evaluation report with five metrics, rubric and numeric bars",
+      "Status": "PREPARED",
+      "File": "Project_Summary_Report.pdf / .md / index.html",
+      "Notes": "Targets are retrospective teaching bars."
+    },
+    {
+      "Requirement": "30-50 labeled cases with paired outputs and scores",
+      "Status": "PREPARED, LABEL REVIEW PENDING",
+      "File": "ResolveGuard_Week3_Evaluation.xlsx / Cases 40",
+      "Notes": "40 identical cases; AI-authored bindings and unverified source authorship disclosed."
+    },
+    {
+      "Requirement": "Top failures, 3-4 changes and measured deltas",
+      "Status": "PREPARED",
+      "File": "Report; Failures and Changes sheets",
+      "Notes": "Four changes; seven repaired cases; RG-056 remains."
+    },
+    {
+      "Requirement": "Supporting prompts, rubric, code and executed analysis",
+      "Status": "PREPARED",
+      "File": "supporting_code/; Evidence_Analysis.ipynb",
+      "Notes": "Notebook replays evidence analysis, not agent execution. Code snapshot is current, not recovered historical source."
+    },
+    {
+      "Requirement": "LLM judge prompt, outputs and human comparison if used",
+      "Status": "SUPPLEMENTARY; HUMAN COMPARISON PENDING",
+      "File": "Judge Human Review sheet; evidence/judge*",
+      "Notes": "Judge is not used for main 40-case scores. No human agreement is claimed."
+    },
+    {
+      "Requirement": "LangSmith evidence",
+      "Status": "NOT USED FOR MAIN TRACK",
+      "File": "evidence/*_traces.jsonl",
+      "Notes": "Spreadsheet track; local traces supplied. No hosted run URLs claimed."
+    },
+    {
+      "Requirement": "Short Loom demonstration",
+      "Status": "NOT RECORDED",
+      "File": "Loom_Recording_Script.md",
+      "Notes": "Learner must record and add the actual Loom URL."
+    },
+    {
+      "Requirement": "Upload final deliverables",
+      "Status": "NOT UPLOADED",
+      "File": "ResolveGuard_Week3_Submission.zip",
+      "Notes": "No course portal destination or upload authorization supplied."
+    }
+  ]
+}

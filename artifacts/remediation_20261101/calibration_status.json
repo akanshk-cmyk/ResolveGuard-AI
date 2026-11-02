@@ -1,0 +1,46 @@
+{
+  "status": "PENDING_HUMAN_CALIBRATION",
+  "human_model_pairs": 0,
+  "total": 12,
+  "agreement": null,
+  "true_passes": 0,
+  "true_failures": 0,
+  "false_passes": 0,
+  "false_failures": 0,
+  "true_positive_rate": null,
+  "true_negative_rate": null,
+  "comparisons": [],
+  "invalid_judge_case_ids": [],
+  "partition_metrics": {},
+  "release_gate_enabled": false,
+  "gate_note": "Human agreement does not grant banking permissions or release approval.",
+  "human_feedback_receipt": {
+    "human_feedback_status": "PROVIDED_RECEIVED_AND_DOCUMENTED",
+    "chat_review": {
+      "reference": "HR-CHAT-22",
+      "observations": 22,
+      "PASS": 14,
+      "FAIL": 6,
+      "PARTIAL_PASS": 2,
+      "evidence": "artifacts/human_feedback_20261101_batch02/Review_Summary.json"
+    },
+    "excel_review": {
+      "reference": "HR-XLSX-28",
+      "observations": 28,
+      "PASS": 23,
+      "FAIL": 2,
+      "PARTIAL_PASS": 3,
+      "evidence": "artifacts/human_review_received/817cb87ce51af0d4/Clarified_Review_Analysis.json"
+    },
+    "overlap_note": "Do not sum these into 50 independent cases.",
+    "review_target": "LIVE_CUSTOMER_APP",
+    "human_judge_agreement": null,
+    "agreement_status": "NOT_YET_CALCULATED_ON_MATCHED_RESPONSES",
+    "reason": "Human live replies and judge saved replies are different targets, not absent human feedback.",
+    "feedback_handover": "RECEIVED_AND_RECORDED_IN_PROJECT_DOCUMENTATION",
+    "bank_support_handoff": "NOT_ESTABLISHED_BY_HUMAN_REVIEW_RECEIPT",
+    "foreign_case_disclosure_observed": false,
+    "source_contract_approval": "SEPARATE_NOT_ESTABLISHED",
+    "open_feedback": "Two product-context FAIL observations and three denial-wording PARTIAL PASS observations."
+  }
+}

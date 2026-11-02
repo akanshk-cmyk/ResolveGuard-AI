@@ -1,0 +1,2254 @@
+{
+  "schema_version": "resolution-qa-foundation-v1",
+  "runtime_active": false,
+  "scope": "Schema validation is not authorization or proof of backend commitment.",
+  "schemas": {
+    "EvidenceRef": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "enum": [
+            "POLICY",
+            "BACKEND_EVENT",
+            "TRACE",
+            "RUNTIME_CHECK",
+            "HUMAN_REVIEW",
+            "EVALUATION"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "reference": {
+          "maxLength": 200,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "title": "Reference",
+          "type": "string"
+        },
+        "version": {
+          "maxLength": 200,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "title": "Version",
+          "type": "string"
+        },
+        "event_kind": {
+          "anyOf": [
+            {
+              "enum": [
+                "CASE_CREATED",
+                "HANDOFF_ACKNOWLEDGED",
+                "ISSUE_RESOLVED",
+                "CALLBACK_CONFIRMED",
+                "PRIORITY_ASSIGNED",
+                "REQUEST_RECONCILED",
+                "REPORT_CAPTURED"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Event Kind"
+        },
+        "resource_ref": {
+          "anyOf": [
+            {
+              "maxLength": 200,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Resource Ref"
+        }
+      },
+      "required": [
+        "kind",
+        "reference",
+        "version"
+      ],
+      "title": "EvidenceRef",
+      "type": "object"
+    },
+    "PriorityProposal": {
+      "$defs": {
+        "EvidenceRef": {
+          "additionalProperties": false,
+          "properties": {
+            "kind": {
+              "enum": [
+                "POLICY",
+                "BACKEND_EVENT",
+                "TRACE",
+                "RUNTIME_CHECK",
+                "HUMAN_REVIEW",
+                "EVALUATION"
+              ],
+              "title": "Kind",
+              "type": "string"
+            },
+            "reference": {
+              "maxLength": 200,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+              "title": "Reference",
+              "type": "string"
+            },
+            "version": {
+              "maxLength": 200,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+              "title": "Version",
+              "type": "string"
+            },
+            "event_kind": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "CASE_CREATED",
+                    "HANDOFF_ACKNOWLEDGED",
+                    "ISSUE_RESOLVED",
+                    "CALLBACK_CONFIRMED",
+                    "PRIORITY_ASSIGNED",
+                    "REQUEST_RECONCILED",
+                    "REPORT_CAPTURED"
+                  ],
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Event Kind"
+            },
+            "resource_ref": {
+              "anyOf": [
+                {
+                  "maxLength": 200,
+                  "minLength": 1,
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Resource Ref"
+            }
+          },
+          "required": [
+            "kind",
+            "reference",
+            "version"
+          ],
+          "title": "EvidenceRef",
+          "type": "object"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "proposed_tier": {
+          "enum": [
+            "P1",
+            "P2",
+            "P3",
+            "P4"
+          ],
+          "title": "Proposed Tier",
+          "type": "string"
+        },
+        "reason_code": {
+          "maxLength": 200,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "title": "Reason Code",
+          "type": "string"
+        },
+        "evidence": {
+          "items": {
+            "$ref": "#/$defs/EvidenceRef"
+          },
+          "maxLength": 100,
+          "minItems": 1,
+          "title": "Evidence",
+          "type": "array"
+        }
+      },
+      "required": [
+        "proposed_tier",
+        "reason_code",
+        "evidence"
+      ],
+      "title": "PriorityProposal",
+      "type": "object"
+    },
+    "PriorityDecision": {
+      "$defs": {
+        "EvidenceRef": {
+          "additionalProperties": false,
+          "properties": {
+            "kind": {
+              "enum": [
+                "POLICY",
+                "BACKEND_EVENT",
+                "TRACE",
+                "RUNTIME_CHECK",
+                "HUMAN_REVIEW",
+                "EVALUATION"
+              ],
+              "title": "Kind",
+              "type": "string"
+            },
+            "reference": {
+              "maxLength": 200,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+              "title": "Reference",
+              "type": "string"
+            },
+            "version": {
+              "maxLength": 200,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+              "title": "Version",
+              "type": "string"
+            },
+            "event_kind": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "CASE_CREATED",
+                    "HANDOFF_ACKNOWLEDGED",
+                    "ISSUE_RESOLVED",
+                    "CALLBACK_CONFIRMED",
+                    "PRIORITY_ASSIGNED",
+                    "REQUEST_RECONCILED",
+                    "REPORT_CAPTURED"
+                  ],
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Event Kind"
+            },
+            "resource_ref": {
+              "anyOf": [
+                {
+                  "maxLength": 200,
+                  "minLength": 1,
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Resource Ref"
+            }
+          },
+          "required": [
+            "kind",
+            "reference",
+            "version"
+          ],
+          "title": "EvidenceRef",
+          "type": "object"
+        }
+      },
+      "additionalProperties": false,
+      "description": "Backend decision, separate from the agent's proposal and any callback.",
+      "properties": {
+        "assigned_tier": {
+          "enum": [
+            "P1",
+            "P2",
+            "P3",
+            "P4"
+          ],
+          "title": "Assigned Tier",
+          "type": "string"
+        },
+        "queue_id": {
+          "maxLength": 200,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "title": "Queue Id",
+          "type": "string"
+        },
+        "rule_id": {
+          "maxLength": 200,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "title": "Rule Id",
+          "type": "string"
+        },
+        "rule_version": {
+          "maxLength": 200,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "title": "Rule Version",
+          "type": "string"
+        },
+        "evidence": {
+          "items": {
+            "$ref": "#/$defs/EvidenceRef"
+          },
+          "maxLength": 100,
+          "minItems": 1,
+          "title": "Evidence",
+          "type": "array"
+        }
+      },
+      "required": [
+        "assigned_tier",
+        "queue_id",
+        "rule_id",
+        "rule_version",
+        "evidence"
+      ],
+      "title": "PriorityDecision",
+      "type": "object"
+    },
+    "CallbackCommitment": {
+      "$defs": {
+        "EvidenceRef": {
+          "additionalProperties": false,
+          "properties": {
+            "kind": {
+              "enum": [
+                "POLICY",
+                "BACKEND_EVENT",
+                "TRACE",
+                "RUNTIME_CHECK",
+                "HUMAN_REVIEW",
+                "EVALUATION"
+              ],
+              "title": "Kind",
+              "type": "string"
+            },
+            "reference": {
+              "maxLength": 200,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+              "title": "Reference",
+              "type": "string"
+            },
+            "version": {
+              "maxLength": 200,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+              "title": "Version",
+              "type": "string"
+            },
+            "event_kind": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "CASE_CREATED",
+                    "HANDOFF_ACKNOWLEDGED",
+                    "ISSUE_RESOLVED",
+                    "CALLBACK_CONFIRMED",
+                    "PRIORITY_ASSIGNED",
+                    "REQUEST_RECONCILED",
+                    "REPORT_CAPTURED"
+                  ],
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Event Kind"
+            },
+            "resource_ref": {
+              "anyOf": [
+                {
+                  "maxLength": 200,
+                  "minLength": 1,
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Resource Ref"
+            }
+          },
+          "required": [
+            "kind",
+            "reference",
+            "version"
+          ],
+          "title": "EvidenceRef",
+          "type": "object"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "enum": [
+            "UNCONFIRMED",
+            "CONFIRMED"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "queue_id": {
+          "anyOf": [
+            {
+              "maxLength": 200,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Queue Id"
+        },
+        "commitment_id": {
+          "anyOf": [
+            {
+              "maxLength": 200,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Commitment Id"
+        },
+        "window_start": {
+          "anyOf": [
+            {
+              "maxLength": 40,
+              "minLength": 20,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Window Start"
+        },
+        "window_end": {
+          "anyOf": [
+            {
+              "maxLength": 40,
+              "minLength": 20,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Window End"
+        },
+        "confirmed_at": {
+          "anyOf": [
+            {
+              "maxLength": 40,
+              "minLength": 20,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Confirmed At"
+        },
+        "evidence": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/EvidenceRef"
+          },
+          "maxLength": 100,
+          "title": "Evidence",
+          "type": "array"
+        }
+      },
+      "required": [
+        "status"
+      ],
+      "title": "CallbackCommitment",
+      "type": "object"
+    },
+    "ResolutionInput": {
+      "$defs": {
+        "EvidenceRef": {
+          "additionalProperties": false,
+          "properties": {
+            "kind": {
+              "enum": [
+                "POLICY",
+                "BACKEND_EVENT",
+                "TRACE",
+                "RUNTIME_CHECK",
+                "HUMAN_REVIEW",
+                "EVALUATION"
+              ],
+              "title": "Kind",
+              "type": "string"
+            },
+            "reference": {
+              "maxLength": 200,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+              "title": "Reference",
+              "type": "string"
+            },
+            "version": {
+              "maxLength": 200,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+              "title": "Version",
+              "type": "string"
+            },
+            "event_kind": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "CASE_CREATED",
+                    "HANDOFF_ACKNOWLEDGED",
+                    "ISSUE_RESOLVED",
+                    "CALLBACK_CONFIRMED",
+                    "PRIORITY_ASSIGNED",
+                    "REQUEST_RECONCILED",
+                    "REPORT_CAPTURED"
+                  ],
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Event Kind"
+            },
+            "resource_ref": {
+              "anyOf": [
+                {
+                  "maxLength": 200,
+                  "minLength": 1,
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Resource Ref"
+            }
+          },
+          "required": [
+            "kind",
+            "reference",
+            "version"
+          ],
+          "title": "EvidenceRef",
+          "type": "object"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "session_ref": {
+          "maxLength": 200,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "title": "Session Ref",
+          "type": "string"
+        },
+        "turn_ref": {
+          "maxLength": 200,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "title": "Turn Ref",
+          "type": "string"
+        },
+        "bank_id": {
+          "enum": [
+            "BOW",
+            "LEGACY_DEMO"
+          ],
+          "title": "Bank Id",
+          "type": "string"
+        },
+        "intent": {
+          "enum": [
+            "FEE_INQUIRY",
+            "POLICY_LOOKUP",
+            "TRANSACTION_INQUIRY",
+            "CASE_STATUS",
+            "FRAUD_ERROR_REPORT",
+            "SUPPORT_CASE_REQUEST",
+            "HUMAN_REQUEST",
+            "UNSUPPORTED_REQUEST",
+            "OTHER_OR_UNCLEAR"
+          ],
+          "title": "Intent",
+          "type": "string"
+        },
+        "summary": {
+          "maxLength": 20000,
+          "minLength": 1,
+          "title": "Summary",
+          "type": "string"
+        },
+        "issue_state": {
+          "enum": [
+            "RESOLVED",
+            "UNRESOLVED",
+            "UNKNOWN"
+          ],
+          "title": "Issue State",
+          "type": "string"
+        },
+        "triggers": {
+          "items": {
+            "enum": [
+              "UNRESOLVED",
+              "FAILED_OPERATION",
+              "HUMAN_REQUEST",
+              "SUBMISSION_UNKNOWN",
+              "AUTH_UNFINISHED",
+              "QUEUE_UNAVAILABLE",
+              "REOPEN_REQUEST"
+            ],
+            "type": "string"
+          },
+          "maxLength": 7,
+          "minLength": 1,
+          "title": "Triggers",
+          "type": "array"
+        },
+        "evidence": {
+          "items": {
+            "$ref": "#/$defs/EvidenceRef"
+          },
+          "maxLength": 100,
+          "title": "Evidence",
+          "type": "array"
+        },
+        "existing_case_ref": {
+          "anyOf": [
+            {
+              "maxLength": 200,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Existing Case Ref"
+        }
+      },
+      "required": [
+        "session_ref",
+        "turn_ref",
+        "bank_id",
+        "intent",
+        "summary",
+        "issue_state",
+        "triggers",
+        "evidence"
+      ],
+      "title": "ResolutionInput",
+      "type": "object"
+    },
+    "ResolutionOutcome": {
+      "$defs": {
+        "CallbackCommitment": {
+          "additionalProperties": false,
+          "properties": {
+            "status": {
+              "enum": [
+                "UNCONFIRMED",
+                "CONFIRMED"
+              ],
+              "title": "Status",
+              "type": "string"
+            },
+            "queue_id": {
+              "anyOf": [
+                {
+                  "maxLength": 200,
+                  "minLength": 1,
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Queue Id"
+            },
+            "commitment_id": {
+              "anyOf": [
+                {
+                  "maxLength": 200,
+                  "minLength": 1,
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Commitment Id"
+            },
+            "window_start": {
+              "anyOf": [
+                {
+                  "maxLength": 40,
+                  "minLength": 20,
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Window Start"
+            },
+            "window_end": {
+              "anyOf": [
+                {
+                  "maxLength": 40,
+                  "minLength": 20,
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Window End"
+            },
+            "confirmed_at": {
+              "anyOf": [
+                {
+                  "maxLength": 40,
+                  "minLength": 20,
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Confirmed At"
+            },
+            "evidence": {
+              "default": [],
+              "items": {
+                "$ref": "#/$defs/EvidenceRef"
+              },
+              "maxLength": 100,
+              "title": "Evidence",
+              "type": "array"
+            }
+          },
+          "required": [
+            "status"
+          ],
+          "title": "CallbackCommitment",
+          "type": "object"
+        },
+        "EvidenceRef": {
+          "additionalProperties": false,
+          "properties": {
+            "kind": {
+              "enum": [
+                "POLICY",
+                "BACKEND_EVENT",
+                "TRACE",
+                "RUNTIME_CHECK",
+                "HUMAN_REVIEW",
+                "EVALUATION"
+              ],
+              "title": "Kind",
+              "type": "string"
+            },
+            "reference": {
+              "maxLength": 200,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+              "title": "Reference",
+              "type": "string"
+            },
+            "version": {
+              "maxLength": 200,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+              "title": "Version",
+              "type": "string"
+            },
+            "event_kind": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "CASE_CREATED",
+                    "HANDOFF_ACKNOWLEDGED",
+                    "ISSUE_RESOLVED",
+                    "CALLBACK_CONFIRMED",
+                    "PRIORITY_ASSIGNED",
+                    "REQUEST_RECONCILED",
+                    "REPORT_CAPTURED"
+                  ],
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Event Kind"
+            },
+            "resource_ref": {
+              "anyOf": [
+                {
+                  "maxLength": 200,
+                  "minLength": 1,
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Resource Ref"
+            }
+          },
+          "required": [
+            "kind",
+            "reference",
+            "version"
+          ],
+          "title": "EvidenceRef",
+          "type": "object"
+        },
+        "PriorityDecision": {
+          "additionalProperties": false,
+          "description": "Backend decision, separate from the agent's proposal and any callback.",
+          "properties": {
+            "assigned_tier": {
+              "enum": [
+                "P1",
+                "P2",
+                "P3",
+                "P4"
+              ],
+              "title": "Assigned Tier",
+              "type": "string"
+            },
+            "queue_id": {
+              "maxLength": 200,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+              "title": "Queue Id",
+              "type": "string"
+            },
+            "rule_id": {
+              "maxLength": 200,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+              "title": "Rule Id",
+              "type": "string"
+            },
+            "rule_version": {
+              "maxLength": 200,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+              "title": "Rule Version",
+              "type": "string"
+            },
+            "evidence": {
+              "items": {
+                "$ref": "#/$defs/EvidenceRef"
+              },
+              "maxLength": 100,
+              "minItems": 1,
+              "title": "Evidence",
+              "type": "array"
+            }
+          },
+          "required": [
+            "assigned_tier",
+            "queue_id",
+            "rule_id",
+            "rule_version",
+            "evidence"
+          ],
+          "title": "PriorityDecision",
+          "type": "object"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "bank_id": {
+          "enum": [
+            "BOW",
+            "LEGACY_DEMO"
+          ],
+          "title": "Bank Id",
+          "type": "string"
+        },
+        "issue_state": {
+          "enum": [
+            "RESOLVED",
+            "UNRESOLVED",
+            "UNKNOWN"
+          ],
+          "title": "Issue State",
+          "type": "string"
+        },
+        "next_step_state": {
+          "enum": [
+            "CASE_CONFIRMED",
+            "HANDOFF_ACKNOWLEDGED",
+            "APPROVED_FALLBACK",
+            "TRACKED_PENDING",
+            "UNKNOWN"
+          ],
+          "title": "Next Step State",
+          "type": "string"
+        },
+        "next_action": {
+          "enum": [
+            "NONE",
+            "CHECK_CASE",
+            "RECONCILE_SUBMISSION",
+            "REQUEST_HANDOFF",
+            "OFFER_APPROVED_CHANNEL",
+            "WAIT_FOR_UPDATE",
+            "REQUEST_CUSTOMER_INPUT"
+          ],
+          "title": "Next Action",
+          "type": "string"
+        },
+        "tracking_ref": {
+          "anyOf": [
+            {
+              "maxLength": 200,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Tracking Ref"
+        },
+        "case_ref": {
+          "anyOf": [
+            {
+              "maxLength": 200,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Case Ref"
+        },
+        "handoff_ref": {
+          "anyOf": [
+            {
+              "maxLength": 200,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Handoff Ref"
+        },
+        "next_owner": {
+          "anyOf": [
+            {
+              "maxLength": 200,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Next Owner"
+        },
+        "priority": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/PriorityDecision"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "callback": {
+          "$ref": "#/$defs/CallbackCommitment"
+        },
+        "evidence": {
+          "items": {
+            "$ref": "#/$defs/EvidenceRef"
+          },
+          "maxLength": 100,
+          "title": "Evidence",
+          "type": "array"
+        }
+      },
+      "required": [
+        "bank_id",
+        "issue_state",
+        "next_step_state",
+        "next_action",
+        "callback",
+        "evidence"
+      ],
+      "title": "ResolutionOutcome",
+      "type": "object"
+    },
+    "QACheck": {
+      "$defs": {
+        "EvidenceRef": {
+          "additionalProperties": false,
+          "properties": {
+            "kind": {
+              "enum": [
+                "POLICY",
+                "BACKEND_EVENT",
+                "TRACE",
+                "RUNTIME_CHECK",
+                "HUMAN_REVIEW",
+                "EVALUATION"
+              ],
+              "title": "Kind",
+              "type": "string"
+            },
+            "reference": {
+              "maxLength": 200,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+              "title": "Reference",
+              "type": "string"
+            },
+            "version": {
+              "maxLength": 200,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+              "title": "Version",
+              "type": "string"
+            },
+            "event_kind": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "CASE_CREATED",
+                    "HANDOFF_ACKNOWLEDGED",
+                    "ISSUE_RESOLVED",
+                    "CALLBACK_CONFIRMED",
+                    "PRIORITY_ASSIGNED",
+                    "REQUEST_RECONCILED",
+                    "REPORT_CAPTURED"
+                  ],
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Event Kind"
+            },
+            "resource_ref": {
+              "anyOf": [
+                {
+                  "maxLength": 200,
+                  "minLength": 1,
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Resource Ref"
+            }
+          },
+          "required": [
+            "kind",
+            "reference",
+            "version"
+          ],
+          "title": "EvidenceRef",
+          "type": "object"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "enum": [
+            "INTENT_ROUTING",
+            "ERROR_REPORT_PRESERVATION",
+            "AUTHORIZATION",
+            "TOOL_CORRECTNESS",
+            "GROUNDING",
+            "ACTION_INTEGRITY",
+            "PRIVACY",
+            "CUSTOMER_EXPERIENCE"
+          ],
+          "title": "Name",
+          "type": "string"
+        },
+        "verdict": {
+          "enum": [
+            "PASS",
+            "FAIL",
+            "NOT_EVALUABLE"
+          ],
+          "title": "Verdict",
+          "type": "string"
+        },
+        "severity": {
+          "enum": [
+            "CRITICAL",
+            "MAJOR",
+            "MINOR"
+          ],
+          "title": "Severity",
+          "type": "string"
+        },
+        "method": {
+          "enum": [
+            "DETERMINISTIC",
+            "DETERMINISTIC_WITH_LLM",
+            "HUMAN",
+            "LLM_ADVISORY"
+          ],
+          "title": "Method",
+          "type": "string"
+        },
+        "reason_code": {
+          "maxLength": 200,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "title": "Reason Code",
+          "type": "string"
+        },
+        "explanation": {
+          "maxLength": 1500,
+          "minLength": 1,
+          "title": "Explanation",
+          "type": "string"
+        },
+        "evidence": {
+          "items": {
+            "$ref": "#/$defs/EvidenceRef"
+          },
+          "maxLength": 100,
+          "title": "Evidence",
+          "type": "array"
+        }
+      },
+      "required": [
+        "name",
+        "verdict",
+        "severity",
+        "method",
+        "reason_code",
+        "explanation",
+        "evidence"
+      ],
+      "title": "QACheck",
+      "type": "object"
+    },
+    "QAReport": {
+      "$defs": {
+        "EvidenceRef": {
+          "additionalProperties": false,
+          "properties": {
+            "kind": {
+              "enum": [
+                "POLICY",
+                "BACKEND_EVENT",
+                "TRACE",
+                "RUNTIME_CHECK",
+                "HUMAN_REVIEW",
+                "EVALUATION"
+              ],
+              "title": "Kind",
+              "type": "string"
+            },
+            "reference": {
+              "maxLength": 200,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+              "title": "Reference",
+              "type": "string"
+            },
+            "version": {
+              "maxLength": 200,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+              "title": "Version",
+              "type": "string"
+            },
+            "event_kind": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "CASE_CREATED",
+                    "HANDOFF_ACKNOWLEDGED",
+                    "ISSUE_RESOLVED",
+                    "CALLBACK_CONFIRMED",
+                    "PRIORITY_ASSIGNED",
+                    "REQUEST_RECONCILED",
+                    "REPORT_CAPTURED"
+                  ],
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Event Kind"
+            },
+            "resource_ref": {
+              "anyOf": [
+                {
+                  "maxLength": 200,
+                  "minLength": 1,
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Resource Ref"
+            }
+          },
+          "required": [
+            "kind",
+            "reference",
+            "version"
+          ],
+          "title": "EvidenceRef",
+          "type": "object"
+        },
+        "QACheck": {
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "enum": [
+                "INTENT_ROUTING",
+                "ERROR_REPORT_PRESERVATION",
+                "AUTHORIZATION",
+                "TOOL_CORRECTNESS",
+                "GROUNDING",
+                "ACTION_INTEGRITY",
+                "PRIVACY",
+                "CUSTOMER_EXPERIENCE"
+              ],
+              "title": "Name",
+              "type": "string"
+            },
+            "verdict": {
+              "enum": [
+                "PASS",
+                "FAIL",
+                "NOT_EVALUABLE"
+              ],
+              "title": "Verdict",
+              "type": "string"
+            },
+            "severity": {
+              "enum": [
+                "CRITICAL",
+                "MAJOR",
+                "MINOR"
+              ],
+              "title": "Severity",
+              "type": "string"
+            },
+            "method": {
+              "enum": [
+                "DETERMINISTIC",
+                "DETERMINISTIC_WITH_LLM",
+                "HUMAN",
+                "LLM_ADVISORY"
+              ],
+              "title": "Method",
+              "type": "string"
+            },
+            "reason_code": {
+              "maxLength": 200,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+              "title": "Reason Code",
+              "type": "string"
+            },
+            "explanation": {
+              "maxLength": 1500,
+              "minLength": 1,
+              "title": "Explanation",
+              "type": "string"
+            },
+            "evidence": {
+              "items": {
+                "$ref": "#/$defs/EvidenceRef"
+              },
+              "maxLength": 100,
+              "title": "Evidence",
+              "type": "array"
+            }
+          },
+          "required": [
+            "name",
+            "verdict",
+            "severity",
+            "method",
+            "reason_code",
+            "explanation",
+            "evidence"
+          ],
+          "title": "QACheck",
+          "type": "object"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "bank_id": {
+          "enum": [
+            "BOW",
+            "LEGACY_DEMO"
+          ],
+          "title": "Bank Id",
+          "type": "string"
+        },
+        "report_id": {
+          "maxLength": 200,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "title": "Report Id",
+          "type": "string"
+        },
+        "session_ref": {
+          "maxLength": 200,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "title": "Session Ref",
+          "type": "string"
+        },
+        "turn_ref": {
+          "anyOf": [
+            {
+              "maxLength": 200,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Turn Ref"
+        },
+        "stage": {
+          "enum": [
+            "PRE_SEND",
+            "POST_SESSION"
+          ],
+          "title": "Stage",
+          "type": "string"
+        },
+        "trigger": {
+          "enum": [
+            "DRAFT_READY",
+            "SESSION_ENDED",
+            "SESSION_ABANDONED",
+            "SESSION_EXPIRED",
+            "HANDOFF_BOUNDARY",
+            "IDLE_TIMEOUT"
+          ],
+          "title": "Trigger",
+          "type": "string"
+        },
+        "reviewed_at": {
+          "maxLength": 40,
+          "minLength": 20,
+          "title": "Reviewed At",
+          "type": "string"
+        },
+        "rubric_version": {
+          "maxLength": 200,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "title": "Rubric Version",
+          "type": "string"
+        },
+        "candidate_response_ref": {
+          "anyOf": [
+            {
+              "maxLength": 200,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Candidate Response Ref"
+        },
+        "context_snapshot_ref": {
+          "anyOf": [
+            {
+              "maxLength": 200,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Context Snapshot Ref"
+        },
+        "checks": {
+          "items": {
+            "$ref": "#/$defs/QACheck"
+          },
+          "maxLength": 8,
+          "minLength": 8,
+          "title": "Checks",
+          "type": "array"
+        },
+        "decision": {
+          "enum": [
+            "APPROVE",
+            "REVISE",
+            "SAFE_FALLBACK",
+            "BLOCK",
+            "NEEDS_REVIEW",
+            "RECORD",
+            "ESCALATE"
+          ],
+          "title": "Decision",
+          "type": "string"
+        },
+        "risk_level": {
+          "enum": [
+            "LOW",
+            "MEDIUM",
+            "HIGH",
+            "CRITICAL"
+          ],
+          "title": "Risk Level",
+          "type": "string"
+        },
+        "requires_human_review": {
+          "title": "Requires Human Review",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "bank_id",
+        "report_id",
+        "session_ref",
+        "stage",
+        "trigger",
+        "reviewed_at",
+        "rubric_version",
+        "checks",
+        "decision",
+        "risk_level",
+        "requires_human_review"
+      ],
+      "title": "QAReport",
+      "type": "object"
+    },
+    "ReviewCheckpoint": {
+      "$defs": {
+        "CallbackCommitment": {
+          "additionalProperties": false,
+          "properties": {
+            "status": {
+              "enum": [
+                "UNCONFIRMED",
+                "CONFIRMED"
+              ],
+              "title": "Status",
+              "type": "string"
+            },
+            "queue_id": {
+              "anyOf": [
+                {
+                  "maxLength": 200,
+                  "minLength": 1,
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Queue Id"
+            },
+            "commitment_id": {
+              "anyOf": [
+                {
+                  "maxLength": 200,
+                  "minLength": 1,
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Commitment Id"
+            },
+            "window_start": {
+              "anyOf": [
+                {
+                  "maxLength": 40,
+                  "minLength": 20,
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Window Start"
+            },
+            "window_end": {
+              "anyOf": [
+                {
+                  "maxLength": 40,
+                  "minLength": 20,
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Window End"
+            },
+            "confirmed_at": {
+              "anyOf": [
+                {
+                  "maxLength": 40,
+                  "minLength": 20,
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Confirmed At"
+            },
+            "evidence": {
+              "default": [],
+              "items": {
+                "$ref": "#/$defs/EvidenceRef"
+              },
+              "maxLength": 100,
+              "title": "Evidence",
+              "type": "array"
+            }
+          },
+          "required": [
+            "status"
+          ],
+          "title": "CallbackCommitment",
+          "type": "object"
+        },
+        "EvidenceRef": {
+          "additionalProperties": false,
+          "properties": {
+            "kind": {
+              "enum": [
+                "POLICY",
+                "BACKEND_EVENT",
+                "TRACE",
+                "RUNTIME_CHECK",
+                "HUMAN_REVIEW",
+                "EVALUATION"
+              ],
+              "title": "Kind",
+              "type": "string"
+            },
+            "reference": {
+              "maxLength": 200,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+              "title": "Reference",
+              "type": "string"
+            },
+            "version": {
+              "maxLength": 200,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+              "title": "Version",
+              "type": "string"
+            },
+            "event_kind": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "CASE_CREATED",
+                    "HANDOFF_ACKNOWLEDGED",
+                    "ISSUE_RESOLVED",
+                    "CALLBACK_CONFIRMED",
+                    "PRIORITY_ASSIGNED",
+                    "REQUEST_RECONCILED",
+                    "REPORT_CAPTURED"
+                  ],
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Event Kind"
+            },
+            "resource_ref": {
+              "anyOf": [
+                {
+                  "maxLength": 200,
+                  "minLength": 1,
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Resource Ref"
+            }
+          },
+          "required": [
+            "kind",
+            "reference",
+            "version"
+          ],
+          "title": "EvidenceRef",
+          "type": "object"
+        },
+        "PriorityDecision": {
+          "additionalProperties": false,
+          "description": "Backend decision, separate from the agent's proposal and any callback.",
+          "properties": {
+            "assigned_tier": {
+              "enum": [
+                "P1",
+                "P2",
+                "P3",
+                "P4"
+              ],
+              "title": "Assigned Tier",
+              "type": "string"
+            },
+            "queue_id": {
+              "maxLength": 200,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+              "title": "Queue Id",
+              "type": "string"
+            },
+            "rule_id": {
+              "maxLength": 200,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+              "title": "Rule Id",
+              "type": "string"
+            },
+            "rule_version": {
+              "maxLength": 200,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+              "title": "Rule Version",
+              "type": "string"
+            },
+            "evidence": {
+              "items": {
+                "$ref": "#/$defs/EvidenceRef"
+              },
+              "maxLength": 100,
+              "minItems": 1,
+              "title": "Evidence",
+              "type": "array"
+            }
+          },
+          "required": [
+            "assigned_tier",
+            "queue_id",
+            "rule_id",
+            "rule_version",
+            "evidence"
+          ],
+          "title": "PriorityDecision",
+          "type": "object"
+        },
+        "QACheck": {
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "enum": [
+                "INTENT_ROUTING",
+                "ERROR_REPORT_PRESERVATION",
+                "AUTHORIZATION",
+                "TOOL_CORRECTNESS",
+                "GROUNDING",
+                "ACTION_INTEGRITY",
+                "PRIVACY",
+                "CUSTOMER_EXPERIENCE"
+              ],
+              "title": "Name",
+              "type": "string"
+            },
+            "verdict": {
+              "enum": [
+                "PASS",
+                "FAIL",
+                "NOT_EVALUABLE"
+              ],
+              "title": "Verdict",
+              "type": "string"
+            },
+            "severity": {
+              "enum": [
+                "CRITICAL",
+                "MAJOR",
+                "MINOR"
+              ],
+              "title": "Severity",
+              "type": "string"
+            },
+            "method": {
+              "enum": [
+                "DETERMINISTIC",
+                "DETERMINISTIC_WITH_LLM",
+                "HUMAN",
+                "LLM_ADVISORY"
+              ],
+              "title": "Method",
+              "type": "string"
+            },
+            "reason_code": {
+              "maxLength": 200,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+              "title": "Reason Code",
+              "type": "string"
+            },
+            "explanation": {
+              "maxLength": 1500,
+              "minLength": 1,
+              "title": "Explanation",
+              "type": "string"
+            },
+            "evidence": {
+              "items": {
+                "$ref": "#/$defs/EvidenceRef"
+              },
+              "maxLength": 100,
+              "title": "Evidence",
+              "type": "array"
+            }
+          },
+          "required": [
+            "name",
+            "verdict",
+            "severity",
+            "method",
+            "reason_code",
+            "explanation",
+            "evidence"
+          ],
+          "title": "QACheck",
+          "type": "object"
+        },
+        "QAReport": {
+          "additionalProperties": false,
+          "properties": {
+            "bank_id": {
+              "enum": [
+                "BOW",
+                "LEGACY_DEMO"
+              ],
+              "title": "Bank Id",
+              "type": "string"
+            },
+            "report_id": {
+              "maxLength": 200,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+              "title": "Report Id",
+              "type": "string"
+            },
+            "session_ref": {
+              "maxLength": 200,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+              "title": "Session Ref",
+              "type": "string"
+            },
+            "turn_ref": {
+              "anyOf": [
+                {
+                  "maxLength": 200,
+                  "minLength": 1,
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Turn Ref"
+            },
+            "stage": {
+              "enum": [
+                "PRE_SEND",
+                "POST_SESSION"
+              ],
+              "title": "Stage",
+              "type": "string"
+            },
+            "trigger": {
+              "enum": [
+                "DRAFT_READY",
+                "SESSION_ENDED",
+                "SESSION_ABANDONED",
+                "SESSION_EXPIRED",
+                "HANDOFF_BOUNDARY",
+                "IDLE_TIMEOUT"
+              ],
+              "title": "Trigger",
+              "type": "string"
+            },
+            "reviewed_at": {
+              "maxLength": 40,
+              "minLength": 20,
+              "title": "Reviewed At",
+              "type": "string"
+            },
+            "rubric_version": {
+              "maxLength": 200,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+              "title": "Rubric Version",
+              "type": "string"
+            },
+            "candidate_response_ref": {
+              "anyOf": [
+                {
+                  "maxLength": 200,
+                  "minLength": 1,
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Candidate Response Ref"
+            },
+            "context_snapshot_ref": {
+              "anyOf": [
+                {
+                  "maxLength": 200,
+                  "minLength": 1,
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Context Snapshot Ref"
+            },
+            "checks": {
+              "items": {
+                "$ref": "#/$defs/QACheck"
+              },
+              "maxLength": 8,
+              "minLength": 8,
+              "title": "Checks",
+              "type": "array"
+            },
+            "decision": {
+              "enum": [
+                "APPROVE",
+                "REVISE",
+                "SAFE_FALLBACK",
+                "BLOCK",
+                "NEEDS_REVIEW",
+                "RECORD",
+                "ESCALATE"
+              ],
+              "title": "Decision",
+              "type": "string"
+            },
+            "risk_level": {
+              "enum": [
+                "LOW",
+                "MEDIUM",
+                "HIGH",
+                "CRITICAL"
+              ],
+              "title": "Risk Level",
+              "type": "string"
+            },
+            "requires_human_review": {
+              "title": "Requires Human Review",
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "bank_id",
+            "report_id",
+            "session_ref",
+            "stage",
+            "trigger",
+            "reviewed_at",
+            "rubric_version",
+            "checks",
+            "decision",
+            "risk_level",
+            "requires_human_review"
+          ],
+          "title": "QAReport",
+          "type": "object"
+        },
+        "ResolutionOutcome": {
+          "additionalProperties": false,
+          "properties": {
+            "bank_id": {
+              "enum": [
+                "BOW",
+                "LEGACY_DEMO"
+              ],
+              "title": "Bank Id",
+              "type": "string"
+            },
+            "issue_state": {
+              "enum": [
+                "RESOLVED",
+                "UNRESOLVED",
+                "UNKNOWN"
+              ],
+              "title": "Issue State",
+              "type": "string"
+            },
+            "next_step_state": {
+              "enum": [
+                "CASE_CONFIRMED",
+                "HANDOFF_ACKNOWLEDGED",
+                "APPROVED_FALLBACK",
+                "TRACKED_PENDING",
+                "UNKNOWN"
+              ],
+              "title": "Next Step State",
+              "type": "string"
+            },
+            "next_action": {
+              "enum": [
+                "NONE",
+                "CHECK_CASE",
+                "RECONCILE_SUBMISSION",
+                "REQUEST_HANDOFF",
+                "OFFER_APPROVED_CHANNEL",
+                "WAIT_FOR_UPDATE",
+                "REQUEST_CUSTOMER_INPUT"
+              ],
+              "title": "Next Action",
+              "type": "string"
+            },
+            "tracking_ref": {
+              "anyOf": [
+                {
+                  "maxLength": 200,
+                  "minLength": 1,
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Tracking Ref"
+            },
+            "case_ref": {
+              "anyOf": [
+                {
+                  "maxLength": 200,
+                  "minLength": 1,
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Case Ref"
+            },
+            "handoff_ref": {
+              "anyOf": [
+                {
+                  "maxLength": 200,
+                  "minLength": 1,
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Handoff Ref"
+            },
+            "next_owner": {
+              "anyOf": [
+                {
+                  "maxLength": 200,
+                  "minLength": 1,
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Next Owner"
+            },
+            "priority": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/PriorityDecision"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null
+            },
+            "callback": {
+              "$ref": "#/$defs/CallbackCommitment"
+            },
+            "evidence": {
+              "items": {
+                "$ref": "#/$defs/EvidenceRef"
+              },
+              "maxLength": 100,
+              "title": "Evidence",
+              "type": "array"
+            }
+          },
+          "required": [
+            "bank_id",
+            "issue_state",
+            "next_step_state",
+            "next_action",
+            "callback",
+            "evidence"
+          ],
+          "title": "ResolutionOutcome",
+          "type": "object"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "bank_id": {
+          "enum": [
+            "BOW",
+            "LEGACY_DEMO"
+          ],
+          "title": "Bank Id",
+          "type": "string"
+        },
+        "stage": {
+          "enum": [
+            "ASSESS_ISSUE",
+            "RESOLUTION",
+            "DRAFT_RESPONSE",
+            "PRE_SEND_QA",
+            "SAFE_FALLBACK_DRAFT",
+            "DELIVER_RESPONSE",
+            "SESSION_OPEN",
+            "POST_SESSION_QA",
+            "AUDIT_RECORDED",
+            "HUMAN_REVIEW"
+          ],
+          "title": "Stage",
+          "type": "string"
+        },
+        "session_ref": {
+          "maxLength": 200,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "title": "Session Ref",
+          "type": "string"
+        },
+        "turn_ref": {
+          "maxLength": 200,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "title": "Turn Ref",
+          "type": "string"
+        },
+        "issue_state": {
+          "enum": [
+            "RESOLVED",
+            "UNRESOLVED",
+            "UNKNOWN"
+          ],
+          "title": "Issue State",
+          "type": "string"
+        },
+        "candidate_response_ref": {
+          "anyOf": [
+            {
+              "maxLength": 200,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Candidate Response Ref"
+        },
+        "context_snapshot_ref": {
+          "anyOf": [
+            {
+              "maxLength": 200,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Context Snapshot Ref"
+        },
+        "resolution": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ResolutionOutcome"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "qa": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/QAReport"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "rewrite_count": {
+          "default": 0,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Rewrite Count",
+          "type": "integer"
+        },
+        "fallback_used": {
+          "default": false,
+          "title": "Fallback Used",
+          "type": "boolean"
+        },
+        "session_ended": {
+          "default": false,
+          "title": "Session Ended",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "bank_id",
+        "stage",
+        "session_ref",
+        "turn_ref",
+        "issue_state"
+      ],
+      "title": "ReviewCheckpoint",
+      "type": "object"
+    }
+  }
+}

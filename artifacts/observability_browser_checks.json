@@ -1,0 +1,38 @@
+{
+  "checks": [
+    {
+      "name": "unauthenticated API blocked",
+      "passed": true
+    },
+    {
+      "name": "historical trends rendered",
+      "passed": true
+    },
+    {
+      "name": "baseline selectors populated",
+      "passed": true
+    },
+    {
+      "name": "comparison and fingerprints rendered",
+      "passed": true
+    },
+    {
+      "name": "token input cleared",
+      "passed": true
+    },
+    {
+      "name": "generation panel distinguishes unavailable measurements",
+      "passed": true
+    },
+    {
+      "name": "trace history rendered",
+      "passed": true
+    },
+    {
+      "name": "mobile page fits viewport",
+      "passed": true
+    }
+  ],
+  "runtime_errors": [],
+  "passed": true
+}

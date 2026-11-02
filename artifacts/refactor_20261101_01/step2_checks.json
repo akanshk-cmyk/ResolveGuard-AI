@@ -1,0 +1,62 @@
+[
+  {
+    "name": "provider_tests",
+    "command": [
+      "python",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_nebius_adapter.py",
+      "-q"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 1.75,
+    "tests_run": 3,
+    "skipped": 0,
+    "log": "artifacts/refactor_20261101_01/step2_provider_tests.log",
+    "passed": 3
+  },
+  {
+    "name": "reply_tests",
+    "command": [
+      "python",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_reply_generation.py",
+      "-q"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 5.344,
+    "tests_run": 17,
+    "skipped": 0,
+    "log": "artifacts/refactor_20261101_01/step2_reply_tests.log",
+    "passed": 17
+  },
+  {
+    "name": "observability_tests",
+    "command": [
+      "python",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_observability.py",
+      "-q"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 3.5,
+    "tests_run": 22,
+    "skipped": 0,
+    "log": "artifacts/refactor_20261101_01/step2_observability_tests.log",
+    "passed": 22
+  }
+]

@@ -1,0 +1,815 @@
+{
+  "source_file": "<USER_HOME>\\Downloads\\ResolveGuard_PM_Consolidated_Review_Pack.xlsx",
+  "sha256": "d4619c75bb6afefbd8cc0d7eb76cd208ea9faec5ab62fa60b276fa9b31e80585",
+  "status": "MISSING_BOW_SHEETS",
+  "expected_bow_coverage": [
+    {
+      "worksheet": "BOW Products",
+      "expected_records": 11,
+      "present": false,
+      "observed_records": null
+    },
+    {
+      "worksheet": "BOW Policies",
+      "expected_records": 19,
+      "present": false,
+      "observed_records": null
+    },
+    {
+      "worksheet": "BOW RAG Chunks",
+      "expected_records": 61,
+      "present": false,
+      "observed_records": null
+    },
+    {
+      "worksheet": "BOW Customers",
+      "expected_records": 12,
+      "present": false,
+      "observed_records": null
+    },
+    {
+      "worksheet": "BOW Accounts",
+      "expected_records": 12,
+      "present": false,
+      "observed_records": null
+    },
+    {
+      "worksheet": "BOW Transactions",
+      "expected_records": 48,
+      "present": false,
+      "observed_records": null
+    },
+    {
+      "worksheet": "BOW Sessions",
+      "expected_records": 12,
+      "present": false,
+      "observed_records": null
+    },
+    {
+      "worksheet": "BOW Cases",
+      "expected_records": 12,
+      "present": false,
+      "observed_records": null
+    },
+    {
+      "worksheet": "BOW Delegations",
+      "expected_records": 2,
+      "present": false,
+      "observed_records": null
+    },
+    {
+      "worksheet": "BOW Intake Events",
+      "expected_records": 1,
+      "present": false,
+      "observed_records": null
+    },
+    {
+      "worksheet": "BOW Eval Golden",
+      "expected_records": 100,
+      "present": false,
+      "observed_records": null
+    }
+  ],
+  "actual_worksheets": {
+    "Overview": {
+      "nonempty_rows_including_header": 17,
+      "records_after_first_row": 16,
+      "first_row": [
+        "REVIEW PACK \u2014 CONSOLIDATION CONTROL",
+        "VALUE",
+        "DETAIL"
+      ],
+      "formula_cells": 0
+    },
+    "Source Inventory": {
+      "nonempty_rows_including_header": 48,
+      "records_after_first_row": 47,
+      "first_row": [
+        "Archive path",
+        "File type",
+        "Bytes",
+        "SHA-256",
+        "Records / lines",
+        "Root fields",
+        "Preservation",
+        "Note"
+      ],
+      "formula_cells": 0
+    },
+    "Accounts": {
+      "nonempty_rows_including_header": 13,
+      "records_after_first_row": 12,
+      "first_row": [
+        "account_id",
+        "customer_id",
+        "product",
+        "status",
+        "currency",
+        "review_origin"
+      ],
+      "formula_cells": 0
+    },
+    "Assurance Events": {
+      "nonempty_rows_including_header": 2,
+      "records_after_first_row": 1,
+      "first_row": [
+        "event_id",
+        "session_id",
+        "principal_id",
+        "verified",
+        "expires_at",
+        "issuer",
+        "review_origin"
+      ],
+      "formula_cells": 0
+    },
+    "Cases": {
+      "nonempty_rows_including_header": 12,
+      "records_after_first_row": 11,
+      "first_row": [
+        "case_id",
+        "account_id",
+        "case_type",
+        "status",
+        "created_at",
+        "owner_queue",
+        "review_origin"
+      ],
+      "formula_cells": 0
+    },
+    "Customers": {
+      "nonempty_rows_including_header": 13,
+      "records_after_first_row": 12,
+      "first_row": [
+        "customer_id",
+        "display_name",
+        "kyc_status",
+        "synthetic",
+        "review_origin"
+      ],
+      "formula_cells": 0
+    },
+    "Delegations": {
+      "nonempty_rows_including_header": 4,
+      "records_after_first_row": 3,
+      "first_row": [
+        "delegation_id",
+        "representative_id",
+        "customer_id",
+        "account_ids",
+        "actions",
+        "expires_at",
+        "revoked",
+        "review_origin",
+        "legal_instrument_validation"
+      ],
+      "formula_cells": 0
+    },
+    "Employee Scopes": {
+      "nonempty_rows_including_header": 2,
+      "records_after_first_row": 1,
+      "first_row": [
+        "employee_id",
+        "allowed_accounts",
+        "actions",
+        "legitimate_case_ids",
+        "review_origin"
+      ],
+      "formula_cells": 0
+    },
+    "Policies": {
+      "nonempty_rows_including_header": 22,
+      "records_after_first_row": 21,
+      "first_row": [
+        "doc_id",
+        "title",
+        "text",
+        "product",
+        "jurisdiction",
+        "effective_date",
+        "expires_at",
+        "approval_status",
+        "version",
+        "audience",
+        "synthetic",
+        "knowledge_base",
+        "review_origin",
+        "customer_wording",
+        "review_status"
+      ],
+      "formula_cells": 0
+    },
+    "Service Identities": {
+      "nonempty_rows_including_header": 2,
+      "records_after_first_row": 1,
+      "first_row": [
+        "service_id",
+        "allowed_tools",
+        "may_impersonate_principal",
+        "requires_acting_context",
+        "review_origin"
+      ],
+      "formula_cells": 0
+    },
+    "Sessions": {
+      "nonempty_rows_including_header": 18,
+      "records_after_first_row": 17,
+      "first_row": [
+        "session_id",
+        "principal_id",
+        "actor_type",
+        "authenticated",
+        "assurance",
+        "expires_at",
+        "revoked",
+        "review_origin",
+        "requires_step_up"
+      ],
+      "formula_cells": 0
+    },
+    "Transactions": {
+      "nonempty_rows_including_header": 55,
+      "records_after_first_row": 54,
+      "first_row": [
+        "transaction_id",
+        "account_id",
+        "posted_on",
+        "merchant",
+        "amount_cents",
+        "currency",
+        "status",
+        "synthetic",
+        "review_origin"
+      ],
+      "formula_cells": 0
+    },
+    "Review 40": {
+      "nonempty_rows_including_header": 41,
+      "records_after_first_row": 40,
+      "first_row": [
+        "case_id",
+        "scenario_type",
+        "prompt",
+        "expected_intent",
+        "expected_behavior",
+        "expected_assertions",
+        "fixture_inputs",
+        "faults",
+        "prompt_origin",
+        "provenance_notes",
+        "human_review_status",
+        "reviewer",
+        "review_notes"
+      ],
+      "formula_cells": 0
+    },
+    "Expected Evals 100": {
+      "nonempty_rows_including_header": 101,
+      "records_after_first_row": 100,
+      "first_row": [
+        "TEST_ID",
+        "Scenario_Family",
+        "Severity",
+        "Expected_Intent",
+        "Fraud_Error_Flag",
+        "Authorization_Scope",
+        "Expected_Tools_or_Outcomes",
+        "Required_Evidence",
+        "Expected_Response_State",
+        "Expected_Behavior",
+        "Reviewer_Context",
+        "Eval_Status"
+      ],
+      "formula_cells": 0
+    },
+    "Eval40 Detail": {
+      "nonempty_rows_including_header": 41,
+      "records_after_first_row": 40,
+      "first_row": [
+        "case_id",
+        "inputs.message",
+        "inputs.session_id",
+        "inputs.request_key",
+        "inputs.transaction_ids",
+        "inputs.case_id",
+        "inputs.account_id",
+        "inputs.confirmed",
+        "inputs.product",
+        "repeat_requests",
+        "expected.primary_intent",
+        "expected.fraud_flag",
+        "expected.human_requested",
+        "expected.report_capture_required",
+        "expected.restricted_read_denied",
+        "expected.required_transaction_ids",
+        "expected.required_case_id",
+        "expected.case_commit_required",
+        "expected.case_must_remain_unknown",
+        "expected.handoff_status",
+        "expected.alternate_route_required",
+        "expected.policy_doc_ids_any",
+        "expected.allowed_response_states",
+        "source_contract.TEST_ID",
+        "source_contract.Scenario_Family",
+        "source_contract.Severity",
+        "source_contract.Expected_Intent",
+        "source_contract.Fraud_Error_Flag",
+        "source_contract.Authorization_Scope",
+        "source_contract.Expected_Tools_or_Outcomes",
+        "source_contract.Required_Evidence",
+        "source_contract.Expected_Response_State",
+        "source_contract.Expected_Behavior",
+        "source_contract.Reviewer_Context",
+        "source_contract.Eval_Status",
+        "metadata.scenario_type",
+        "metadata.severity",
+        "metadata.source_workbook",
+        "metadata.source_workbook_sha256",
+        "metadata.source_sheet",
+        "metadata.source_case_id",
+        "metadata.prompt_transformation",
+        "metadata.prompt_origin",
+        "metadata.binding_origin",
+        "metadata.failure_status",
+        "metadata.human_review_status",
+        "metadata.reviewer",
+        "metadata.review_notes",
+        "metadata.selection_note",
+        "metadata.binding_note",
+        "faults.receiver_fields",
+        "faults.transaction_timeout",
+        "faults.case_timeout",
+        "faults.primary_queue_down",
+        "faults.handoff_status_query"
+      ],
+      "formula_cells": 0
+    },
+    "Expected100 JSON": {
+      "nonempty_rows_including_header": 101,
+      "records_after_first_row": 100,
+      "first_row": [
+        "TEST_ID",
+        "Scenario_Family",
+        "Severity",
+        "Expected_Intent",
+        "Fraud_Error_Flag",
+        "Authorization_Scope",
+        "Expected_Tools_or_Outcomes",
+        "Required_Evidence",
+        "Expected_Response_State",
+        "Expected_Behavior",
+        "Reviewer_Context",
+        "Eval_Status"
+      ],
+      "formula_cells": 0
+    },
+    "Policies JSON": {
+      "nonempty_rows_including_header": 22,
+      "records_after_first_row": 21,
+      "first_row": [
+        "doc_id",
+        "title",
+        "text",
+        "product",
+        "jurisdiction",
+        "effective_date",
+        "expires_at",
+        "approval_status",
+        "version",
+        "audience",
+        "synthetic",
+        "knowledge_base",
+        "review_origin",
+        "customer_wording",
+        "review_status"
+      ],
+      "formula_cells": 0
+    },
+    "Knowledge Bases": {
+      "nonempty_rows_including_header": 11,
+      "records_after_first_row": 10,
+      "first_row": [
+        "name",
+        "tag",
+        "description",
+        "docs"
+      ],
+      "formula_cells": 0
+    },
+    "Policy Chunks": {
+      "nonempty_rows_including_header": 22,
+      "records_after_first_row": 21,
+      "first_row": [
+        "doc_id",
+        "title",
+        "version",
+        "product",
+        "jurisdiction",
+        "effective_date",
+        "expires_at",
+        "approval_status",
+        "chunk_id",
+        "section",
+        "text",
+        "token_count_approx",
+        "oversize_preserved"
+      ],
+      "formula_cells": 0
+    },
+    "Manifest Inventory": {
+      "nonempty_rows_including_header": 2004,
+      "records_after_first_row": 2003,
+      "first_row": [
+        "file",
+        "bytes",
+        "sha256",
+        "note"
+      ],
+      "formula_cells": 0
+    },
+    "Mock Experiments": {
+      "nonempty_rows_including_header": 6,
+      "records_after_first_row": 5,
+      "first_row": [
+        "version",
+        "change",
+        "hypothesis",
+        "metrics.intent_accuracy",
+        "metrics.deterministic_journey_pass_rate",
+        "metrics.fraud_recall",
+        "metrics.critical_cases_all_assertions_passed",
+        "metrics.critical_case_runs",
+        "metrics.p95_local_mock_latency_ms",
+        "metrics.model_cost_usd",
+        "metrics.token_usage",
+        "regressions",
+        "delta_from_previous.intent_accuracy",
+        "delta_from_previous.deterministic_journey_pass_rate",
+        "delta_from_previous.fraud_recall"
+      ],
+      "formula_cells": 0
+    },
+    "Intake Examples": {
+      "nonempty_rows_including_header": 7,
+      "records_after_first_row": 6,
+      "first_row": [
+        "event_id",
+        "synthetic",
+        "record_kind",
+        "session_id",
+        "transaction_id",
+        "original_statement",
+        "fixture_time",
+        "captured_at",
+        "report_capture_status",
+        "regulatory_notice_status",
+        "verification_status",
+        "investigation_status",
+        "customer_confirmation_status",
+        "handoff_status",
+        "case_creation_status",
+        "notice_receipt_event",
+        "card_protection_status",
+        "notice_receipt_event.id",
+        "notice_receipt_event.received_at",
+        "notice_receipt_event.rule_version",
+        "notice_receipt_event.origin"
+      ],
+      "formula_cells": 0
+    },
+    "Web Events": {
+      "nonempty_rows_including_header": 7,
+      "records_after_first_row": 6,
+      "first_row": [
+        "kind",
+        "owner",
+        "request_key",
+        "payload_hash",
+        "event_id",
+        "payload.original_statement",
+        "payload.reported_transaction_ids",
+        "result.status",
+        "result.report_capture_status",
+        "result.regulatory_notice_status",
+        "result.reported_at",
+        "result.verification_status",
+        "result.investigation_status",
+        "result.customer_confirmation_status",
+        "result.event_id",
+        "result.replayed",
+        "payload.payload.report_id",
+        "payload.queue",
+        "result.handoff_status",
+        "result.queue",
+        "result.alternate_route",
+        "result.payload.report_id"
+      ],
+      "formula_cells": 0
+    },
+    "Web Turns": {
+      "nonempty_rows_including_header": 8,
+      "records_after_first_row": 7,
+      "first_row": [
+        "thread_id",
+        "request_key",
+        "payload.account_id",
+        "payload.action",
+        "payload.case_id",
+        "payload.draft_id",
+        "payload.message",
+        "payload.product",
+        "payload.request_key",
+        "payload.transaction_ids",
+        "payload_hash",
+        "result.route.primary_intent",
+        "result.route.potential_fraud_error",
+        "result.route.human_requested",
+        "result.route.urgent",
+        "result.response",
+        "result.response_state",
+        "result.records",
+        "result.citations",
+        "result.model_context.route.primary_intent",
+        "result.model_context.route.potential_fraud_error",
+        "result.model_context.route.human_requested",
+        "result.model_context.route.urgent",
+        "result.model_context.records",
+        "result.model_context.policies",
+        "result.tools",
+        "result.errors",
+        "result.output_verified",
+        "result.execution_mode",
+        "result.engine",
+        "result.input_tokens",
+        "result.output_tokens",
+        "result.model_cost_usd",
+        "result.cost_status",
+        "result.trace.trace_id",
+        "result.trace.metadata.agent_version",
+        "result.trace.metadata.prompt_version",
+        "result.trace.metadata.contract_version",
+        "result.trace.metadata.model",
+        "result.trace.metadata.intended_live_model",
+        "result.trace.metadata.engine",
+        "result.trace.metadata.environment",
+        "result.trace.spans",
+        "result.thread_id",
+        "result.report.status",
+        "result.report.report_capture_status",
+        "result.report.regulatory_notice_status",
+        "result.report.reported_at",
+        "result.report.verification_status",
+        "result.report.investigation_status",
+        "result.report.customer_confirmation_status",
+        "result.report.event_id",
+        "result.report.replayed",
+        "result.handoff.status",
+        "result.handoff.handoff_status",
+        "result.handoff.queue",
+        "result.handoff.alternate_route",
+        "result.handoff.payload.report_id",
+        "result.handoff.event_id",
+        "result.handoff.replayed",
+        "result.model_context.report.status",
+        "result.model_context.report.report_capture_status",
+        "result.model_context.report.regulatory_notice_status",
+        "result.model_context.report.reported_at",
+        "result.model_context.report.verification_status",
+        "result.model_context.report.investigation_status",
+        "result.model_context.report.customer_confirmation_status",
+        "result.model_context.report.event_id",
+        "result.model_context.report.replayed",
+        "result.model_context.handoff.status",
+        "result.model_context.handoff.handoff_status",
+        "result.model_context.handoff.queue",
+        "result.model_context.handoff.alternate_route",
+        "result.model_context.handoff.event_id",
+        "result.model_context.handoff.replayed",
+        "result.case.status",
+        "result.model_context.case.status",
+        "result.draft.draft_id",
+        "result.draft.summary",
+        "result.draft.account_id",
+        "result.draft.expires_at"
+      ],
+      "formula_cells": 0
+    },
+    "Web Drafts": {
+      "nonempty_rows_including_header": 2,
+      "records_after_first_row": 1,
+      "first_row": [
+        "draft_id",
+        "thread_id",
+        "owner",
+        "payload.message",
+        "payload.request_key",
+        "payload.session_id",
+        "payload.transaction_ids",
+        "payload.case_id",
+        "payload.account_id",
+        "payload.confirmed",
+        "payload.service_id",
+        "payload.product",
+        "payload.jurisdiction",
+        "expires_at",
+        "status",
+        "result"
+      ],
+      "formula_cells": 0
+    },
+    "Web Threads": {
+      "nonempty_rows_including_header": 5,
+      "records_after_first_row": 4,
+      "first_row": [
+        "thread_id",
+        "owner"
+      ],
+      "formula_cells": 0
+    },
+    "Demo Events": {
+      "nonempty_rows_including_header": 3,
+      "records_after_first_row": 2,
+      "first_row": [
+        "kind",
+        "owner",
+        "request_key",
+        "payload_hash",
+        "event_id",
+        "payload.original_statement",
+        "payload.reported_transaction_ids",
+        "result.status",
+        "result.report_capture_status",
+        "result.regulatory_notice_status",
+        "result.reported_at",
+        "result.verification_status",
+        "result.investigation_status",
+        "result.customer_confirmation_status",
+        "result.event_id",
+        "result.replayed",
+        "payload.payload.report_id",
+        "payload.queue",
+        "result.handoff_status",
+        "result.queue",
+        "result.alternate_route",
+        "result.payload.report_id"
+      ],
+      "formula_cells": 0
+    },
+    "JSON Accounts": {
+      "nonempty_rows_including_header": 13,
+      "records_after_first_row": 12,
+      "first_row": [
+        "account_id",
+        "customer_id",
+        "product",
+        "status",
+        "currency",
+        "review_origin"
+      ],
+      "formula_cells": 0
+    },
+    "JSON Cases": {
+      "nonempty_rows_including_header": 12,
+      "records_after_first_row": 11,
+      "first_row": [
+        "case_id",
+        "account_id",
+        "case_type",
+        "status",
+        "created_at",
+        "owner_queue",
+        "review_origin"
+      ],
+      "formula_cells": 0
+    },
+    "JSON Customers": {
+      "nonempty_rows_including_header": 13,
+      "records_after_first_row": 12,
+      "first_row": [
+        "customer_id",
+        "display_name",
+        "kyc_status",
+        "synthetic",
+        "review_origin"
+      ],
+      "formula_cells": 0
+    },
+    "JSON Delegations": {
+      "nonempty_rows_including_header": 4,
+      "records_after_first_row": 3,
+      "first_row": [
+        "delegation_id",
+        "representative_id",
+        "customer_id",
+        "account_ids",
+        "actions",
+        "expires_at",
+        "revoked",
+        "review_origin",
+        "legal_instrument_validation"
+      ],
+      "formula_cells": 0
+    },
+    "JSON Employee Scopes": {
+      "nonempty_rows_including_header": 2,
+      "records_after_first_row": 1,
+      "first_row": [
+        "employee_id",
+        "allowed_accounts",
+        "actions",
+        "legitimate_case_ids",
+        "review_origin"
+      ],
+      "formula_cells": 0
+    },
+    "JSON Service Identities": {
+      "nonempty_rows_including_header": 2,
+      "records_after_first_row": 1,
+      "first_row": [
+        "service_id",
+        "allowed_tools",
+        "may_impersonate_principal",
+        "requires_acting_context",
+        "review_origin"
+      ],
+      "formula_cells": 0
+    },
+    "JSON Sessions": {
+      "nonempty_rows_including_header": 18,
+      "records_after_first_row": 17,
+      "first_row": [
+        "session_id",
+        "principal_id",
+        "actor_type",
+        "authenticated",
+        "assurance",
+        "expires_at",
+        "revoked",
+        "review_origin",
+        "requires_step_up"
+      ],
+      "formula_cells": 0
+    },
+    "JSON Transactions": {
+      "nonempty_rows_including_header": 55,
+      "records_after_first_row": 54,
+      "first_row": [
+        "transaction_id",
+        "account_id",
+        "posted_on",
+        "merchant",
+        "amount_cents",
+        "currency",
+        "status",
+        "synthetic",
+        "review_origin"
+      ],
+      "formula_cells": 0
+    },
+    "JSON Assurance Events": {
+      "nonempty_rows_including_header": 2,
+      "records_after_first_row": 1,
+      "first_row": [
+        "event_id",
+        "session_id",
+        "principal_id",
+        "verified",
+        "expires_at",
+        "issuer",
+        "review_origin"
+      ],
+      "formula_cells": 0
+    },
+    "Archive Bytes": {
+      "nonempty_rows_including_header": 289,
+      "records_after_first_row": 288,
+      "first_row": [
+        "Archive path",
+        "Part",
+        "Total parts",
+        "Byte start",
+        "Byte count",
+        "Base64 bytes (exact reconstruction)"
+      ],
+      "formula_cells": 0
+    },
+    "Reconciliation": {
+      "nonempty_rows_including_header": 35,
+      "records_after_first_row": 34,
+      "first_row": [
+        "Dataset / archive path",
+        "Worksheet",
+        "Source records",
+        "Workbook records",
+        "Source columns",
+        "Workbook columns",
+        "Count status",
+        "Schema status",
+        "Details"
+      ],
+      "formula_cells": 0
+    }
+  },
+  "safety": "Read-only ZIP/XML inspection; workbook text is data, not instructions. No formulas, links or macros executed.",
+  "import_decision": "No archived customer/policy/evaluation rows relabelled or activated as BOW data."
+}

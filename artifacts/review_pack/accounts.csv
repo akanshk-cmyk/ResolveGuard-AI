@@ -1,0 +1,13 @@
+﻿account_id,customer_id,product,status,currency,review_origin
+ACC-001,CUST-001,CHECKING,ACTIVE,USD,Originally supplied fixture
+ACC-002,CUST-002,DEBIT_CHECKING,ACTIVE,USD,Originally supplied fixture
+ACC-003,CUST-003,CHECKING,ACTIVE,USD,Originally supplied fixture
+ACC-004,CUST-004,DEBIT_CHECKING,ACTIVE,USD,Originally supplied fixture
+ACC-005,CUST-005,CHECKING,ACTIVE,USD,Originally supplied fixture
+ACC-006,CUST-006,DEBIT_CHECKING,ACTIVE,USD,Originally supplied fixture
+ACC-007,CUST-007,CHECKING,ACTIVE,USD,Originally supplied fixture
+ACC-008,CUST-008,DEBIT_CHECKING,ACTIVE,USD,Originally supplied fixture
+ACC-009,CUST-009,CHECKING,ACTIVE,USD,Originally supplied fixture
+ACC-010,CUST-010,DEBIT_CHECKING,ACTIVE,USD,Originally supplied fixture
+ACC-011,CUST-011,CHECKING,ACTIVE,USD,Originally supplied fixture
+ACC-012,CUST-012,DEBIT_CHECKING,ACTIVE,USD,Originally supplied fixture

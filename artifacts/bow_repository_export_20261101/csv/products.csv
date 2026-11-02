@@ -1,0 +1,12 @@
+﻿product_id,product_name,product_type,tier,monthly_fee_cents_or_annual_card_fee_cents,currency,waiver_or_fee_terms,illustrative_apy_percent,reward_structure,eligibility,access_level,effective_date
+BOW-CHK-001,Whatever Everyday Checking,checking,Everyday,600,USD,no fee with qualifying direct deposit ≥ $750 monthly OR daily balance ≥ $1500; otherwise $6,0.00,none,debit standard,PUBLIC,2026-10-01
+BOW-CHK-002,Whatever Plus Checking,checking,Plus,1200,USD,waive with monthly direct deposit ≥ $2000 OR combined eligible balance ≥ $10000,0.00,"1% eligible debit cashback up to $8/month, demo only",debit plus,PUBLIC,2026-10-01
+BOW-CHK-003,Whatever Premier Checking,checking,Premier,2500,USD,waive with combined eligible balance ≥ $25000,0.05,"1.5% eligible debit rewards capped at $15/month, demo only",debit premier,PUBLIC,2026-10-01
+BOW-SAV-001,Whatever Starter Savings,savings,Starter,0,USD,no monthly maintenance fee,2.00,"variable APY, no balance tiers",none,PUBLIC,2026-10-01
+BOW-SAV-002,Whatever High-Five Savings,savings,High-Five,0,USD,no monthly fee,3.20,variable APY applies to balances below $10000; 3.50% on $10000+,none,PUBLIC,2026-10-01
+BOW-SAV-003,Whatever Premier Savings,savings,Premier,0,USD,no monthly fee; Premier Checking relationship eligibility,3.65,"variable APY, relationship conditions apply",none,PUBLIC,2026-10-01
+BOW-CARD-001,Whatever Debit,debit_card,Standard,0,USD,no annual card fee; out-of-network ATM charges may apply,0.00,no rewards,linked eligible checking,PUBLIC,2026-10-01
+BOW-CARD-002,Whatever Debit Plus,debit_card,Plus,0,USD,no annual card fee,0.00,"1% on eligible debit purchases, capped at $8/month",linked Plus Checking,PUBLIC,2026-10-01
+BOW-CARD-003,Whatever Premier Debit,debit_card,Premier,0,USD,no annual card fee,0.00,"1.5% eligible debit, capped $15/month",linked Premier Checking,PUBLIC,2026-10-01
+BOW-CREDIT-001,Whatever Cash-ish Card,credit_card,Cash-ish,0,USD,$0 annual fee; APR varies by applicant and terms,0.00,"1.5% eligible purchases, sample reward terms only",application outside servicing MVP,PUBLIC,2026-10-01
+BOW-CREDIT-002,YOLO Miles Card,credit_card,Travel,9500,USD,$95 annual fee; APR varies by applicant and terms,0.00,2 points per $1 eligible travel; 1 point per $1 elsewhere,application outside servicing MVP,PUBLIC,2026-10-01

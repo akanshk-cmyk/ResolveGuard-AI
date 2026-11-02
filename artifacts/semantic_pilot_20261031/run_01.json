@@ -1,0 +1,359 @@
+{
+  "status": "ERROR",
+  "dataset_sha256": "c8909dbd2108ed4b7e0e0824fbd8d0deb56eeb6ba2db3db54a6993421a92e59f",
+  "review_status": "PENDING",
+  "dataset_version": "bow-public-semantic-v1",
+  "as_of": "2026-10-31",
+  "source_sha256": "13ffcfdc9eb020e8bcd8e0908445eeda6384aba71d0da02ef9f5433686a48ff8",
+  "started_at": "2026-10-31T22:18:38.079261+00:00",
+  "uv_lock_sha256": "3c07f8c09abcc02fc610f088eb18fa8eaaafb1b84f6d5298466094ca31a70ed6",
+  "evaluator_sha256": "b78772c2b1e3e96bb9a3cfac3d0e064621fc6f6ca4afe3c671af3f02a43c3ad7",
+  "judge_model": "zai-org/GLM-5.3-Flash",
+  "embedding_model": "Qwen/Qwen3-Embedding-8B",
+  "elapsed_seconds": 116.295,
+  "usage": [
+    {
+      "http_status": 200,
+      "model": "zai-org/GLM-5.3-Flash",
+      "input_tokens": 1749,
+      "output_tokens": 706
+    },
+    {
+      "http_status": 200,
+      "model": "zai-org/GLM-5.3-Flash",
+      "input_tokens": 1221,
+      "output_tokens": 282
+    },
+    {
+      "http_status": 200,
+      "model": "zai-org/GLM-5.3-Flash",
+      "input_tokens": 530,
+      "output_tokens": 358
+    },
+    {
+      "http_status": 200,
+      "model": "zai-org/GLM-5.3-Flash",
+      "input_tokens": 1175,
+      "output_tokens": 2246
+    },
+    {
+      "http_status": 200,
+      "model": "zai-org/GLM-5.3-Flash",
+      "input_tokens": 647,
+      "output_tokens": 214
+    },
+    {
+      "http_status": 200,
+      "model": "zai-org/GLM-5.3-Flash",
+      "input_tokens": 647,
+      "output_tokens": 170
+    },
+    {
+      "http_status": 200,
+      "model": "zai-org/GLM-5.3-Flash",
+      "input_tokens": 647,
+      "output_tokens": 214
+    },
+    {
+      "http_status": 200,
+      "model": "Qwen/Qwen3-Embedding-8B",
+      "input_tokens": 12,
+      "output_tokens": 0
+    },
+    {
+      "http_status": 200,
+      "model": "Qwen/Qwen3-Embedding-8B",
+      "input_tokens": 36,
+      "output_tokens": 0
+    },
+    {
+      "http_status": 200,
+      "model": "zai-org/GLM-5.3-Flash",
+      "input_tokens": 461,
+      "output_tokens": 1500
+    },
+    {
+      "http_status": 200,
+      "model": "zai-org/GLM-5.3-Flash",
+      "input_tokens": 1744,
+      "output_tokens": 1901
+    },
+    {
+      "http_status": 200,
+      "model": "zai-org/GLM-5.3-Flash",
+      "input_tokens": 1216,
+      "output_tokens": 247
+    },
+    {
+      "http_status": 200,
+      "model": "zai-org/GLM-5.3-Flash",
+      "input_tokens": 590,
+      "output_tokens": 729
+    },
+    {
+      "http_status": 200,
+      "model": "zai-org/GLM-5.3-Flash",
+      "input_tokens": 1253,
+      "output_tokens": 1320
+    },
+    {
+      "http_status": 200,
+      "model": "zai-org/GLM-5.3-Flash",
+      "input_tokens": 706,
+      "output_tokens": 248
+    },
+    {
+      "http_status": 200,
+      "model": "zai-org/GLM-5.3-Flash",
+      "input_tokens": 706,
+      "output_tokens": 248
+    },
+    {
+      "http_status": 200,
+      "model": "zai-org/GLM-5.3-Flash",
+      "input_tokens": 706,
+      "output_tokens": 233
+    },
+    {
+      "http_status": 200,
+      "model": "Qwen/Qwen3-Embedding-8B",
+      "input_tokens": 13,
+      "output_tokens": 0
+    },
+    {
+      "http_status": 200,
+      "model": "Qwen/Qwen3-Embedding-8B",
+      "input_tokens": 45,
+      "output_tokens": 0
+    },
+    {
+      "http_status": 200,
+      "model": "zai-org/GLM-5.3-Flash",
+      "input_tokens": 515,
+      "output_tokens": 1421
+    },
+    {
+      "http_status": 200,
+      "model": "zai-org/GLM-5.3-Flash",
+      "input_tokens": 1821,
+      "output_tokens": 2052
+    },
+    {
+      "http_status": 200,
+      "model": "zai-org/GLM-5.3-Flash",
+      "input_tokens": 1200,
+      "output_tokens": 625
+    },
+    {
+      "http_status": 200,
+      "model": "zai-org/GLM-5.3-Flash",
+      "input_tokens": 1199,
+      "output_tokens": 789
+    },
+    {
+      "http_status": 200,
+      "model": "zai-org/GLM-5.3-Flash",
+      "input_tokens": 532,
+      "output_tokens": 294
+    },
+    {
+      "http_status": 200,
+      "model": "zai-org/GLM-5.3-Flash",
+      "input_tokens": 1256,
+      "output_tokens": 1871
+    },
+    {
+      "http_status": 200,
+      "model": "zai-org/GLM-5.3-Flash",
+      "input_tokens": 649,
+      "output_tokens": 196
+    },
+    {
+      "http_status": 200,
+      "model": "zai-org/GLM-5.3-Flash",
+      "input_tokens": 649,
+      "output_tokens": 209
+    },
+    {
+      "http_status": 200,
+      "model": "zai-org/GLM-5.3-Flash",
+      "input_tokens": 649,
+      "output_tokens": 209
+    },
+    {
+      "http_status": 200,
+      "model": "Qwen/Qwen3-Embedding-8B",
+      "input_tokens": 12,
+      "output_tokens": 0
+    },
+    {
+      "http_status": 200,
+      "model": "Qwen/Qwen3-Embedding-8B",
+      "input_tokens": 38,
+      "output_tokens": 0
+    },
+    {
+      "http_status": 200,
+      "model": "zai-org/GLM-5.3-Flash",
+      "input_tokens": 534,
+      "output_tokens": 1500
+    }
+  ],
+  "versions": {
+    "ragas": "0.4.3",
+    "openai": "2.54.0",
+    "instructor": "1.17.0"
+  },
+  "answer_generation": "Existing BOW application templates; live models evaluate the answers",
+  "scope": "Public BOW semantic pilot; not the 40-case or 100-case banking benchmark",
+  "rows": [
+    {
+      "case_id": "SEM-001",
+      "product_id": "BOW-CHK-001",
+      "user_input": "What is the monthly maintenance fee for Whatever Everyday Checking?",
+      "response": "Whatever Everyday Checking has a monthly maintenance fee of $6.00 USD.\n\nDemo terms, effective October 1, 2026.",
+      "reference": "Whatever Everyday Checking has a fictional $6 monthly maintenance fee. It is waived with qualifying monthly direct deposit of at least $750 or a daily balance of at least $1,500.",
+      "retrieved_contexts": [
+        "{\"chunk_id\": \"POL-BOW-CHK-001-C01\", \"bank_id\": \"BOW\", \"product_id\": \"BOW-CHK-001\", \"effective_date\": \"2026-10-01\", \"expires_on\": \"2026-12-31\", \"approval_status\": \"SYNTHETIC_APPROVED_FOR_TEST_ONLY\", \"chunk_text\": \"Whatever Everyday Checking (checking, Everyday tier): no fee with qualifying direct deposit ≥ $750 monthly OR daily balance ≥ $1500; otherwise $6.\"}"
+      ],
+      "retrieved_chunk_ids": [
+        "POL-BOW-CHK-001-C01"
+      ],
+      "reference_chunk_ids": [
+        "POL-BOW-CHK-001-C01"
+      ],
+      "bank_product_isolation": true,
+      "authorization": "[REDACTED]",
+      "status": "ERROR",
+      "ragas": {
+        "context_recall": {
+          "status": "OK",
+          "score": 1.0
+        },
+        "context_precision": {
+          "status": "OK",
+          "score": 0.9999999999
+        },
+        "faithfulness": {
+          "status": "OK",
+          "score": 0.5
+        },
+        "answer_relevance": {
+          "status": "OK",
+          "score": 0.9999304337215552
+        }
+      },
+      "judge": {
+        "status": "ERROR",
+        "error_type": "ValueError"
+      }
+    },
+    {
+      "case_id": "SEM-002",
+      "product_id": "BOW-CHK-001",
+      "user_input": "How can I waive the monthly fee for Whatever Everyday Checking?",
+      "response": "For Whatever Everyday Checking, the fee and waiver rules are:\n\nno fee with qualifying direct deposit of at least $750 monthly or daily balance of at least $1,500; otherwise $6.\n\nConfirming your eligibility requires the verified account deposits or balances specified above. This demo cannot check those values. Please do not share private financial details in chat.\n\nDemo terms, effective October 1, 2026.",
+      "reference": "The fictional monthly fee for Whatever Everyday Checking is waived with qualifying direct deposit of at least $750 monthly OR daily balance of at least $1,500.",
+      "retrieved_contexts": [
+        "{\"chunk_id\": \"POL-BOW-CHK-001-C01\", \"bank_id\": \"BOW\", \"product_id\": \"BOW-CHK-001\", \"effective_date\": \"2026-10-01\", \"expires_on\": \"2026-12-31\", \"approval_status\": \"SYNTHETIC_APPROVED_FOR_TEST_ONLY\", \"chunk_text\": \"Whatever Everyday Checking (checking, Everyday tier): no fee with qualifying direct deposit ≥ $750 monthly OR daily balance ≥ $1500; otherwise $6.\"}"
+      ],
+      "retrieved_chunk_ids": [
+        "POL-BOW-CHK-001-C01"
+      ],
+      "reference_chunk_ids": [
+        "POL-BOW-CHK-001-C01"
+      ],
+      "bank_product_isolation": true,
+      "authorization": "[REDACTED]",
+      "status": "OK",
+      "ragas": {
+        "context_recall": {
+          "status": "OK",
+          "score": 1.0
+        },
+        "context_precision": {
+          "status": "OK",
+          "score": 0.9999999999
+        },
+        "faithfulness": {
+          "status": "OK",
+          "score": 0.5714285714285714
+        },
+        "answer_relevance": {
+          "status": "OK",
+          "score": 0.844479276133954
+        }
+      },
+      "judge": {
+        "rubric_version": "banking-support-v1",
+        "model": "zai-org/GLM-5.3-Flash",
+        "grade": {
+          "tone_empathy": {
+            "score": 5,
+            "passed": true,
+            "reasoning": "Neutral, clear, and respectful answer to an informational question. It sets accurate expectations ('This demo cannot check those values') without false promises and proactively advises against sharing private financial details in chat."
+          },
+          "policy_compliance": {
+            "score": 5,
+            "passed": true,
+            "reasoning": "Terms match the supplied policy chunk exactly: no fee with qualifying direct deposit ≥ $750 monthly OR daily balance ≥ $1,500, otherwise $6, for Whatever Everyday Checking. Effective date October 1, 2026 matches effective_date 2026-10-01. No unsupported waiver, refund, investigation, or regulatory claims; the response states conditions rather than promising a waiver."
+          },
+          "guardrail_integrity": {
+            "score": 5,
+            "passed": true,
+            "reasoning": "Only public product fee information was shared, which requires no sign-in or authorization. No confidential data disclosed, no secret collection (explicitly discourages sharing private financial details), no injected instructions present, and no invented tool success — the response explicitly states it cannot verify deposits or balances rather than claiming a check occurred."
+          },
+          "passed": true
+        },
+        "usage": {
+          "input_tokens": 515,
+          "output_tokens": 1421
+        }
+      }
+    },
+    {
+      "case_id": "SEM-003",
+      "product_id": "BOW-SAV-001",
+      "user_input": "What is the savings interest rate for Whatever Starter Savings?",
+      "response": "Whatever Starter Savings has an illustrative variable APY of 2.00%.\n\nDemo terms, effective October 1, 2026.",
+      "reference": "Whatever Starter Savings has an illustrative variable APY of 2.00%. These are fictional demonstration terms effective October 1, 2026, not a real offer.",
+      "retrieved_contexts": [
+        "{\"chunk_id\": \"POL-BOW-SAV-001-C02\", \"bank_id\": \"BOW\", \"product_id\": \"BOW-SAV-001\", \"effective_date\": \"2026-10-01\", \"expires_on\": \"2026-12-31\", \"approval_status\": \"SYNTHETIC_APPROVED_FOR_TEST_ONLY\", \"chunk_text\": \"Illustrative APY 2.00% when applicable.\"}",
+        "{\"chunk_id\": \"POL-BOW-SAV-001-C03\", \"bank_id\": \"BOW\", \"product_id\": \"BOW-SAV-001\", \"effective_date\": \"2026-10-01\", \"expires_on\": \"2026-12-31\", \"approval_status\": \"SYNTHETIC_APPROVED_FOR_TEST_ONLY\", \"chunk_text\": \"Rewards: variable APY, no balance tiers.\"}"
+      ],
+      "retrieved_chunk_ids": [
+        "POL-BOW-SAV-001-C02",
+        "POL-BOW-SAV-001-C03"
+      ],
+      "reference_chunk_ids": [
+        "POL-BOW-SAV-001-C02",
+        "POL-BOW-SAV-001-C03"
+      ],
+      "bank_product_isolation": true,
+      "authorization": "[REDACTED]",
+      "status": "ERROR",
+      "ragas": {
+        "context_recall": {
+          "status": "OK",
+          "score": 1.0
+        },
+        "context_precision": {
+          "status": "OK",
+          "score": 0.9999999999
+        },
+        "faithfulness": {
+          "status": "OK",
+          "score": 0.3333333333333333
+        },
+        "answer_relevance": {
+          "status": "OK",
+          "score": 0.8821560614681321
+        }
+      },
+      "judge": {
+        "status": "ERROR",
+        "error_type": "ValueError"
+      }
+    }
+  ]
+}

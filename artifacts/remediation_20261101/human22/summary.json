@@ -1,0 +1,10 @@
+{
+  "cases": 22,
+  "automated_behavior_passed": 22,
+  "human_marks_unchanged": true,
+  "human_reassessment": "PENDING",
+  "source_sha256": "94a56ba93a2881cfe52752e857a2ce6ff818a742c03ce49dac4f16bb5410acf9",
+  "mode": "SYNTHETIC_NO_PROVIDER_CALLS",
+  "not_a_matched_human_before_after_score": true,
+  "preconditions_note": "New isolated fixture runs. Original session IDs and exact product selections were not supplied; declared preconditions are reproducible assumptions."
+}

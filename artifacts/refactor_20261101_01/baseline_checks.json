@@ -1,0 +1,72 @@
+[
+  {
+    "name": "main_tests",
+    "command": [
+      "python",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-q"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 73.0,
+    "tests_run": 321,
+    "skipped": 1,
+    "log": "artifacts/refactor_20261101_01/baseline_main_tests.log",
+    "passed": 320
+  },
+  {
+    "name": "fixture_tests",
+    "command": [
+      "python",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "resolveguard_synthetic_v04/tests",
+      "-q"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.281,
+    "tests_run": 13,
+    "skipped": 0,
+    "log": "artifacts/refactor_20261101_01/baseline_fixture_tests.log",
+    "passed": 13
+  },
+  {
+    "name": "original100",
+    "command": [
+      "python",
+      "-m",
+      "resolveguard.full_evaluation",
+      "--suite",
+      "original",
+      "--output",
+      ".\\artifacts\\refactor_20261101_01\\baseline_original100"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 7.078,
+    "tests_run": null,
+    "skipped": 0,
+    "log": "artifacts/refactor_20261101_01/baseline_original100.log"
+  },
+  {
+    "name": "bow100",
+    "command": [
+      "python",
+      "-m",
+      "resolveguard.full_evaluation",
+      "--suite",
+      "bow",
+      "--output",
+      ".\\artifacts\\refactor_20261101_01\\baseline_bow100"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 26.297,
+    "tests_run": null,
+    "skipped": 0,
+    "log": "artifacts/refactor_20261101_01/baseline_bow100.log"
+  }
+]

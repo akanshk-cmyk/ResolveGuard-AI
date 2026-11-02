@@ -1,0 +1,183 @@
+{
+  "version": "demo-baseline-8",
+  "status": "SYNTHETIC_ASSUMPTIONS_NOT_APPROVED_BANK_POLICY",
+  "as_of": "2026-10-30",
+  "purpose": "Learning/demo prototype; no production readiness or real performance claims",
+  "authority": "PRD v0.4 used as a proposed design reference, not an approved requirements baseline",
+  "scope": {
+    "products": [
+      "US consumer checking",
+      "debit card"
+    ],
+    "channel": "simulated authenticated in-app text chat plus public intake",
+    "language": "English",
+    "priority_journeys": [
+      "fraud/error intake",
+      "transaction inquiries"
+    ],
+    "representatives_and_employees": "negative authorization tests; customer-facing workflows deferred",
+    "prohibited_actions": [
+      "transfer_money",
+      "issue_refund",
+      "reset_credentials",
+      "adjudicate_dispute",
+      "freeze_card"
+    ]
+  },
+  "business_assumptions": {
+    "source": "Invented planning inputs; not industry benchmarks or observed results",
+    "monthly_interactions": 1000,
+    "journey_mix": {
+      "fraud_error_intake": 0.4,
+      "transaction_inquiry": 0.4,
+      "other_regression": 0.2
+    },
+    "current_human_handling_minutes_per_interaction": 10,
+    "repeat_contact_rate_within_7_days": 0.25,
+    "cost_per_human_handled_interaction_usd": 8,
+    "derived_monthly_handling_hours": 166.67,
+    "derived_monthly_handling_cost_usd": 8000,
+    "benefit_forecast": "Not estimated until demo outcomes are measured; no assumed containment savings"
+  },
+  "synthetic_data": {
+    "reuse_existing_fixtures": true,
+    "counts": {
+      "accounts": 12,
+      "cases": 8,
+      "customers": 12,
+      "delegations": 2,
+      "employee_scopes": 1,
+      "knowledge_bases": 10,
+      "service_identities": 1,
+      "sessions": 15,
+      "transactions": 48
+    },
+    "money_representation": "integer cents",
+    "clock": "2026-10-30T13:00:00Z",
+    "demo_event_reset": "Reset examples between independent evaluation runs"
+  },
+  "intake_rules": {
+    "rule_version": "DEMO-INTAKE-1",
+    "capture": "Preserve original report and capture timestamp independently of restricted account disclosure",
+    "regulatory_notice_status_default": "REVIEW_REQUIRED",
+    "legal_receipt_event": "Only explicitly seeded simulated backend event; never inferred from chat",
+    "legal_deadlines": "Not calculated; institution-specific rules unresolved",
+    "case_creation": "Separate from report capture; no committed case claim on unknown outcome",
+    "confirmation": "Report capture, legal notice, verification, investigation and customer acknowledgment tracked separately"
+  },
+  "operations_assumptions": {
+    "timezone": "America/Los_Angeles",
+    "regular_queue": {
+      "id": "DEMO-CUSTOMER-SUPPORT",
+      "hours": "Monday-Friday 09:00-17:00 local; holidays not modeled"
+    },
+    "urgent_queue": {
+      "id": "DEMO-FRAUD-PRIMARY",
+      "hours": "24x7 simulated availability"
+    },
+    "fallback_queue": {
+      "id": "DEMO-FRAUD-BACKUP",
+      "hours": "24x7 simulated availability"
+    },
+    "all_queues_unavailable": "Preserve intake and state that live connection is unavailable; no fabricated connection or contact details",
+    "handoff_success": "Requires simulated delivery acknowledgment and authorized receiving-agent scope",
+    "public_contact_details": "None; queue IDs are internal demo labels"
+  },
+  "demo_data_handling": {
+    "inputs": "Synthetic fixtures only",
+    "model_context": "Allowlisted authorized fields; no auth secrets",
+    "memory": "Session-scoped context; clear on principal change; no long-term customer memory",
+    "telemetry": "Sanitized trace inputs/outputs with opaque IDs",
+    "retention": "Local demo artifacts kept until explicit reset; no production retention policy inferred"
+  },
+  "recommended_stack": {
+    "development": "Codex",
+    "interface_and_hosting": "Replit",
+    "runtime_inference": "Nebius Token Factory serverless; GLM-5.3-Flash selected by user for the current demo",
+    "evaluation_and_traces": "LangSmith",
+    "backend": "Python fixture authority and SQLite durable reports/cases/handoffs with scoped idempotency",
+    "retrieval": "Implemented local keyword policy index with version/date/product/jurisdiction filters; no embeddings",
+    "alternative_observability": "Langfuse instead of LangSmith, if preferred; not both",
+    "runtime_provider": "Nebius Token Factory",
+    "runtime_base_url": "https://api.tokenfactory.nebius.com/v1",
+    "runtime_model": "zai-org/GLM-5.3-Flash",
+    "model_selection_status": "Selected for now by user; ResolveGuard model evaluations not yet executed",
+    "workflow_orchestration": "LangGraph StateGraph definition with one mocked conversational model; same node functions tested through explicit offline executor"
+  },
+  "acceptance": {
+    "execution_status": "NOT_RUN",
+    "all_cases": 100,
+    "critical_cases": 84,
+    "standard_cases": 16,
+    "critical_gate": "Every mandatory assertion passes in all 84 critical cases; missing evidence blocks demo acceptance",
+    "classification_target": "At least 95 of 100 correct primary intents as a proposed demo target, independently of critical gates",
+    "priority_model_journeys": "At least three repeated runs per selected fraud and transaction journey; report each result and all-runs-pass separately",
+    "required_evidence": [
+      "expected vs actual route",
+      "fraud and human flags",
+      "authorization decision",
+      "tool arguments and returned fields",
+      "backend capture/commit/acknowledgment events",
+      "customer-visible state",
+      "sanitized trace ID"
+    ],
+    "latency_target": "Proposed p95 under 5 seconds for single-turn completed demo responses; exclude simulated human wait and report timeouts separately",
+    "judge_policy": "Deterministic checks govern permissions, amounts, identifiers and states; optional semantic judges need human calibration"
+  },
+  "demo_review_roles": {
+    "product_and_fixture_owner": "Learner/project owner",
+    "engineering_and_test_owner": "Learner/project owner",
+    "independent_label_review": "Second reviewer where available; otherwise disclose self-review",
+    "legal_privacy_security": "Simulated role checklist only; no professional approval claimed"
+  },
+  "known_gaps": [
+    "Human labels, semantic review and source provenance attestation pending",
+    "Nebius live authentication/schema support, real token cost and latency unverified",
+    "LangSmith Cloud authentication/uploads/hosted experiments unverified; no cloud writes performed",
+    "Policy retrieval case RG-056 still fails in the improved mock",
+    "Original 100-case safety suite not fully executed; 40-case development set is not independent holdout qualification",
+    "Real browser rendering, Replit hosting/persistence checks and Loom remain pending",
+    "Synthetic identity/queue rules and single-worker SQLite deployment are demo-only; no real bank integrations or legal approval"
+  ],
+  "proposed_rag_settings": {
+    "status": "Design only; not implemented or benchmarked",
+    "chunking": "Heading/topic/procedure first; preserve rule and exception together",
+    "target_tokens_per_chunk": [
+      300,
+      500
+    ],
+    "overlap_tokens_for_long_prose": 50,
+    "short_sections": "Keep whole",
+    "long_sections": "Split at sentence boundaries",
+    "tables": "Preserve row meaning and repeat headers if split",
+    "metadata": [
+      "source_id",
+      "section_or_page",
+      "version",
+      "product",
+      "jurisdiction",
+      "approval_status",
+      "effective_date",
+      "expires_at"
+    ],
+    "retrieval": "Filter applicable passages, rank local word matches, select up to 3-5 useful passages",
+    "insufficient_or_conflicting_evidence": "Safe explanation or human route; do not invent policy",
+    "private_records": "Structured authorized API lookups, not policy chunks"
+  },
+  "implementation_status": {
+    "local_offline_workflow": "Implemented and tested with mocked responses",
+    "langgraph": "LangGraph 1.2.19 installed and locally verified: 40 cases x 3 repeats; offline parity passed",
+    "langsmith": "LangSmith 0.14.16 installed; actual RunTree tested with intercepted local create/update operations. No Cloud authentication, uploads or experiments performed.",
+    "durable_storage": "SQLite reports, cases, handoff acknowledgments and scoped idempotency implemented",
+    "policy_rag": "Local keyword index, policy filters and approximate structure-aware chunking implemented",
+    "evaluation": "40 draft cases x 3 repeats per engine after Pydantic migration; all checks and substantive outputs match earlier mock results. Original 100-case suite not fully executed.",
+    "human_review": "All 40 selected labels and bindings pending; original prompt authorship unknown",
+    "live_model": "Nebius classification adapter prepared and fake-transport tested; zero actual provider calls",
+    "validation": "Pydantic 2.14.2: strict request/routing, fault controls, backend/policy outcomes and durable event boundaries. Graph-internal state remains a dataclass.",
+    "continuity_fixes": "Created-case lookup, centralized assurance and combined-obligation acknowledgment fixed and regression tested",
+    "conversations": "SQLite LangGraph checkpoints, browser/session-bound threads, retry recovery and permission rechecks implemented",
+    "confirmation": "Expiring stored drafts with customer/thread/account binding, cancellation and atomic idempotent confirmation implemented",
+    "interface": "Local FastAPI interface and Replit run configuration built; no hosted deployment; browser rendering not visually verified",
+    "iteration": "Four cumulative mock-rule experiments on unchanged 40-case draft dataset; routing 85% to 100%, complete-case 80% to 97.5%; not real GLM or holdout evidence"
+  }
+}

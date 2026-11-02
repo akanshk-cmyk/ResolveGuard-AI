@@ -1,0 +1,105 @@
+{
+  "status": "Observed mock failures only; human root-cause annotation required",
+  "clusters": [
+    {
+      "category": "routing_exact",
+      "count": 18,
+      "example_case_ids": [
+        "RG-018",
+        "RG-018",
+        "RG-018"
+      ],
+      "estimated_rework_minutes": 180,
+      "cost_basis": "Illustrative 10-minute baseline rework assumption; not measured financial harm"
+    },
+    {
+      "category": "response_state",
+      "count": 18,
+      "example_case_ids": [
+        "RG-018",
+        "RG-018",
+        "RG-018"
+      ],
+      "estimated_rework_minutes": 180,
+      "cost_basis": "Illustrative 10-minute baseline rework assumption; not measured financial harm"
+    },
+    {
+      "category": "handoff_truth",
+      "count": 9,
+      "example_case_ids": [
+        "RG-020",
+        "RG-020",
+        "RG-020"
+      ],
+      "estimated_rework_minutes": 90,
+      "cost_basis": "Illustrative 10-minute baseline rework assumption; not measured financial harm"
+    },
+    {
+      "category": "human_flag",
+      "count": 9,
+      "example_case_ids": [
+        "RG-032",
+        "RG-032",
+        "RG-032"
+      ],
+      "estimated_rework_minutes": 90,
+      "cost_basis": "Illustrative 10-minute baseline rework assumption; not measured financial harm"
+    },
+    {
+      "category": "case_commit_truth",
+      "count": 6,
+      "example_case_ids": [
+        "RG-018",
+        "RG-018",
+        "RG-018"
+      ],
+      "estimated_rework_minutes": 60,
+      "cost_basis": "Illustrative 10-minute baseline rework assumption; not measured financial harm"
+    },
+    {
+      "category": "fraud_flag",
+      "count": 6,
+      "example_case_ids": [
+        "RG-020",
+        "RG-020",
+        "RG-020"
+      ],
+      "estimated_rework_minutes": 60,
+      "cost_basis": "Illustrative 10-minute baseline rework assumption; not measured financial harm"
+    },
+    {
+      "category": "report_preserved",
+      "count": 6,
+      "example_case_ids": [
+        "RG-020",
+        "RG-020",
+        "RG-020"
+      ],
+      "estimated_rework_minutes": 60,
+      "cost_basis": "Illustrative 10-minute baseline rework assumption; not measured financial harm"
+    },
+    {
+      "category": "report_before_restricted_read",
+      "count": 6,
+      "example_case_ids": [
+        "RG-020",
+        "RG-020",
+        "RG-020"
+      ],
+      "estimated_rework_minutes": 60,
+      "cost_basis": "Illustrative 10-minute baseline rework assumption; not measured financial harm"
+    },
+    {
+      "category": "policy_evidence",
+      "count": 3,
+      "example_case_ids": [
+        "RG-056",
+        "RG-056",
+        "RG-056"
+      ],
+      "estimated_rework_minutes": 30,
+      "cost_basis": "Illustrative 10-minute baseline rework assumption; not measured financial harm"
+    }
+  ],
+  "improvements": "Not applied; preserve this run as mock diagnostic evidence, not a live model baseline."
+}

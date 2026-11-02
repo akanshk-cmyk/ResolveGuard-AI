@@ -1,0 +1,42 @@
+[
+  {
+    "name": "web_tests",
+    "command": [
+      "python",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_web.py",
+      "-q"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 7.609,
+    "tests_run": 14,
+    "skipped": 0,
+    "log": "artifacts/refactor_20261101_01/step1_web_tests.log",
+    "passed": 14
+  },
+  {
+    "name": "contract_tests",
+    "command": [
+      "python",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_pydantic_contracts.py",
+      "-q"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 3.063,
+    "tests_run": 26,
+    "skipped": 0,
+    "log": "artifacts/refactor_20261101_01/step1_contract_tests.log",
+    "passed": 26
+  }
+]

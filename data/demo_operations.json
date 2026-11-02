@@ -1,0 +1,8 @@
+{
+  "version":"demo-operations-v1",
+  "approval":"SYNTHETIC_TEST_ONLY",
+  "notice":"Invented local scheduling rules. No bank commitment or real telephone call.",
+  "queues":["CUSTOMER_SUPPORT","FRAUD_OPERATIONS","FRAUD_BACKUP"],
+  "callback_start_minutes":30,
+  "callback_end_minutes":60
+}

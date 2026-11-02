@@ -1,0 +1,11 @@
+{
+  "guest_report_preserved_before_auth": true,
+  "guest_no_lock_or_private_cards": true,
+  "original_request_resumed": true,
+  "authenticated_demo_lock_verified": true,
+  "demo_fraud_ticket_saved": true,
+  "model_generation_bypassed": true,
+  "guest_latency_ms": 377.74,
+  "verified_latency_ms": 446.46,
+  "scope": "Synthetic BOW backend only. No real card frozen or official bank dispute filed."
+}

@@ -1,0 +1,86 @@
+{
+  "bank_id": "BOW",
+  "bank_name": "BOW - fictional demo bank",
+  "catalog_version": "user-message-v1",
+  "source": "User-provided BOW product tables in chat, October 30, 2026; not imported from the supplied workbook",
+  "approval_status": "SYNTHETIC_USER_SUPPLIED_PENDING_REVIEW",
+  "notice": "Invented demonstration terms and rates, not real banking offers or institution-approved policies.",
+  "products": [
+    {
+      "product_id": "BOW-CHK-001",
+      "id_origin": "Assigned for staging; reconcile against missing BOW worksheet",
+      "name": "Whatever Everyday Checking",
+      "category": "CHECKING",
+      "monthly_fee_cents": 600,
+      "waiver": "Direct deposit of at least $750 monthly, or a qualifying balance of $1,500.",
+      "effective_date": null,
+      "expires_on": null
+    },
+    {
+      "product_id": "BOW-CHK-002",
+      "id_origin": "Product variant explicitly given in user metadata",
+      "name": "Whatever Plus Checking",
+      "category": "CHECKING",
+      "monthly_fee_cents": 1200,
+      "waiver": "Direct deposit of at least $2,000 monthly, or an eligible combined balance of $10,000.",
+      "effective_date": null,
+      "expires_on": null
+    },
+    {
+      "product_id": "BOW-CHK-003",
+      "id_origin": "Assigned for staging; reconcile against missing BOW worksheet",
+      "name": "Whatever Premier Checking",
+      "category": "CHECKING",
+      "monthly_fee_cents": 2500,
+      "waiver": "Eligible combined balance of at least $25,000.",
+      "effective_date": null,
+      "expires_on": null
+    },
+    {
+      "product_id": "BOW-SAV-001",
+      "id_origin": "Assigned for staging; reconcile against missing BOW worksheet",
+      "name": "Whatever Starter Savings",
+      "category": "SAVINGS",
+      "rates_percent": [
+        "2.00"
+      ],
+      "conditions": "Variable rate.",
+      "effective_date": "2026-10-01",
+      "expires_on": null
+    },
+    {
+      "product_id": "BOW-SAV-002",
+      "id_origin": "Assigned for staging; reconcile against missing BOW worksheet",
+      "name": "Whatever High-Five Savings",
+      "category": "SAVINGS",
+      "rates_percent": [
+        "3.20",
+        "3.50"
+      ],
+      "conditions": "APY differs by balance tier. Tier thresholds were not supplied; do not assign a rate to a balance.",
+      "effective_date": "2026-10-01",
+      "expires_on": null
+    },
+    {
+      "product_id": "BOW-SAV-003",
+      "id_origin": "Assigned for staging; reconcile against missing BOW worksheet",
+      "name": "Whatever Premier Savings",
+      "category": "SAVINGS",
+      "rates_percent": [
+        "3.65"
+      ],
+      "conditions": "Eligible relationship required. Detailed relationship eligibility was not supplied.",
+      "effective_date": "2026-10-01",
+      "expires_on": null
+    }
+  ],
+  "coverage": {
+    "expected_products": 11,
+    "specified_products": 6,
+    "missing_details": "Three debit-card tiers and two credit-card products need full product metadata. YOLO Miles Card is mentioned by name only; no terms invented.",
+    "credit_card_servicing": "Outside original MVP; not enabled.",
+    "checking_policy_effective_dates": "Not supplied. Fee values are review data only and are not presented as verified current policy."
+  },
+  "runtime_status": "SUPERSEDED_BY_VALIDATED_BOW_WORKBOOK_NOT_ACTIVE",
+  "superseded_by": "data/bow/active.json"
+}

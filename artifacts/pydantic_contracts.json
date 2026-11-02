@@ -1,0 +1,1431 @@
+{
+  "version": "pydantic-boundaries-v1",
+  "note": "Shape validation is not authorization or proof of committed effects. JSON array-to-tuple normalization is explicit; other value coercion is disabled.",
+  "schemas": {
+    "Request": {
+      "additionalProperties": false,
+      "description": "Trusted caller supplies fixture identity; chat text cannot set authority.",
+      "properties": {
+        "message": {
+          "maxLength": 20000,
+          "minLength": 1,
+          "title": "Message",
+          "type": "string"
+        },
+        "request_key": {
+          "maxLength": 200,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "title": "Request Key",
+          "type": "string"
+        },
+        "session_id": {
+          "default": "SESS-001",
+          "maxLength": 200,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "title": "Session Id",
+          "type": "string"
+        },
+        "transaction_ids": {
+          "default": [],
+          "items": {
+            "maxLength": 200,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+            "type": "string"
+          },
+          "maxLength": 20,
+          "title": "Transaction Ids",
+          "type": "array"
+        },
+        "case_id": {
+          "anyOf": [
+            {
+              "maxLength": 200,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Case Id"
+        },
+        "account_id": {
+          "anyOf": [
+            {
+              "maxLength": 200,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Account Id"
+        },
+        "confirmed": {
+          "default": false,
+          "title": "Confirmed",
+          "type": "boolean"
+        },
+        "service_id": {
+          "default": "resolveguard-agent",
+          "maxLength": 200,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "title": "Service Id",
+          "type": "string"
+        },
+        "product": {
+          "default": "DEBIT_CHECKING",
+          "enum": [
+            "CHECKING",
+            "DEBIT_CHECKING"
+          ],
+          "title": "Product",
+          "type": "string"
+        },
+        "jurisdiction": {
+          "const": "US",
+          "default": "US",
+          "title": "Jurisdiction",
+          "type": "string"
+        },
+        "bank_id": {
+          "default": "LEGACY_DEMO",
+          "enum": [
+            "LEGACY_DEMO",
+            "BOW"
+          ],
+          "title": "Bank Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "message",
+        "request_key"
+      ],
+      "title": "Request",
+      "type": "object"
+    },
+    "Route": {
+      "additionalProperties": false,
+      "properties": {
+        "primary_intent": {
+          "enum": [
+            "FEE_INQUIRY",
+            "POLICY_LOOKUP",
+            "TRANSACTION_INQUIRY",
+            "CASE_STATUS",
+            "FRAUD_ERROR_REPORT",
+            "SUPPORT_CASE_REQUEST",
+            "HUMAN_REQUEST",
+            "UNSUPPORTED_REQUEST",
+            "OTHER_OR_UNCLEAR"
+          ],
+          "title": "Primary Intent",
+          "type": "string"
+        },
+        "potential_fraud_error": {
+          "title": "Potential Fraud Error",
+          "type": "boolean"
+        },
+        "human_requested": {
+          "title": "Human Requested",
+          "type": "boolean"
+        },
+        "urgent": {
+          "title": "Urgent",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "primary_intent",
+        "potential_fraud_error",
+        "human_requested",
+        "urgent"
+      ],
+      "title": "Route",
+      "type": "object"
+    },
+    "Faults": {
+      "additionalProperties": false,
+      "description": "Mutable, assignment-validated simulator controls; never model-generated.",
+      "properties": {
+        "transaction_timeout": {
+          "default": false,
+          "title": "Transaction Timeout",
+          "type": "boolean"
+        },
+        "case_timeout": {
+          "default": false,
+          "title": "Case Timeout",
+          "type": "boolean"
+        },
+        "intake_timeout": {
+          "default": false,
+          "title": "Intake Timeout",
+          "type": "boolean"
+        },
+        "intake_commit_then_timeout": {
+          "default": false,
+          "title": "Intake Commit Then Timeout",
+          "type": "boolean"
+        },
+        "case_commit_then_timeout": {
+          "default": false,
+          "title": "Case Commit Then Timeout",
+          "type": "boolean"
+        },
+        "primary_queue_down": {
+          "default": false,
+          "title": "Primary Queue Down",
+          "type": "boolean"
+        },
+        "backup_queue_down": {
+          "default": false,
+          "title": "Backup Queue Down",
+          "type": "boolean"
+        },
+        "handoff_timeout": {
+          "default": false,
+          "title": "Handoff Timeout",
+          "type": "boolean"
+        },
+        "receiver_denied": {
+          "default": false,
+          "title": "Receiver Denied",
+          "type": "boolean"
+        },
+        "receiver_fields": {
+          "default": [
+            "case_id",
+            "report_id"
+          ],
+          "items": {
+            "enum": [
+              "case_id",
+              "report_id"
+            ],
+            "type": "string"
+          },
+          "maxLength": 2,
+          "title": "Receiver Fields",
+          "type": "array"
+        },
+        "handoff_status_query": {
+          "default": false,
+          "title": "Handoff Status Query",
+          "type": "boolean"
+        },
+        "step_up_verified": {
+          "default": false,
+          "title": "Step Up Verified",
+          "type": "boolean"
+        }
+      },
+      "title": "Faults",
+      "type": "object"
+    },
+    "Explanation": {
+      "additionalProperties": false,
+      "properties": {
+        "response": {
+          "maxLength": 65536,
+          "minLength": 1,
+          "title": "Response",
+          "type": "string"
+        }
+      },
+      "required": [
+        "response"
+      ],
+      "title": "Explanation",
+      "type": "object"
+    },
+    "transaction_result": {
+      "$defs": {
+        "ReadFailure": {
+          "additionalProperties": false,
+          "properties": {
+            "status": {
+              "enum": [
+                "DENIED",
+                "UNKNOWN"
+              ],
+              "title": "Status",
+              "type": "string"
+            },
+            "reason_code": {
+              "anyOf": [
+                {
+                  "maxLength": 200,
+                  "minLength": 1,
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Reason Code"
+            },
+            "data": {
+              "default": null,
+              "title": "Data",
+              "type": "null"
+            }
+          },
+          "required": [
+            "status"
+          ],
+          "title": "ReadFailure",
+          "type": "object"
+        },
+        "TransactionData": {
+          "additionalProperties": false,
+          "properties": {
+            "transaction_id": {
+              "maxLength": 200,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+              "title": "Transaction Id",
+              "type": "string"
+            },
+            "posted_on": {
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+              "title": "Posted On",
+              "type": "string"
+            },
+            "merchant": {
+              "maxLength": 300,
+              "minLength": 1,
+              "title": "Merchant",
+              "type": "string"
+            },
+            "amount_cents": {
+              "maximum": 9223372036854775807,
+              "minimum": -9223372036854775808,
+              "title": "Amount Cents",
+              "type": "integer"
+            },
+            "currency": {
+              "const": "USD",
+              "title": "Currency",
+              "type": "string"
+            },
+            "status": {
+              "enum": [
+                "PENDING",
+                "POSTED",
+                "REVERSED",
+                "DECLINED"
+              ],
+              "title": "Status",
+              "type": "string"
+            },
+            "bank_id": {
+              "anyOf": [
+                {
+                  "const": "BOW",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Bank Id"
+            },
+            "product_id": {
+              "anyOf": [
+                {
+                  "maxLength": 200,
+                  "minLength": 1,
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Product Id"
+            },
+            "account_display": {
+              "anyOf": [
+                {
+                  "pattern": "^[\\u2022*]{2,4}\\d{4}$",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Account Display"
+            }
+          },
+          "required": [
+            "transaction_id",
+            "posted_on",
+            "merchant",
+            "amount_cents",
+            "currency",
+            "status"
+          ],
+          "title": "TransactionData",
+          "type": "object"
+        },
+        "TransactionSuccess": {
+          "additionalProperties": false,
+          "properties": {
+            "status": {
+              "const": "OK",
+              "title": "Status",
+              "type": "string"
+            },
+            "reason_code": {
+              "anyOf": [
+                {
+                  "maxLength": 200,
+                  "minLength": 1,
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Reason Code"
+            },
+            "data": {
+              "$ref": "#/$defs/TransactionData"
+            }
+          },
+          "required": [
+            "status",
+            "data"
+          ],
+          "title": "TransactionSuccess",
+          "type": "object"
+        }
+      },
+      "discriminator": {
+        "mapping": {
+          "DENIED": "#/$defs/ReadFailure",
+          "OK": "#/$defs/TransactionSuccess",
+          "UNKNOWN": "#/$defs/ReadFailure"
+        },
+        "propertyName": "status"
+      },
+      "oneOf": [
+        {
+          "$ref": "#/$defs/TransactionSuccess"
+        },
+        {
+          "$ref": "#/$defs/ReadFailure"
+        }
+      ]
+    },
+    "case_read_result": {
+      "$defs": {
+        "CaseData": {
+          "additionalProperties": false,
+          "properties": {
+            "case_id": {
+              "maxLength": 200,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+              "title": "Case Id",
+              "type": "string"
+            },
+            "case_type": {
+              "maxLength": 200,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+              "title": "Case Type",
+              "type": "string"
+            },
+            "status": {
+              "enum": [
+                "OPEN",
+                "PENDING_REVIEW",
+                "IN_REVIEW",
+                "WAITING_FOR_CUSTOMER",
+                "RESOLVED",
+                "CLOSED"
+              ],
+              "title": "Status",
+              "type": "string"
+            },
+            "created_at": {
+              "maxLength": 40,
+              "minLength": 20,
+              "title": "Created At",
+              "type": "string"
+            },
+            "owner_queue": {
+              "enum": [
+                "CUSTOMER_SUPPORT",
+                "FRAUD_OPERATIONS",
+                "BOW-SUPPORT",
+                "BOW-FRAUD"
+              ],
+              "title": "Owner Queue",
+              "type": "string"
+            }
+          },
+          "required": [
+            "case_id",
+            "case_type",
+            "status",
+            "created_at",
+            "owner_queue"
+          ],
+          "title": "CaseData",
+          "type": "object"
+        },
+        "CaseReadSuccess": {
+          "additionalProperties": false,
+          "properties": {
+            "status": {
+              "const": "OK",
+              "title": "Status",
+              "type": "string"
+            },
+            "reason_code": {
+              "anyOf": [
+                {
+                  "maxLength": 200,
+                  "minLength": 1,
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Reason Code"
+            },
+            "data": {
+              "$ref": "#/$defs/CaseData"
+            }
+          },
+          "required": [
+            "status",
+            "data"
+          ],
+          "title": "CaseReadSuccess",
+          "type": "object"
+        },
+        "ReadFailure": {
+          "additionalProperties": false,
+          "properties": {
+            "status": {
+              "enum": [
+                "DENIED",
+                "UNKNOWN"
+              ],
+              "title": "Status",
+              "type": "string"
+            },
+            "reason_code": {
+              "anyOf": [
+                {
+                  "maxLength": 200,
+                  "minLength": 1,
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Reason Code"
+            },
+            "data": {
+              "default": null,
+              "title": "Data",
+              "type": "null"
+            }
+          },
+          "required": [
+            "status"
+          ],
+          "title": "ReadFailure",
+          "type": "object"
+        }
+      },
+      "discriminator": {
+        "mapping": {
+          "DENIED": "#/$defs/ReadFailure",
+          "OK": "#/$defs/CaseReadSuccess",
+          "UNKNOWN": "#/$defs/ReadFailure"
+        },
+        "propertyName": "status"
+      },
+      "oneOf": [
+        {
+          "$ref": "#/$defs/CaseReadSuccess"
+        },
+        {
+          "$ref": "#/$defs/ReadFailure"
+        }
+      ]
+    },
+    "report_result": {
+      "$defs": {
+        "CapturedReport": {
+          "additionalProperties": false,
+          "properties": {
+            "status": {
+              "const": "OK",
+              "title": "Status",
+              "type": "string"
+            },
+            "report_capture_status": {
+              "const": "CAPTURED",
+              "title": "Report Capture Status",
+              "type": "string"
+            },
+            "regulatory_notice_status": {
+              "const": "REVIEW_REQUIRED",
+              "title": "Regulatory Notice Status",
+              "type": "string"
+            },
+            "reported_at": {
+              "maxLength": 40,
+              "minLength": 20,
+              "title": "Reported At",
+              "type": "string"
+            },
+            "verification_status": {
+              "enum": [
+                "VERIFIED",
+                "PENDING"
+              ],
+              "title": "Verification Status",
+              "type": "string"
+            },
+            "investigation_status": {
+              "const": "NOT_STARTED",
+              "title": "Investigation Status",
+              "type": "string"
+            },
+            "customer_confirmation_status": {
+              "const": "UNCONFIRMED",
+              "title": "Customer Confirmation Status",
+              "type": "string"
+            },
+            "event_id": {
+              "pattern": "^DEMO-REPORT-[0-9a-f]{16}$",
+              "title": "Event Id",
+              "type": "string"
+            },
+            "replayed": {
+              "title": "Replayed",
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "status",
+            "report_capture_status",
+            "regulatory_notice_status",
+            "reported_at",
+            "verification_status",
+            "investigation_status",
+            "customer_confirmation_status",
+            "event_id",
+            "replayed"
+          ],
+          "title": "CapturedReport",
+          "type": "object"
+        },
+        "WriteFailure": {
+          "additionalProperties": false,
+          "properties": {
+            "status": {
+              "enum": [
+                "DENIED",
+                "UNKNOWN",
+                "CONFLICT"
+              ],
+              "title": "Status",
+              "type": "string"
+            },
+            "reason_code": {
+              "anyOf": [
+                {
+                  "maxLength": 200,
+                  "minLength": 1,
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Reason Code"
+            }
+          },
+          "required": [
+            "status"
+          ],
+          "title": "WriteFailure",
+          "type": "object"
+        }
+      },
+      "discriminator": {
+        "mapping": {
+          "CONFLICT": "#/$defs/WriteFailure",
+          "DENIED": "#/$defs/WriteFailure",
+          "OK": "#/$defs/CapturedReport",
+          "UNKNOWN": "#/$defs/WriteFailure"
+        },
+        "propertyName": "status"
+      },
+      "oneOf": [
+        {
+          "$ref": "#/$defs/CapturedReport"
+        },
+        {
+          "$ref": "#/$defs/WriteFailure"
+        }
+      ]
+    },
+    "case_write_result": {
+      "$defs": {
+        "CommittedCase": {
+          "additionalProperties": false,
+          "properties": {
+            "status": {
+              "const": "OK",
+              "title": "Status",
+              "type": "string"
+            },
+            "case_status": {
+              "const": "OPEN",
+              "title": "Case Status",
+              "type": "string"
+            },
+            "committed_at": {
+              "maxLength": 40,
+              "minLength": 20,
+              "title": "Committed At",
+              "type": "string"
+            },
+            "event_id": {
+              "pattern": "^DEMO-CASE-[0-9a-f]{16}$",
+              "title": "Event Id",
+              "type": "string"
+            },
+            "replayed": {
+              "title": "Replayed",
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "status",
+            "case_status",
+            "committed_at",
+            "event_id",
+            "replayed"
+          ],
+          "title": "CommittedCase",
+          "type": "object"
+        },
+        "ConfirmationRequired": {
+          "additionalProperties": false,
+          "properties": {
+            "status": {
+              "const": "CONFIRMATION_REQUIRED",
+              "title": "Status",
+              "type": "string"
+            }
+          },
+          "required": [
+            "status"
+          ],
+          "title": "ConfirmationRequired",
+          "type": "object"
+        },
+        "WriteFailure": {
+          "additionalProperties": false,
+          "properties": {
+            "status": {
+              "enum": [
+                "DENIED",
+                "UNKNOWN",
+                "CONFLICT"
+              ],
+              "title": "Status",
+              "type": "string"
+            },
+            "reason_code": {
+              "anyOf": [
+                {
+                  "maxLength": 200,
+                  "minLength": 1,
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Reason Code"
+            }
+          },
+          "required": [
+            "status"
+          ],
+          "title": "WriteFailure",
+          "type": "object"
+        }
+      },
+      "discriminator": {
+        "mapping": {
+          "CONFIRMATION_REQUIRED": "#/$defs/ConfirmationRequired",
+          "CONFLICT": "#/$defs/WriteFailure",
+          "DENIED": "#/$defs/WriteFailure",
+          "OK": "#/$defs/CommittedCase",
+          "UNKNOWN": "#/$defs/WriteFailure"
+        },
+        "propertyName": "status"
+      },
+      "oneOf": [
+        {
+          "$ref": "#/$defs/CommittedCase"
+        },
+        {
+          "$ref": "#/$defs/WriteFailure"
+        },
+        {
+          "$ref": "#/$defs/ConfirmationRequired"
+        }
+      ]
+    },
+    "handoff_result": {
+      "$defs": {
+        "AcknowledgedHandoff": {
+          "additionalProperties": false,
+          "properties": {
+            "status": {
+              "const": "OK",
+              "title": "Status",
+              "type": "string"
+            },
+            "handoff_status": {
+              "const": "ACKNOWLEDGED",
+              "title": "Handoff Status",
+              "type": "string"
+            },
+            "queue": {
+              "enum": [
+                "CUSTOMER_SUPPORT",
+                "FRAUD_OPERATIONS",
+                "FRAUD_BACKUP"
+              ],
+              "title": "Queue",
+              "type": "string"
+            },
+            "alternate_route": {
+              "title": "Alternate Route",
+              "type": "boolean"
+            },
+            "payload": {
+              "$ref": "#/$defs/HandoffPayload"
+            },
+            "event_id": {
+              "pattern": "^DEMO-HANDOFF-[0-9a-f]{16}$",
+              "title": "Event Id",
+              "type": "string"
+            },
+            "replayed": {
+              "title": "Replayed",
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "status",
+            "handoff_status",
+            "queue",
+            "alternate_route",
+            "payload",
+            "event_id",
+            "replayed"
+          ],
+          "title": "AcknowledgedHandoff",
+          "type": "object"
+        },
+        "BlockedHandoff": {
+          "additionalProperties": false,
+          "properties": {
+            "status": {
+              "const": "DENIED",
+              "title": "Status",
+              "type": "string"
+            },
+            "handoff_status": {
+              "const": "BLOCKED",
+              "title": "Handoff Status",
+              "type": "string"
+            },
+            "reason_code": {
+              "anyOf": [
+                {
+                  "maxLength": 200,
+                  "minLength": 1,
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Reason Code"
+            },
+            "payload": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/HandoffPayload"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null
+            }
+          },
+          "required": [
+            "status",
+            "handoff_status"
+          ],
+          "title": "BlockedHandoff",
+          "type": "object"
+        },
+        "HandoffConflict": {
+          "additionalProperties": false,
+          "properties": {
+            "status": {
+              "const": "CONFLICT",
+              "title": "Status",
+              "type": "string"
+            },
+            "reason_code": {
+              "maxLength": 200,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+              "title": "Reason Code",
+              "type": "string"
+            }
+          },
+          "required": [
+            "status",
+            "reason_code"
+          ],
+          "title": "HandoffConflict",
+          "type": "object"
+        },
+        "HandoffPayload": {
+          "additionalProperties": false,
+          "properties": {
+            "case_id": {
+              "anyOf": [
+                {
+                  "maxLength": 200,
+                  "minLength": 1,
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Case Id"
+            },
+            "report_id": {
+              "anyOf": [
+                {
+                  "pattern": "^DEMO-REPORT-[0-9a-f]{16}$",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Report Id"
+            }
+          },
+          "title": "HandoffPayload",
+          "type": "object"
+        },
+        "UnknownHandoff": {
+          "additionalProperties": false,
+          "properties": {
+            "status": {
+              "const": "UNKNOWN",
+              "title": "Status",
+              "type": "string"
+            },
+            "handoff_status": {
+              "enum": [
+                "UNAVAILABLE",
+                "DELIVERY_UNKNOWN"
+              ],
+              "title": "Handoff Status",
+              "type": "string"
+            },
+            "reason_code": {
+              "anyOf": [
+                {
+                  "maxLength": 200,
+                  "minLength": 1,
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Reason Code"
+            },
+            "payload": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/HandoffPayload"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null
+            }
+          },
+          "required": [
+            "status",
+            "handoff_status"
+          ],
+          "title": "UnknownHandoff",
+          "type": "object"
+        }
+      },
+      "discriminator": {
+        "mapping": {
+          "CONFLICT": "#/$defs/HandoffConflict",
+          "DENIED": "#/$defs/BlockedHandoff",
+          "OK": "#/$defs/AcknowledgedHandoff",
+          "UNKNOWN": "#/$defs/UnknownHandoff"
+        },
+        "propertyName": "status"
+      },
+      "oneOf": [
+        {
+          "$ref": "#/$defs/AcknowledgedHandoff"
+        },
+        {
+          "$ref": "#/$defs/BlockedHandoff"
+        },
+        {
+          "$ref": "#/$defs/UnknownHandoff"
+        },
+        {
+          "$ref": "#/$defs/HandoffConflict"
+        }
+      ]
+    },
+    "policy_result": {
+      "$defs": {
+        "MissingPolicies": {
+          "additionalProperties": false,
+          "properties": {
+            "status": {
+              "enum": [
+                "NOT_FOUND",
+                "CONFLICT"
+              ],
+              "title": "Status",
+              "type": "string"
+            },
+            "chunks": {
+              "items": {
+                "$ref": "#/$defs/PolicyChunk"
+              },
+              "maxItems": 0,
+              "title": "Chunks",
+              "type": "array"
+            },
+            "reason_code": {
+              "anyOf": [
+                {
+                  "maxLength": 200,
+                  "minLength": 1,
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Reason Code"
+            }
+          },
+          "required": [
+            "status",
+            "chunks"
+          ],
+          "title": "MissingPolicies",
+          "type": "object"
+        },
+        "PolicyChunk": {
+          "additionalProperties": false,
+          "properties": {
+            "doc_id": {
+              "maxLength": 200,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+              "title": "Doc Id",
+              "type": "string"
+            },
+            "title": {
+              "maxLength": 20000,
+              "minLength": 1,
+              "title": "Title",
+              "type": "string"
+            },
+            "version": {
+              "maxLength": 200,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+              "title": "Version",
+              "type": "string"
+            },
+            "product": {
+              "enum": [
+                "ALL",
+                "CHECKING",
+                "DEBIT_CHECKING",
+                "SAVINGS",
+                "DEBIT_CARD",
+                "CREDIT_CARD"
+              ],
+              "title": "Product",
+              "type": "string"
+            },
+            "jurisdiction": {
+              "const": "US",
+              "title": "Jurisdiction",
+              "type": "string"
+            },
+            "effective_date": {
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+              "title": "Effective Date",
+              "type": "string"
+            },
+            "expires_at": {
+              "anyOf": [
+                {
+                  "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Expires At"
+            },
+            "approval_status": {
+              "enum": [
+                "APPROVED_FOR_SYNTHETIC_TEST",
+                "SYNTHETIC_APPROVED_FOR_TEST_ONLY"
+              ],
+              "title": "Approval Status",
+              "type": "string"
+            },
+            "chunk_id": {
+              "maxLength": 200,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+              "title": "Chunk Id",
+              "type": "string"
+            },
+            "section": {
+              "maxLength": 20000,
+              "minLength": 1,
+              "title": "Section",
+              "type": "string"
+            },
+            "text": {
+              "maxLength": 20000,
+              "minLength": 1,
+              "title": "Text",
+              "type": "string"
+            },
+            "token_count_approx": {
+              "exclusiveMinimum": 0,
+              "title": "Token Count Approx",
+              "type": "integer"
+            },
+            "oversize_preserved": {
+              "title": "Oversize Preserved",
+              "type": "boolean"
+            },
+            "score": {
+              "exclusiveMinimum": 0,
+              "title": "Score",
+              "type": "number"
+            },
+            "bank_id": {
+              "anyOf": [
+                {
+                  "const": "BOW",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Bank Id"
+            },
+            "product_id": {
+              "anyOf": [
+                {
+                  "maxLength": 200,
+                  "minLength": 1,
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Product Id"
+            },
+            "content_hash": {
+              "anyOf": [
+                {
+                  "pattern": "^[0-9a-f]{64}$",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Content Hash"
+            }
+          },
+          "required": [
+            "doc_id",
+            "title",
+            "version",
+            "product",
+            "jurisdiction",
+            "effective_date",
+            "expires_at",
+            "approval_status",
+            "chunk_id",
+            "section",
+            "text",
+            "token_count_approx",
+            "oversize_preserved",
+            "score"
+          ],
+          "title": "PolicyChunk",
+          "type": "object"
+        },
+        "RetrievedPolicies": {
+          "additionalProperties": false,
+          "properties": {
+            "status": {
+              "const": "OK",
+              "title": "Status",
+              "type": "string"
+            },
+            "chunks": {
+              "items": {
+                "$ref": "#/$defs/PolicyChunk"
+              },
+              "maxItems": 5,
+              "minItems": 1,
+              "title": "Chunks",
+              "type": "array"
+            }
+          },
+          "required": [
+            "status",
+            "chunks"
+          ],
+          "title": "RetrievedPolicies",
+          "type": "object"
+        }
+      },
+      "discriminator": {
+        "mapping": {
+          "CONFLICT": "#/$defs/MissingPolicies",
+          "NOT_FOUND": "#/$defs/MissingPolicies",
+          "OK": "#/$defs/RetrievedPolicies"
+        },
+        "propertyName": "status"
+      },
+      "oneOf": [
+        {
+          "$ref": "#/$defs/RetrievedPolicies"
+        },
+        {
+          "$ref": "#/$defs/MissingPolicies"
+        }
+      ]
+    },
+    "report_payload": {
+      "additionalProperties": false,
+      "properties": {
+        "original_statement": {
+          "maxLength": 20000,
+          "minLength": 1,
+          "title": "Original Statement",
+          "type": "string"
+        },
+        "reported_transaction_ids": {
+          "items": {
+            "maxLength": 200,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+            "type": "string"
+          },
+          "maxItems": 20,
+          "title": "Reported Transaction Ids",
+          "type": "array"
+        },
+        "bank_id": {
+          "default": "LEGACY_DEMO",
+          "enum": [
+            "LEGACY_DEMO",
+            "BOW"
+          ],
+          "title": "Bank Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "original_statement",
+        "reported_transaction_ids"
+      ],
+      "title": "ReportPayload",
+      "type": "object"
+    },
+    "case_payload": {
+      "additionalProperties": false,
+      "properties": {
+        "statement": {
+          "maxLength": 20000,
+          "minLength": 1,
+          "title": "Statement",
+          "type": "string"
+        },
+        "account_id": {
+          "maxLength": 200,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "title": "Account Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "statement",
+        "account_id"
+      ],
+      "title": "CasePayload",
+      "type": "object"
+    },
+    "handoff_payload": {
+      "$defs": {
+        "HandoffPayload": {
+          "additionalProperties": false,
+          "properties": {
+            "case_id": {
+              "anyOf": [
+                {
+                  "maxLength": 200,
+                  "minLength": 1,
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Case Id"
+            },
+            "report_id": {
+              "anyOf": [
+                {
+                  "pattern": "^DEMO-REPORT-[0-9a-f]{16}$",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Report Id"
+            }
+          },
+          "title": "HandoffPayload",
+          "type": "object"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "payload": {
+          "$ref": "#/$defs/HandoffPayload"
+        },
+        "queue": {
+          "enum": [
+            "CUSTOMER_SUPPORT",
+            "FRAUD_OPERATIONS",
+            "FRAUD_BACKUP"
+          ],
+          "title": "Queue",
+          "type": "string"
+        },
+        "bank_id": {
+          "default": "LEGACY_DEMO",
+          "enum": [
+            "LEGACY_DEMO",
+            "BOW"
+          ],
+          "title": "Bank Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "payload",
+        "queue"
+      ],
+      "title": "DeliveryPayload",
+      "type": "object"
+    }
+  }
+}

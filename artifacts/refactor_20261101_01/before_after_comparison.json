@@ -1,0 +1,36 @@
+{
+  "suites": {
+    "original100": {
+      "paired_cases": 100,
+      "baseline_passed": 100,
+      "after_passed": 100,
+      "behavior_differences": [],
+      "receipt_reference_only_changes": [],
+      "trace_records_same_structure": 102
+    },
+    "bow100": {
+      "paired_cases": 100,
+      "baseline_passed": 100,
+      "after_passed": 100,
+      "behavior_differences": [],
+      "receipt_reference_only_changes": [
+        "BOW-EVAL-083",
+        "BOW-EVAL-084",
+        "BOW-EVAL-085",
+        "BOW-EVAL-086",
+        "BOW-EVAL-087",
+        "BOW-EVAL-088",
+        "BOW-EVAL-089",
+        "BOW-EVAL-090"
+      ],
+      "trace_records_same_structure": 100
+    }
+  },
+  "api_schema": "UNCHANGED",
+  "ui_assets": "BYTE_IDENTICAL",
+  "graph_topology": "SOURCE_UNCHANGED",
+  "known_bow_source_conflicts": 16,
+  "human_labels_changed": false,
+  "public_service_statement_ast": "IDENTICAL",
+  "schema_initialization_statement_ast": "IDENTICAL"
+}

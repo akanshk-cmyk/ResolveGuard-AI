@@ -1,0 +1,110 @@
+[
+  {
+    "case_id": "BOW-CASE-001",
+    "account_id": "BOW-ACC-001",
+    "case_type": "FEE_INQUIRY",
+    "status": "OPEN",
+    "created_at": "2026-10-20T12:00:00+00:00",
+    "owner_queue": "BOW-SUPPORT",
+    "synthetic": true
+  },
+  {
+    "case_id": "BOW-CASE-002",
+    "account_id": "BOW-ACC-002",
+    "case_type": "DEBIT_ERROR",
+    "status": "OPEN",
+    "created_at": "2026-10-20T12:00:00+00:00",
+    "owner_queue": "BOW-SUPPORT",
+    "synthetic": true
+  },
+  {
+    "case_id": "BOW-CASE-003",
+    "account_id": "BOW-ACC-003",
+    "case_type": "FEE_INQUIRY",
+    "status": "OPEN",
+    "created_at": "2026-10-20T12:00:00+00:00",
+    "owner_queue": "BOW-SUPPORT",
+    "synthetic": true
+  },
+  {
+    "case_id": "BOW-CASE-004",
+    "account_id": "BOW-ACC-004",
+    "case_type": "DEBIT_ERROR",
+    "status": "PENDING_REVIEW",
+    "created_at": "2026-10-20T12:00:00+00:00",
+    "owner_queue": "BOW-SUPPORT",
+    "synthetic": true
+  },
+  {
+    "case_id": "BOW-CASE-005",
+    "account_id": "BOW-ACC-005",
+    "case_type": "FEE_INQUIRY",
+    "status": "OPEN",
+    "created_at": "2026-10-20T12:00:00+00:00",
+    "owner_queue": "BOW-SUPPORT",
+    "synthetic": true
+  },
+  {
+    "case_id": "BOW-CASE-006",
+    "account_id": "BOW-ACC-006",
+    "case_type": "DEBIT_ERROR",
+    "status": "OPEN",
+    "created_at": "2026-10-20T12:00:00+00:00",
+    "owner_queue": "BOW-SUPPORT",
+    "synthetic": true
+  },
+  {
+    "case_id": "BOW-CASE-007",
+    "account_id": "BOW-ACC-007",
+    "case_type": "FEE_INQUIRY",
+    "status": "OPEN",
+    "created_at": "2026-10-20T12:00:00+00:00",
+    "owner_queue": "BOW-SUPPORT",
+    "synthetic": true
+  },
+  {
+    "case_id": "BOW-CASE-008",
+    "account_id": "BOW-ACC-008",
+    "case_type": "DEBIT_ERROR",
+    "status": "PENDING_REVIEW",
+    "created_at": "2026-10-20T12:00:00+00:00",
+    "owner_queue": "BOW-SUPPORT",
+    "synthetic": true
+  },
+  {
+    "case_id": "BOW-CASE-009",
+    "account_id": "BOW-ACC-009",
+    "case_type": "FEE_INQUIRY",
+    "status": "OPEN",
+    "created_at": "2026-10-20T12:00:00+00:00",
+    "owner_queue": "BOW-SUPPORT",
+    "synthetic": true
+  },
+  {
+    "case_id": "BOW-CASE-010",
+    "account_id": "BOW-ACC-010",
+    "case_type": "DEBIT_ERROR",
+    "status": "OPEN",
+    "created_at": "2026-10-20T12:00:00+00:00",
+    "owner_queue": "BOW-SUPPORT",
+    "synthetic": true
+  },
+  {
+    "case_id": "BOW-CASE-011",
+    "account_id": "BOW-ACC-011",
+    "case_type": "FEE_INQUIRY",
+    "status": "OPEN",
+    "created_at": "2026-10-20T12:00:00+00:00",
+    "owner_queue": "BOW-SUPPORT",
+    "synthetic": true
+  },
+  {
+    "case_id": "BOW-CASE-012",
+    "account_id": "BOW-ACC-012",
+    "case_type": "DEBIT_ERROR",
+    "status": "PENDING_REVIEW",
+    "created_at": "2026-10-20T12:00:00+00:00",
+    "owner_queue": "BOW-SUPPORT",
+    "synthetic": true
+  }
+]

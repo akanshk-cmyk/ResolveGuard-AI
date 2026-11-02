@@ -1,0 +1,29 @@
+[
+  {
+    "delegation_id": "DEL-001",
+    "representative_id": "REP-001",
+    "customer_id": "CUST-002",
+    "account_ids": [
+      "ACC-002"
+    ],
+    "actions": [
+      "CASE_STATUS"
+    ],
+    "expires_at": "2026-12-01T00:00:00Z",
+    "revoked": false
+  },
+  {
+    "delegation_id": "DEL-002",
+    "representative_id": "REP-001",
+    "customer_id": "CUST-003",
+    "account_ids": [
+      "ACC-003"
+    ],
+    "actions": [
+      "CASE_STATUS",
+      "TRANSACTION_READ"
+    ],
+    "expires_at": "2026-12-01T00:00:00Z",
+    "revoked": true
+  }
+]

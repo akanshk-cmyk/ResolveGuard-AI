@@ -1,0 +1,108 @@
+{
+  "reply_mode": "all",
+  "provider": "zai-org/GLM-5.3-Flash",
+  "results": [
+    {
+      "feature": "authentication",
+      "response_state": "AUTH_REQUIRED",
+      "outcome": "APPROVED",
+      "failure_code": null,
+      "error_type": null,
+      "generation_latency_ms": 2186.874,
+      "returned_model": "zai-org/GLM-5.3-Flash",
+      "input_tokens": 313,
+      "output_tokens": 306
+    },
+    {
+      "feature": "security",
+      "response_state": "SECURITY_BLOCKED",
+      "outcome": "APPROVED",
+      "failure_code": null,
+      "error_type": null,
+      "generation_latency_ms": 2214.088,
+      "returned_model": "zai-org/GLM-5.3-Flash",
+      "input_tokens": 315,
+      "output_tokens": 260
+    },
+    {
+      "feature": "clarification",
+      "response_state": "CLARIFICATION_REQUIRED",
+      "outcome": "APPROVED",
+      "failure_code": null,
+      "error_type": null,
+      "generation_latency_ms": 2992.841,
+      "returned_model": "zai-org/GLM-5.3-Flash",
+      "input_tokens": 315,
+      "output_tokens": 473
+    },
+    {
+      "feature": "comparison",
+      "response_state": "PUBLIC_GUIDANCE",
+      "outcome": "FALLBACK",
+      "failure_code": "GENERATION_REJECTED_OR_UNAVAILABLE",
+      "error_type": "ValueError",
+      "generation_latency_ms": 3467.052,
+      "returned_model": null,
+      "input_tokens": null,
+      "output_tokens": null
+    },
+    {
+      "feature": "private-read",
+      "response_state": "NO_ACTION",
+      "outcome": "APPROVED",
+      "failure_code": null,
+      "error_type": null,
+      "generation_latency_ms": 3103.337,
+      "returned_model": "zai-org/GLM-5.3-Flash",
+      "input_tokens": 313,
+      "output_tokens": 463
+    },
+    {
+      "feature": "fraud-intake",
+      "response_state": "CAPTURED_REVIEW",
+      "outcome": "APPROVED",
+      "failure_code": null,
+      "error_type": null,
+      "generation_latency_ms": 3083.743,
+      "returned_model": "zai-org/GLM-5.3-Flash",
+      "input_tokens": 329,
+      "output_tokens": 471
+    },
+    {
+      "feature": "callback",
+      "response_state": "DEMO_CALLBACK_CONFIRMED",
+      "outcome": "APPROVED",
+      "failure_code": null,
+      "error_type": null,
+      "generation_latency_ms": 2524.983,
+      "returned_model": "zai-org/GLM-5.3-Flash",
+      "input_tokens": 316,
+      "output_tokens": 243
+    },
+    {
+      "feature": "case-draft",
+      "response_state": "CONFIRMATION_REQUIRED",
+      "outcome": "APPROVED",
+      "failure_code": null,
+      "error_type": null,
+      "generation_latency_ms": 3058.953,
+      "returned_model": "zai-org/GLM-5.3-Flash",
+      "input_tokens": 315,
+      "output_tokens": 366
+    },
+    {
+      "feature": "case-confirm",
+      "response_state": "CASE_CREATED",
+      "outcome": "APPROVED",
+      "failure_code": null,
+      "error_type": null,
+      "generation_latency_ms": 2142.372,
+      "returned_model": "zai-org/GLM-5.3-Flash",
+      "input_tokens": 313,
+      "output_tokens": 321
+    }
+  ],
+  "approved": 8,
+  "total": 9,
+  "scope": "Synthetic local actions; provider receives categories and placeholders only"
+}

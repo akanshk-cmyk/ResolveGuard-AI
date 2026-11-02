@@ -1,0 +1,20 @@
+{
+  "human_feedback": "PROVIDED_CHAT_AND_EXCEL",
+  "chat_observations": 22,
+  "excel_live_observations": 28,
+  "non_additive": true,
+  "original_received_workbook_hash": "PASS",
+  "current_workbook_tabs": 16,
+  "office_xml_integrity": "PASS",
+  "local_readme_links_checked": 44,
+  "broken_links": [],
+  "archive_names_normalized": true,
+  "application_code_changed": false,
+  "new_model_calls": false,
+  "new_cloud_calls": false,
+  "matched_response_agreement": "NOT_YET_CALCULATED",
+  "bank_support_handoff": "NOT_ESTABLISHED_BY_REVIEW_RECEIPT",
+  "visual_word_pagination": "NOT_RENDERED",
+  "banking_response_judging": "COMPLETED_SAVED_REPORTS_EXIST",
+  "summary_report_and_judge_workbook_included": true
+}

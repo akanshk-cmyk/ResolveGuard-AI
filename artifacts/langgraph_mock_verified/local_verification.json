@@ -1,0 +1,41 @@
+{
+  "date": "2026-10-30",
+  "python": "3.14.8",
+  "platform": "Windows",
+  "installed_versions": {
+    "langgraph": "1.2.19",
+    "langsmith": "0.14.16",
+    "langchain-core": "1.7.3"
+  },
+  "pip_check": "No broken requirements found",
+  "new_tests": {
+    "run": 52,
+    "passed": 51,
+    "skipped": 1,
+    "skip_reason": "Negative missing-LangGraph test is not applicable because LangGraph is installed"
+  },
+  "existing_fixture_tests": {
+    "run": 13,
+    "passed": 13
+  },
+  "graph_case_runs": 120,
+  "unique_cases": 40,
+  "graph_offline_parity": "All case checks and substantive outputs identical across 120 paired runs",
+  "network_verification": {
+    "graph_evaluation_socket_attempts": 0,
+    "ambient_auto_tracing_suppression_test": "Passed with fake key and both tracing environment flags enabled"
+  },
+  "langsmith_local_sdk": "Real RunTree tested, create/update intercepted locally; 13 spans and 13 update operations in representative verification",
+  "langsmith_cloud": "Not contacted; authentication, dataset uploads, traces and hosted experiments not performed",
+  "nebius": "No requests made; model remains mocked",
+  "model_metrics": {
+    "intent_accuracy": 0.85,
+    "deterministic_journey_pass_rate": 0.8,
+    "fraud_recall": 0.8,
+    "critical_cases_all_assertions_passed": 57,
+    "critical_case_runs": 81,
+    "p95_local_mock_latency_ms": 31.213,
+    "model_cost_usd": 0.0,
+    "token_usage": null
+  }
+}

@@ -1,0 +1,158 @@
+{
+  "status": "Local implementation increment verified; release remains blocked pending review and real integrations",
+  "date": "2026-10-30",
+  "code_sha256": "f857e68ea9715c879d95e13ca1d758a6f48329385fda5ae50f083a69e8dabd1b",
+  "dataset_sha256": "8df40d76421052903381d59087af264c60fa6005ebe0dd7191cf98da1eef5f01",
+  "dependencies": {
+    "pydantic": "2.14.2",
+    "langgraph": "1.2.19",
+    "langsmith": "0.14.16",
+    "langgraph-checkpoint-sqlite": "3.1.3",
+    "fastapi": "0.162.0",
+    "uvicorn": "0.54.0"
+  },
+  "tests": {
+    "application_run": 103,
+    "application_passed": 102,
+    "application_skipped": 1,
+    "original_fixture_passed": 13,
+    "total_passed": 115,
+    "skip_reason": "Negative missing-LangGraph test is not applicable in the installed environment"
+  },
+  "verified": [
+    "persisted-case retrieval and cross-customer denial",
+    "step-up checks on reads/writes/reconciliation",
+    "combined unsupported/fraud/human obligations",
+    "checkpoint recovery after committed side effect",
+    "draft confirmation after restart and concurrent duplicate prevention",
+    "expired/cancelled/revoked/wrong-thread draft denial",
+    "session/browser isolation and cached authorization",
+    "local HTTP UI and persisted browser-session restoration",
+    "provider adapter schema/usage/failure handling with fake HTTP transport"
+  ],
+  "mock_experiments": {
+    "status": "MOCK_ONLY: not GLM improvement evidence; labels and provenance pending",
+    "dataset_sha256": "8df40d76421052903381d59087af264c60fa6005ebe0dd7191cf98da1eef5f01",
+    "code_sha256": "f857e68ea9715c879d95e13ca1d758a6f48329385fda5ae50f083a69e8dabd1b",
+    "cases": 40,
+    "repeats": 3,
+    "experiments": [
+      {
+        "version": "v0",
+        "change": "baseline",
+        "hypothesis": "Unmodified mock rules",
+        "metrics": {
+          "intent_accuracy": 0.85,
+          "deterministic_journey_pass_rate": 0.8,
+          "fraud_recall": 0.8,
+          "critical_cases_all_assertions_passed": 57,
+          "critical_case_runs": 81,
+          "p95_local_mock_latency_ms": 30.95,
+          "model_cost_usd": 0.0,
+          "token_usage": null
+        },
+        "delta_from_previous": {},
+        "regressions": []
+      },
+      {
+        "version": "v1",
+        "change": "indirect-fraud",
+        "hypothesis": "Recognize indirect unauthorized activity; predicted fraud recall and report preservation increase",
+        "metrics": {
+          "intent_accuracy": 0.9,
+          "deterministic_journey_pass_rate": 0.825,
+          "fraud_recall": 1.0,
+          "critical_cases_all_assertions_passed": 60,
+          "critical_case_runs": 81,
+          "p95_local_mock_latency_ms": 31.523,
+          "model_cost_usd": 0.0,
+          "token_usage": null
+        },
+        "delta_from_previous": {
+          "intent_accuracy": 0.050000000000000044,
+          "deterministic_journey_pass_rate": 0.02499999999999991,
+          "fraud_recall": 0.19999999999999996
+        },
+        "regressions": []
+      },
+      {
+        "version": "v2",
+        "change": "human-language",
+        "hypothesis": "Recognize human/fraud-support phrasing; predicted human flag and routing improve",
+        "metrics": {
+          "intent_accuracy": 0.925,
+          "deterministic_journey_pass_rate": 0.9,
+          "fraud_recall": 1.0,
+          "critical_cases_all_assertions_passed": 69,
+          "critical_case_runs": 81,
+          "p95_local_mock_latency_ms": 32.824,
+          "model_cost_usd": 0.0,
+          "token_usage": null
+        },
+        "delta_from_previous": {
+          "intent_accuracy": 0.025000000000000022,
+          "deterministic_journey_pass_rate": 0.07500000000000007,
+          "fraud_recall": 0.0
+        },
+        "regressions": []
+      },
+      {
+        "version": "v3",
+        "change": "case-language",
+        "hypothesis": "Recognize ticket creation and duplicate-submit language; predicted case completion improves",
+        "metrics": {
+          "intent_accuracy": 0.975,
+          "deterministic_journey_pass_rate": 0.95,
+          "fraud_recall": 1.0,
+          "critical_cases_all_assertions_passed": 75,
+          "critical_case_runs": 81,
+          "p95_local_mock_latency_ms": 31.193,
+          "model_cost_usd": 0.0,
+          "token_usage": null
+        },
+        "delta_from_previous": {
+          "intent_accuracy": 0.04999999999999993,
+          "deterministic_journey_pass_rate": 0.04999999999999993,
+          "fraud_recall": 0.0
+        },
+        "regressions": []
+      },
+      {
+        "version": "v4",
+        "change": "primary-intent",
+        "hypothesis": "Prefer requested account facts over incidental rules wording; predicted adversarial routing improves",
+        "metrics": {
+          "intent_accuracy": 1.0,
+          "deterministic_journey_pass_rate": 0.975,
+          "fraud_recall": 1.0,
+          "critical_cases_all_assertions_passed": 78,
+          "critical_case_runs": 81,
+          "p95_local_mock_latency_ms": 30.577,
+          "model_cost_usd": 0.0,
+          "token_usage": null
+        },
+        "delta_from_previous": {
+          "intent_accuracy": 0.025000000000000022,
+          "deterministic_journey_pass_rate": 0.025000000000000022,
+          "fraud_recall": 0.0
+        },
+        "regressions": []
+      }
+    ],
+    "remaining_failures": [
+      "RG-056"
+    ],
+    "next": "Review policy retrieval failure and human labels; repeat iteration on a real model only after explicit provider setup"
+  },
+  "external_calls": {
+    "nebius": 0,
+    "langsmith_cloud": 0,
+    "hosted_deployments": 0,
+    "note": "Dependency packages were downloaded with authorization; mock experiments blocked outbound sockets"
+  },
+  "verification_limits": [
+    "No browser automation tool or JS runtime available: rendering requires a browser review",
+    "All human labels remain PENDING; provenance share unverified",
+    "GLM live baseline and Cloud experiments not run"
+  ]
+}

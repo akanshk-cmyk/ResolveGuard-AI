@@ -1,0 +1,127 @@
+{
+  "historical_sheet_checks": [
+    {
+      "sheet": "00 \u2014 Summary",
+      "rows": 15,
+      "filter": true,
+      "frozen": true,
+      "dropdown": false,
+      "conditional_rules": 0
+    },
+    {
+      "sheet": "01 \u2014 Golden Dataset",
+      "rows": 240,
+      "filter": true,
+      "frozen": true,
+      "dropdown": false,
+      "conditional_rules": 0
+    },
+    {
+      "sheet": "02 \u2014 V1 Baseline",
+      "rows": 120,
+      "filter": true,
+      "frozen": true,
+      "dropdown": false,
+      "conditional_rules": 1
+    },
+    {
+      "sheet": "03 \u2014 Failure Annotations",
+      "rows": 16,
+      "filter": true,
+      "frozen": true,
+      "dropdown": true,
+      "conditional_rules": 1
+    },
+    {
+      "sheet": "04 \u2014 Failure Categories",
+      "rows": 11,
+      "filter": true,
+      "frozen": true,
+      "dropdown": false,
+      "conditional_rules": 0
+    },
+    {
+      "sheet": "05 \u2014 Failure Labels",
+      "rows": 16,
+      "filter": true,
+      "frozen": true,
+      "dropdown": false,
+      "conditional_rules": 0
+    },
+    {
+      "sheet": "06 \u2014 Prompt Logic Changes",
+      "rows": 6,
+      "filter": true,
+      "frozen": true,
+      "dropdown": false,
+      "conditional_rules": 0
+    },
+    {
+      "sheet": "07 \u2014 V1 vs V2",
+      "rows": 40,
+      "filter": true,
+      "frozen": true,
+      "dropdown": false,
+      "conditional_rules": 2
+    },
+    {
+      "sheet": "08 \u2014 Human Review",
+      "rows": 62,
+      "filter": true,
+      "frozen": true,
+      "dropdown": true,
+      "conditional_rules": 1
+    },
+    {
+      "sheet": "09 \u2014 LLM Judge",
+      "rows": 24,
+      "filter": true,
+      "frozen": true,
+      "dropdown": true,
+      "conditional_rules": 2
+    },
+    {
+      "sheet": "10 \u2014 Tool Security Assertions",
+      "rows": 200,
+      "filter": true,
+      "frozen": true,
+      "dropdown": false,
+      "conditional_rules": 1
+    },
+    {
+      "sheet": "11 \u2014 RAG Grounding",
+      "rows": 12,
+      "filter": true,
+      "frozen": true,
+      "dropdown": true,
+      "conditional_rules": 2
+    },
+    {
+      "sheet": "12 \u2014 Critical Safety Gates",
+      "rows": 5,
+      "filter": true,
+      "frozen": true,
+      "dropdown": false,
+      "conditional_rules": 1
+    },
+    {
+      "sheet": "13 \u2014 Trace References",
+      "rows": 474,
+      "filter": true,
+      "frozen": true,
+      "dropdown": false,
+      "conditional_rules": 0
+    },
+    {
+      "sheet": "14 \u2014 Known Limitations",
+      "rows": 17,
+      "filter": true,
+      "frozen": true,
+      "dropdown": false,
+      "conditional_rules": 1
+    }
+  ],
+  "human_review_receipt_sheet": "Human Review Receipt",
+  "current_workbook_tabs": 16,
+  "original_evaluation_sheets_preserved": true
+}

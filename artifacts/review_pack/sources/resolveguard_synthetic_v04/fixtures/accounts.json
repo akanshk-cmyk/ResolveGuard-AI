@@ -1,0 +1,86 @@
+[
+  {
+    "account_id": "ACC-001",
+    "customer_id": "CUST-001",
+    "product": "CHECKING",
+    "status": "ACTIVE",
+    "currency": "USD"
+  },
+  {
+    "account_id": "ACC-002",
+    "customer_id": "CUST-002",
+    "product": "DEBIT_CHECKING",
+    "status": "ACTIVE",
+    "currency": "USD"
+  },
+  {
+    "account_id": "ACC-003",
+    "customer_id": "CUST-003",
+    "product": "CHECKING",
+    "status": "ACTIVE",
+    "currency": "USD"
+  },
+  {
+    "account_id": "ACC-004",
+    "customer_id": "CUST-004",
+    "product": "DEBIT_CHECKING",
+    "status": "ACTIVE",
+    "currency": "USD"
+  },
+  {
+    "account_id": "ACC-005",
+    "customer_id": "CUST-005",
+    "product": "CHECKING",
+    "status": "ACTIVE",
+    "currency": "USD"
+  },
+  {
+    "account_id": "ACC-006",
+    "customer_id": "CUST-006",
+    "product": "DEBIT_CHECKING",
+    "status": "ACTIVE",
+    "currency": "USD"
+  },
+  {
+    "account_id": "ACC-007",
+    "customer_id": "CUST-007",
+    "product": "CHECKING",
+    "status": "ACTIVE",
+    "currency": "USD"
+  },
+  {
+    "account_id": "ACC-008",
+    "customer_id": "CUST-008",
+    "product": "DEBIT_CHECKING",
+    "status": "ACTIVE",
+    "currency": "USD"
+  },
+  {
+    "account_id": "ACC-009",
+    "customer_id": "CUST-009",
+    "product": "CHECKING",
+    "status": "ACTIVE",
+    "currency": "USD"
+  },
+  {
+    "account_id": "ACC-010",
+    "customer_id": "CUST-010",
+    "product": "DEBIT_CHECKING",
+    "status": "ACTIVE",
+    "currency": "USD"
+  },
+  {
+    "account_id": "ACC-011",
+    "customer_id": "CUST-011",
+    "product": "CHECKING",
+    "status": "ACTIVE",
+    "currency": "USD"
+  },
+  {
+    "account_id": "ACC-012",
+    "customer_id": "CUST-012",
+    "product": "DEBIT_CHECKING",
+    "status": "ACTIVE",
+    "currency": "USD"
+  }
+]

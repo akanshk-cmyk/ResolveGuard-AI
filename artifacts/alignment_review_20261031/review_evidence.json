@@ -1,0 +1,40 @@
+{
+  "review_date": "2026-10-31",
+  "scope": "local synthetic demo; no application behavior changes",
+  "fresh_unit_tests": {
+    "main_run": 250,
+    "main_passed": 249,
+    "main_skipped": 1,
+    "fixture_run": 13,
+    "fixture_passed": 13,
+    "combined_passed": 262,
+    "skipped_reason": "Missing-LangGraph branch skipped because LangGraph is installed"
+  },
+  "saved_browser_report": {
+    "path": "artifacts/customer_ui_validation/browser_checks.json",
+    "passed": 46,
+    "rerun_during_this_review": false
+  },
+  "security_scenarios": {
+    "passed": 8,
+    "total": 8
+  },
+  "mock_regression": {
+    "passed": 39,
+    "total": 40,
+    "remaining_failure": "RG-056 policy_evidence",
+    "release_decision": "BLOCKED"
+  },
+  "isolated_spotcheck": {
+    "scenario": "incorrect fee sentence with unchanged valid sources",
+    "candidate_accepted": true,
+    "grounding_verdict": "PASS",
+    "customer_session_modified": false
+  },
+  "local_audit_snapshot": {
+    "customer_reviews": 98,
+    "completed_jobs": 22,
+    "needs_review_decisions": 22
+  },
+  "review_sha256": "5801db1050cf9da8b6b6ed0a53be65cafb2baa33fbe857e9203f1075b7ef3363"
+}

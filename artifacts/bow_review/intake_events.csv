@@ -1,0 +1,2 @@
+﻿event_id,customer_id,report_capture_status,captured_at,regulatory_notice_status,investigation_status,synthetic
+BOW-EVT-001,BOW-CUST-001,REPORT_CAPTURED,2026-10-21T10:00:00+00:00,NOTICE_REVIEW_REQUIRED,NOT_STARTED,True

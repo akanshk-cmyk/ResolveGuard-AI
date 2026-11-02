@@ -1,0 +1,7 @@
+SUPERSEDED DIAGNOSTIC RUN
+
+This early run exposed a redaction bug that obscured some hexadecimal event IDs
+and timestamp microseconds, causing misleading report-ID assertion failures and
+non-parseable trace timestamps. The issue was fixed and covered by regression tests.
+Use artifacts/mock_offline_verified for the corrected mock evaluation evidence.
+Neither directory contains a real GLM or LangGraph performance baseline.

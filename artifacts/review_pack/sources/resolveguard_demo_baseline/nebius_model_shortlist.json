@@ -1,0 +1,44 @@
+{
+  "checked_on": "2026-10-30",
+  "status": "Published public-source shortlist; not exhaustive live catalog and not account-verified",
+  "pricing_note": "Public pages list these USD token rates. Interactive catalog did not expose readable pricing. Reconfirm in console before billing; model availability depends on account.",
+  "cost_assumption": "1000 total model calls, 2000 billed input and 500 total billed output tokens per call; no discounts or credits; excludes hosting, observability, embeddings, extra tool rounds, retries and additional reasoning output.",
+  "models": [
+    {
+      "model": "Nemotron 3.5 Lightning",
+      "model_id": "nvidia/Nemotron-3_5-Lightning",
+      "input_usd_per_million": 0.06,
+      "output_usd_per_million": 0.24,
+      "source": "https://nebius.com/services/token-factory/models/nvidia-nemotron-models-inference",
+      "illustrative_cost_1000_calls_2000_input_500_output_each_usd": 0.24
+    },
+    {
+      "model": "Nemotron 3 Nano 30B A3B",
+      "model_id": null,
+      "input_usd_per_million": 0.06,
+      "output_usd_per_million": 0.24,
+      "source": "https://nebius.com/services/token-factory/models/nvidia-nemotron-models-inference",
+      "note": "Exact API ID requires catalog confirmation",
+      "illustrative_cost_1000_calls_2000_input_500_output_each_usd": 0.24
+    },
+    {
+      "model": "Qwen3-30B-A3B-Instruct-2507",
+      "model_id": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+      "input_usd_per_million": 0.1,
+      "output_usd_per_million": 0.3,
+      "source": "https://nebius.com/services/token-factory/models/qwen-models-inference",
+      "illustrative_cost_1000_calls_2000_input_500_output_each_usd": 0.35
+    },
+    {
+      "model": "GLM-5.3-Flash",
+      "model_id": "zai-org/GLM-5.3-Flash",
+      "input_usd_per_million": 0.15,
+      "output_usd_per_million": 0.5,
+      "source": "https://nebius.com/services/token-factory/models/glm-models-inference",
+      "illustrative_cost_1000_calls_2000_input_500_output_each_usd": 0.55
+    }
+  ],
+  "resolveguard_model_tests": "100 scenarios with all mandatory critical assertions; compare actual cost per successful journey, latency, JSON validity, fraud/human flags and grounded states. No live model calls made.",
+  "selected_model": "zai-org/GLM-5.3-Flash",
+  "selection_status": "User selected for current demo; alternatives retained for future comparison; no live evaluations executed"
+}

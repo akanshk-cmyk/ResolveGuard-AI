@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "sheet": "03 Review 40",
+      "rows": 40,
+      "all_marks_blank": true
+    },
+    {
+      "sheet": "04 Judge 12",
+      "rows": 12,
+      "all_marks_blank": true
+    }
+  ],
+  "dropdowns_verified": true,
+  "existing_verdicts_omitted": true,
+  "reviews_performed": 0,
+  "labels_approved": 0
+}

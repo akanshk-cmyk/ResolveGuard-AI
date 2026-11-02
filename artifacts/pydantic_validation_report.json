@@ -1,0 +1,53 @@
+{
+  "scope": "Pydantic validation migration only; no prompt tuning or live-model evaluation",
+  "pydantic_version": "2.14.2",
+  "contract_version": "pydantic-boundaries-v1",
+  "tested_boundaries": [
+    "strict request fields and frozen identity/confirmation",
+    "required routing flags and allowed intents",
+    "validated simulator assignments",
+    "integer-cents transaction data and ISO dates",
+    "separate success/denied/unknown/confirmation/conflict outcomes",
+    "report capture and case commit evidence",
+    "handoff acknowledgment and payload minimization",
+    "policy provenance fields",
+    "SQLite pre-commit and replay validation",
+    "redacted CLI field/code errors"
+  ],
+  "tests": {
+    "application": {
+      "run": 78,
+      "passed": 77,
+      "skipped": 1
+    },
+    "original_fixtures": {
+      "run": 13,
+      "passed": 13
+    },
+    "skip_reason": "Missing-LangGraph negative test is not applicable in the installed environment"
+  },
+  "evaluation": {
+    "unique_cases": 40,
+    "repeats_per_engine": 3,
+    "case_runs_per_engine": 120,
+    "attempt_traces_per_engine": 123,
+    "engines": [
+      "offline",
+      "langgraph"
+    ],
+    "full_prior_output_and_assertion_parity": true,
+    "routing_accuracy": 0.85,
+    "complete_case_pass_rate": 0.8,
+    "fraud_recall": 0.8,
+    "release_decision": "BLOCKED"
+  },
+  "outbound_socket_attempts": 0,
+  "langsmith_uploads": 0,
+  "nebius_calls": 0,
+  "pending": [
+    "Human label/provenance review",
+    "Conversation checkpoints",
+    "Live Nebius adapter and real model baseline",
+    "LangSmith Cloud integration"
+  ]
+}

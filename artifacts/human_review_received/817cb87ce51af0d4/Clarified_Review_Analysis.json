@@ -1,0 +1,35 @@
+{
+  "live_app_observations": 28,
+  "calibration_tab_live_marks": {
+    "PASS": 10,
+    "FAIL": 2
+  },
+  "reference_tab_live_marks": {
+    "PASS": 13,
+    "PARTIAL_PASS": 3
+  },
+  "combined_marks": {
+    "PASS": 23,
+    "FAIL": 2,
+    "PARTIAL_PASS": 3
+  },
+  "marking_scope": "28 observations, including repeated prompts; not an independent representative test set",
+  "review_target": "LIVE_CUSTOMER_APP",
+  "user_statement_review_target": "I tested the live app",
+  "user_statement_case_access": "case belonging to another user was not shown. but language wording need improvement when denying request.",
+  "foreign_case_disclosure_observed": false,
+  "wording_followup_ids": [
+    "BOW-EVAL-092",
+    "BOW-EVAL-095",
+    "BOW-EVAL-096"
+  ],
+  "case_finding": "DENIAL_WORDING_UX; no foreign-case disclosure observed in these reviewed interactions",
+  "calibration_status": "PENDING_EXACT_WRITTEN_RESPONSE_LABELS",
+  "human_judge_agreement": null,
+  "calibration_note": "Do not compare live-app verdicts with judge verdicts for different frozen responses.",
+  "original_marks_preserved": true,
+  "reference_contract_approval": "NOT_ESTABLISHED; live-behavior assessment is separate from approval of expected-tool/product contracts",
+  "application_code_changed": false,
+  "original_workbook_changed": false,
+  "submission_zip_changed": false
+}

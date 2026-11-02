@@ -1,0 +1,213 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2800" height="2850" viewBox="0 0 2800 2850">
+<rect width="100%" height="100%" fill="white"/>
+<rect x="1" y="1" width="2798" height="2848" rx="18" fill="white" stroke="#cad4df" stroke-width="2"/>
+<text x="40" y="60" font-family="Arial,sans-serif" font-size="36" font-weight="700" fill="#192431">ResolveGuard | Follow the data from source to answer</text>
+<text x="42" y="102" font-family="Arial,sans-serif" font-size="24" font-weight="400" fill="#566579">Proposed learning/demo design. All customers, transactions, policies and human-support queues are synthetic.</text>
+<rect x="20" y="140" width="2220" height="395" rx="18" fill="#edf3f8" stroke="#edf3f8" stroke-width="2"/>
+<text x="48" y="186" font-family="Arial,sans-serif" font-size="24" font-weight="700" fill="#2f649b">A. PREPARE THE KNOWLEDGE  /  ONCE, THEN AGAIN WHEN DOCUMENTS CHANGE</text>
+<rect x="55" y="230" width="390" height="200" rx="18" fill="white" stroke="#2f649b" stroke-width="2"/>
+<text x="77" y="273" font-family="Arial,sans-serif" font-size="25" font-weight="700" fill="#192431">1  Collect policy text</text>
+<text x="77" y="315" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#566579">Invented servicing policies</text>
+<text x="77" y="348" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#566579">PDF / text / JSON inputs</text>
+<text x="77" y="381" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#566579">PRD defines app behavior</text>
+<rect x="495" y="230" width="390" height="200" rx="18" fill="white" stroke="#2f649b" stroke-width="2"/>
+<text x="517" y="273" font-family="Arial,sans-serif" font-size="25" font-weight="700" fill="#192431">2  Clean and approve</text>
+<text x="517" y="315" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#566579">Remove repeated footers</text>
+<text x="517" y="348" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#566579">Keep headings and tables</text>
+<text x="517" y="381" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#566579">Exclude invalid / old text</text>
+<rect x="935" y="230" width="390" height="200" rx="18" fill="white" stroke="#2f649b" stroke-width="2"/>
+<text x="957" y="273" font-family="Arial,sans-serif" font-size="25" font-weight="700" fill="#192431">3  Split into passages</text>
+<text x="957" y="315" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#566579">One topic per passage</text>
+<text x="957" y="348" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#566579">Keep rules + exceptions</text>
+<text x="957" y="381" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#566579">Add source + version IDs</text>
+<rect x="1375" y="230" width="390" height="200" rx="18" fill="white" stroke="#2f649b" stroke-width="2"/>
+<text x="1397" y="273" font-family="Arial,sans-serif" font-size="25" font-weight="700" fill="#192431">4  Make it searchable</text>
+<text x="1397" y="315" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#566579">Store passages locally</text>
+<text x="1397" y="348" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#566579">Search words + headings</text>
+<text x="1397" y="381" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#566579">No model training here</text>
+<rect x="1815" y="230" width="390" height="200" rx="18" fill="white" stroke="#2f649b" stroke-width="2"/>
+<text x="1837" y="273" font-family="Arial,sans-serif" font-size="25" font-weight="700" fill="#192431">5  Keep records separate</text>
+<text x="1837" y="315" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#566579">Transactions stay structured</text>
+<text x="1837" y="348" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#566579">Reports saved in database</text>
+<text x="1837" y="381" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#566579">Never chunk private records</text>
+<polyline points="445,330 495,330" fill="none" stroke="#97701a" stroke-width="3" />
+<polygon points="495,330 479.0,337.0 479.0,323.0" fill="#97701a"/>
+<polyline points="885,330 935,330" fill="none" stroke="#97701a" stroke-width="3" />
+<polygon points="935,330 919.0,337.0 919.0,323.0" fill="#97701a"/>
+<polyline points="1325,330 1375,330" fill="none" stroke="#97701a" stroke-width="3" />
+<polygon points="1375,330 1359.0,337.0 1359.0,323.0" fill="#97701a"/>
+<text x="1390" y="481" font-family="Arial,sans-serif" font-size="22" font-weight="700" fill="#2f649b">Policy lookup ready</text>
+<text x="1830" y="481" font-family="Arial,sans-serif" font-size="22" font-weight="700" fill="#2f649b">Authorized API reads ready</text>
+<text x="55" y="507" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#566579">Two evidence sources: document passages explain rules; authorized records establish exact amounts, dates and action states.</text>
+<rect x="20" y="565" width="2220" height="455" rx="18" fill="#fff7e9" stroke="#fff7e9" stroke-width="2"/>
+<text x="48" y="610" font-family="Arial,sans-serif" font-size="23" font-weight="700" fill="#97701a">B. WHAT DOES CHUNKING MEAN?  /  TURN A DOCUMENT INTO SMALL, USEFUL ANSWER CARDS</text>
+<rect x="55" y="650" width="1045" height="295" rx="18" fill="white" stroke="#97701a" stroke-width="2"/>
+<text x="77" y="695" font-family="Arial,sans-serif" font-size="27" font-weight="700" fill="#192431">Proposed starting rules for splitting documents</text>
+<text x="77" y="736" font-family="Arial,sans-serif" font-size="23" font-weight="400" fill="#566579">Split at a heading, topic or numbered procedure first.</text>
+<text x="77" y="769" font-family="Arial,sans-serif" font-size="23" font-weight="400" fill="#566579">Aim for 300-500 tokens per passage (tokens are small text pieces).</text>
+<text x="77" y="802" font-family="Arial,sans-serif" font-size="23" font-weight="400" fill="#566579">Keep short sections whole; split long sections at sentence boundaries.</text>
+<text x="77" y="835" font-family="Arial,sans-serif" font-size="23" font-weight="400" fill="#566579">For long prose splits, repeat about 50 tokens to preserve context.</text>
+<text x="77" y="868" font-family="Arial,sans-serif" font-size="23" font-weight="400" fill="#566579">Keep a rule with its exception; repeat table headings if tables must split.</text>
+<text x="77" y="901" font-family="Arial,sans-serif" font-size="23" font-weight="400" fill="#566579">Do not combine different products, versions or jurisdictions.</text>
+<rect x="1135" y="650" width="1070" height="295" rx="18" fill="white" stroke="#97701a" stroke-width="2"/>
+<text x="1157" y="695" font-family="Arial,sans-serif" font-size="27" font-weight="700" fill="#192431">Example: one policy becomes traceable answer cards</text>
+<text x="1157" y="735" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#566579">Document: DEMO transaction guidance, version 1, U.S. debit checking.</text>
+<text x="1157" y="768" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#566579">Card 1: what pending and posted mean. Card 2: report an unknown debit.</text>
+<text x="1157" y="801" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#566579">Each card keeps: source ID, heading/page, version, product and dates.</text>
+<text x="1157" y="834" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#566579">Search first filters applicable cards, then ranks relevant passages.</text>
+<text x="1157" y="867" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#566579">Use up to 3-5 useful passages; missing/conflicting evidence means fallback.</text>
+<text x="1157" y="900" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#566579">These chunk sizes and retrieval settings must be tested, not assumed best.</text>
+<text x="55" y="991" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#566579">Initial RAG uses local word search. Optional later: embeddings turn passages into numeric signatures for meaning-based search.</text>
+<rect x="20" y="1050" width="2220" height="1185" rx="18" fill="#edf5f3" stroke="#edf5f3" stroke-width="2"/>
+<text x="48" y="1094" font-family="Arial,sans-serif" font-size="23" font-weight="700" fill="#087b77">C. ANSWER THE CUSTOMER  /  LANGGRAPH DIRECTS THE STEPS AND REMEMBERS THEIR RESULTS</text>
+<rect x="55" y="1145" width="410" height="175" rx="18" fill="white" stroke="#087b77" stroke-width="2"/>
+<text x="77" y="1188" font-family="Arial,sans-serif" font-size="25" font-weight="700" fill="#192431">Customer uses Replit app</text>
+<text x="77" y="1229" font-family="Arial,sans-serif" font-size="21" font-weight="400" fill="#566579">&quot;I do not recognize this debit.&quot;</text>
+<text x="77" y="1262" font-family="Arial,sans-serif" font-size="21" font-weight="400" fill="#566579">Message + selected transaction</text>
+<text x="77" y="1295" font-family="Arial,sans-serif" font-size="21" font-weight="400" fill="#566579">Session identifies demo customer</text>
+<rect x="515" y="1145" width="440" height="175" rx="18" fill="white" stroke="#087b77" stroke-width="2"/>
+<text x="537" y="1188" font-family="Arial,sans-serif" font-size="25" font-weight="700" fill="#192431">1  AI understands the request</text>
+<text x="537" y="1230" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#566579">GLM returns a typed decision</text>
+<text x="537" y="1263" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#566579">Fraud? Human requested?</text>
+<text x="537" y="1296" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#566579">A request is not permission</text>
+<rect x="1005" y="1145" width="535" height="175" rx="18" fill="white" stroke="#087b77" stroke-width="2"/>
+<text x="1027" y="1188" font-family="Arial,sans-serif" font-size="25" font-weight="700" fill="#192431">2  Save a potential error report</text>
+<text x="1027" y="1230" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#566579">Original words + timestamp + reference</text>
+<text x="1027" y="1263" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#566579">Capture can happen before verified access</text>
+<text x="1027" y="1296" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#566579">Retry safely; do not create duplicates</text>
+<rect x="1590" y="1145" width="615" height="175" rx="18" fill="white" stroke="#087b77" stroke-width="2"/>
+<text x="1612" y="1188" font-family="Arial,sans-serif" font-size="25" font-weight="700" fill="#192431">3  Backend checks permission</text>
+<text x="1612" y="1231" font-family="Arial,sans-serif" font-size="23" font-weight="400" fill="#566579">Is the session valid? Is this the right customer?</text>
+<text x="1612" y="1264" font-family="Arial,sans-serif" font-size="23" font-weight="400" fill="#566579">Denied: no restricted record enters AI context</text>
+<text x="1612" y="1297" font-family="Arial,sans-serif" font-size="23" font-weight="400" fill="#566579">Report stays captured; offer a safe next step</text>
+<polyline points="465,1232 515,1232" fill="none" stroke="#087b77" stroke-width="3" />
+<polygon points="515,1232 499.0,1239.0 499.0,1225.0" fill="#087b77"/>
+<polyline points="955,1232 1005,1232" fill="none" stroke="#087b77" stroke-width="3" />
+<polygon points="1005,1232 989.0,1239.0 989.0,1225.0" fill="#087b77"/>
+<polyline points="1540,1232 1590,1232" fill="none" stroke="#087b77" stroke-width="3" />
+<polygon points="1590,1232 1574.0,1239.0 1574.0,1225.0" fill="#087b77"/>
+<text x="70" y="1403" font-family="Arial,sans-serif" font-size="23" font-weight="700" fill="#2f649b">4A  POLICY RAG: find guidance for this question</text>
+<text x="1145" y="1403" font-family="Arial,sans-serif" font-size="23" font-weight="700" fill="#087b77">4B  RECORDS + ACTIONS: fetch facts and verified outcomes</text>
+<rect x="55" y="1425" width="1050" height="265" rx="18" fill="#f7fbff" stroke="#2f649b" stroke-width="2"/>
+<text x="77" y="1470" font-family="Arial,sans-serif" font-size="27" font-weight="700" fill="#192431">Retrieve -&gt; add context -&gt; generate (RAG)</text>
+<text x="77" y="1511" font-family="Arial,sans-serif" font-size="23" font-weight="400" fill="#566579">Filter cards by product, jurisdiction, approval and effective date.</text>
+<text x="77" y="1544" font-family="Arial,sans-serif" font-size="23" font-weight="400" fill="#566579">Search the question against eligible text; rank useful passages.</text>
+<text x="77" y="1577" font-family="Arial,sans-serif" font-size="23" font-weight="400" fill="#566579">Keep source IDs with the selected passages and check for conflicts.</text>
+<text x="77" y="1610" font-family="Arial,sans-serif" font-size="23" font-weight="400" fill="#566579">Example evidence: POL-TRAN-002, section &quot;Unrecognized transaction&quot;.</text>
+<text x="77" y="1643" font-family="Arial,sans-serif" font-size="23" font-weight="400" fill="#566579">The model receives these passages, not the whole document library.</text>
+<rect x="1140" y="1425" width="1065" height="265" rx="18" fill="white" stroke="#087b77" stroke-width="2"/>
+<text x="1162" y="1470" font-family="Arial,sans-serif" font-size="27" font-weight="700" fill="#192431">Authorized tools read records and save action events</text>
+<text x="1162" y="1510" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#566579">Transaction API -&gt; TXN-001-01, $45.99, posted, DEMO GROCERY.</text>
+<text x="1162" y="1543" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#566579">Intake database -&gt; report captured, reference DEMO-REPORT-001.</text>
+<text x="1162" y="1576" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#566579">Human queue -&gt; acknowledged, pending, unknown or unavailable.</text>
+<text x="1162" y="1609" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#566579">Backend rechecks permission whenever a restricted tool executes.</text>
+<text x="1162" y="1642" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#566579">Capture, legal receipt, investigation and handoff remain separate states.</text>
+<polyline points="1890,1320 1890,1350 580,1350 580,1425" fill="none" stroke="#087b77" stroke-width="3" />
+<polygon points="580,1425 573.0,1409.0 587.0,1409.0" fill="#087b77"/>
+<polyline points="1890,1350 1690,1350 1690,1425" fill="none" stroke="#087b77" stroke-width="3" />
+<polygon points="1690,1425 1683.0,1409.0 1697.0,1409.0" fill="#087b77"/>
+<rect x="55" y="1800" width="655" height="215" rx="18" fill="white" stroke="#087b77" stroke-width="2"/>
+<text x="77" y="1844" font-family="Arial,sans-serif" font-size="26" font-weight="700" fill="#192431">5  Assemble an evidence packet</text>
+<text x="77" y="1886" font-family="Arial,sans-serif" font-size="23" font-weight="400" fill="#566579">Only necessary authorized facts + policy cards</text>
+<text x="77" y="1919" font-family="Arial,sans-serif" font-size="23" font-weight="400" fill="#566579">Add confirmed report / queue outcomes</text>
+<text x="77" y="1952" font-family="Arial,sans-serif" font-size="23" font-weight="400" fill="#566579">Keep the original request and source IDs</text>
+<text x="77" y="1985" font-family="Arial,sans-serif" font-size="23" font-weight="400" fill="#566579">Do not include another customer&#x27;s data</text>
+<rect x="800" y="1800" width="655" height="215" rx="18" fill="white" stroke="#087b77" stroke-width="2"/>
+<text x="822" y="1844" font-family="Arial,sans-serif" font-size="26" font-weight="700" fill="#192431">6  One AI agent explains the result</text>
+<text x="822" y="1885" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#566579">GLM writes a short, grounded explanation</text>
+<text x="822" y="1918" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#566579">Cite the policy used; quote exact record facts</text>
+<text x="822" y="1951" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#566579">Use fixed wording for important action states</text>
+<text x="822" y="1984" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#566579">Do not invent missing facts or legal deadlines</text>
+<rect x="1545" y="1800" width="660" height="215" rx="18" fill="white" stroke="#087b77" stroke-width="2"/>
+<text x="1567" y="1844" font-family="Arial,sans-serif" font-size="26" font-weight="700" fill="#192431">7  Backend checks before sending</text>
+<text x="1567" y="1885" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#566579">Amounts, dates and states match evidence?</text>
+<text x="1567" y="1918" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#566579">Any unauthorized fields or false success?</text>
+<text x="1567" y="1951" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#566579">Pass -&gt; send. Fail -&gt; safe template / human path.</text>
+<text x="1567" y="1984" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#566579">Never discard an already captured report</text>
+<polyline points="580,1690 580,1735 380,1735 380,1800" fill="none" stroke="#087b77" stroke-width="3" />
+<polygon points="380,1800 373.0,1784.0 387.0,1784.0" fill="#087b77"/>
+<polyline points="1690,1690 1690,1735 380,1735" fill="none" stroke="#087b77" stroke-width="3" />
+<polygon points="380,1735 396.0,1728.0 396.0,1742.0" fill="#087b77"/>
+<polyline points="710,1905 800,1905" fill="none" stroke="#087b77" stroke-width="3" />
+<polygon points="800,1905 784.0,1912.0 784.0,1898.0" fill="#087b77"/>
+<polyline points="1455,1905 1545,1905" fill="none" stroke="#087b77" stroke-width="3" />
+<polygon points="1545,1905 1529.0,1912.0 1529.0,1898.0" fill="#087b77"/>
+<rect x="55" y="2080" width="2150" height="115" rx="18" fill="#e2f1ed" stroke="#087b77" stroke-width="2"/>
+<text x="77" y="2124" font-family="Arial,sans-serif" font-size="26" font-weight="700" fill="#192431">8  Customer sees the verified outcome</text>
+<text x="77" y="2166" font-family="Arial,sans-serif" font-size="23" font-weight="400" fill="#566579">&quot;Your report was captured as DEMO-REPORT-001. The fraud-team connection is currently unavailable.&quot;  No claim of a card block or investigation.</text>
+<polyline points="1875,2015 1875,2080" fill="none" stroke="#087b77" stroke-width="3" />
+<polygon points="1875,2080 1868.0,2064.0 1882.0,2064.0" fill="#087b77"/>
+<rect x="20" y="2270" width="2220" height="535" rx="18" fill="#f1eff8" stroke="#f1eff8" stroke-width="2"/>
+<text x="48" y="2316" font-family="Arial,sans-serif" font-size="23" font-weight="700" fill="#7055bf">D. WATCH, TEST AND IMPROVE  /  LANGSMITH HELPS THE TEAM UNDERSTAND WHAT HAPPENED</text>
+<rect x="55" y="2380" width="680" height="245" rx="18" fill="white" stroke="#7055bf" stroke-width="2"/>
+<text x="77" y="2424" font-family="Arial,sans-serif" font-size="26" font-weight="700" fill="#192431">Record a safe trace</text>
+<text x="77" y="2467" font-family="Arial,sans-serif" font-size="24" font-weight="400" fill="#566579">Log steps and allow/deny decisions</text>
+<text x="77" y="2500" font-family="Arial,sans-serif" font-size="24" font-weight="400" fill="#566579">Keep evidence IDs + action states</text>
+<text x="77" y="2533" font-family="Arial,sans-serif" font-size="24" font-weight="400" fill="#566579">Measure time, tokens and cost</text>
+<text x="77" y="2566" font-family="Arial,sans-serif" font-size="24" font-weight="400" fill="#566579">Mask sensitive content before export</text>
+<rect x="790" y="2380" width="680" height="245" rx="18" fill="white" stroke="#7055bf" stroke-width="2"/>
+<text x="812" y="2424" font-family="Arial,sans-serif" font-size="26" font-weight="700" fill="#192431">Test the same application</text>
+<text x="812" y="2467" font-family="Arial,sans-serif" font-size="24" font-weight="400" fill="#566579">Run 100 scenarios with isolated data</text>
+<text x="812" y="2500" font-family="Arial,sans-serif" font-size="24" font-weight="400" fill="#566579">Check all 84 critical cases fully</text>
+<text x="812" y="2533" font-family="Arial,sans-serif" font-size="24" font-weight="400" fill="#566579">Test fraud misses, leakage and retries</text>
+<text x="812" y="2566" font-family="Arial,sans-serif" font-size="24" font-weight="400" fill="#566579">Repeat selected multi-turn journeys</text>
+<rect x="1525" y="2380" width="680" height="245" rx="18" fill="white" stroke="#7055bf" stroke-width="2"/>
+<text x="1547" y="2424" font-family="Arial,sans-serif" font-size="26" font-weight="700" fill="#192431">Review before demo release</text>
+<text x="1547" y="2467" font-family="Arial,sans-serif" font-size="24" font-weight="400" fill="#566579">Compare expected vs actual results</text>
+<text x="1547" y="2500" font-family="Arial,sans-serif" font-size="24" font-weight="400" fill="#566579">Human checks meaning and clarity</text>
+<text x="1547" y="2533" font-family="Arial,sans-serif" font-size="24" font-weight="400" fill="#566579">Critical failures block acceptance</text>
+<text x="1547" y="2566" font-family="Arial,sans-serif" font-size="24" font-weight="400" fill="#566579">Version fixes and rerun affected tests</text>
+<polyline points="735,2500 790,2500" fill="none" stroke="#7055bf" stroke-width="3" stroke-dasharray="9 7"/>
+<polygon points="790,2500 774.0,2507.0 774.0,2493.0" fill="#7055bf"/>
+<polyline points="1470,2500 1525,2500" fill="none" stroke="#7055bf" stroke-width="3" stroke-dasharray="9 7"/>
+<polygon points="1525,2500 1509.0,2507.0 1509.0,2493.0" fill="#7055bf"/>
+<text x="55" y="2693" font-family="Arial,sans-serif" font-size="23" font-weight="400" fill="#566579">LangSmith observes and evaluates. It does not authorize banking actions or decide whether a legal notice was received.</text>
+<text x="55" y="2737" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#566579">Existing: synthetic tools and expected cases. Proposed: LangGraph application, chunking pipeline, durable writes, integrations and full evaluations.</text>
+<text x="55" y="2780" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#566579">No live banking data, automatic refunds, transfers, credential changes, dispute decisions or card freezes in this demo.</text>
+<text x="2280" y="170" font-family="Arial,sans-serif" font-size="25" font-weight="700" fill="#192431">WHO DOES WHAT?</text>
+<rect x="2280" y="210" width="495" height="330" rx="18" fill="#f8fafc" stroke="#2f649b" stroke-width="2"/>
+<text x="2302" y="253" font-family="Arial,sans-serif" font-size="25" font-weight="700" fill="#192431">Replit = the front door</text>
+<text x="2302" y="295" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#566579">Hosts the planned app and chat UI.</text>
+<text x="2302" y="328" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#566579">Customer enters a question here.</text>
+<text x="2302" y="361" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#566579">Displays answers and report status.</text>
+<text x="2302" y="394" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#566579">API keys stay on the server.</text>
+<rect x="2280" y="600" width="495" height="330" rx="18" fill="#f8fafc" stroke="#087b77" stroke-width="2"/>
+<text x="2302" y="643" font-family="Arial,sans-serif" font-size="25" font-weight="700" fill="#192431">LangGraph = the coordinator</text>
+<text x="2302" y="685" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#566579">Runs the steps in a defined order.</text>
+<text x="2302" y="718" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#566579">Branches on intent and permission.</text>
+<text x="2302" y="751" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#566579">Carries results between steps.</text>
+<text x="2302" y="784" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#566579">Tracks retries and safe fallback.</text>
+<text x="2302" y="817" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#566579">Checks still live in backend code.</text>
+<rect x="2280" y="1040" width="495" height="330" rx="18" fill="#f8fafc" stroke="#087b77" stroke-width="2"/>
+<text x="2302" y="1083" font-family="Arial,sans-serif" font-size="25" font-weight="700" fill="#192431">Agent = the interpreter</text>
+<text x="2302" y="1125" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#566579">One conversational AI agent.</text>
+<text x="2302" y="1158" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#566579">GLM-5.3-Flash on Nebius.</text>
+<text x="2302" y="1191" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#566579">Understands and explains.</text>
+<text x="2302" y="1224" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#566579">Uses only allowed evidence.</text>
+<text x="2302" y="1257" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#566579">Not a team of independent agents.</text>
+<rect x="2280" y="1480" width="495" height="330" rx="18" fill="#f8fafc" stroke="#97701a" stroke-width="2"/>
+<text x="2302" y="1523" font-family="Arial,sans-serif" font-size="25" font-weight="700" fill="#192431">Backend = the authority</text>
+<text x="2302" y="1565" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#566579">Checks identity and access.</text>
+<text x="2302" y="1598" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#566579">Reads exact transaction records.</text>
+<text x="2302" y="1631" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#566579">Saves reports durably.</text>
+<text x="2302" y="1664" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#566579">Confirms real simulated outcomes.</text>
+<text x="2302" y="1697" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#566579">RAG is not the transaction ledger.</text>
+<rect x="2280" y="1920" width="495" height="330" rx="18" fill="#f8fafc" stroke="#7055bf" stroke-width="2"/>
+<text x="2302" y="1963" font-family="Arial,sans-serif" font-size="25" font-weight="700" fill="#192431">LangSmith = the reviewer</text>
+<text x="2302" y="2005" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#566579">Records sanitized workflow traces.</text>
+<text x="2302" y="2038" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#566579">Helps inspect failures and costs.</text>
+<text x="2302" y="2071" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#566579">Compares evaluation runs.</text>
+<text x="2302" y="2104" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#566579">Supports human feedback.</text>
+<text x="2302" y="2137" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#566579">Safety assertions run in code.</text>
+<rect x="2280" y="2360" width="495" height="330" rx="18" fill="#f8fafc" stroke="#2f649b" stroke-width="2"/>
+<text x="2302" y="2403" font-family="Arial,sans-serif" font-size="25" font-weight="700" fill="#192431">RAG = look up, then explain</text>
+<text x="2302" y="2445" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#566579">R: retrieve useful policy cards.</text>
+<text x="2302" y="2478" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#566579">A: add them to the model context.</text>
+<text x="2302" y="2511" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#566579">G: generate a grounded answer.</text>
+<text x="2302" y="2544" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#566579">The model is not being retrained.</text>
+<text x="2302" y="2577" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#566579">No vectors required for word search.</text>
+<polyline points="1570,430 1570,550 35,550 35,1560 55,1560" fill="none" stroke="#97701a" stroke-width="3" stroke-dasharray="9 7"/>
+<polygon points="55,1560 39.0,1567.0 39.0,1553.0" fill="#97701a"/>
+<polyline points="2010,430 2010,550 2225,550 2225,1560 2205,1560" fill="none" stroke="#97701a" stroke-width="3" stroke-dasharray="9 7"/>
+<polygon points="2205,1560 2221.0,1553.0 2221.0,1567.0" fill="#97701a"/>
+</svg>

@@ -1,0 +1,15 @@
+[
+  {
+    "employee_id": "EMP-001",
+    "allowed_accounts": [
+      "ACC-001"
+    ],
+    "actions": [
+      "TRANSACTION_READ",
+      "CASE_STATUS"
+    ],
+    "legitimate_case_ids": [
+      "CASE-001"
+    ]
+  }
+]

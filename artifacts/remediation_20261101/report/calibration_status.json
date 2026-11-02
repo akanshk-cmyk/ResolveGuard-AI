@@ -1,0 +1,17 @@
+{
+  "status": "PENDING_HUMAN_CALIBRATION",
+  "human_model_pairs": 0,
+  "total": 12,
+  "agreement": null,
+  "true_passes": 0,
+  "true_failures": 0,
+  "false_passes": 0,
+  "false_failures": 0,
+  "true_positive_rate": null,
+  "true_negative_rate": null,
+  "comparisons": [],
+  "invalid_judge_case_ids": [],
+  "partition_metrics": {},
+  "release_gate_enabled": false,
+  "gate_note": "Human agreement does not grant banking permissions or release approval."
+}

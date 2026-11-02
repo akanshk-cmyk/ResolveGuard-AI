@@ -1,0 +1,53 @@
+[
+  {
+    "test": "typed_foreign_account_with_old_selection",
+    "http": 200,
+    "response": "The payment to Coffee Shop is -$4.25 USD. Its status is posted. The date shown in the record is Oct 13, 2026.",
+    "state": "NO_ACTION",
+    "card_refs": [
+      "BOW-TXN-001-01"
+    ]
+  },
+  {
+    "test": "typed_foreign_account_no_selection",
+    "http": 200,
+    "response": "Please select the payment you want to ask about, or tell us which support request you mean.",
+    "state": "CLARIFICATION_REQUIRED",
+    "card_refs": []
+  },
+  {
+    "test": "signed_in_charge_words",
+    "http": 200,
+    "response": "Please select the payment you want to ask about, or tell us which support request you mean.",
+    "state": "CLARIFICATION_REQUIRED",
+    "card_refs": []
+  },
+  {
+    "test": "unsupported_transfer",
+    "http": 200,
+    "response": "Tell us a little more about what you need help with. Please do not share passwords, PINs or one-time codes.",
+    "state": "SAFE_GUIDANCE",
+    "card_refs": []
+  },
+  {
+    "test": "public_context_0",
+    "response": "Which savings account would you like to know about? Choose one below, or type its name.",
+    "state": "CLARIFICATION_REQUIRED",
+    "selected_product": null,
+    "choose_product": true
+  },
+  {
+    "test": "public_context_1",
+    "response": "Rewards for YOLO Miles Card: 2 points per $1 eligible travel; 1 point per $1 elsewhere.\n\nDemo terms, effective October 1, 2026.",
+    "state": "PUBLIC_GUIDANCE",
+    "selected_product": "BOW-CREDIT-002",
+    "choose_product": null
+  },
+  {
+    "test": "public_context_2",
+    "response": "Rewards for YOLO Miles Card: 2 points per $1 eligible travel; 1 point per $1 elsewhere.\n\nDemo terms, effective October 1, 2026.",
+    "state": "PUBLIC_GUIDANCE",
+    "selected_product": "BOW-CREDIT-002",
+    "choose_product": null
+  }
+]

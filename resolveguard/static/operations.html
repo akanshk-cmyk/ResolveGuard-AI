@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>ResolveGuard Operations</title><link rel="stylesheet" href="operations.css"><script src="operations.js" defer></script></head>
+<body><main><h1>ResolveGuard Operations</h1><p>Local evaluation results and workflow health. Mock results do not establish live model quality.</p>
+<p><a href="/reviewer">Open Agent Review Admin</a></p>
+<form id="access"><label for="token">Operations access token</label><input id="token" type="password" autocomplete="off" required><button>Open dashboard</button></form>
+<p id="status" role="status">Enter your local dashboard token to load results.</p>
+<section><h2>Operational alerts</h2><ul id="alerts"></ul><p id="runtime"></p></section>
+<section><h2>Public reply generation</h2><p id="generation">No generation measurements loaded. Live replies are opt-in.</p></section>
+<section><h2>Evaluation trends</h2><p>Scores shown as percentages. Each row is an evaluation batch, not a customer session.</p><div class="scroll"><table><thead><tr><th>Run</th><th>Journey pass</th><th>Intent accuracy</th><th>Fraud/error recall</th><th>p95 ms</th></tr></thead><tbody id="trends"></tbody></table></div></section>
+<section><h2>Compare evaluation runs</h2><label>Baseline <select id="baseline"></select></label><label>Comparison <select id="comparison"></select></label><pre id="difference"></pre></section>
+<section><h2>Failure clusters and fingerprints</h2><pre id="details"></pre></section>
+<section><h2>Execution trace history</h2><p>Customer messages, financial records and tool payloads are omitted.</p><button id="trace">Load selected run traces</button><pre id="traces"></pre></section>
+</main></body></html>

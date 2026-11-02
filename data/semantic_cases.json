@@ -1,0 +1,26 @@
+{
+  "version": "bow-public-semantic-v1",
+  "review_status": "PENDING",
+  "source_sha256": "13ffcfdc9eb020e8bcd8e0908445eeda6384aba71d0da02ef9f5433686a48ff8",
+  "as_of": "2026-10-31",
+  "cases": [
+    {
+      "case_id": "SEM-001", "product_id": "BOW-CHK-001",
+      "question": "What is the monthly maintenance fee for Whatever Everyday Checking?",
+      "reference": "Whatever Everyday Checking has a fictional $6 monthly maintenance fee. It is waived with qualifying monthly direct deposit of at least $750 or a daily balance of at least $1,500.",
+      "reference_chunk_ids": ["POL-BOW-CHK-001-C01"]
+    },
+    {
+      "case_id": "SEM-002", "product_id": "BOW-CHK-001",
+      "question": "How can I waive the monthly fee for Whatever Everyday Checking?",
+      "reference": "The fictional monthly fee for Whatever Everyday Checking is waived with qualifying direct deposit of at least $750 monthly OR daily balance of at least $1,500.",
+      "reference_chunk_ids": ["POL-BOW-CHK-001-C01"]
+    },
+    {
+      "case_id": "SEM-003", "product_id": "BOW-SAV-001",
+      "question": "What is the savings interest rate for Whatever Starter Savings?",
+      "reference": "Whatever Starter Savings has an illustrative variable APY of 2.00%. These are fictional demonstration terms effective October 1, 2026, not a real offer.",
+      "reference_chunk_ids": ["POL-BOW-SAV-001-C02", "POL-BOW-SAV-001-C03"]
+    }
+  ]
+}

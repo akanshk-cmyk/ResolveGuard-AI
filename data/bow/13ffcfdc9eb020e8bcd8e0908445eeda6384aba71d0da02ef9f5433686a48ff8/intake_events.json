@@ -1,0 +1,11 @@
+[
+  {
+    "event_id": "BOW-EVT-001",
+    "customer_id": "BOW-CUST-001",
+    "report_capture_status": "REPORT_CAPTURED",
+    "captured_at": "2026-10-21T10:00:00+00:00",
+    "regulatory_notice_status": "NOTICE_REVIEW_REQUIRED",
+    "investigation_status": "NOT_STARTED",
+    "synthetic": true
+  }
+]

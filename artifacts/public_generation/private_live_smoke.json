@@ -1,0 +1,17 @@
+{
+  "reply_mode": "public_private",
+  "response_state": "NO_ACTION",
+  "generation": {
+    "outcome": "APPROVED",
+    "data_scope": "PRIVATE_READ",
+    "failure_code": null,
+    "error_type": null,
+    "generation_latency_ms": 2481.084,
+    "requested_model": "zai-org/GLM-5.3-Flash",
+    "returned_model": "zai-org/GLM-5.3-Flash",
+    "input_tokens": 313,
+    "output_tokens": 246
+  },
+  "account_facts_sent_to_provider": false,
+  "note": "Provider prompt uses numbered placeholders; actual account facts are inserted locally."
+}

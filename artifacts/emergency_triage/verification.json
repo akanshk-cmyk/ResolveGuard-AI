@@ -1,0 +1,16 @@
+{
+  "feature": "HIGH_SEVERITY_FRAUD deterministic synthetic emergency triage",
+  "activated": true,
+  "main_tests": {"run": 304, "passed": 303, "skipped": 1},
+  "fixture_tests_passed": 13,
+  "targeted_emergency_tests_passed": 15,
+  "browser_checks_passed": 7,
+  "guest_report_and_auth_resume": "VERIFIED_LOCAL",
+  "synthetic_card_lock_and_ticket": "VERIFIED_LOCAL",
+  "model_called_for_emergency": false,
+  "real_bank_card_changed": false,
+  "official_bank_dispute_filed": false,
+  "LangSmith_cloud": "NOT_ACTIVATED; sanitized export adapter prepared",
+  "approved_investigation_and_provisional_credit_timelines": "NOT_PROVIDED",
+  "documentation": "docs/EMERGENCY_DEBIT_TRIAGE.md"
+}

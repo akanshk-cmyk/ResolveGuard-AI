@@ -1,0 +1,22 @@
+{
+  "suite": "BOW-100-local-v1",
+  "source_sha256": "13ffcfdc9eb020e8bcd8e0908445eeda6384aba71d0da02ef9f5433686a48ff8",
+  "cases_executed": 100,
+  "passed": 100,
+  "human_review_pending": 100,
+  "release_decision": "BLOCKED_PENDING_HUMAN_QUALIFICATION",
+  "source_contract_conflicts": 16,
+  "run_type": "MOCK_SYNTHETIC_WEB_CONTRACTS",
+  "dataset_sha256": "b4e6fde4875f8721f60563ed97dc5e82e1427f125dda7b3b9a885a2dcd89ac35",
+  "fixture_sha256": "13ffcfdc9eb020e8bcd8e0908445eeda6384aba71d0da02ef9f5433686a48ff8",
+  "code_sha256": "c215be3fa1baf9e74fc2be382ab86dd033aa2d5950b3571b81692fc140ef7d37",
+  "metrics": {
+    "deterministic_journey_pass_rate": 1.0,
+    "intent_accuracy": null,
+    "fraud_recall": 1.0,
+    "p95_local_mock_latency_ms": 301.253,
+    "model_cost_usd": 0.0,
+    "token_usage": null
+  },
+  "failure_counts": {}
+}

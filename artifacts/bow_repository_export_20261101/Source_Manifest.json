@@ -1,0 +1,1232 @@
+{
+  "source_file": "Bank_of_Whatever_ResolveGuard_Synthetic_Review_Workbook.xlsx",
+  "source_sha256": "13ffcfdc9eb020e8bcd8e0908445eeda6384aba71d0da02ef9f5433686a48ff8",
+  "bank_id": "BOW",
+  "counts": {
+    "products": 11,
+    "policies": 19,
+    "chunks": 61,
+    "customers": 12,
+    "accounts": 12,
+    "transactions": 48,
+    "sessions": 12,
+    "cases": 12,
+    "delegations": 2,
+    "intake_events": 1,
+    "evaluations": 100
+  },
+  "data_sha256": {
+    "products": "d6e2abc872519b4ff593ee1c9b83845f9ccfa670a85332e80917e8adbf1ffd79",
+    "policies": "5c5b8ee683b5aa86ca36f09deff5173981b4b6fbc0d66a92d8fbec23b328df00",
+    "chunks": "d6a9911b5f12593c275ab106cecd00ea1a33b9371837b0394c76cbc4f267863a",
+    "customers": "a4706fe488de33ae843640ef3096b28612d0076537cf16919d7ef4e4955362db",
+    "accounts": "b6b3b1cccd9be69cc2d1ff0abadd08224ed511286ea1bccdba6a28db27119877",
+    "transactions": "052f8b8dbd725a65b681eb137613e6f87b1b7e76e76f5b5df6554d6e4be8081d",
+    "sessions": "4ea2aa2cbfda6627b0236f42da38e6c7a4ab5af719f14fc7cfe7b7ce56512a64",
+    "cases": "f2e5478979765d697d00f7ed20583455bae313c85b2d290dad025f707430b936",
+    "delegations": "7c099c9191ce825b92872c172a2fed926ba312aa31ce7f6f76a5eff22a7dd229",
+    "intake_events": "bb0c17f38d431e48836fd8c08637f6b085d0f09622640d76874d7434c2712bb3",
+    "evaluations": "eedb6a48663e89d5f878630a549604949bde1ec29b15108f40510ccf18d52aae"
+  },
+  "lineage": {
+    "products": [
+      {
+        "worksheet": "BOW Products",
+        "row": 2
+      },
+      {
+        "worksheet": "BOW Products",
+        "row": 3
+      },
+      {
+        "worksheet": "BOW Products",
+        "row": 4
+      },
+      {
+        "worksheet": "BOW Products",
+        "row": 5
+      },
+      {
+        "worksheet": "BOW Products",
+        "row": 6
+      },
+      {
+        "worksheet": "BOW Products",
+        "row": 7
+      },
+      {
+        "worksheet": "BOW Products",
+        "row": 8
+      },
+      {
+        "worksheet": "BOW Products",
+        "row": 9
+      },
+      {
+        "worksheet": "BOW Products",
+        "row": 10
+      },
+      {
+        "worksheet": "BOW Products",
+        "row": 11
+      },
+      {
+        "worksheet": "BOW Products",
+        "row": 12
+      }
+    ],
+    "policies": [
+      {
+        "worksheet": "BOW Policies",
+        "row": 2
+      },
+      {
+        "worksheet": "BOW Policies",
+        "row": 3
+      },
+      {
+        "worksheet": "BOW Policies",
+        "row": 4
+      },
+      {
+        "worksheet": "BOW Policies",
+        "row": 5
+      },
+      {
+        "worksheet": "BOW Policies",
+        "row": 6
+      },
+      {
+        "worksheet": "BOW Policies",
+        "row": 7
+      },
+      {
+        "worksheet": "BOW Policies",
+        "row": 8
+      },
+      {
+        "worksheet": "BOW Policies",
+        "row": 9
+      },
+      {
+        "worksheet": "BOW Policies",
+        "row": 10
+      },
+      {
+        "worksheet": "BOW Policies",
+        "row": 11
+      },
+      {
+        "worksheet": "BOW Policies",
+        "row": 12
+      },
+      {
+        "worksheet": "BOW Policies",
+        "row": 13
+      },
+      {
+        "worksheet": "BOW Policies",
+        "row": 14
+      },
+      {
+        "worksheet": "BOW Policies",
+        "row": 15
+      },
+      {
+        "worksheet": "BOW Policies",
+        "row": 16
+      },
+      {
+        "worksheet": "BOW Policies",
+        "row": 17
+      },
+      {
+        "worksheet": "BOW Policies",
+        "row": 18
+      },
+      {
+        "worksheet": "BOW Policies",
+        "row": 19
+      },
+      {
+        "worksheet": "BOW Policies",
+        "row": 20
+      }
+    ],
+    "chunks": [
+      {
+        "worksheet": "BOW RAG Chunks",
+        "row": 2
+      },
+      {
+        "worksheet": "BOW RAG Chunks",
+        "row": 3
+      },
+      {
+        "worksheet": "BOW RAG Chunks",
+        "row": 4
+      },
+      {
+        "worksheet": "BOW RAG Chunks",
+        "row": 5
+      },
+      {
+        "worksheet": "BOW RAG Chunks",
+        "row": 6
+      },
+      {
+        "worksheet": "BOW RAG Chunks",
+        "row": 7
+      },
+      {
+        "worksheet": "BOW RAG Chunks",
+        "row": 8
+      },
+      {
+        "worksheet": "BOW RAG Chunks",
+        "row": 9
+      },
+      {
+        "worksheet": "BOW RAG Chunks",
+        "row": 10
+      },
+      {
+        "worksheet": "BOW RAG Chunks",
+        "row": 11
+      },
+      {
+        "worksheet": "BOW RAG Chunks",
+        "row": 12
+      },
+      {
+        "worksheet": "BOW RAG Chunks",
+        "row": 13
+      },
+      {
+        "worksheet": "BOW RAG Chunks",
+        "row": 14
+      },
+      {
+        "worksheet": "BOW RAG Chunks",
+        "row": 15
+      },
+      {
+        "worksheet": "BOW RAG Chunks",
+        "row": 16
+      },
+      {
+        "worksheet": "BOW RAG Chunks",
+        "row": 17
+      },
+      {
+        "worksheet": "BOW RAG Chunks",
+        "row": 18
+      },
+      {
+        "worksheet": "BOW RAG Chunks",
+        "row": 19
+      },
+      {
+        "worksheet": "BOW RAG Chunks",
+        "row": 20
+      },
+      {
+        "worksheet": "BOW RAG Chunks",
+        "row": 21
+      },
+      {
+        "worksheet": "BOW RAG Chunks",
+        "row": 22
+      },
+      {
+        "worksheet": "BOW RAG Chunks",
+        "row": 23
+      },
+      {
+        "worksheet": "BOW RAG Chunks",
+        "row": 24
+      },
+      {
+        "worksheet": "BOW RAG Chunks",
+        "row": 25
+      },
+      {
+        "worksheet": "BOW RAG Chunks",
+        "row": 26
+      },
+      {
+        "worksheet": "BOW RAG Chunks",
+        "row": 27
+      },
+      {
+        "worksheet": "BOW RAG Chunks",
+        "row": 28
+      },
+      {
+        "worksheet": "BOW RAG Chunks",
+        "row": 29
+      },
+      {
+        "worksheet": "BOW RAG Chunks",
+        "row": 30
+      },
+      {
+        "worksheet": "BOW RAG Chunks",
+        "row": 31
+      },
+      {
+        "worksheet": "BOW RAG Chunks",
+        "row": 32
+      },
+      {
+        "worksheet": "BOW RAG Chunks",
+        "row": 33
+      },
+      {
+        "worksheet": "BOW RAG Chunks",
+        "row": 34
+      },
+      {
+        "worksheet": "BOW RAG Chunks",
+        "row": 35
+      },
+      {
+        "worksheet": "BOW RAG Chunks",
+        "row": 36
+      },
+      {
+        "worksheet": "BOW RAG Chunks",
+        "row": 37
+      },
+      {
+        "worksheet": "BOW RAG Chunks",
+        "row": 38
+      },
+      {
+        "worksheet": "BOW RAG Chunks",
+        "row": 39
+      },
+      {
+        "worksheet": "BOW RAG Chunks",
+        "row": 40
+      },
+      {
+        "worksheet": "BOW RAG Chunks",
+        "row": 41
+      },
+      {
+        "worksheet": "BOW RAG Chunks",
+        "row": 42
+      },
+      {
+        "worksheet": "BOW RAG Chunks",
+        "row": 43
+      },
+      {
+        "worksheet": "BOW RAG Chunks",
+        "row": 44
+      },
+      {
+        "worksheet": "BOW RAG Chunks",
+        "row": 45
+      },
+      {
+        "worksheet": "BOW RAG Chunks",
+        "row": 46
+      },
+      {
+        "worksheet": "BOW RAG Chunks",
+        "row": 47
+      },
+      {
+        "worksheet": "BOW RAG Chunks",
+        "row": 48
+      },
+      {
+        "worksheet": "BOW RAG Chunks",
+        "row": 49
+      },
+      {
+        "worksheet": "BOW RAG Chunks",
+        "row": 50
+      },
+      {
+        "worksheet": "BOW RAG Chunks",
+        "row": 51
+      },
+      {
+        "worksheet": "BOW RAG Chunks",
+        "row": 52
+      },
+      {
+        "worksheet": "BOW RAG Chunks",
+        "row": 53
+      },
+      {
+        "worksheet": "BOW RAG Chunks",
+        "row": 54
+      },
+      {
+        "worksheet": "BOW RAG Chunks",
+        "row": 55
+      },
+      {
+        "worksheet": "BOW RAG Chunks",
+        "row": 56
+      },
+      {
+        "worksheet": "BOW RAG Chunks",
+        "row": 57
+      },
+      {
+        "worksheet": "BOW RAG Chunks",
+        "row": 58
+      },
+      {
+        "worksheet": "BOW RAG Chunks",
+        "row": 59
+      },
+      {
+        "worksheet": "BOW RAG Chunks",
+        "row": 60
+      },
+      {
+        "worksheet": "BOW RAG Chunks",
+        "row": 61
+      },
+      {
+        "worksheet": "BOW RAG Chunks",
+        "row": 62
+      }
+    ],
+    "customers": [
+      {
+        "worksheet": "BOW Customers",
+        "row": 2
+      },
+      {
+        "worksheet": "BOW Customers",
+        "row": 3
+      },
+      {
+        "worksheet": "BOW Customers",
+        "row": 4
+      },
+      {
+        "worksheet": "BOW Customers",
+        "row": 5
+      },
+      {
+        "worksheet": "BOW Customers",
+        "row": 6
+      },
+      {
+        "worksheet": "BOW Customers",
+        "row": 7
+      },
+      {
+        "worksheet": "BOW Customers",
+        "row": 8
+      },
+      {
+        "worksheet": "BOW Customers",
+        "row": 9
+      },
+      {
+        "worksheet": "BOW Customers",
+        "row": 10
+      },
+      {
+        "worksheet": "BOW Customers",
+        "row": 11
+      },
+      {
+        "worksheet": "BOW Customers",
+        "row": 12
+      },
+      {
+        "worksheet": "BOW Customers",
+        "row": 13
+      }
+    ],
+    "accounts": [
+      {
+        "worksheet": "BOW Accounts",
+        "row": 2
+      },
+      {
+        "worksheet": "BOW Accounts",
+        "row": 3
+      },
+      {
+        "worksheet": "BOW Accounts",
+        "row": 4
+      },
+      {
+        "worksheet": "BOW Accounts",
+        "row": 5
+      },
+      {
+        "worksheet": "BOW Accounts",
+        "row": 6
+      },
+      {
+        "worksheet": "BOW Accounts",
+        "row": 7
+      },
+      {
+        "worksheet": "BOW Accounts",
+        "row": 8
+      },
+      {
+        "worksheet": "BOW Accounts",
+        "row": 9
+      },
+      {
+        "worksheet": "BOW Accounts",
+        "row": 10
+      },
+      {
+        "worksheet": "BOW Accounts",
+        "row": 11
+      },
+      {
+        "worksheet": "BOW Accounts",
+        "row": 12
+      },
+      {
+        "worksheet": "BOW Accounts",
+        "row": 13
+      }
+    ],
+    "transactions": [
+      {
+        "worksheet": "BOW Transactions",
+        "row": 2
+      },
+      {
+        "worksheet": "BOW Transactions",
+        "row": 3
+      },
+      {
+        "worksheet": "BOW Transactions",
+        "row": 4
+      },
+      {
+        "worksheet": "BOW Transactions",
+        "row": 5
+      },
+      {
+        "worksheet": "BOW Transactions",
+        "row": 6
+      },
+      {
+        "worksheet": "BOW Transactions",
+        "row": 7
+      },
+      {
+        "worksheet": "BOW Transactions",
+        "row": 8
+      },
+      {
+        "worksheet": "BOW Transactions",
+        "row": 9
+      },
+      {
+        "worksheet": "BOW Transactions",
+        "row": 10
+      },
+      {
+        "worksheet": "BOW Transactions",
+        "row": 11
+      },
+      {
+        "worksheet": "BOW Transactions",
+        "row": 12
+      },
+      {
+        "worksheet": "BOW Transactions",
+        "row": 13
+      },
+      {
+        "worksheet": "BOW Transactions",
+        "row": 14
+      },
+      {
+        "worksheet": "BOW Transactions",
+        "row": 15
+      },
+      {
+        "worksheet": "BOW Transactions",
+        "row": 16
+      },
+      {
+        "worksheet": "BOW Transactions",
+        "row": 17
+      },
+      {
+        "worksheet": "BOW Transactions",
+        "row": 18
+      },
+      {
+        "worksheet": "BOW Transactions",
+        "row": 19
+      },
+      {
+        "worksheet": "BOW Transactions",
+        "row": 20
+      },
+      {
+        "worksheet": "BOW Transactions",
+        "row": 21
+      },
+      {
+        "worksheet": "BOW Transactions",
+        "row": 22
+      },
+      {
+        "worksheet": "BOW Transactions",
+        "row": 23
+      },
+      {
+        "worksheet": "BOW Transactions",
+        "row": 24
+      },
+      {
+        "worksheet": "BOW Transactions",
+        "row": 25
+      },
+      {
+        "worksheet": "BOW Transactions",
+        "row": 26
+      },
+      {
+        "worksheet": "BOW Transactions",
+        "row": 27
+      },
+      {
+        "worksheet": "BOW Transactions",
+        "row": 28
+      },
+      {
+        "worksheet": "BOW Transactions",
+        "row": 29
+      },
+      {
+        "worksheet": "BOW Transactions",
+        "row": 30
+      },
+      {
+        "worksheet": "BOW Transactions",
+        "row": 31
+      },
+      {
+        "worksheet": "BOW Transactions",
+        "row": 32
+      },
+      {
+        "worksheet": "BOW Transactions",
+        "row": 33
+      },
+      {
+        "worksheet": "BOW Transactions",
+        "row": 34
+      },
+      {
+        "worksheet": "BOW Transactions",
+        "row": 35
+      },
+      {
+        "worksheet": "BOW Transactions",
+        "row": 36
+      },
+      {
+        "worksheet": "BOW Transactions",
+        "row": 37
+      },
+      {
+        "worksheet": "BOW Transactions",
+        "row": 38
+      },
+      {
+        "worksheet": "BOW Transactions",
+        "row": 39
+      },
+      {
+        "worksheet": "BOW Transactions",
+        "row": 40
+      },
+      {
+        "worksheet": "BOW Transactions",
+        "row": 41
+      },
+      {
+        "worksheet": "BOW Transactions",
+        "row": 42
+      },
+      {
+        "worksheet": "BOW Transactions",
+        "row": 43
+      },
+      {
+        "worksheet": "BOW Transactions",
+        "row": 44
+      },
+      {
+        "worksheet": "BOW Transactions",
+        "row": 45
+      },
+      {
+        "worksheet": "BOW Transactions",
+        "row": 46
+      },
+      {
+        "worksheet": "BOW Transactions",
+        "row": 47
+      },
+      {
+        "worksheet": "BOW Transactions",
+        "row": 48
+      },
+      {
+        "worksheet": "BOW Transactions",
+        "row": 49
+      }
+    ],
+    "sessions": [
+      {
+        "worksheet": "BOW Sessions",
+        "row": 2
+      },
+      {
+        "worksheet": "BOW Sessions",
+        "row": 3
+      },
+      {
+        "worksheet": "BOW Sessions",
+        "row": 4
+      },
+      {
+        "worksheet": "BOW Sessions",
+        "row": 5
+      },
+      {
+        "worksheet": "BOW Sessions",
+        "row": 6
+      },
+      {
+        "worksheet": "BOW Sessions",
+        "row": 7
+      },
+      {
+        "worksheet": "BOW Sessions",
+        "row": 8
+      },
+      {
+        "worksheet": "BOW Sessions",
+        "row": 9
+      },
+      {
+        "worksheet": "BOW Sessions",
+        "row": 10
+      },
+      {
+        "worksheet": "BOW Sessions",
+        "row": 11
+      },
+      {
+        "worksheet": "BOW Sessions",
+        "row": 12
+      },
+      {
+        "worksheet": "BOW Sessions",
+        "row": 13
+      }
+    ],
+    "cases": [
+      {
+        "worksheet": "BOW Cases",
+        "row": 2
+      },
+      {
+        "worksheet": "BOW Cases",
+        "row": 3
+      },
+      {
+        "worksheet": "BOW Cases",
+        "row": 4
+      },
+      {
+        "worksheet": "BOW Cases",
+        "row": 5
+      },
+      {
+        "worksheet": "BOW Cases",
+        "row": 6
+      },
+      {
+        "worksheet": "BOW Cases",
+        "row": 7
+      },
+      {
+        "worksheet": "BOW Cases",
+        "row": 8
+      },
+      {
+        "worksheet": "BOW Cases",
+        "row": 9
+      },
+      {
+        "worksheet": "BOW Cases",
+        "row": 10
+      },
+      {
+        "worksheet": "BOW Cases",
+        "row": 11
+      },
+      {
+        "worksheet": "BOW Cases",
+        "row": 12
+      },
+      {
+        "worksheet": "BOW Cases",
+        "row": 13
+      }
+    ],
+    "delegations": [
+      {
+        "worksheet": "BOW Delegations",
+        "row": 2
+      },
+      {
+        "worksheet": "BOW Delegations",
+        "row": 3
+      }
+    ],
+    "intake_events": [
+      {
+        "worksheet": "BOW Intake Events",
+        "row": 2
+      }
+    ],
+    "evaluations": [
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 2
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 3
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 4
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 5
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 6
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 7
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 8
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 9
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 10
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 11
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 12
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 13
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 14
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 15
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 16
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 17
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 18
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 19
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 20
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 21
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 22
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 23
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 24
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 25
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 26
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 27
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 28
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 29
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 30
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 31
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 32
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 33
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 34
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 35
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 36
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 37
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 38
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 39
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 40
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 41
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 42
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 43
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 44
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 45
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 46
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 47
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 48
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 49
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 50
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 51
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 52
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 53
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 54
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 55
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 56
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 57
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 58
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 59
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 60
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 61
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 62
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 63
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 64
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 65
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 66
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 67
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 68
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 69
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 70
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 71
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 72
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 73
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 74
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 75
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 76
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 77
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 78
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 79
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 80
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 81
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 82
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 83
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 84
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 85
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 86
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 87
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 88
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 89
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 90
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 91
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 92
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 93
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 94
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 95
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 96
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 97
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 98
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 99
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 100
+      },
+      {
+        "worksheet": "BOW Eval Golden",
+        "row": 101
+      }
+    ]
+  },
+  "archive_worksheets": "Not activated or merged; preserved in the exact XLSX source copy.",
+  "formula_policy": "No formulas/macros/links executed; formula cells in imported tables are rejected.",
+  "timestamp_assumption": "Excel serial timestamps and timezone-less expiry dates are interpreted as UTC for this synthetic demo; original source bytes are preserved.",
+  "evaluation_status": "100 source scenarios imported as NOT_RUN. The Golden worksheet name is not human approval or proof of execution.",
+  "approval": "SYNTHETIC_APPROVED_FOR_TEST_ONLY is a fictional test label, not institution approval.",
+  "evaluation_categories": {
+    "Guest product policy": 18,
+    "Fee and waiver tiers": 12,
+    "APY freshness": 10,
+    "Card and reward terms": 10,
+    "Cross bank isolation": 12,
+    "Authentication": 10,
+    "Authorization": 10,
+    "Fraud and errors": 8,
+    "Case and handoff": 6,
+    "Adversarial and outage": 4
+  }
+}

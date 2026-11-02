@@ -1,0 +1,47 @@
+{
+  "checks": [
+    {
+      "name": "Unauthenticated review API denied",
+      "passed": true
+    },
+    {
+      "name": "Searchable recorded turns render",
+      "passed": true
+    },
+    {
+      "name": "Token input clears after login",
+      "passed": true
+    },
+    {
+      "name": "Reply, access and source evidence renders",
+      "passed": true
+    },
+    {
+      "name": "Both 100-case suites and semantic/calibration drafts visible",
+      "passed": true
+    },
+    {
+      "name": "Human attestation is never preselected",
+      "passed": true
+    },
+    {
+      "name": "Measured semantic results and low-score flags visible",
+      "passed": true
+    },
+    {
+      "name": "Reviewer page fits mobile viewport",
+      "passed": true
+    },
+    {
+      "name": "Late staff response cannot restore evidence after logout",
+      "passed": true
+    },
+    {
+      "name": "Closing workspace clears review data",
+      "passed": true
+    }
+  ],
+  "runtime_errors": [],
+  "passed": true,
+  "scope": "Read-only local synthetic browser checks; no label approvals or banking actions"
+}

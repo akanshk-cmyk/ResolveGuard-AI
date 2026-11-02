@@ -1,0 +1,43 @@
+name: Local contracts and synthetic evaluations
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: windows-latest
+    timeout-minutes: 20
+    env:
+      RESOLVEGUARD_REPLY_MODE: 'off'
+      LANGSMITH_TRACING: 'false'
+      RESOLVEGUARD_CLOUD_TRACING: 'false'
+      RAGAS_DO_NOT_TRACK: 'true'
+      PYTHONIOENCODING: utf-8
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+          package-manager-cache: false
+      - name: Install locked dependencies
+        run: uv sync --locked --extra evals
+      - name: Check source and publication boundaries
+        run: uv run --locked python -m tools.repository_checks
+      - name: Main regression suite
+        run: uv run --locked python -m unittest discover -s tests -q
+      - name: Synthetic fixture suite
+        run: uv run --locked python -m unittest discover -s resolveguard_synthetic_v04/tests -q
+      - name: Original local evaluation
+        run: uv run --locked python -m resolveguard.full_evaluation --suite original --output artifacts/ci-original100
+      - name: BOW local evaluation
+        run: uv run --locked python -m resolveguard.full_evaluation --suite bow --output artifacts/ci-bow100

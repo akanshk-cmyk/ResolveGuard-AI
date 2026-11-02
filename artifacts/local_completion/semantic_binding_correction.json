@@ -1,0 +1,20 @@
+{
+  "version": "bow-public-semantic-expanded-v3-validated-product-bindings-SEM-011-correction",
+  "review_status": "PENDING",
+  "source_sha256": "13ffcfdc9eb020e8bcd8e0908445eeda6384aba71d0da02ef9f5433686a48ff8",
+  "as_of": "2026-10-31",
+  "cases": [
+    {
+      "case_id": "SEM-011",
+      "product_id": "BOW-CARD-002",
+      "question": "What are the rewards for Whatever Debit Plus?",
+      "reference": "Whatever Debit Plus: 1% on eligible debit purchases, capped at $8/month. Fictional terms effective October 1, 2026.",
+      "reference_chunk_ids": [
+        "POL-BOW-CARD-002-C01",
+        "POL-BOW-CARD-002-C02",
+        "POL-BOW-CARD-002-C03",
+        "POL-BOW-CARD-002-C04"
+      ]
+    }
+  ]
+}

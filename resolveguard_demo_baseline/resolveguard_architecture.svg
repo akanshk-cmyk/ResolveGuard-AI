@@ -1,0 +1,228 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2800" height="1900" viewBox="0 0 2800 1900">
+<rect width="100%" height="100%" fill="white"/>
+<rect x="1" y="1" width="2798" height="1898" rx="20" fill="white" stroke="#c8d2dd" stroke-width="2"/>
+<text x="40" y="58" font-family="Arial,sans-serif" font-size="34" fill="#192431" font-weight="700">ResolveGuard AI | Proposed demo architecture</text>
+<text x="42" y="92" font-family="Arial,sans-serif" font-size="22" fill="#596779" font-weight="400">Fraud/error intake + transaction inquiries | Synthetic data only | GLM-5.3-Flash selected; evaluations not run</text>
+<rect x="20" y="125" width="2230" height="345" rx="20" fill="#edf3f8" stroke="#edf3f8" stroke-width="2"/>
+<text x="52" y="171" font-family="Arial,sans-serif" font-size="22" fill="#596779" font-weight="700">BUILD TIME  /  WHEN FIXTURES OR SYNTHETIC POLICIES CHANGE</text>
+<rect x="55" y="215" width="375" height="195" rx="17" fill="#eaf2fc" stroke="#2f649b" stroke-width="2"/>
+<text x="79" y="261" font-family="Arial,sans-serif" font-size="26" fill="#192431" font-weight="700">PRD + synthetic sources</text>
+<text x="79" y="302" font-family="Arial,sans-serif" font-size="22" fill="#596779" font-weight="400">Proposed v0.4 controls</text>
+<text x="79" y="333" font-family="Arial,sans-serif" font-size="22" fill="#596779" font-weight="400">Existing JSON fixtures</text>
+<text x="79" y="364" font-family="Arial,sans-serif" font-size="22" fill="#596779" font-weight="400">100 expected test cases</text>
+<rect x="485" y="215" width="375" height="195" rx="17" fill="white" stroke="#c8d2dd" stroke-width="2"/>
+<text x="509" y="261" font-family="Arial,sans-serif" font-size="26" fill="#192431" font-weight="700">prepare_data.py</text>
+<text x="509" y="302" font-family="Arial,sans-serif" font-size="22" fill="#596779" font-weight="400">Normalize tools + states</text>
+<text x="509" y="333" font-family="Arial,sans-serif" font-size="22" fill="#596779" font-weight="400">Preserve golden labels</text>
+<text x="509" y="364" font-family="Arial,sans-serif" font-size="22" fill="#596779" font-weight="400">Validate IDs + scope</text>
+<rect x="915" y="215" width="375" height="195" rx="17" fill="white" stroke="#c8d2dd" stroke-width="2"/>
+<text x="939" y="261" font-family="Arial,sans-serif" font-size="26" fill="#192431" font-weight="700">seed_demo.py</text>
+<text x="939" y="302" font-family="Arial,sans-serif" font-size="22" fill="#596779" font-weight="400">12 customers / accounts</text>
+<text x="939" y="333" font-family="Arial,sans-serif" font-size="22" fill="#596779" font-weight="400">48 transactions; 8 cases</text>
+<text x="939" y="364" font-family="Arial,sans-serif" font-size="22" fill="#596779" font-weight="400">Sessions + fixed clock</text>
+<rect x="1345" y="215" width="375" height="195" rx="17" fill="white" stroke="#c8d2dd" stroke-width="2"/>
+<text x="1369" y="261" font-family="Arial,sans-serif" font-size="26" fill="#192431" font-weight="700">prepare_policy.py</text>
+<text x="1369" y="302" font-family="Arial,sans-serif" font-size="22" fill="#596779" font-weight="400">Approved demo text only</text>
+<text x="1369" y="333" font-family="Arial,sans-serif" font-size="22" fill="#596779" font-weight="400">Product + date filters</text>
+<text x="1369" y="364" font-family="Arial,sans-serif" font-size="22" fill="#596779" font-weight="400">Versioned evidence IDs</text>
+<rect x="1775" y="215" width="375" height="195" rx="17" fill="white" stroke="#c8d2dd" stroke-width="2"/>
+<text x="1799" y="261" font-family="Arial,sans-serif" font-size="26" fill="#192431" font-weight="700">demo_manifest.json</text>
+<text x="1799" y="302" font-family="Arial,sans-serif" font-size="22" fill="#596779" font-weight="400">Fixture + policy versions</text>
+<text x="1799" y="333" font-family="Arial,sans-serif" font-size="22" fill="#596779" font-weight="400">SQLite seed + local lookup</text>
+<text x="1799" y="364" font-family="Arial,sans-serif" font-size="22" fill="#596779" font-weight="400">Concrete test bindings</text>
+<polyline points="430,310 485,310" fill="none" stroke="#967519" stroke-width="3" />
+<polygon points="485,310 469.0,317.0 469.0,303.0" fill="#967519"/>
+<polyline points="860,310 915,310" fill="none" stroke="#967519" stroke-width="3" />
+<polygon points="915,310 899.0,317.0 899.0,303.0" fill="#967519"/>
+<polyline points="1290,310 1345,310" fill="none" stroke="#967519" stroke-width="3" />
+<polygon points="1345,310 1329.0,317.0 1329.0,303.0" fill="#967519"/>
+<polyline points="1720,310 1775,310" fill="none" stroke="#967519" stroke-width="3" />
+<polygon points="1775,310 1759.0,317.0 1759.0,303.0" fill="#967519"/>
+<rect x="20" y="495" width="2230" height="840" rx="20" fill="#edf5f3" stroke="#edf5f3" stroke-width="2"/>
+<text x="52" y="540" font-family="Arial,sans-serif" font-size="22" fill="#596779" font-weight="700">QUERY TIME  /  PER CUSTOMER MESSAGE</text>
+<rect x="55" y="780" width="220" height="155" rx="17" fill="white" stroke="#c8d2dd" stroke-width="2"/>
+<text x="79" y="826" font-family="Arial,sans-serif" font-size="26" fill="#192431" font-weight="700">Customer</text>
+<text x="79" y="867" font-family="Arial,sans-serif" font-size="22" fill="#596779" font-weight="400">Demo browser</text>
+<text x="79" y="898" font-family="Arial,sans-serif" font-size="22" fill="#596779" font-weight="400">Synthetic identity</text>
+<rect x="315" y="650" width="680" height="450" rx="20" fill="#edf5f3" stroke="#087b77" stroke-width="2"/>
+<text x="340" y="693" font-family="Arial,sans-serif" font-size="21" fill="#087b77" font-weight="700">REPLIT APP  /  PLANNED HOSTING</text>
+<rect x="340" y="720" width="295" height="265" rx="17" fill="white" stroke="#c8d2dd" stroke-width="2"/>
+<text x="364" y="766" font-family="Arial,sans-serif" font-size="26" fill="#192431" font-weight="700">Chat UI</text>
+<text x="364" y="806" font-family="Arial,sans-serif" font-size="21" fill="#596779" font-weight="400">Transaction selector</text>
+<text x="364" y="837" font-family="Arial,sans-serif" font-size="21" fill="#596779" font-weight="400">Report reference</text>
+<text x="364" y="868" font-family="Arial,sans-serif" font-size="21" fill="#596779" font-weight="400">Human-support button</text>
+<text x="364" y="899" font-family="Arial,sans-serif" font-size="21" fill="#596779" font-weight="400">Source evidence</text>
+<text x="364" y="930" font-family="Arial,sans-serif" font-size="21" fill="#596779" font-weight="400">Honest status updates</text>
+<rect x="665" y="720" width="305" height="265" rx="17" fill="white" stroke="#c8d2dd" stroke-width="2"/>
+<text x="689" y="766" font-family="Arial,sans-serif" font-size="26" fill="#192431" font-weight="700">api.py / FastAPI</text>
+<text x="689" y="806" font-family="Arial,sans-serif" font-size="21" fill="#596779" font-weight="400">POST /api/chat</text>
+<text x="689" y="837" font-family="Arial,sans-serif" font-size="21" fill="#596779" font-weight="400">Session binding</text>
+<text x="689" y="868" font-family="Arial,sans-serif" font-size="21" fill="#596779" font-weight="400">Request idempotency</text>
+<text x="689" y="899" font-family="Arial,sans-serif" font-size="21" fill="#596779" font-weight="400">Server-side secrets</text>
+<text x="689" y="930" font-family="Arial,sans-serif" font-size="21" fill="#596779" font-weight="400">Rate limit + validation</text>
+<text x="340" y="1030" font-family="Arial,sans-serif" font-size="20" fill="#596779" font-weight="400">Separate demo controls: customer switch,</text>
+<text x="340" y="1062" font-family="Arial,sans-serif" font-size="20" fill="#596779" font-weight="400">expired session, API / queue failure injection</text>
+<polyline points="275,855 340,855" fill="none" stroke="#087b77" stroke-width="3" />
+<polygon points="340,855 324.0,862.0 324.0,848.0" fill="#087b77"/>
+<polyline points="635,855 665,855" fill="none" stroke="#087b77" stroke-width="3" />
+<polygon points="665,855 649.0,862.0 649.0,848.0" fill="#087b77"/>
+<polyline points="970,855 1040,855" fill="none" stroke="#087b77" stroke-width="3" />
+<polygon points="1040,855 1024.0,862.0 1024.0,848.0" fill="#087b77"/>
+<rect x="340" y="1150" width="630" height="130" rx="17" fill="white" stroke="#c8d2dd" stroke-width="2"/>
+<text x="364" y="1196" font-family="Arial,sans-serif" font-size="26" fill="#192431" font-weight="700">ask.py / local CLI</text>
+<text x="364" y="1236" font-family="Arial,sans-serif" font-size="21" fill="#596779" font-weight="400">Same workflow entry point; reproducible fixture reset</text>
+<polyline points="970,1215 1008,1215 1008,1090 1040,1090" fill="none" stroke="#087b77" stroke-width="3" />
+<polygon points="1040,1090 1024.0,1097.0 1024.0,1083.0" fill="#087b77"/>
+<rect x="1040" y="575" width="1170" height="725" rx="22" fill="#edf5f3" stroke="#087b77" stroke-width="3"/>
+<text x="1070" y="620" font-family="Arial,sans-serif" font-size="27" fill="#087b77" font-weight="700">workflow.py / explicit Python state machine</text>
+<text x="1070" y="654" font-family="Arial,sans-serif" font-size="20" fill="#596779" font-weight="400">LLM proposes; backend authorizes, persists and establishes state</text>
+<rect x="1080" y="690" width="320" height="145" rx="17" fill="white" stroke="#087b77" stroke-width="2"/>
+<text x="1104" y="736" font-family="Arial,sans-serif" font-size="26" fill="#192431" font-weight="700">1  classify</text>
+<text x="1104" y="775" font-family="Arial,sans-serif" font-size="20" fill="#596779" font-weight="400">Intent + fraud flag</text>
+<text x="1104" y="806" font-family="Arial,sans-serif" font-size="20" fill="#596779" font-weight="400">Human flag; typed schema</text>
+<rect x="1465" y="690" width="320" height="145" rx="17" fill="white" stroke="#087b77" stroke-width="2"/>
+<text x="1489" y="736" font-family="Arial,sans-serif" font-size="26" fill="#192431" font-weight="700">2  preserve report</text>
+<text x="1489" y="775" font-family="Arial,sans-serif" font-size="20" fill="#596779" font-weight="400">If flagged: original text</text>
+<text x="1489" y="806" font-family="Arial,sans-serif" font-size="20" fill="#596779" font-weight="400">Capture time + dedupe</text>
+<rect x="1850" y="690" width="320" height="145" rx="17" fill="white" stroke="#087b77" stroke-width="2"/>
+<text x="1874" y="736" font-family="Arial,sans-serif" font-size="26" fill="#192431" font-weight="700">3  authorize</text>
+<text x="1874" y="775" font-family="Arial,sans-serif" font-size="20" fill="#596779" font-weight="400">Session + resource scope</text>
+<text x="1874" y="806" font-family="Arial,sans-serif" font-size="20" fill="#596779" font-weight="400">Deny restricted access</text>
+<rect x="1080" y="895" width="320" height="145" rx="17" fill="white" stroke="#087b77" stroke-width="2"/>
+<text x="1104" y="941" font-family="Arial,sans-serif" font-size="26" fill="#192431" font-weight="700">4  scoped tools</text>
+<text x="1104" y="980" font-family="Arial,sans-serif" font-size="20" fill="#596779" font-weight="400">Authorized reads only</text>
+<text x="1104" y="1011" font-family="Arial,sans-serif" font-size="20" fill="#596779" font-weight="400">Applicable demo policy</text>
+<rect x="1465" y="895" width="320" height="145" rx="17" fill="white" stroke="#087b77" stroke-width="2"/>
+<text x="1489" y="941" font-family="Arial,sans-serif" font-size="26" fill="#192431" font-weight="700">5  human routing</text>
+<text x="1489" y="980" font-family="Arial,sans-serif" font-size="20" fill="#596779" font-weight="400">Queue + receiver scope</text>
+<text x="1489" y="1011" font-family="Arial,sans-serif" font-size="20" fill="#596779" font-weight="400">ACK / unknown / fallback</text>
+<rect x="1850" y="895" width="320" height="145" rx="17" fill="white" stroke="#087b77" stroke-width="2"/>
+<text x="1874" y="941" font-family="Arial,sans-serif" font-size="26" fill="#192431" font-weight="700">6  evidence packet</text>
+<text x="1874" y="980" font-family="Arial,sans-serif" font-size="20" fill="#596779" font-weight="400">Exact amounts + states</text>
+<text x="1874" y="1011" font-family="Arial,sans-serif" font-size="20" fill="#596779" font-weight="400">No legal-state inference</text>
+<rect x="1080" y="1100" width="320" height="145" rx="17" fill="white" stroke="#087b77" stroke-width="2"/>
+<text x="1104" y="1146" font-family="Arial,sans-serif" font-size="26" fill="#192431" font-weight="700">7  explain</text>
+<text x="1104" y="1185" font-family="Arial,sans-serif" font-size="20" fill="#596779" font-weight="400">GLM grounded response</text>
+<text x="1104" y="1216" font-family="Arial,sans-serif" font-size="20" fill="#596779" font-weight="400">Fixed status templates</text>
+<rect x="1465" y="1100" width="320" height="145" rx="17" fill="white" stroke="#087b77" stroke-width="2"/>
+<text x="1489" y="1146" font-family="Arial,sans-serif" font-size="26" fill="#192431" font-weight="700">8  output checks</text>
+<text x="1489" y="1185" font-family="Arial,sans-serif" font-size="20" fill="#596779" font-weight="400">Facts + field allowlists</text>
+<text x="1489" y="1216" font-family="Arial,sans-serif" font-size="20" fill="#596779" font-weight="400">No false action success</text>
+<rect x="1850" y="1100" width="320" height="145" rx="17" fill="white" stroke="#087b77" stroke-width="2"/>
+<text x="1874" y="1146" font-family="Arial,sans-serif" font-size="26" fill="#192431" font-weight="700">9  respond safely</text>
+<text x="1874" y="1185" font-family="Arial,sans-serif" font-size="20" fill="#596779" font-weight="400">Verified result or fallback</text>
+<text x="1874" y="1216" font-family="Arial,sans-serif" font-size="20" fill="#596779" font-weight="400">Keep captured report</text>
+<polyline points="1400,762 1465,762" fill="none" stroke="#087b77" stroke-width="3" />
+<polygon points="1465,762 1449.0,769.0 1449.0,755.0" fill="#087b77"/>
+<polyline points="1785,762 1850,762" fill="none" stroke="#087b77" stroke-width="3" />
+<polygon points="1850,762 1834.0,769.0 1834.0,755.0" fill="#087b77"/>
+<polyline points="1400,967 1465,967" fill="none" stroke="#087b77" stroke-width="3" />
+<polygon points="1465,967 1449.0,974.0 1449.0,960.0" fill="#087b77"/>
+<polyline points="1785,967 1850,967" fill="none" stroke="#087b77" stroke-width="3" />
+<polygon points="1850,967 1834.0,974.0 1834.0,960.0" fill="#087b77"/>
+<polyline points="1400,1172 1465,1172" fill="none" stroke="#087b77" stroke-width="3" />
+<polygon points="1465,1172 1449.0,1179.0 1449.0,1165.0" fill="#087b77"/>
+<polyline points="1785,1172 1850,1172" fill="none" stroke="#087b77" stroke-width="3" />
+<polygon points="1850,1172 1834.0,1179.0 1834.0,1165.0" fill="#087b77"/>
+<polyline points="2170,835 2190,835 2190,865 1060,865 1060,967 1080,967" fill="none" stroke="#087b77" stroke-width="3" />
+<polygon points="1080,967 1064.0,974.0 1064.0,960.0" fill="#087b77"/>
+<polyline points="2170,1040 2190,1040 2190,1070 1060,1070 1060,1172 1080,1172" fill="none" stroke="#087b77" stroke-width="3" />
+<polygon points="1080,1172 1064.0,1179.0 1064.0,1165.0" fill="#087b77"/>
+<polyline points="1960,410 1960,490 1200,490 1200,575" fill="none" stroke="#967519" stroke-width="3" stroke-dasharray="9 7"/>
+<polygon points="1200,575 1193.0,559.0 1207.0,559.0" fill="#967519"/>
+<text x="1400" y="484" font-family="Consolas,monospace" font-size="19" fill="#967519" font-weight="400">load versioned artifacts</text>
+<text x="2290" y="162" font-family="Arial,sans-serif" font-size="22" fill="#596779" font-weight="700">SERVICES &amp; APP DATA</text>
+<rect x="2280" y="185" width="495" height="355" rx="20" fill="#eaf2fc" stroke="#2f649b" stroke-width="2"/>
+<text x="2305" y="231" font-family="Arial,sans-serif" font-size="26" fill="#2f649b" font-weight="700">Nebius Token Factory</text>
+<rect x="2300" y="260" width="455" height="250" rx="17" fill="white" stroke="#2f649b" stroke-width="2"/>
+<text x="2324" y="306" font-family="Arial,sans-serif" font-size="26" fill="#192431" font-weight="700">GLM-5.3-Flash</text>
+<text x="2324" y="346" font-family="Arial,sans-serif" font-size="21" fill="#596779" font-weight="400">zai-org/GLM-5.3-Flash</text>
+<text x="2324" y="377" font-family="Arial,sans-serif" font-size="21" fill="#596779" font-weight="400">Structured routing + explanation</text>
+<text x="2324" y="408" font-family="Arial,sans-serif" font-size="21" fill="#596779" font-weight="400">Server-side API calls only</text>
+<text x="2324" y="439" font-family="Arial,sans-serif" font-size="21" fill="#596779" font-weight="400">Scoped, minimized context</text>
+<text x="2324" y="470" font-family="Arial,sans-serif" font-size="21" fill="#596779" font-weight="400">Never the authorization authority</text>
+<polyline points="2210,610 2260,610 2260,365 2280,365" fill="none" stroke="#087b77" stroke-width="3" />
+<polygon points="2280,365 2264.0,372.0 2264.0,358.0" fill="#087b77"/>
+<text x="1980" y="567" font-family="Consolas,monospace" font-size="19" fill="#087b77" font-weight="400">classify + explain</text>
+<rect x="2280" y="605" width="495" height="690" rx="20" fill="#eaf2fc" stroke="#2f649b" stroke-width="2"/>
+<text x="2305" y="651" font-family="Arial,sans-serif" font-size="25" fill="#2f649b" font-weight="700">App-owned synthetic backend</text>
+<rect x="2300" y="685" width="455" height="180" rx="17" fill="white" stroke="#2f649b" stroke-width="2"/>
+<text x="2324" y="731" font-family="Arial,sans-serif" font-size="26" fill="#192431" font-weight="700">FixtureBank + local policy</text>
+<text x="2324" y="771" font-family="Arial,sans-serif" font-size="21" fill="#596779" font-weight="400">Ownership / session enforcement</text>
+<text x="2324" y="802" font-family="Arial,sans-serif" font-size="21" fill="#596779" font-weight="400">Existing scoped transaction reads</text>
+<text x="2324" y="833" font-family="Arial,sans-serif" font-size="21" fill="#596779" font-weight="400">Local approved policy lookup</text>
+<rect x="2300" y="890" width="455" height="260" rx="17" fill="white" stroke="#2f649b" stroke-width="2"/>
+<text x="2324" y="936" font-family="Arial,sans-serif" font-size="26" fill="#192431" font-weight="700">SQLite + simulated queues</text>
+<text x="2324" y="976" font-family="Arial,sans-serif" font-size="21" fill="#596779" font-weight="400">Durable reports + request keys</text>
+<text x="2324" y="1007" font-family="Arial,sans-serif" font-size="21" fill="#596779" font-weight="400">Case commit / unknown states</text>
+<text x="2324" y="1038" font-family="Arial,sans-serif" font-size="21" fill="#596779" font-weight="400">Delivery ACK + receiver scope</text>
+<text x="2324" y="1069" font-family="Arial,sans-serif" font-size="21" fill="#596779" font-weight="400">Legal notice defaults to review</text>
+<text x="2324" y="1100" font-family="Arial,sans-serif" font-size="21" fill="#596779" font-weight="400">Hosting persistence to validate</text>
+<text x="2305" y="1200" font-family="Arial,sans-serif" font-size="20" fill="#596779" font-weight="400">Planned extensions; no real bank APIs</text>
+<text x="2305" y="1235" font-family="Arial,sans-serif" font-size="20" fill="#596779" font-weight="400">No vector database needed initially</text>
+<polyline points="2210,940 2280,940" fill="none" stroke="#087b77" stroke-width="3" />
+<polygon points="2280,940 2264.0,947.0 2264.0,933.0" fill="#087b77"/>
+<text x="2230" y="888" font-family="Consolas,monospace" font-size="18" fill="#087b77" font-weight="400">tools</text>
+<rect x="20" y="1370" width="2230" height="500" rx="20" fill="#f1f0f8" stroke="#f1f0f8" stroke-width="2"/>
+<text x="52" y="1416" font-family="Arial,sans-serif" font-size="22" fill="#596779" font-weight="700">EVALUATE &amp; SHIP  /  DEMO ACCEPTANCE, NOT BANK LAUNCH APPROVAL</text>
+<rect x="55" y="1480" width="380" height="245" rx="17" fill="white" stroke="#c8d2dd" stroke-width="2"/>
+<text x="79" y="1526" font-family="Arial,sans-serif" font-size="26" fill="#192431" font-weight="700">Source repository</text>
+<text x="79" y="1566" font-family="Arial,sans-serif" font-size="21" fill="#596779" font-weight="400">Code + setup instructions</text>
+<text x="79" y="1597" font-family="Arial,sans-serif" font-size="21" fill="#596779" font-weight="400">Versioned synthetic data</text>
+<text x="79" y="1628" font-family="Arial,sans-serif" font-size="21" fill="#596779" font-weight="400">Prompt / model versions</text>
+<text x="79" y="1659" font-family="Arial,sans-serif" font-size="21" fill="#596779" font-weight="400">No credentials in source</text>
+<rect x="490" y="1480" width="380" height="245" rx="17" fill="white" stroke="#c8d2dd" stroke-width="2"/>
+<text x="514" y="1526" font-family="Arial,sans-serif" font-size="26" fill="#192431" font-weight="700">bind_cases.py</text>
+<text x="514" y="1566" font-family="Arial,sans-serif" font-size="21" fill="#596779" font-weight="400">RG-001 through RG-100</text>
+<text x="514" y="1597" font-family="Arial,sans-serif" font-size="21" fill="#596779" font-weight="400">Principal + resource IDs</text>
+<text x="514" y="1628" font-family="Arial,sans-serif" font-size="21" fill="#596779" font-weight="400">Expected events + states</text>
+<text x="514" y="1659" font-family="Arial,sans-serif" font-size="21" fill="#596779" font-weight="400">84 critical; 16 standard</text>
+<rect x="925" y="1480" width="380" height="245" rx="17" fill="white" stroke="#c8d2dd" stroke-width="2"/>
+<text x="949" y="1526" font-family="Arial,sans-serif" font-size="26" fill="#192431" font-weight="700">run_eval.py</text>
+<text x="949" y="1566" font-family="Arial,sans-serif" font-size="21" fill="#596779" font-weight="400">Same workflow as the UI</text>
+<text x="949" y="1597" font-family="Arial,sans-serif" font-size="21" fill="#596779" font-weight="400">Isolated state + fault injection</text>
+<text x="949" y="1628" font-family="Arial,sans-serif" font-size="21" fill="#596779" font-weight="400">API checks + full trajectories</text>
+<text x="949" y="1659" font-family="Arial,sans-serif" font-size="21" fill="#596779" font-weight="400">Repeat selected journeys</text>
+<rect x="1360" y="1480" width="380" height="245" rx="17" fill="white" stroke="#c8d2dd" stroke-width="2"/>
+<text x="1384" y="1526" font-family="Arial,sans-serif" font-size="26" fill="#192431" font-weight="700">review_results.py</text>
+<text x="1384" y="1566" font-family="Arial,sans-serif" font-size="21" fill="#596779" font-weight="400">Actual vs expected evidence</text>
+<text x="1384" y="1597" font-family="Arial,sans-serif" font-size="21" fill="#596779" font-weight="400">Routing + grounding + privacy</text>
+<text x="1384" y="1628" font-family="Arial,sans-serif" font-size="21" fill="#596779" font-weight="400">Latency, tokens and cost</text>
+<text x="1384" y="1659" font-family="Arial,sans-serif" font-size="21" fill="#596779" font-weight="400">Human review of semantics</text>
+<rect x="1795" y="1480" width="380" height="245" rx="17" fill="white" stroke="#c8d2dd" stroke-width="2"/>
+<text x="1819" y="1526" font-family="Arial,sans-serif" font-size="26" fill="#192431" font-weight="700">demo_gate.py</text>
+<text x="1819" y="1566" font-family="Arial,sans-serif" font-size="21" fill="#596779" font-weight="400">100 executed; no missing runs</text>
+<text x="1819" y="1597" font-family="Arial,sans-serif" font-size="21" fill="#596779" font-weight="400">84 critical: every assertion</text>
+<text x="1819" y="1628" font-family="Arial,sans-serif" font-size="21" fill="#596779" font-weight="400">Proposed intent: &gt;= 95 / 100</text>
+<text x="1819" y="1659" font-family="Arial,sans-serif" font-size="21" fill="#596779" font-weight="400">Critical failure blocks release</text>
+<polyline points="435,1600 490,1600" fill="none" stroke="#7055cf" stroke-width="3" stroke-dasharray="9 7"/>
+<polygon points="490,1600 474.0,1607.0 474.0,1593.0" fill="#7055cf"/>
+<polyline points="870,1600 925,1600" fill="none" stroke="#7055cf" stroke-width="3" stroke-dasharray="9 7"/>
+<polygon points="925,1600 909.0,1607.0 909.0,1593.0" fill="#7055cf"/>
+<polyline points="1305,1600 1360,1600" fill="none" stroke="#7055cf" stroke-width="3" stroke-dasharray="9 7"/>
+<polygon points="1360,1600 1344.0,1607.0 1344.0,1593.0" fill="#7055cf"/>
+<polyline points="1740,1600 1795,1600" fill="none" stroke="#7055cf" stroke-width="3" stroke-dasharray="9 7"/>
+<polygon points="1795,1600 1779.0,1607.0 1779.0,1593.0" fill="#7055cf"/>
+<polyline points="1100,1480 1100,1348 1260,1348 1260,1300" fill="none" stroke="#7055cf" stroke-width="3" stroke-dasharray="9 7"/>
+<polygon points="1260,1300 1267.0,1316.0 1253.0,1316.0" fill="#7055cf"/>
+<text x="1150" y="1339" font-family="Consolas,monospace" font-size="19" fill="#7055cf" font-weight="400">execute real workflow</text>
+<text x="55" y="1781" font-family="Arial,sans-serif" font-size="21" fill="#596779" font-weight="400">Existing: fixture package + 13 passing unit tests. Proposed: application, durable workflows, complete evaluation harness and hosting.</text>
+<text x="55" y="1821" font-family="Arial,sans-serif" font-size="21" fill="#596779" font-weight="400">No transfers, refunds, credential changes, card freeze or dispute adjudication. No statutory deadline calculations.</text>
+<rect x="2280" y="1370" width="495" height="500" rx="20" fill="#eaf2fc" stroke="#2f649b" stroke-width="2"/>
+<text x="2305" y="1421" font-family="Arial,sans-serif" font-size="27" fill="#2f649b" font-weight="700">LangSmith</text>
+<rect x="2300" y="1455" width="455" height="150" rx="17" fill="white" stroke="#2f649b" stroke-width="2"/>
+<text x="2324" y="1501" font-family="Arial,sans-serif" font-size="26" fill="#192431" font-weight="700">Tracing</text>
+<text x="2324" y="1541" font-family="Arial,sans-serif" font-size="21" fill="#596779" font-weight="400">Sanitize before export</text>
+<text x="2324" y="1572" font-family="Arial,sans-serif" font-size="21" fill="#596779" font-weight="400">Step spans + session / test IDs</text>
+<rect x="2300" y="1630" width="455" height="205" rx="17" fill="white" stroke="#2f649b" stroke-width="2"/>
+<text x="2324" y="1676" font-family="Arial,sans-serif" font-size="26" fill="#192431" font-weight="700">Datasets + experiments</text>
+<text x="2324" y="1716" font-family="Arial,sans-serif" font-size="21" fill="#596779" font-weight="400">100 expected cases; all Not Run</text>
+<text x="2324" y="1747" font-family="Arial,sans-serif" font-size="21" fill="#596779" font-weight="400">Code-based critical assertions</text>
+<text x="2324" y="1778" font-family="Arial,sans-serif" font-size="21" fill="#596779" font-weight="400">Compare prompt / model versions</text>
+<text x="2324" y="1809" font-family="Arial,sans-serif" font-size="21" fill="#596779" font-weight="400">Judge optional after calibration</text>
+<polyline points="2210,1265 2240,1265 2240,1530 2300,1530" fill="none" stroke="#7055cf" stroke-width="3" stroke-dasharray="9 7"/>
+<polygon points="2300,1530 2284.0,1537.0 2284.0,1523.0" fill="#7055cf"/>
+<text x="1990" y="1325" font-family="Consolas,monospace" font-size="18" fill="#7055cf" font-weight="400">sanitized traces</text>
+<polyline points="2175,1630 2230,1630 2230,1735 2300,1735" fill="none" stroke="#7055cf" stroke-width="3" stroke-dasharray="9 7"/>
+<polygon points="2300,1735 2284.0,1742.0 2284.0,1728.0" fill="#7055cf"/>
+</svg>

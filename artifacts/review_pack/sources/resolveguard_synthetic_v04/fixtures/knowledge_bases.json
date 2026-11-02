@@ -1,0 +1,306 @@
+[
+  {
+    "name": "search_fee_policies",
+    "tag": "Fee policies",
+    "description": "Search synthetic ResolveGuard fee policies evidence. Return versioned document IDs and passages; never use this as a source for live balances, permissions or case states.",
+    "docs": [
+      {
+        "doc_id": "POL-FEE-001",
+        "title": "Checking account monthly fee",
+        "text": "DEMO CHECKING fee schedule: a $12.00 monthly service fee may apply. Eligibility for waiver depends on account terms and is not determined solely by this excerpt.",
+        "product": "CHECKING",
+        "jurisdiction": "US",
+        "effective_date": "2026-01-01",
+        "expires_at": null,
+        "approval_status": "APPROVED_FOR_SYNTHETIC_TEST",
+        "version": "demo-v1",
+        "audience": "CUSTOMER_AND_AGENT",
+        "synthetic": true
+      },
+      {
+        "doc_id": "POL-FEE-002",
+        "title": "Fee waiver conditions",
+        "text": "DEMO CHECKING fee waiver rules require a verified product-level eligibility check; do not promise reversal or refund.",
+        "product": "CHECKING",
+        "jurisdiction": "US",
+        "effective_date": "2026-01-01",
+        "expires_at": null,
+        "approval_status": "APPROVED_FOR_SYNTHETIC_TEST",
+        "version": "demo-v1",
+        "audience": "CUSTOMER_AND_AGENT",
+        "synthetic": true
+      }
+    ]
+  },
+  {
+    "name": "search_transaction_guidance",
+    "tag": "Transaction guidance",
+    "description": "Search synthetic ResolveGuard transaction guidance evidence. Return versioned document IDs and passages; never use this as a source for live balances, permissions or case states.",
+    "docs": [
+      {
+        "doc_id": "POL-TRAN-001",
+        "title": "Posted versus pending",
+        "text": "Posted transactions appear in transaction history after processing. A pending authorization is not a final posted charge.",
+        "product": "ALL",
+        "jurisdiction": "US",
+        "effective_date": "2026-01-01",
+        "expires_at": null,
+        "approval_status": "APPROVED_FOR_SYNTHETIC_TEST",
+        "version": "demo-v1",
+        "audience": "CUSTOMER_AND_AGENT",
+        "synthetic": true
+      },
+      {
+        "doc_id": "POL-TRAN-002",
+        "title": "Unrecognized transaction",
+        "text": "If a customer does not recognize a debit-card transaction, preserve the statement and route through the approved error-intake workflow; do not require specific magic words.",
+        "product": "DEBIT_CHECKING",
+        "jurisdiction": "US",
+        "effective_date": "2026-01-01",
+        "expires_at": null,
+        "approval_status": "APPROVED_FOR_SYNTHETIC_TEST",
+        "version": "demo-v1",
+        "audience": "CUSTOMER_AND_AGENT",
+        "synthetic": true
+      }
+    ]
+  },
+  {
+    "name": "search_error_resolution",
+    "tag": "Error resolution",
+    "description": "Search synthetic ResolveGuard error resolution evidence. Return versioned document IDs and passages; never use this as a source for live balances, permissions or case states.",
+    "docs": [
+      {
+        "doc_id": "POL-ERR-001",
+        "title": "Notice preservation",
+        "text": "Synthetic operating policy: preserve the exact customer statement and event time durably. Legal receipt determination is made by the approved operations system, not the chatbot.",
+        "product": "ALL",
+        "jurisdiction": "US",
+        "effective_date": "2026-01-01",
+        "expires_at": null,
+        "approval_status": "APPROVED_FOR_SYNTHETIC_TEST",
+        "version": "demo-v1",
+        "audience": "CUSTOMER_AND_AGENT",
+        "synthetic": true
+      },
+      {
+        "doc_id": "POL-ERR-002",
+        "title": "Case versus notice",
+        "text": "A customer support case identifier does not independently establish whether a legally qualifying electronic-funds-transfer error notice was received.",
+        "product": "ALL",
+        "jurisdiction": "US",
+        "effective_date": "2026-01-01",
+        "expires_at": null,
+        "approval_status": "APPROVED_FOR_SYNTHETIC_TEST",
+        "version": "demo-v1",
+        "audience": "CUSTOMER_AND_AGENT",
+        "synthetic": true
+      }
+    ]
+  },
+  {
+    "name": "search_authentication_policy",
+    "tag": "Identity and authority",
+    "description": "Search synthetic ResolveGuard identity and authority evidence. Return versioned document IDs and passages; never use this as a source for live balances, permissions or case states.",
+    "docs": [
+      {
+        "doc_id": "POL-AUTH-001",
+        "title": "Customer account scope",
+        "text": "Account-specific information requires an active authenticated session and current server-side permission for the exact resource and requested fields.",
+        "product": "ALL",
+        "jurisdiction": "US",
+        "effective_date": "2026-01-01",
+        "expires_at": null,
+        "approval_status": "APPROVED_FOR_SYNTHETIC_TEST",
+        "version": "demo-v1",
+        "audience": "CUSTOMER_AND_AGENT",
+        "synthetic": true
+      },
+      {
+        "doc_id": "POL-AUTH-002",
+        "title": "Representative delegation",
+        "text": "Representative permissions are limited to approved accounts and action scopes, and are rechecked for expiration or revocation on each restricted call.",
+        "product": "ALL",
+        "jurisdiction": "US",
+        "effective_date": "2026-01-01",
+        "expires_at": null,
+        "approval_status": "APPROVED_FOR_SYNTHETIC_TEST",
+        "version": "demo-v1",
+        "audience": "CUSTOMER_AND_AGENT",
+        "synthetic": true
+      },
+      {
+        "doc_id": "POL-AUTH-003",
+        "title": "Step-up verification",
+        "text": "Synthetic rule: sensitive scope changes must use an approved step-up authentication service. Chat must not request passwords, PINs, CVVs or OTPs.",
+        "product": "ALL",
+        "jurisdiction": "US",
+        "effective_date": "2026-01-01",
+        "expires_at": null,
+        "approval_status": "APPROVED_FOR_SYNTHETIC_TEST",
+        "version": "demo-v1",
+        "audience": "CUSTOMER_AND_AGENT",
+        "synthetic": true
+      }
+    ]
+  },
+  {
+    "name": "search_fraud_guidance",
+    "tag": "Fraud protection",
+    "description": "Search synthetic ResolveGuard fraud protection evidence. Return versioned document IDs and passages; never use this as a source for live balances, permissions or case states.",
+    "docs": [
+      {
+        "doc_id": "POL-FRAUD-001",
+        "title": "Urgent fraud routing",
+        "text": "Suspected ongoing unauthorized debit-card activity must be routed to an approved fraud-protection channel. Do not claim a card was blocked unless the bank tool confirms it.",
+        "product": "DEBIT_CHECKING",
+        "jurisdiction": "US",
+        "effective_date": "2026-01-01",
+        "expires_at": null,
+        "approval_status": "APPROVED_FOR_SYNTHETIC_TEST",
+        "version": "demo-v1",
+        "audience": "CUSTOMER_AND_AGENT",
+        "synthetic": true
+      }
+    ]
+  },
+  {
+    "name": "search_case_procedures",
+    "tag": "Case procedures",
+    "description": "Search synthetic ResolveGuard case procedures evidence. Return versioned document IDs and passages; never use this as a source for live balances, permissions or case states.",
+    "docs": [
+      {
+        "doc_id": "POL-CASE-001",
+        "title": "Case statuses",
+        "text": "Supported synthetic statuses: OPEN, IN_REVIEW, WAITING_FOR_CUSTOMER, RESOLVED, CLOSED. Do not equate CLOSED to customer satisfaction or error resolution.",
+        "product": "ALL",
+        "jurisdiction": "US",
+        "effective_date": "2026-01-01",
+        "expires_at": null,
+        "approval_status": "APPROVED_FOR_SYNTHETIC_TEST",
+        "version": "demo-v1",
+        "audience": "CUSTOMER_AND_AGENT",
+        "synthetic": true
+      },
+      {
+        "doc_id": "POL-CASE-002",
+        "title": "Case creation uncertainty",
+        "text": "If a case creation call times out, reconcile by idempotency key before retrying and do not tell the customer the case exists without backend confirmation.",
+        "product": "ALL",
+        "jurisdiction": "US",
+        "effective_date": "2026-01-01",
+        "expires_at": null,
+        "approval_status": "APPROVED_FOR_SYNTHETIC_TEST",
+        "version": "demo-v1",
+        "audience": "CUSTOMER_AND_AGENT",
+        "synthetic": true
+      }
+    ]
+  },
+  {
+    "name": "search_privacy_controls",
+    "tag": "Privacy and audit",
+    "description": "Search synthetic ResolveGuard privacy and audit evidence. Return versioned document IDs and passages; never use this as a source for live balances, permissions or case states.",
+    "docs": [
+      {
+        "doc_id": "POL-PRIV-001",
+        "title": "Data minimization",
+        "text": "The agent receives only fields necessary for an authorized request. Restricted values must not be copied to unrelated conversation context or verbose logs.",
+        "product": "ALL",
+        "jurisdiction": "US",
+        "effective_date": "2026-01-01",
+        "expires_at": null,
+        "approval_status": "APPROVED_FOR_SYNTHETIC_TEST",
+        "version": "demo-v1",
+        "audience": "CUSTOMER_AND_AGENT",
+        "synthetic": true
+      },
+      {
+        "doc_id": "POL-PRIV-002",
+        "title": "Model and traces",
+        "text": "Customer account numbers, authentication factors and restricted PII must not be exposed in LLM prompts or exported traces outside institution-approved controls.",
+        "product": "ALL",
+        "jurisdiction": "US",
+        "effective_date": "2026-01-01",
+        "expires_at": null,
+        "approval_status": "APPROVED_FOR_SYNTHETIC_TEST",
+        "version": "demo-v1",
+        "audience": "CUSTOMER_AND_AGENT",
+        "synthetic": true
+      }
+    ]
+  },
+  {
+    "name": "search_handoff_policy",
+    "tag": "Handoff policies",
+    "description": "Search synthetic ResolveGuard handoff policies evidence. Return versioned document IDs and passages; never use this as a source for live balances, permissions or case states.",
+    "docs": [
+      {
+        "doc_id": "POL-HAND-001",
+        "title": "Transfer ownership",
+        "text": "A handoff is completed only when an authorized receiving queue acknowledges delivery. Otherwise report a pending/unavailable handoff and provide approved alternatives.",
+        "product": "ALL",
+        "jurisdiction": "US",
+        "effective_date": "2026-01-01",
+        "expires_at": null,
+        "approval_status": "APPROVED_FOR_SYNTHETIC_TEST",
+        "version": "demo-v1",
+        "audience": "CUSTOMER_AND_AGENT",
+        "synthetic": true
+      },
+      {
+        "doc_id": "POL-HAND-002",
+        "title": "Receiving agent scope",
+        "text": "The destination agent must be entitled to receive the specific case context before the handoff payload is revealed.",
+        "product": "ALL",
+        "jurisdiction": "US",
+        "effective_date": "2026-01-01",
+        "expires_at": null,
+        "approval_status": "APPROVED_FOR_SYNTHETIC_TEST",
+        "version": "demo-v1",
+        "audience": "CUSTOMER_AND_AGENT",
+        "synthetic": true
+      }
+    ]
+  },
+  {
+    "name": "search_complaint_policy",
+    "tag": "Complaint policy",
+    "description": "Search synthetic ResolveGuard complaint policy evidence. Return versioned document IDs and passages; never use this as a source for live balances, permissions or case states.",
+    "docs": [
+      {
+        "doc_id": "POL-COMP-001",
+        "title": "Complaint recognition",
+        "text": "A customer complaint must not be discarded because the assistant could not complete a restricted data lookup. Preserve and route according to approved bank procedures.",
+        "product": "ALL",
+        "jurisdiction": "US",
+        "effective_date": "2026-01-01",
+        "expires_at": null,
+        "approval_status": "APPROVED_FOR_SYNTHETIC_TEST",
+        "version": "demo-v1",
+        "audience": "CUSTOMER_AND_AGENT",
+        "synthetic": true
+      }
+    ]
+  },
+  {
+    "name": "search_agent_authorization",
+    "tag": "Agent authorization",
+    "description": "Search synthetic ResolveGuard agent authorization evidence. Return versioned document IDs and passages; never use this as a source for live balances, permissions or case states.",
+    "docs": [
+      {
+        "doc_id": "POL-SERV-001",
+        "title": "AI agent identity",
+        "text": "The AI service principal must have least privilege and a valid acting-principal context. Service credentials alone do not authorize access to customer records.",
+        "product": "ALL",
+        "jurisdiction": "US",
+        "effective_date": "2026-01-01",
+        "expires_at": null,
+        "approval_status": "APPROVED_FOR_SYNTHETIC_TEST",
+        "version": "demo-v1",
+        "audience": "CUSTOMER_AND_AGENT",
+        "synthetic": true
+      }
+    ]
+  }
+]

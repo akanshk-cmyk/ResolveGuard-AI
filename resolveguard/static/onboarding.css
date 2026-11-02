@@ -1,0 +1,8 @@
+.workspace.is-welcome .welcome{margin:22px auto;max-width:500px}
+.workspace.is-welcome .welcome h3{font-size:21px;line-height:1.5}
+.workspace.is-welcome .agent-avatar-welcome{width:90px;height:90px}
+.workspace.is-welcome #chat-form{border:2px solid #508b7e;box-shadow:0 0 0 3px #edf5f1}
+.workspace.is-welcome #message{min-height:72px;font-size:15px}
+.service-panel .suggestions{justify-content:flex-start;margin-top:12px}
+.service-panel .suggestions button{font-size:13px}
+@media(max-width:850px){.workspace.is-welcome .welcome{margin:14px auto}.workspace.is-welcome .welcome h3{font-size:19px}}

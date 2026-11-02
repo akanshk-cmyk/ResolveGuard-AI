@@ -1,0 +1,36 @@
+{
+  "source_sha256": "817cb87ce51af0d4429098b0e6ba09931a6e6482f15ab43939c266630856f628",
+  "calibration_rows": 12,
+  "calibration_human_marks": {
+    "PASS": 10,
+    "FAIL": 2
+  },
+  "reference_rows": 16,
+  "reference_behavioral_marks": {
+    "PASS": 13,
+    "PARTIAL_PASS": 3
+  },
+  "all_source_hashes_match": true,
+  "exact_written_calibration_responses_unchanged": true,
+  "label_disagreement_ids": [
+    "CAL-006",
+    "CAL-008",
+    "CAL-010",
+    "CAL-012"
+  ],
+  "valid_human_judge_agreement": null,
+  "valid_human_judge_agreement_reason": "Comments indicate different live replies were evaluated; review target needs confirmation.",
+  "privacy_followup_ids": [
+    "BOW-EVAL-092",
+    "BOW-EVAL-095",
+    "BOW-EVAL-096"
+  ],
+  "attestation_values_preserved": [
+    "Reviewed"
+  ],
+  "references_automatically_approved": false,
+  "human_marks_changed": false,
+  "application_code_changed": false,
+  "model_or_cloud_calls": false,
+  "submission_package_overwritten": false
+}

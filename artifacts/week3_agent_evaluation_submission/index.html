@@ -1,0 +1,227 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ResolveGuard Week 3 Evaluation</title><style>body{font:16px/1.6 system-ui,sans-serif;color:#173b40;background:#f7f9f8;margin:0}main{max-width:1120px;margin:auto;padding:32px}h1,h2{line-height:1.25}table{display:block;overflow:auto;border-collapse:collapse;background:white}td,th{padding:10px;border:1px solid #ccd9d4;text-align:left;vertical-align:top}pre{white-space:pre-wrap;background:#eaf0ed;padding:12px;overflow-wrap:anywhere}code{overflow-wrap:anywhere}a{color:#09665c}select{font:inherit;max-width:100%;padding:10px}.pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}.pair>div{min-width:0}.pair p{overflow-wrap:anywhere}.pair pre{max-height:360px;overflow:auto}@media(max-width:700px){.pair{display:block}}@media print{body{font-size:10pt;background:white}main{padding:0}h2{break-after:avoid}table{display:table;font-size:9pt}pre{font-size:9pt}.interactive{display:none}}</style></head><body><main><p><a href="ResolveGuard_Week3_Evaluation.xlsx">Download spreadsheet</a> · <a href="Project_Summary_Report.pdf">PDF report</a> · <a href="Evidence_Analysis.ipynb">Executed analysis</a> · <a href="Loom_Recording_Script.md">Loom script</a></p><header id="project-overview"><h1>ResolveGuard AI · Week 3 Agent Evaluation</h1><p><strong>Mock-agent experiment:</strong> 40 identical cases, three repeats per version. Human reference review pending.</p><p><strong>Journey:</strong> 80% → 97.5% · <strong>Intent:</strong> 85% → 100% · <strong>Fraud recall:</strong> 80% → 100%. These are not GLM quality gains.</p></header><section class="interactive"><h2>Inspect the same case before and after</h2><select id="case"></select><p id="expected"></p><div class="pair"><div><h3>Baseline v0</h3><p id="before-status"></p><pre id="before"></pre></div><div><h3>Improved v4</h3><p id="after-status"></p><pre id="after"></pre></div></div></section><h1>ResolveGuard AI — Week 3 Agent Evaluation</h1>
+<p>Project summary and solution report · Own use case · Spreadsheet track</p>
+<p><strong>Main finding:</strong> on the same 40 synthetic cases, four targeted mock-rule changes
+raised journey pass rate from <strong>80% to 97.5%</strong>. Seven failing cases became passes;
+one evidence-retrieval failure remained. No case regressed in this experiment.
+This measures mock-agent routing and workflow checks, <strong>not GLM model improvement</strong>.</p>
+<h2>1. Use case, user and expected outcome</h2>
+<p>ResolveGuard is a banking-support learning project. It helps fictional checking
+and debit customers understand a payment, report an error, check permitted support
+information or request a human. A good outcome is an accurate, authorized answer
+or a durably saved report with truthful next steps. A plausible answer without a
+real backend receipt does not count as success.</p>
+<p><strong>Evaluation one-liner:</strong> Can the agent select the right journey, preserve the
+customer's report, respect access boundaries and describe only verified outcomes
+on the same set of happy-path, edge, known-failure and adversarial inputs?</p>
+<p>The evaluated system used Python, Pydantic input/output validation, LangGraph
+workflow steps, local policy retrieval, synthetic backend fixtures and SQLite
+receipts. Baseline was TunedMockModel stage 0; improved was stage 4. Neither called
+a provider. The actual saved traces identify mock-rules-v0 through mock-rules-v4.</p>
+<h2>2. Dataset and fair comparison</h2>
+<p>The workbook contains <strong>40 unique cases</strong>: 20 happy-path, 12 edge, six anticipated
+backend-failure scenarios and two adversarial cases. A known backend outage is not
+automatically a failed agent: a truthful unconfirmed response can pass its rubric.
+Each version ran every case three times in isolated databases: 120 observations
+per version, not 120 different cases. The two headline versions therefore supply
+240 raw observations. All five stages used the same case IDs and expected labels.</p>
+<p>The packaging script verifies the dataset hash, all 40 IDs, the three repeats,
+matching expected assertions and the metrics recomputed from saved results.
+Dataset fingerprint: <code>8df40d76421052903381d59087af264c60fa6005ebe0dd7191cf98da1eef5f01</code>.
+Historical code fingerprint: <code>f857e68ea9715c879d95e13ca1d758a6f48329385fda5ae50f083a69e8dabd1b</code>.</p>
+<p>Inputs and scenario text originate in the supplied ResolveGuard synthetic workbook;
+fixture bindings and expected assertions were AI-authored. Human review was PENDING
+for all 40 at measurement time, and prompt authorship was not independently
+attested. These are <strong>proposed golden labels</strong>, not human-certified ground truth.
+The source contracts and provenance are retained in the spreadsheet/JSON.</p>
+<p>The saved experiment ran October 30 UTC. The report was prepared October 31,
+2026, Pacific time. Later live framing, BOW expansion and emergency-card features
+are outside this paired experiment. Their separate checks must not be pooled into
+these before/after scores. The attached code is a current reference snapshot;
+the exact historical checkout and a historical fixture hash were not preserved.</p>
+<h2>3. Metrics, scoring and numeric pass bars</h2>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th style="text-align:right">Baseline</th>
+<th style="text-align:right">Improved</th>
+<th style="text-align:right">Delta</th>
+<th>Proposed learning pass bar</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Intent accuracy</td>
+<td style="text-align:right">85.000</td>
+<td style="text-align:right">100.000</td>
+<td style="text-align:right">+15.000 percentage points</td>
+<td>&gt;= 95%</td>
+</tr>
+<tr>
+<td>Journey pass rate</td>
+<td style="text-align:right">80.000</td>
+<td style="text-align:right">97.500</td>
+<td style="text-align:right">+17.500 percentage points</td>
+<td>&gt;= 95%</td>
+</tr>
+<tr>
+<td>Fraud/error recall</td>
+<td style="text-align:right">80.000</td>
+<td style="text-align:right">100.000</td>
+<td style="text-align:right">+20.000 percentage points</td>
+<td>= 100%</td>
+</tr>
+<tr>
+<td>Local p95 latency, ms</td>
+<td style="text-align:right">30.950</td>
+<td style="text-align:right">30.577</td>
+<td style="text-align:right">-0.373 ms</td>
+<td>&lt;= 100 ms</td>
+</tr>
+<tr>
+<td>Provider API cost per 120-run batch, USD</td>
+<td style="text-align:right">0.000</td>
+<td style="text-align:right">0.000</td>
+<td style="text-align:right">+0.000 USD</td>
+<td>= $0 in offline mock</td>
+</tr>
+</tbody>
+</table>
+<p>Percent metrics are displayed in percent; their deltas are percentage points.
+Latency is nearest-rank p95 across 120 saved per-case elapsed times, including
+the evaluator's configured same-request retries. It is local workflow timing,
+not browser latency or live provider latency. The 0.373 ms p95 difference is small
+and is not evidence of a meaningful speed optimization. Provider cost is $0
+because no model API was called; CPU, hosting and review costs are excluded.
+Provider tokens are unavailable, not measured zeros.</p>
+<p>These pass bars were selected retrospectively for the learning report; they were
+not pre-registered before the runs and are not bank service commitments.</p>
+<p>The main rubric is deterministic, not an LLM judge. Checks cover exact intent,
+fraud/human flags, allowed response state, required records, record truth, access
+denial, report preservation, intake-before-read ordering, committed case state,
+handoff acknowledgement/scope, required policy sources and field minimization.
+PASS requires every recorded check to pass. A spreadsheet case scores 1 only if
+all three repeats pass; otherwise 0. The raw sheet retains each repeat's checks.
+Some non-applicable checks default to true; a fraction of checks passed should
+not be interpreted as a semantic correctness probability.</p>
+<p>Improved results meet the five proposed aggregate targets. <strong>Qualification still
+remains blocked</strong> by RG-056, unapproved references and incomplete provenance.
+For critical scenarios, all-assertion passes were 57/81 repeat-runs before and
+78/81 after; the remaining three failures are the same RG-056 case. Aggregate
+success does not waive required evidence or critical safety review.</p>
+<h2>4. Top three failure modes</h2>
+<ol>
+<li><strong>Indirect fraud language was missed — RG-020 and RG-033.</strong> A customer said
+&quot;that was not me&quot; rather than the exact words the baseline recognized. The
+baseline missed the fraud flag and required preservation/handoff checks.</li>
+<li><strong>Human support requests were missed — RG-032, RG-033 and RG-053.</strong> &quot;Real
+person&quot; and &quot;fraud support&quot; were not recognized consistently. RG-032 had the
+correct main intent but still failed because the human-request flag was wrong.</li>
+<li><strong>Case and retry language was missed — RG-018 and RG-050.</strong> &quot;Create a ticket&quot;
+and &quot;clicked submit twice&quot; did not reach the expected case path.</li>
+</ol>
+<p>These impact-based groups overlap: RG-033 appears in two groups. They are not a
+partition of all failures. Across the baseline there were eight distinct failed
+cases, including RG-054 and RG-056, which remain visible in the spreadsheet.</p>
+<h2>5. Four targeted changes and measured results</h2>
+<table>
+<thead>
+<tr>
+<th>Stage</th>
+<th>Change</th>
+<th style="text-align:right">Journey pass</th>
+<th style="text-align:right">Intent accuracy</th>
+<th style="text-align:right">Fraud recall</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>v0</td>
+<td>Baseline rules</td>
+<td style="text-align:right">80%</td>
+<td style="text-align:right">85%</td>
+<td style="text-align:right">80%</td>
+</tr>
+<tr>
+<td>v1</td>
+<td>Recognize indirect unauthorized-use phrases</td>
+<td style="text-align:right">82.5%</td>
+<td style="text-align:right">90%</td>
+<td style="text-align:right">100%</td>
+</tr>
+<tr>
+<td>v2</td>
+<td>Recognize human-support phrases</td>
+<td style="text-align:right">90%</td>
+<td style="text-align:right">92.5%</td>
+<td style="text-align:right">100%</td>
+</tr>
+<tr>
+<td>v3</td>
+<td>Recognize ticket and duplicate-submit language</td>
+<td style="text-align:right">95%</td>
+<td style="text-align:right">97.5%</td>
+<td style="text-align:right">100%</td>
+</tr>
+<tr>
+<td>v4</td>
+<td>Prioritize requested account facts over incidental policy wording</td>
+<td style="text-align:right">97.5%</td>
+<td style="text-align:right">100%</td>
+<td style="text-align:right">100%</td>
+</tr>
+</tbody>
+</table>
+<p>The same codebase supported all stages through a stage parameter; the measured
+intervention was rule coverage, not a model swap or fine-tune. No test IDs or
+expected labels were sent into the agent. Trusted test setup supplied fixture
+identity/selectors outside the customer message. Three deterministic repeats
+show consistency in this sample, not robustness to LLM sampling variation.</p>
+<p><strong>RG-054 caveat:</strong> its historical proposed label is TRANSACTION_INQUIRY even
+though the input is a prompt-injection attempt. The v4 pass is against that old
+contract, not proof of better injection detection. Both versions retained backend
+access boundaries. The current application has a separate explicit security-block
+route; human review should reconcile the label before a new benchmark.</p>
+<h2>6. Remaining failure, regressions and next steps</h2>
+<p>The improved run passes <strong>39/40 unique cases</strong>, versus <strong>32/40</strong> before. Seven
+cases improved, none regressed, and <strong>RG-056 failed in all three repeats</strong> because
+the required privacy-policy evidence was missing. This is not evidence that card
+numbers were disclosed. It is a required-source retrieval failure. Later work
+addressed retrieval, but that later result is intentionally not mixed into this
+matched v0/v4 comparison.</p>
+<p>Next: independently review labels and provenance; reconcile the RG-054 security
+contract; validate the RG-056 retrieval correction in a new versioned matched run;
+expand paraphrase and held-out coverage; then evaluate real provider quality,
+tokens, latency and cost separately. Do not fine-tune from these draft labels.
+Zero observed regressions in 40 cases does not prove general safety.</p>
+<h2>7. Supporting evidence and observability</h2>
+<p>ResolveGuard_Week3_Evaluation.xlsx contains case-level inputs, expected behaviors,
+baseline/improved full outputs, binary scores, failure categories, repeats,
+latencies, rubric and provenance. Raw Runs 240 contains all repeat scores and
+version/trace IDs. evidence/v0_traces.jsonl and v4_traces.jsonl contain actual local
+execution traces; no hosted LangSmith links are claimed for this spreadsheet track.</p>
+<p>Evidence_Analysis.ipynb was executed by the packaging script using Python code
+execution and includes genuine outputs/assertions. It recomputes saved evidence;
+it does <strong>not</strong> rerun the agent. Current relevant agent/evaluator code and router
+prompts are attached under supporting_code. The mock rules do not use a live
+generation prompt; attaching router prompts does not imply they produced the
+main measured outputs.</p>
+<p>An optional LLM judge exists elsewhere in the app. Its prompt and twelve actual
+calibration outputs are included as a <strong>separate appendix</strong>, not as the source of
+the 40-case scores. Judge Human Review explicitly shows human labels as missing.
+Matching proposed AI-authored labels does not establish human-model agreement;
+that agreement remains unscored until independent labels are supplied.</p>
+<h2>8. Submission checklist and demo video</h2>
+<p>Prepared: spreadsheet, CSV/JSON, solution report, local traces, executed evidence
+analysis, relevant code/prompts and a Loom recording script. The interactive HTML
+viewer can show any case's exact baseline and improved evidence during recording.</p>
+<p><strong>Not completed:</strong> independent label approval, actual Loom recording/link, and
+upload to the course portal. Loom_Recording_Script.md provides a five-minute
+sequence covering the use case, dataset, failure, changes, results and remaining
+limits. Do not submit the script as though it were a recorded video.</p>
+<h2>What I learned</h2>
+<p>Testing the full journey matters more than checking whether a reply sounds good.
+A correct intent can still miss a requested human handoff. A high aggregate score
+can still hide missing evidence. Improvements are credible when the cases,
+expectations, versions and limitations remain visible to the reviewer.</p>
+<script src="case_viewer.js"></script></main></body></html>

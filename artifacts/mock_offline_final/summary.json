@@ -1,0 +1,40 @@
+{
+  "run_type": "MOCK_SMOKE_NOT_LIVE_MODEL_BASELINE",
+  "engine": "offline",
+  "dataset_version": "resolveguard-40-draft-v1",
+  "dataset_sha256": "8df40d76421052903381d59087af264c60fa6005ebe0dd7191cf98da1eef5f01",
+  "cases_executed": 120,
+  "unique_cases": 40,
+  "metrics": {
+    "intent_accuracy": 0.85,
+    "deterministic_journey_pass_rate": 0.8,
+    "fraud_recall": 0.8,
+    "critical_cases_all_assertions_passed": 57,
+    "critical_case_runs": 81,
+    "p95_local_mock_latency_ms": 28.006,
+    "model_cost_usd": 0.0,
+    "token_usage": null
+  },
+  "failure_counts": {
+    "routing_exact": 18,
+    "response_state": 18,
+    "case_commit_truth": 6,
+    "fraud_flag": 6,
+    "report_preserved": 6,
+    "report_before_restricted_read": 6,
+    "handoff_truth": 9,
+    "human_flag": 9,
+    "policy_evidence": 3
+  },
+  "human_review_pending": 40,
+  "demo_release_decision": "BLOCKED",
+  "blocking_reasons": [
+    "Mock responses do not establish GLM quality, live latency or provider cost",
+    "Human labels and semantic outputs require review",
+    "Source prompt authorship / LLM-generated proportion unverified",
+    "Full 100-case critical suite not executed by this 40-case runner",
+    "Critical mock scenario assertions failed"
+  ],
+  "code_sha256": "af5e31b69fbb93bae626dfc71dceca67549ef2f5003ffd2823a9dd5256cab282",
+  "fixture_sha256": "f399e649d845c1ac5ed7e7d670f61850895e295f8ac1f0d3335d306906fb3a2d"
+}

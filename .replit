@@ -1,0 +1,1 @@
+run = "python -m uvicorn resolveguard.web:create_app --factory --host 0.0.0.0 --port 3000 --workers 1"

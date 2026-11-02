@@ -1,0 +1,266 @@
+<!doctype html><html lang="en"><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'">
+<title>ResolveGuard local completion report</title><style>
+body{font:16px/1.65 system-ui,sans-serif;color:#173b40;background:#f5f7f5;margin:0}
+main{max-width:1100px;margin:auto;padding:28px}h1,h2{line-height:1.25}
+table{display:block;overflow:auto;border-collapse:collapse;background:white}
+th,td{padding:12px;border:1px solid #d3dfdc;min-width:150px;text-align:left;vertical-align:top}
+pre{overflow:auto;padding:16px;background:#e8efed}code{overflow-wrap:anywhere}
+a{color:#09665c}li{margin-bottom:8px}</style><main><h1>ResolveGuard local implementation completion</h1>
+<p>Completed local implementation and verification after the October 31 review.
+Scope excludes LangSmith Cloud, Replit deployment and real bank integrations.
+This is a synthetic learning/demo application. Human reference approval and
+production qualification are separate from implementation completion.</p>
+<h2>What changed and why</h2>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>What now works</th>
+<th>Why it matters</th>
+<th>Verification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. Check answer claims</td>
+<td>Controlled public answers are reconstructed and compared; financial amounts and conditions are checked. Private payment descriptions are compared with authorized records. Catalog facts now have explicit evidence.</td>
+<td>A real citation cannot make an incorrect fee or condition true.</td>
+<td>Changed-fee and reversed-condition tests; the original RG-056 retrieval failure is fixed.</td>
+</tr>
+<tr>
+<td>2. Make session reviews useful</td>
+<td>Unmeasured intent accuracy remains visible without automatically escalating every clean session. Failed checks and privacy signals still require review.</td>
+<td>Reviewers can distinguish missing measurement from a confirmed problem.</td>
+<td>Clean, failed and incomplete-session tests.</td>
+</tr>
+<tr>
+<td>3. Review the whole journey</td>
+<td>Independent local checks examine delivered replies, receipt ownership, report preservation and duplicate commits.</td>
+<td>An individually safe reply does not establish that the whole journey was handled correctly.</td>
+<td>Session trajectory checks, restart recovery and failed-turn tests.</td>
+</tr>
+<tr>
+<td>4. Preserve audit history</td>
+<td>Requests retain their original conversation generation after reset. New evidence creates another audit revision; previous reports are retained.</td>
+<td>A late result must not rewrite history or appear in a new conversation.</td>
+<td>Reset-during-request and late-evidence revision tests.</td>
+</tr>
+<tr>
+<td>5. Execute full local suites</td>
+<td>Separate runners execute the original 100 and BOW 100 scenarios with isolated state, saved results and actual traces.</td>
+<td>Imported cases are not test results.</td>
+<td>Both suites pass their implemented local behavioral assertions; qualification remains pending.</td>
+</tr>
+<tr>
+<td>6. Add the reviewer workspace</td>
+<td>Staff can search sessions, inspect recorded steps, sources, access decisions, delivered text and audits, and append review notes.</td>
+<td>Failures become explainable and actionable.</td>
+<td>API scope/privacy tests and ten read-only browser checks.</td>
+</tr>
+<tr>
+<td>7. Protect reviews and exports</td>
+<td>Bank-scoped VIEWER/REVIEWER/ADMIN roles, one-hour created tokens, revocation, logout clearing, concurrent-edit protection and encrypted exports.</td>
+<td>Review access must not grant banking powers or expose unprotected evidence.</td>
+<td>Cross-scope denial, revision conflict, encryption/decryption, tamper and revocation tests.</td>
+</tr>
+<tr>
+<td>8. Add operational coverage</td>
+<td>Local API and workflow observations include public and private paths. Configurable rules flag denied access, failed checks, confusion, latency and review backlog.</td>
+<td>Operators need visibility even when a failure is handled safely.</td>
+<td>Dashboard/API tests, operations browser checks and local alert acknowledgement tests.</td>
+</tr>
+<tr>
+<td>9. Expand model evaluation</td>
+<td>Twelve public-policy questions have actual RAGAS metrics and LLM-judge grades. Twelve balanced calibration examples have actual model grades, with development/holdout tags.</td>
+<td>Model opinions need broader evidence and human comparison.</td>
+<td>Twelve valid semantic results and twelve valid calibration grades, retained separately from mock banking tests.</td>
+</tr>
+<tr>
+<td>10. Add human reference review</td>
+<td>A person can approve/reject proposed expected answers with a source hash, identity, note and explicit attestation. Judge/human agreement stays unavailable until human labels exist.</td>
+<td>AI-authored examples cannot certify their own correctness.</td>
+<td>Source-change rejection, missing-attestation and disagreement tests.</td>
+</tr>
+<tr>
+<td>11. Add demo operational commitments</td>
+<td>Versioned local rules assign priority from verified support receipts. A signed-in customer may explicitly request a simulated callback for an owned, acknowledged handoff.</td>
+<td>Priority and callback claims need backend records, not model promises.</td>
+<td>Retry, ownership, consent, queue-outage and revoked-delegation tests.</td>
+</tr>
+</tbody>
+</table>
+<p>These steps were implemented incrementally, with targeted checks after each
+change and broader regression checks after integration. The original workbooks,
+product PDFs and bank fixture files remain unchanged. Three additional fee events
+and one paper-statement policy exist only as declared, draft evaluation fixtures;
+they are not silently activated as bank terms in customer chat.</p>
+<h2>Customer privacy and consent</h2>
+<p>Family relationships do not grant access. Spouses, parents, children, friends and
+other third parties must pass backend identity and resource/action permission
+checks. A message saying that the customer consented is not evidence of consent.
+Only a trusted backend authorization record can establish access.</p>
+<p>Tests cover guest family claims, an authenticated spouse attempting another
+customer's case, valid narrow power-of-attorney access, denied transaction access
+outside that authority, and revocation. Callback confirmation rechecks current
+case authority; an old handoff receipt does not preserve revoked access rights.</p>
+<p>Reading an existing case and creating a case are separate permissions. A
+representative with read-only case access cannot create a case. The backend also
+requires a service explicitly permitted to write cases; read authority alone is
+insufficient. Authentication continuation links preserve the session timeline
+without transferring account permissions.</p>
+<p>For RG-040, the original question is about a case while the source label says
+transaction inquiry. The versioned bindings normalize it to a case inquiry and
+require verification before disclosure, based on the user's privacy clarification.
+The original source label remains in <code>source_contract</code>; general dataset approval
+is still pending. Earlier attack-route changes are also explicit versioned
+translations rather than edits to the workbook.</p>
+<h2>How the app works now</h2>
+<p>The customer still speaks to one assistant. Security checks run first. Public
+questions identify the product and retrieve its current fictional terms. Personal
+requests require demo sign-in and backend authorization. Possible fraud/error
+reports are preserved before private lookup. Draft case creation requires explicit
+confirmation and stable retry keys.</p>
+<p>Resolution records supported next steps and local queue ownership. The reply
+checker checks the final answer, records and sources before delivery. Session-end
+work is durable and runs separately from sending messages. The reviewer workspace
+plays recorded evidence; it never repeats a banking action.</p>
+<p>The web app still uses controlled templates and a mock router. Actual Nebius
+models evaluate synthetic public answers separately. This work does not enable
+unrestricted generated replies or send live customer conversations to a provider.
+LangGraph orchestrates account conversations; direct public web paths now also
+record retrieval and source-date checks. Pydantic validates external data shapes.</p>
+<h2>Results and review items</h2>
+<table>
+<thead>
+<tr>
+<th>Evidence</th>
+<th>Result and limits</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Python regression checks</td>
+<td>272 main tests: 271 pass and one expected dependency-branch skip. All 13 synthetic-fixture tests pass.</td>
+</tr>
+<tr>
+<td>Original suite</td>
+<td>100/100 local checks pass; proposed fixture bindings and versioned expectation translations remain subject to human review.</td>
+</tr>
+<tr>
+<td>BOW suite</td>
+<td>100/100 local behavior/tool-path checks pass. Sixteen source rows list a tool as both required and forbidden; those contradictions block qualification rather than disappearing from the report.</td>
+</tr>
+<tr>
+<td>Adversarial suite</td>
+<td>8/8 pass, including no sign-in continuation for explicit attacks and preserved fraud intake.</td>
+</tr>
+<tr>
+<td>Customer browser checks</td>
+<td>48 pass. Checks of answer focus use visible text, not hidden content inside the collapsed evidence panel.</td>
+</tr>
+<tr>
+<td>Operations browser checks</td>
+<td>7 pass, including trends, trace history and mobile layout.</td>
+</tr>
+<tr>
+<td>Reviewer browser checks</td>
+<td>10 pass, including access denial, evidence display, draft datasets, human-attestation defaults and protection against late responses after logout.</td>
+</tr>
+<tr>
+<td>Expanded semantic suite</td>
+<td>All 12 cases have metrics and valid judge grades; the judge passes 12/12. RAGAS faithfulness remains 0.5 on SEM-003 and SEM-011 and is flagged for human assessment. Other valid low scores are not replaced by retries.</td>
+</tr>
+<tr>
+<td>Judge calibration</td>
+<td>Twelve actual grades are recorded. They match the proposed examples, but human-model agreement is still unscored because independent human labels have not been supplied.</td>
+</tr>
+</tbody>
+</table>
+<p>The first expanded semantic run exposed missing catalog evidence and two truncated
+judge outputs. It is preserved in <code>semantic_expanded_01.json</code>. The second run is
+also preserved. One draft reference incorrectly bound Debit Plus to Debit; a new
+validation guard rejects that mismatch. Only that corrected case was remeasured.
+The consolidated final report verifies identical model inputs before retaining the
+other eleven measurements. Changes in references/evidence are not represented as
+an isolated improvement in model quality.</p>
+<p>The two remaining faithfulness flags concern the phrase &quot;demo terms&quot;: the NLI
+verifier rejected it despite fictional/test provenance. Its statements and reasons
+remain visible for human review. The application does not convert those opinions
+into permission or a banking commitment.</p>
+<h2>Open the application</h2>
+<ul>
+<li>Customer chat: <code>http://127.0.0.1:8765</code></li>
+<li>Operations: <code>http://127.0.0.1:8766</code></li>
+<li>Agent Review Admin: <code>http://127.0.0.1:8766/reviewer</code></li>
+</ul>
+<p>The reviewer uses the existing <code>RESOLVEGUARD_DASHBOARD_TOKEN</code> from the local <code>.env</code>.
+Do not paste it into chat. Local administrators can create narrower viewer/reviewer
+tokens in the workspace; those tokens expire after one hour and can be revoked.
+The configured bootstrap administrator token is rotated through local configuration.
+It is demo authentication, not institution staff identity.</p>
+<p>To try a callback: sign in explicitly as a sample customer, submit an eligible
+report or request support, then choose <strong>Request a demo callback</strong>. The app records
+a simulated window and states that <strong>no real telephone call is scheduled</strong>.
+No phone number or authentication secret is collected in chat.</p>
+<h2>Repeat the checks</h2>
+<p>From the project directory, use the existing single Python 3.12 <code>.venv</code>:</p>
+<pre><code class="language-powershell">uv sync --extra evals
+uv run --extra evals python -m unittest discover -s tests -q
+uv run --extra evals python -m unittest discover -s resolveguard_synthetic_v04/tests -q
+uv run --extra evals python -m resolveguard.full_evaluation --suite original --output artifacts/my-original-run
+uv run --extra evals python -m resolveguard.full_evaluation --suite bow --output artifacts/my-bow-run
+uv run --extra evals python -m resolveguard evaluate-security --output artifacts/my-security-run.json
+</code></pre>
+<p>Use new output directories so previous results remain intact. Model evaluation is
+explicit, paid and separate from these local commands:</p>
+<pre><code class="language-powershell">uv run --extra evals python -m resolveguard semantic-eval --dataset data/semantic_cases_expanded_v3.json --ragas --judge --output artifacts/my-semantic-run.json
+uv run --extra evals python -m resolveguard.calibration_eval --output artifacts/my-calibration-run.json
+</code></pre>
+<p>Only synthetic public questions, answers, reference passages and evaluation
+instructions leave the machine for these commands. Customer fixture tables,
+session bindings and credentials are excluded from prompts. The model key is used
+only for authenticated API access. Cloud trace publishing remains off.</p>
+<p>Decrypt a downloaded reviewer package locally; the password is requested privately:</p>
+<pre><code class="language-powershell">uv run python -m resolveguard.review_export --input review.rgexport --output review.json
+</code></pre>
+<p>Use an appropriate output extension for JSON or CSV. Exports use authenticated
+AES-GCM encryption with a password-derived key; the password is never bundled into
+the package. Protect the decrypted file. SQLite review history has application
+append-only controls and integrity checks, not a production tamper-proof archive.</p>
+<h2>What still requires a person</h2>
+<p>Review the expected answers and proposed fixture bindings, resolve the 16 BOW tool
+contract conflicts, and assess the two RAGAS disagreements. Approve or reject
+calibration labels before interpreting human-model agreement. Prompt authorship
+provenance remains unverified; reviewing a prompt does not prove who authored it.</p>
+<p>These are approval/evidence decisions, not unfinished buttons or hidden automatic
+approvals. The workbench now supports them. Full qualification remains blocked
+until its required evidence is complete. Production identity, legal decisions,
+retention, independent archival protection and real service commitments are not
+claimed by the synthetic implementation.</p>
+<p>LangSmith Cloud, Replit deployment and real bank integrations were deliberately
+left out, as requested. Voice, autonomous financial actions and credit-card
+servicing remain outside the agreed MVP. Missing BOW payment-status definitions
+still produce an honest source-gap response rather than borrowing another bank's
+policy.</p>
+<h2>Evidence locations</h2>
+<ul>
+<li><code>artifacts/local_completion/original100_release_check/</code>: results, proposed
+bindings, summary and actual traces from the original workbook.</li>
+<li><code>artifacts/local_completion/bow100_release_check/</code>: BOW results, tool paths,
+source conflicts, version fingerprints and traces.</li>
+<li><code>artifacts/local_completion/security_final.json</code>.</li>
+<li><code>artifacts/local_completion/semantic_expanded_final.json</code>: consolidated actual
+metrics with measurement-source references and explicit low-score flags.</li>
+<li><code>artifacts/local_completion/judge_calibration.json</code>: measured model opinions.</li>
+<li><code>artifacts/customer_ui_validation/browser_checks.json</code>.</li>
+<li><code>artifacts/observability_browser_checks.json</code>.</li>
+<li><code>artifacts/local_completion/reviewer_browser_checks.json</code>.</li>
+<li><code>artifacts/web.sqlite3</code>: local banking events and staff-protected review evidence.</li>
+<li><code>artifacts/operations.sqlite3</code>: minimized local observations.</li>
+</ul>
+<p>The original requirements are in the unchanged PRD/BRD PDFs. The earlier
+<a href="review.html">alignment review</a> is retained as the
+pre-implementation snapshot; this report is the current completion record.</p>
+</main></html>

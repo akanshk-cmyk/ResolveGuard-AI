@@ -1,0 +1,84 @@
+# Security-aware banking routing
+
+## Human review receipt and integration status
+
+Human feedback **was provided and recorded twice**: in chat (22 observations: 14 PASS, 6 FAIL, 2 PARTIAL PASS) and in the returned Excel workbook (28 live-app observations: 23 PASS, 2 FAIL, 3 PARTIAL PASS). These sets overlap and must not be added into 50 independent tests.
+
+Receipt references: HR-CHAT-22 (`artifacts/human_feedback_20261101_batch02/Review_Summary.json`) and HR-XLSX-28 (`artifacts/human_review_received/817cb87ce51af0d4/Clarified_Review_Analysis.json`). The original returned workbook SHA-256 is `817cb87ce51af0d4429098b0e6ba09931a6e6482f15ab43939c266630856f628`.
+
+The reviewer confirmed "I tested the live app" and clarified that another customer's case was not shown; three partial passes concern denial wording. Two product-context failures remain reported. Feedback receipt and documentation integration are complete; implementing or accepting every feedback item is not implied.
+
+Human-judge agreement is **not yet calculated on matched responses**: the human reviewed live replies while the judge graded different saved responses. This is not missing human feedback. Formal source-contract approval and exact-saved-response calibration are separate outstanding decisions. No agreement percentage is invented.
+
+This confirms handover of human review feedback to the project record, **not** a bank-support handoff, callback, or operational acknowledgement. Those require separate backend evidence.
+
+
+The local customer app now checks security signals before ordinary banking
+routing and before saving a sign-in/resume request. The LangGraph and offline
+workflow both begin with `security_check`, then banking classification. Existing
+banking Route models and account API contracts are preserved.
+
+`security_routing.py` provides a separate strict Pydantic assessment: banking
+request category, multiple security flags, proposed resource, authentication
+requirement and recommended action. Its authorization status is deliberately
+`UNVERIFIED`. Only backend checks may establish access. An account identifier
+alone does not prove that it belongs to another customer.
+
+Explicit override, authority-spoofing, private-prompt disclosure and requests for
+another customer's information are blocked. They do not launch sign-in, save an
+authentication-resume request, or execute restricted lookups. Old saved requests
+are checked again when resumed. Legitimate account requests retain secure
+sign-in and per-resource entitlement checks; successful sign-in is not blanket
+authorization.
+
+Quoted/educational security questions receive a short public explanation. The
+detector checks remaining clauses too: an educational prefix does not exempt an
+appended bypass request. Independently detected fraud/error reports are saved
+through the existing intake path. Mixed attacks cannot trigger transaction/case
+reads; receipt and handoff verification remain unchanged. No extra banking cases
+or financial actions are introduced. The approved-response gate still runs last.
+
+The optional provider prompt is versioned as `prompts/router_v4.txt`; v3 remains
+available for historical comparisons. Explicit blocked requests use deterministic
+classification/response handling rather than sending the malicious instructions
+to the provider. No new provider or cloud calls are enabled.
+
+## Local evidence
+
+- `security_events` in the app SQLite database records detector version, flags,
+  a hashed resource reference, proposed action, trusted pre-execution decision,
+  blocked lookup category and response category. It contains no original message,
+  raw account identifier, balance or credentials. `executed_tool_calls=[]` describes
+  the pre-execution decision point; report intake may subsequently proceed.
+- Workflow traces include `security.assess`, proposed flags, backend-deferred or
+  blocked decisions, and existing actual tool spans. Public web paths retain
+  local security events and response-boundary QA rather than fabricated graph
+  spans.
+- `data/adversarial_evaluation.json` contains the eight requested synthetic cases.
+  It is separate from the existing 40 banking labels and 100 BOW fixtures.
+- `data/evaluation_40_security_v2.json` preserves the original 40-case dataset
+  and changes only RG-054's superseded routing/state expectation to an explicit
+  security block, adding flag and no-restricted-call assertions. Provenance and
+  pending human review are retained. The original v1 file is unchanged.
+
+Run the credential-free web security journeys:
+
+```powershell
+uv run --locked --extra evals python -m resolveguard evaluate-security --output artifacts/security_evaluation/results.json
+uv run --locked --extra evals python -m unittest discover -s tests -p test_security_routing.py -v
+```
+
+The unit tests also cover both workflow engines with a deliberately incorrect
+model, appended attacks, mixed fraud reports, no restricted reads, and minimized
+event contents. Existing authorization/delegation tests remain independent of
+attack detection.
+
+## Limits
+
+This is a contextual deterministic detector, not comprehensive semantic attack
+detection. Unseen paraphrases, multilingual instructions, encoded content and
+multi-turn attacks may evade it. Backend principal/resource/action permission
+checks remain mandatory regardless of detector output. A security flag does not
+prove malicious customer intent or unauthorized ownership. The public security
+explanation is application guidance, not a newly approved bank policy. Local
+SQLite events are not a tamper-proof regulatory archive.

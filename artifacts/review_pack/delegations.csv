@@ -1,0 +1,4 @@
+﻿delegation_id,representative_id,customer_id,account_ids,actions,expires_at,revoked,review_origin,legal_instrument_validation
+DEL-001,REP-001,CUST-002,"[""ACC-002""]","[""CASE_STATUS""]",2026-12-01T00:00:00Z,False,Originally supplied fixture,
+DEL-002,REP-001,CUST-003,"[""ACC-003""]","[""CASE_STATUS"", ""TRANSACTION_READ""]",2026-12-01T00:00:00Z,True,Originally supplied fixture,
+DEMO-POA-001,REP-POA,CUST-002,"[""ACC-002""]","[""CASE_STATUS""]",2026-12-01T00:00:00Z,False,Added during implementation,DEMO-VALIDATED

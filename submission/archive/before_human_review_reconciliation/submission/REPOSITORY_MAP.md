@@ -1,0 +1,3 @@
+# Repository map
+
+No application files were moved. Existing `resolveguard/` contains the API, UI assets, graphs, banking adapters, evaluators and monitoring. `data/` holds separate BOW/legacy/evaluation fixtures; `resolveguard_synthetic_v04/` supplies the original test bank. `tests/` contains regression checks. `prompts/` and `tools/` retain prompt versions and reproducibility helpers. `artifacts/` contains selected executed evidence. Added `docs/architecture/`, `demo/` and `submission/` organize the requested deliverables without an unnecessary new app layer. pyproject.toml/uv.lock replace manual multiple environments; requirements files are compatibility references, not the complete canonical install.

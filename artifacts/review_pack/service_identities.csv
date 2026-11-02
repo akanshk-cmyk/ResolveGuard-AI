@@ -1,0 +1,2 @@
+﻿service_id,allowed_tools,may_impersonate_principal,requires_acting_context,review_origin
+resolveguard-agent,"[""search_approved_policy"", ""get_transaction"", ""get_case_status"", ""record_error_report"", ""handoff_to_human"", ""get_session_assurance"", ""check_authority""]",False,True,Originally supplied fixture

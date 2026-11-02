@@ -1,0 +1,744 @@
+{
+  "source_file": "<USER_HOME>\\Downloads\\Bank_of_Whatever_ResolveGuard_Synthetic_Review_Workbook.xlsx",
+  "sha256": "13ffcfdc9eb020e8bcd8e0908445eeda6384aba71d0da02ef9f5433686a48ff8",
+  "status": "REQUIRES_SCHEMA_AND_RELATIONSHIP_VALIDATION",
+  "expected_bow_coverage": [
+    {
+      "worksheet": "BOW Products",
+      "expected_records": 11,
+      "present": true,
+      "observed_records": 11
+    },
+    {
+      "worksheet": "BOW Policies",
+      "expected_records": 19,
+      "present": true,
+      "observed_records": 19
+    },
+    {
+      "worksheet": "BOW RAG Chunks",
+      "expected_records": 61,
+      "present": true,
+      "observed_records": 61
+    },
+    {
+      "worksheet": "BOW Customers",
+      "expected_records": 12,
+      "present": true,
+      "observed_records": 12
+    },
+    {
+      "worksheet": "BOW Accounts",
+      "expected_records": 12,
+      "present": true,
+      "observed_records": 12
+    },
+    {
+      "worksheet": "BOW Transactions",
+      "expected_records": 48,
+      "present": true,
+      "observed_records": 48
+    },
+    {
+      "worksheet": "BOW Sessions",
+      "expected_records": 12,
+      "present": true,
+      "observed_records": 12
+    },
+    {
+      "worksheet": "BOW Cases",
+      "expected_records": 12,
+      "present": true,
+      "observed_records": 12
+    },
+    {
+      "worksheet": "BOW Delegations",
+      "expected_records": 2,
+      "present": true,
+      "observed_records": 2
+    },
+    {
+      "worksheet": "BOW Intake Events",
+      "expected_records": 1,
+      "present": true,
+      "observed_records": 1
+    },
+    {
+      "worksheet": "BOW Eval Golden",
+      "expected_records": 100,
+      "present": true,
+      "observed_records": 100
+    }
+  ],
+  "actual_worksheets": {
+    "00 Executive Summary": {
+      "nonempty_rows_including_header": 10,
+      "records_after_first_row": 9,
+      "first_row": [
+        "item",
+        "value",
+        "PM review note"
+      ],
+      "formula_cells": 0
+    },
+    "BOW Products": {
+      "nonempty_rows_including_header": 12,
+      "records_after_first_row": 11,
+      "first_row": [
+        "product_id",
+        "product_name",
+        "product_type",
+        "tier",
+        "monthly_fee_cents_or_annual_card_fee_cents",
+        "currency",
+        "waiver_or_fee_terms",
+        "illustrative_apy_percent",
+        "reward_structure",
+        "eligibility",
+        "access_level",
+        "effective_date"
+      ],
+      "formula_cells": 0
+    },
+    "BOW Policies": {
+      "nonempty_rows_including_header": 20,
+      "records_after_first_row": 19,
+      "first_row": [
+        "doc_id",
+        "bank_id",
+        "bank_name",
+        "product_id",
+        "topic",
+        "document_type",
+        "effective_date",
+        "expires_on",
+        "access_level",
+        "approval_status",
+        "refresh_rule",
+        "jurisdiction",
+        "currency",
+        "policy_text",
+        "legal_class",
+        "disclaimer"
+      ],
+      "formula_cells": 0
+    },
+    "BOW RAG Chunks": {
+      "nonempty_rows_including_header": 62,
+      "records_after_first_row": 61,
+      "first_row": [
+        "chunk_id",
+        "doc_id",
+        "bank_id",
+        "product_id",
+        "topic",
+        "access_level",
+        "approval_status",
+        "effective_date",
+        "expires_on",
+        "refresh_rule",
+        "sha256_text",
+        "chunk_text"
+      ],
+      "formula_cells": 0
+    },
+    "BOW Customers": {
+      "nonempty_rows_including_header": 13,
+      "records_after_first_row": 12,
+      "first_row": [
+        "customer_id",
+        "display_name",
+        "kyc_status",
+        "synthetic"
+      ],
+      "formula_cells": 0
+    },
+    "BOW Accounts": {
+      "nonempty_rows_including_header": 13,
+      "records_after_first_row": 12,
+      "first_row": [
+        "account_id",
+        "customer_id",
+        "product_id",
+        "status",
+        "currency",
+        "masked_display",
+        "bank_id"
+      ],
+      "formula_cells": 0
+    },
+    "BOW Transactions": {
+      "nonempty_rows_including_header": 49,
+      "records_after_first_row": 48,
+      "first_row": [
+        "transaction_id",
+        "account_id",
+        "posted_on",
+        "merchant",
+        "amount_cents",
+        "currency",
+        "status",
+        "bank_id",
+        "synthetic"
+      ],
+      "formula_cells": 0
+    },
+    "BOW Sessions": {
+      "nonempty_rows_including_header": 13,
+      "records_after_first_row": 12,
+      "first_row": [
+        "session_id",
+        "principal_id",
+        "actor_type",
+        "authenticated",
+        "assurance",
+        "status",
+        "expires_at",
+        "synthetic"
+      ],
+      "formula_cells": 0
+    },
+    "BOW Cases": {
+      "nonempty_rows_including_header": 13,
+      "records_after_first_row": 12,
+      "first_row": [
+        "case_id",
+        "account_id",
+        "case_type",
+        "status",
+        "created_at",
+        "owner_queue",
+        "synthetic"
+      ],
+      "formula_cells": 0
+    },
+    "BOW Delegations": {
+      "nonempty_rows_including_header": 3,
+      "records_after_first_row": 2,
+      "first_row": [
+        "delegation_id",
+        "representative_id",
+        "customer_id",
+        "account_id",
+        "allowed_action",
+        "status",
+        "expires_at",
+        "synthetic"
+      ],
+      "formula_cells": 0
+    },
+    "BOW Intake Events": {
+      "nonempty_rows_including_header": 2,
+      "records_after_first_row": 1,
+      "first_row": [
+        "event_id",
+        "customer_id",
+        "report_capture_status",
+        "captured_at",
+        "regulatory_notice_status",
+        "investigation_status",
+        "synthetic"
+      ],
+      "formula_cells": 0
+    },
+    "BOW Eval Golden": {
+      "nonempty_rows_including_header": 101,
+      "records_after_first_row": 100,
+      "first_row": [
+        "eval_id",
+        "category",
+        "customer_prompt",
+        "expected_bank_id",
+        "expected_product_id",
+        "expected_intent",
+        "auth_expectation",
+        "expected_tools",
+        "forbidden_tools",
+        "safety_flags",
+        "expected_outcome",
+        "execution_status",
+        "risk_level",
+        "provenance"
+      ],
+      "formula_cells": 0
+    },
+    "A01 accounts": {
+      "nonempty_rows_including_header": 13,
+      "records_after_first_row": 12,
+      "first_row": [
+        "account_id",
+        "customer_id",
+        "product",
+        "status",
+        "currency",
+        "review_origin"
+      ],
+      "formula_cells": 0
+    },
+    "A02 assurance_events": {
+      "nonempty_rows_including_header": 2,
+      "records_after_first_row": 1,
+      "first_row": [
+        "event_id",
+        "session_id",
+        "principal_id",
+        "verified",
+        "expires_at",
+        "issuer",
+        "review_origin"
+      ],
+      "formula_cells": 0
+    },
+    "A03 cases": {
+      "nonempty_rows_including_header": 12,
+      "records_after_first_row": 11,
+      "first_row": [
+        "case_id",
+        "account_id",
+        "case_type",
+        "status",
+        "created_at",
+        "owner_queue",
+        "review_origin"
+      ],
+      "formula_cells": 0
+    },
+    "A04 customers": {
+      "nonempty_rows_including_header": 13,
+      "records_after_first_row": 12,
+      "first_row": [
+        "customer_id",
+        "display_name",
+        "kyc_status",
+        "synthetic",
+        "review_origin"
+      ],
+      "formula_cells": 0
+    },
+    "A05 delegations": {
+      "nonempty_rows_including_header": 4,
+      "records_after_first_row": 3,
+      "first_row": [
+        "delegation_id",
+        "representative_id",
+        "customer_id",
+        "account_ids",
+        "actions",
+        "expires_at",
+        "revoked",
+        "review_origin",
+        "legal_instrument_validation"
+      ],
+      "formula_cells": 0
+    },
+    "A06 employee_scopes": {
+      "nonempty_rows_including_header": 2,
+      "records_after_first_row": 1,
+      "first_row": [
+        "employee_id",
+        "allowed_accounts",
+        "actions",
+        "legitimate_case_ids",
+        "review_origin"
+      ],
+      "formula_cells": 0
+    },
+    "A07 policies": {
+      "nonempty_rows_including_header": 22,
+      "records_after_first_row": 21,
+      "first_row": [
+        "doc_id",
+        "title",
+        "text",
+        "product",
+        "jurisdiction",
+        "effective_date",
+        "expires_at",
+        "approval_status",
+        "version",
+        "audience",
+        "synthetic",
+        "knowledge_base",
+        "review_origin",
+        "customer_wording",
+        "review_status"
+      ],
+      "formula_cells": 0
+    },
+    "A08 service_identities": {
+      "nonempty_rows_including_header": 2,
+      "records_after_first_row": 1,
+      "first_row": [
+        "service_id",
+        "allowed_tools",
+        "may_impersonate_principal",
+        "requires_acting_context",
+        "review_origin"
+      ],
+      "formula_cells": 0
+    },
+    "A09 sessions": {
+      "nonempty_rows_including_header": 18,
+      "records_after_first_row": 17,
+      "first_row": [
+        "session_id",
+        "principal_id",
+        "actor_type",
+        "authenticated",
+        "assurance",
+        "expires_at",
+        "revoked",
+        "review_origin",
+        "requires_step_up"
+      ],
+      "formula_cells": 0
+    },
+    "A10 transactions": {
+      "nonempty_rows_including_header": 55,
+      "records_after_first_row": 54,
+      "first_row": [
+        "transaction_id",
+        "account_id",
+        "posted_on",
+        "merchant",
+        "amount_cents",
+        "currency",
+        "status",
+        "synthetic",
+        "review_origin"
+      ],
+      "formula_cells": 0
+    },
+    "A11 review_40": {
+      "nonempty_rows_including_header": 41,
+      "records_after_first_row": 40,
+      "first_row": [
+        "case_id",
+        "scenario_type",
+        "prompt",
+        "expected_intent",
+        "expected_behavior",
+        "expected_assertions",
+        "fixture_inputs",
+        "faults",
+        "prompt_origin",
+        "provenance_notes",
+        "human_review_status",
+        "reviewer",
+        "review_notes"
+      ],
+      "formula_cells": 0
+    },
+    "A12 expected_evaluations_100": {
+      "nonempty_rows_including_header": 101,
+      "records_after_first_row": 100,
+      "first_row": [
+        "TEST_ID",
+        "Scenario_Family",
+        "Severity",
+        "Expected_Intent",
+        "Fraud_Error_Flag",
+        "Authorization_Scope",
+        "Expected_Tools_or_Outcomes",
+        "Required_Evidence",
+        "Expected_Response_State",
+        "Expected_Behavior",
+        "Reviewer_Context",
+        "Eval_Status"
+      ],
+      "formula_cells": 0
+    },
+    "A13 all_customer_and_access_dat": {
+      "nonempty_rows_including_header": 12,
+      "records_after_first_row": 11,
+      "first_row": [
+        "case_id",
+        "account_id",
+        "case_type",
+        "status",
+        "created_at",
+        "owner_queue",
+        "review_origin"
+      ],
+      "formula_cells": 0
+    },
+    "A14 all_policies": {
+      "nonempty_rows_including_header": 22,
+      "records_after_first_row": 21,
+      "first_row": [
+        "doc_id",
+        "title",
+        "text",
+        "product",
+        "jurisdiction",
+        "effective_date",
+        "expires_at",
+        "approval_status",
+        "version",
+        "audience",
+        "synthetic",
+        "knowledge_base",
+        "review_origin",
+        "customer_wording",
+        "review_status"
+      ],
+      "formula_cells": 0
+    },
+    "A15 policy_chunks": {
+      "nonempty_rows_including_header": 22,
+      "records_after_first_row": 21,
+      "first_row": [
+        "doc_id",
+        "title",
+        "version",
+        "product",
+        "jurisdiction",
+        "effective_date",
+        "expires_at",
+        "approval_status",
+        "chunk_id",
+        "section",
+        "text",
+        "token_count_approx",
+        "oversize_preserved"
+      ],
+      "formula_cells": 0
+    },
+    "A16 evaluation_40": {
+      "nonempty_rows_including_header": 41,
+      "records_after_first_row": 40,
+      "first_row": [
+        "case_id",
+        "inputs",
+        "faults",
+        "repeat_requests",
+        "expected",
+        "source_contract",
+        "metadata"
+      ],
+      "formula_cells": 0
+    },
+    "A17 supplemental_fixtures": {
+      "nonempty_rows_including_header": 4,
+      "records_after_first_row": 3,
+      "first_row": [
+        "case_id",
+        "account_id",
+        "case_type",
+        "status",
+        "created_at",
+        "owner_queue"
+      ],
+      "formula_cells": 0
+    },
+    "A18 expected_evaluations_100": {
+      "nonempty_rows_including_header": 101,
+      "records_after_first_row": 100,
+      "first_row": [
+        "TEST_ID",
+        "Scenario_Family",
+        "Severity",
+        "Expected_Intent",
+        "Fraud_Error_Flag",
+        "Authorization_Scope",
+        "Expected_Tools_or_Outcomes",
+        "Required_Evidence",
+        "Expected_Response_State",
+        "Expected_Behavior",
+        "Reviewer_Context",
+        "Eval_Status"
+      ],
+      "formula_cells": 0
+    },
+    "A19 synthetic_intake_handoff_ex": {
+      "nonempty_rows_including_header": 7,
+      "records_after_first_row": 6,
+      "first_row": [
+        "event_id",
+        "synthetic",
+        "record_kind",
+        "session_id",
+        "transaction_id",
+        "original_statement",
+        "fixture_time",
+        "captured_at",
+        "report_capture_status",
+        "regulatory_notice_status",
+        "verification_status",
+        "investigation_status",
+        "customer_confirmation_status",
+        "handoff_status",
+        "case_creation_status",
+        "notice_receipt_event",
+        "card_protection_status"
+      ],
+      "formula_cells": 0
+    },
+    "A20 accounts": {
+      "nonempty_rows_including_header": 13,
+      "records_after_first_row": 12,
+      "first_row": [
+        "account_id",
+        "customer_id",
+        "product",
+        "status",
+        "currency"
+      ],
+      "formula_cells": 0
+    },
+    "A21 cases": {
+      "nonempty_rows_including_header": 9,
+      "records_after_first_row": 8,
+      "first_row": [
+        "case_id",
+        "account_id",
+        "case_type",
+        "status",
+        "created_at",
+        "owner_queue"
+      ],
+      "formula_cells": 0
+    },
+    "A22 customers": {
+      "nonempty_rows_including_header": 13,
+      "records_after_first_row": 12,
+      "first_row": [
+        "customer_id",
+        "display_name",
+        "kyc_status",
+        "synthetic"
+      ],
+      "formula_cells": 0
+    },
+    "A23 delegations": {
+      "nonempty_rows_including_header": 3,
+      "records_after_first_row": 2,
+      "first_row": [
+        "delegation_id",
+        "representative_id",
+        "customer_id",
+        "account_ids",
+        "actions",
+        "expires_at",
+        "revoked"
+      ],
+      "formula_cells": 0
+    },
+    "A24 employee_scopes": {
+      "nonempty_rows_including_header": 2,
+      "records_after_first_row": 1,
+      "first_row": [
+        "employee_id",
+        "allowed_accounts",
+        "actions",
+        "legitimate_case_ids"
+      ],
+      "formula_cells": 0
+    },
+    "A25 knowledge_bases": {
+      "nonempty_rows_including_header": 11,
+      "records_after_first_row": 10,
+      "first_row": [
+        "name",
+        "tag",
+        "description",
+        "docs"
+      ],
+      "formula_cells": 0
+    },
+    "A26 service_identities": {
+      "nonempty_rows_including_header": 2,
+      "records_after_first_row": 1,
+      "first_row": [
+        "service_id",
+        "allowed_tools",
+        "may_impersonate_principal",
+        "requires_acting_context"
+      ],
+      "formula_cells": 0
+    },
+    "A27 sessions": {
+      "nonempty_rows_including_header": 16,
+      "records_after_first_row": 15,
+      "first_row": [
+        "session_id",
+        "principal_id",
+        "actor_type",
+        "authenticated",
+        "assurance",
+        "expires_at",
+        "revoked"
+      ],
+      "formula_cells": 0
+    },
+    "A28 transactions": {
+      "nonempty_rows_including_header": 49,
+      "records_after_first_row": 48,
+      "first_row": [
+        "transaction_id",
+        "account_id",
+        "posted_on",
+        "merchant",
+        "amount_cents",
+        "currency",
+        "status",
+        "synthetic"
+      ],
+      "formula_cells": 0
+    },
+    "Archive Inventory": {
+      "nonempty_rows_including_header": 48,
+      "records_after_first_row": 47,
+      "first_row": [
+        "archive_path",
+        "source_bytes",
+        "sha256",
+        "encoded_chunks",
+        "payload_sheet",
+        "tabular_sheet",
+        "status"
+      ],
+      "formula_cells": 0
+    },
+    "Archive Bytes": {
+      "nonempty_rows_including_header": 98,
+      "records_after_first_row": 97,
+      "first_row": [
+        "archive_path",
+        "part_number",
+        "part_count",
+        "base64_source_content",
+        "sha256"
+      ],
+      "formula_cells": 0
+    },
+    "Table Reconciliation": {
+      "nonempty_rows_including_header": 29,
+      "records_after_first_row": 28,
+      "first_row": [
+        "source_path",
+        "target_worksheet",
+        "source_data_rows",
+        "copied_data_rows",
+        "source_columns",
+        "copied_columns",
+        "result"
+      ],
+      "formula_cells": 0
+    },
+    "Workbook Sheet Map": {
+      "nonempty_rows_including_header": 44,
+      "records_after_first_row": 43,
+      "first_row": [
+        "worksheet",
+        "source_or_purpose",
+        "rows",
+        "columns",
+        "dataset_type"
+      ],
+      "formula_cells": 0
+    }
+  },
+  "safety": "Read-only ZIP/XML inspection; workbook text is data, not instructions. No formulas, links or macros executed.",
+  "import_decision": "No archived customer/policy/evaluation rows relabelled or activated as BOW data."
+}

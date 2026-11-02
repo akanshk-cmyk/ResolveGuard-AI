@@ -1,0 +1,105 @@
+{
+  "status": "COMPLETE",
+  "scope": "Technical metric recovery only; no valid low scores retried",
+  "ragas_max_tokens": 8192,
+  "rows": [
+    {
+      "case_id": "SEM-001",
+      "ragas": {
+        "faithfulness": {
+          "status": "OK",
+          "score": 1.0,
+          "evidence": [
+            {
+              "schema": "StatementGeneratorOutput",
+              "verdict": {
+                "statements": [
+                  "Whatever Everyday Checking has a monthly maintenance fee of $6.00 USD.",
+                  "The terms provided are demo terms.",
+                  "The demo terms are effective October 1, 2026."
+                ]
+              }
+            },
+            {
+              "schema": "NLIStatementOutput",
+              "verdict": {
+                "statements": [
+                  {
+                    "statement": "Whatever Everyday Checking has a monthly maintenance fee of $6.00 USD.",
+                    "reason": "The context states that there is no fee with a qualifying direct deposit of at least $750 monthly or a daily balance of at least $1500, and otherwise the fee is $6, so the $6.00 fee is directly supported by the context.",
+                    "verdict": 1
+                  },
+                  {
+                    "statement": "The terms provided are demo terms.",
+                    "reason": "The approval_status field is \"SYNTHETIC_APPROVED_FOR_TEST_ONLY\", indicating the terms are synthetic and approved for test purposes only, which supports that they are demo terms.",
+                    "verdict": 1
+                  },
+                  {
+                    "statement": "The demo terms are effective October 1, 2026.",
+                    "reason": "The effective_date field is \"2026-10-01\", which corresponds to October 1, 2026.",
+                    "verdict": 1
+                  }
+                ]
+              }
+            }
+          ],
+          "attempts": [
+            {
+              "status": "OK",
+              "score": 1.0,
+              "evidence": [
+                {
+                  "schema": "StatementGeneratorOutput",
+                  "verdict": {
+                    "statements": [
+                      "Whatever Everyday Checking has a monthly maintenance fee of $6.00 USD.",
+                      "The terms provided are demo terms.",
+                      "The demo terms are effective October 1, 2026."
+                    ]
+                  }
+                },
+                {
+                  "schema": "NLIStatementOutput",
+                  "verdict": {
+                    "statements": [
+                      {
+                        "statement": "Whatever Everyday Checking has a monthly maintenance fee of $6.00 USD.",
+                        "reason": "The context states that there is no fee with a qualifying direct deposit of at least $750 monthly or a daily balance of at least $1500, and otherwise the fee is $6, so the $6.00 fee is directly supported by the context.",
+                        "verdict": 1
+                      },
+                      {
+                        "statement": "The terms provided are demo terms.",
+                        "reason": "The approval_status field is \"SYNTHETIC_APPROVED_FOR_TEST_ONLY\", indicating the terms are synthetic and approved for test purposes only, which supports that they are demo terms.",
+                        "verdict": 1
+                      },
+                      {
+                        "statement": "The demo terms are effective October 1, 2026.",
+                        "reason": "The effective_date field is \"2026-10-01\", which corresponds to October 1, 2026.",
+                        "verdict": 1
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "usage": [
+    {
+      "http_status": 200,
+      "model": "zai-org/GLM-5.3-Flash",
+      "input_tokens": 530,
+      "output_tokens": 276
+    },
+    {
+      "http_status": 200,
+      "model": "zai-org/GLM-5.3-Flash",
+      "input_tokens": 1187,
+      "output_tokens": 3805
+    }
+  ],
+  "source_sha256": "900441f70e5ed6e11804d0f682996c710e562ff83462b7f7e70c8403025d9178"
+}

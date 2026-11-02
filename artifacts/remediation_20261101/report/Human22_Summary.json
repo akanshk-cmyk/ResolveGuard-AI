@@ -1,0 +1,13 @@
+{
+  "cases": 22,
+  "automated_behavior_passed": 22,
+  "code_sha256": "9041dac2dbb14e4577c43cbef8548b8bad26c93c3a54c563725a38632d58d419",
+  "human_marks_unchanged": true,
+  "human_reassessment": "PENDING",
+  "source_sha256": "94a56ba93a2881cfe52752e857a2ce6ff818a742c03ce49dac4f16bb5410acf9",
+  "mode": "SYNTHETIC_NO_PROVIDER_CALLS",
+  "not_a_matched_human_before_after_score": true,
+  "preconditions_note": "New isolated fixture runs. Original session IDs and exact product selections were not supplied; declared preconditions are reproducible assumptions.",
+  "previous_code_hash_algorithm": "customer_review.fingerprint default ASCII serialization",
+  "code_fingerprint_algorithm": "evaluation.fingerprint UTF-8 JSON ensure_ascii=False, matching full_evaluation"
+}

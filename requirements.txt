@@ -1,0 +1,8 @@
+# Pydantic validates boundaries in both execution engines.
+pydantic>=2.14,<3
+# LangGraph/LangSmith are optional for the local sequential executor.
+langgraph>=1.0,<2
+langsmith>=0.4,<1
+langgraph-checkpoint-sqlite
+fastapi
+uvicorn

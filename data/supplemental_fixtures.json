@@ -1,0 +1,31 @@
+{
+  "status": "Invented demo fixture extensions; not real bank policy or identity proof",
+  "sessions": [
+    {"session_id":"SESS-STEPUP","principal_id":"CUST-001","actor_type":"CUSTOMER","authenticated":true,"assurance":"AAL2","expires_at":"2026-12-01T00:00:00Z","revoked":false,"requires_step_up":true},
+    {"session_id":"SESS-POA","principal_id":"REP-POA","actor_type":"REPRESENTATIVE","authenticated":true,"assurance":"AAL2","expires_at":"2026-12-01T00:00:00Z","revoked":false}
+  ],
+  "assurance_events": [
+    {"event_id":"DEMO-AUTH-001","session_id":"SESS-STEPUP","principal_id":"CUST-001","verified":true,"expires_at":"2026-12-01T00:00:00Z","issuer":"DEMO-IAM"}
+  ],
+  "delegations": [
+    {"delegation_id":"DEMO-POA-001","representative_id":"REP-POA","customer_id":"CUST-002","account_ids":["ACC-002"],"actions":["CASE_STATUS"],"expires_at":"2026-12-01T00:00:00Z","revoked":false,"legal_instrument_validation":"DEMO-VALIDATED"}
+  ],
+  "transactions": [
+    {"transaction_id":"TXN-DEMO-FEE","account_id":"ACC-001","posted_on":"2026-10-20","merchant":"DEMO MONTHLY SERVICE FEE","amount_cents":1200,"currency":"USD","status":"POSTED","synthetic":true},
+    {"transaction_id":"TXN-DEMO-ATM","account_id":"ACC-001","posted_on":"2026-10-20","merchant":"DEMO ATM FEE","amount_cents":350,"currency":"USD","status":"POSTED","synthetic":true},
+    {"transaction_id":"TXN-DEMO-85","account_id":"ACC-001","posted_on":"2026-10-20","merchant":"DEMO BOOK SHOP","amount_cents":8500,"currency":"USD","status":"POSTED","synthetic":true},
+    {"transaction_id":"TXN-DEMO-63","account_id":"ACC-001","posted_on":"2026-10-20","merchant":"DEMO CARD PURCHASE","amount_cents":6300,"currency":"USD","status":"PENDING","synthetic":true},
+    {"transaction_id":"TXN-DEMO-ABC","account_id":"ACC-001","posted_on":"2026-10-20","merchant":"ABC SERVICES","amount_cents":2500,"currency":"USD","status":"POSTED","synthetic":true},
+    {"transaction_id":"TXN-DEMO-450","account_id":"ACC-001","posted_on":"2026-10-20","merchant":"DEMO STORE","amount_cents":45000,"currency":"USD","status":"POSTED","synthetic":true}
+  ],
+  "cases": [
+    {"case_id":"CASE-A101","account_id":"ACC-001","case_type":"TRANSACTION_QUESTION","status":"OPEN","created_at":"2026-10-20T12:00:00Z","owner_queue":"CUSTOMER_SUPPORT"},
+    {"case_id":"CASE-A102","account_id":"ACC-001","case_type":"DEBIT_ISSUE","status":"IN_REVIEW","created_at":"2026-10-20T12:00:00Z","owner_queue":"CUSTOMER_SUPPORT"},
+    {"case_id":"CASE-A103","account_id":"ACC-001","case_type":"DEBIT_ISSUE","status":"WAITING_FOR_CUSTOMER","created_at":"2026-10-20T12:00:00Z","owner_queue":"CUSTOMER_SUPPORT"}
+  ],
+  "policies": [
+    {"doc_id":"POL-DEMO-LIMIT","title":"Debit-card purchase limits","text":"Fictional demo policy: debit-card purchases have a $1000 daily limit. This invented limit is only for synthetic evaluation.","product":"DEBIT_CHECKING","jurisdiction":"US","effective_date":"2026-01-01","expires_at":null,"approval_status":"APPROVED_FOR_SYNTHETIC_TEST","version":"demo-extension-v1"},
+    {"doc_id":"POL-DEMO-ATM","title":"Out-of-network ATM withdrawal fee","text":"Fictional demo policy: an out-of-network ATM withdrawal may incur a $3.50 bank fee. An independent operator fee may also apply; use the authorized event to explain an actual fee.","product":"CHECKING","jurisdiction":"US","effective_date":"2026-01-01","expires_at":null,"approval_status":"APPROVED_FOR_SYNTHETIC_TEST","version":"demo-extension-v1"},
+    {"doc_id":"POL-DEMO-OVERDRAFT","title":"Checking overdraft policy","text":"Fictional demo policy: overdraft eligibility and fees depend on the account terms and applicable elections. Contact support when these facts cannot be verified; do not promise a refund.","product":"CHECKING","jurisdiction":"US","effective_date":"2026-01-01","expires_at":null,"approval_status":"APPROVED_FOR_SYNTHETIC_TEST","version":"demo-extension-v1"}
+  ]
+}

@@ -1,0 +1,2 @@
+﻿employee_id,allowed_accounts,actions,legitimate_case_ids,review_origin
+EMP-001,"[""ACC-001""]","[""TRANSACTION_READ"", ""CASE_STATUS""]","[""CASE-001""]",Originally supplied fixture

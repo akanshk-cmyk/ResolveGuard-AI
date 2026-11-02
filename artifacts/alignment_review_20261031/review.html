@@ -1,0 +1,384 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; base-uri 'none'"><title>ResolveGuard implementation alignment and next steps</title><style>body{font:17px/1.65 system-ui,sans-serif;color:#203b43;background:#f4f7f5;margin:0}main{max-width:1100px;margin:32px auto;padding:40px;background:white;border:1px solid #d7e2dd;border-radius:14px}h1{font-size:30px;line-height:1.25}h2{font-size:24px;margin-top:38px;color:#14675d}h3{font-size:20px;margin-top:28px}table{border-collapse:collapse;width:100%;font-size:15px;display:block;overflow-x:auto}th,td{text-align:left;vertical-align:top;border:1px solid #d7e2dd;padding:11px;min-width:145px}th{background:#e8f1ec}code{font-size:14px;overflow-wrap:anywhere}.flow{padding:20px;background:#e8f1ec;border-radius:10px;line-height:2}p,li{overflow-wrap:anywhere}@media(max-width:650px){main{margin:0;padding:20px;border-radius:0}}@media print{body{background:white}main{border:0;margin:0;padding:0}table{display:table;font-size:11px}th,td{min-width:0}}</style></head><body><main><h1>ResolveGuard implementation alignment and next steps</h1>
+<p>Reviewed October 31, 2026. Scope: the local learning/demo application, its original
+PRD v0.4 and Observability BRD, subsequent customer-chat/admin specifications,
+implementation code and recorded evaluation results.</p>
+<p>ResolveGuard largely follows the agreed demo direction: customers can ask public
+questions, identify the right product, securely enter a simulated account journey,
+report a problem and receive a verified receipt. It is <strong>partly aligned with the
+full design</strong>, not feature complete or ready for real banking customers. The main
+remaining work is answer verification, complete evaluation coverage, useful
+reviewer workflows and authoritative operational integrations.</p>
+<p>No customer-facing code, banking data, credentials or running configuration was
+changed during this review. The original product PDFs and workbook are preserved.</p>
+<h2>How the conclusion was reached</h2>
+<p>An item counts as working when implementation and relevant test evidence exist.
+An item is partial when only part of its promised behavior works. A specification,
+schema, installed library or configured key alone does not establish a working
+integration. A small pilot does not establish broad quality or production safety.</p>
+<p>The original PRD favors one customer-facing assistant with controlled specialist
+services. That matches the current direction. Resolution and QA are mostly Python
+rules and evidence checks; they are not three independently reasoning AI models.
+The original PRD preserves older 60-case material and appends the v0.4 controls
+for 100 original RG cases. The additional 100 BOW cases are a separate dataset.
+Neither 100-case requirement is satisfied by running the selected 40 cases.</p>
+<h2>The current customer journey</h2>
+<div class="flow">Message &rarr; Security and intent checks &rarr; Public policy, permitted lookup, or report intake &rarr; Verified next steps &rarr; Reply checks &rarr; Customer response &rarr; Session audit</div>
+<p>Public questions use a direct web-service path; account conversations use
+LangGraph, the framework that controls the order of workflow steps. Both pass
+through the shared response checker. The diagram describes responsibilities,
+not a claim that every box is a separate LangGraph agent or AI call.</p>
+<h2>What is implemented and what remains</h2>
+<table>
+<thead>
+<tr>
+<th>Capability</th>
+<th>Status in the demo</th>
+<th>What remains</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Guest-first chat</td>
+<td>Working</td>
+<td>A real bank sign-in service is separate work.</td>
+</tr>
+<tr>
+<td>Product clarification and follow-up</td>
+<td>Working for supported questions</td>
+<td>Broader ambiguous, mixed-topic and long conversation coverage.</td>
+</tr>
+<tr>
+<td>Policy retrieval, often called RAG</td>
+<td>Working locally</td>
+<td>It searches supplied evidence by words and metadata. Vector search and Pinecone are not connected and are not required to finish this small demo.</td>
+</tr>
+<tr>
+<td>BOW product and policy data</td>
+<td>Working</td>
+<td>11 products, 19 policies and 61 linked chunks are synthetic. Bank approval and real published offers are not supplied.</td>
+</tr>
+<tr>
+<td>Product comparison</td>
+<td>Working for supported evidence</td>
+<td>BOW lacks a payment-status glossary; pending-versus-posted definitions must remain unavailable until an approved source is added.</td>
+</tr>
+<tr>
+<td>Account and case permissions</td>
+<td>Working against synthetic backend records</td>
+<td>Real identity, banking APIs, signed service identity and institution-controlled permissions.</td>
+</tr>
+<tr>
+<td>Fraud/error intake</td>
+<td>Working in tested journeys</td>
+<td>Real fraud/disputes operations, approved urgent contact channels and institution-defined notice handling.</td>
+</tr>
+<tr>
+<td>Support-case creation and duplicate prevention</td>
+<td>Working</td>
+<td>Real case-system connection and broader concurrent/failure testing.</td>
+</tr>
+<tr>
+<td>Human handoff</td>
+<td>Simulated, with receipt checks</td>
+<td>A real receiving team, availability, accountable owner and approved alternate channel.</td>
+</tr>
+<tr>
+<td>Security-aware routing</td>
+<td>Working for tested attacks</td>
+<td>Broader paraphrase, multilingual, encoded and multi-turn attacks. Backend permissions remain the independent safeguard.</td>
+</tr>
+<tr>
+<td>Resolution</td>
+<td>Partly working</td>
+<td>Records some verified next steps. General unresolved-issue detection, assigned priority and confirmed callback windows are incomplete.</td>
+</tr>
+<tr>
+<td>Check before each reply</td>
+<td>Active but partial</td>
+<td>Verifies specific access, source, card and receipt rules; does not establish that every sentence agrees with its evidence.</td>
+</tr>
+<tr>
+<td>Review after the session</td>
+<td>Active but partial</td>
+<td>Aggregates recorded checks. Independent conversation assessment, useful prioritization and reviewer completion are missing.</td>
+</tr>
+<tr>
+<td>Pydantic and LangGraph</td>
+<td>Working</td>
+<td>Pydantic checks data shape; LangGraph controls steps. Neither proves that an answer is true. One-process deployment remains the supported demo setup.</td>
+</tr>
+<tr>
+<td>Live customer-facing GLM answers</td>
+<td>Not enabled</td>
+<td>The web app uses mock routing and controlled templates. Optional Nebius routing and evaluation are separate.</td>
+</tr>
+<tr>
+<td>RAGAS and LLM judge</td>
+<td>Implemented and piloted</td>
+<td>Three public-policy cases have actual provider results. Broader banking, comparison, fraud and permission coverage plus human calibration remain.</td>
+</tr>
+<tr>
+<td>LangSmith Cloud</td>
+<td>Prepared, unverified</td>
+<td>No configured LangSmith key was found at review time; hosted dataset/experiment/trace verification remains pending.</td>
+</tr>
+<tr>
+<td>Local operations dashboard</td>
+<td>Working with limits</td>
+<td>Shows batch history and optional workflow metrics. It is not the complete Agent Review Admin workspace.</td>
+</tr>
+<tr>
+<td>Live monitoring coverage</td>
+<td>Partial</td>
+<td>No local monitor database was configured at review time. Public routes, security events and new review tables are not one complete operational view.</td>
+</tr>
+<tr>
+<td>Replit hosting</td>
+<td>Configuration only</td>
+<td>No verified hosted deployment.</td>
+</tr>
+<tr>
+<td>Real balances, money movement, refunds and card blocking</td>
+<td>Not available</td>
+<td>Balances lack an authoritative API. Financial actions, credit-card servicing and voice remain outside the agreed MVP.</td>
+</tr>
+</tbody>
+</table>
+<h2>Important findings</h2>
+<h3>Answer verification needs strengthening before live generated replies</h3>
+<p>An isolated check changed a BOW fee answer to an incorrect fictional $999 fee
+while keeping its original valid policy sources. The current gate returned
+<code>APPROVE</code>, including <code>GROUNDING=PASS</code>. The test used temporary storage and did
+not change a customer session.</p>
+<p>This establishes a specific gap: checking that a source is genuine does not
+check that the answer correctly uses it. The current controlled templates reduce
+the immediate exposure, but the gate must not be relied on as a complete defense
+for a future freely generated answer. Similar independent checks are needed for
+unsupported amounts, waiver conditions, product mix-ups and promises of action.</p>
+<p>Recommended completion test: a changed fee, rate, condition, case state or promise
+is rejected even when valid sources are attached. A failed source/receipt check
+must continue to fail closed. Use deterministic checks for exact financial facts;
+add calibrated semantic assessment where rules alone are insufficient.</p>
+<h3>The review queue currently marks every audited session for review</h3>
+<p>The local snapshot contained 22 completed audit jobs, all with <code>NEEDS_REVIEW</code>.
+The code intentionally marks online intent accuracy <code>NOT_EVALUABLE</code>, since no
+independent reference label exists, and then treats any non-pass finding as a
+reason for post-session review. The jobs completed technically; this does not
+mean a human reviewed them or a customer problem was resolved.</p>
+<p>Recommended completion test: a session with no detected safety issue, an
+unmeasured quality dimension and a confirmed safety failure remain distinct.
+Unknown quality must stay visible without making every session equally urgent.
+Create ownership, review status and completion actions without downgrading
+critical failures.</p>
+<h3>Resolution records next steps but cannot promise operational outcomes</h3>
+<p>The service records a verified report/case/handoff reference when its implemented
+paths apply. It has no authoritative priority assignment or callback service.
+Its unresolved triggers are limited; it is not a comprehensive assessment of
+every unfinished conversation. A normal saved-case confirmation is not, by
+itself, a full case-resolution decision.</p>
+<p>Recommended completion test: every agreed unresolved journey records an owner,
+supported next action and either a verified callback commitment or an explicit
+unconfirmed state. Do not introduce arbitrary promised response times.</p>
+<h3>Review evidence is spread across separate stores</h3>
+<p>Banking events, conversation checkpoints, public turns, workflow traces, security
+events and QA reports exist, but the operations dashboard does not join them into
+one customer-session history. Security event records do not currently expose a
+shared session/turn reference for straightforward reviewer navigation.</p>
+<p>Recommended completion test: an authorized reviewer can follow one session from
+the customer request through product choice, access decision, policy evidence,
+tool result, delivered reply and review outcome. Playback must not repeat banking
+actions. Exact displayed response retention needs its own privacy controls.</p>
+<h3>Full qualification remains blocked</h3>
+<p>The latest versioned 40-case run passed 39 cases. Its remaining failure is the
+previously known policy-evidence failure, RG-056. Both intent accuracy and
+fraud/error recall were 100% within this mock development set. These percentages
+do not establish live model quality.</p>
+<p>The original RG-001 through RG-100 release suite has not been fully executed by
+this runner. The separate 100 imported BOW cases remain <code>NOT_RUN</code>. Human review,
+prompt provenance and independent judge calibration are still pending.</p>
+<p>The security change preserved the original 40-case file. A versioned copy changes
+only RG-054's superseded routing/state expectation to the newly requested attack
+block, with additional flag and no-restricted-call assertions. Its labels still
+require human review. Results before and after that label change must not be
+presented as a pure improvement in model quality.</p>
+<h2>Alignment with the requirements</h2>
+<table>
+<thead>
+<tr>
+<th>Requirement group</th>
+<th>Assessment</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PRD FR-01/02/16/17/22: identity and permissions</td>
+<td>Partial</td>
+<td>Synthetic identity, session, delegation and service boundaries exist; production identity and signed banking context do not.</td>
+</tr>
+<tr>
+<td>PRD FR-03: grounded explanations</td>
+<td>Partial</td>
+<td>Retrieval and scoped presentation work, but the online gate does not verify every answer claim.</td>
+</tr>
+<tr>
+<td>PRD FR-04/05/12/15: case state, creation and recovery</td>
+<td>Substantial demo coverage</td>
+<td>Durable writes, confirmation and reconciliation exist; full-suite and real-service verification remain.</td>
+</tr>
+<tr>
+<td>PRD FR-06/18: fraud/error preservation</td>
+<td>Substantial demo coverage</td>
+<td>Original statements and separate states are preserved in tested synthetic paths; institution-approved operational semantics remain open.</td>
+</tr>
+<tr>
+<td>PRD FR-07/19/21: urgent routing and handoff</td>
+<td>Partial</td>
+<td>Simulated receipt/backup routing works; actual teams, contact channels and service commitments are absent.</td>
+</tr>
+<tr>
+<td>PRD FR-08/11: excluded actions and typed safety routing</td>
+<td>Substantial demo coverage</td>
+<td>Prohibited financial tools are absent, and independent security signals were added; detector coverage is bounded.</td>
+</tr>
+<tr>
+<td>PRD FR-09/20: privacy</td>
+<td>Partial</td>
+<td>Field limits and minimized exports exist; masking approval, secret handling, retention and protected archives remain.</td>
+</tr>
+<tr>
+<td>PRD FR-10/13/14/23: audit and release evidence</td>
+<td>Partial</td>
+<td>Local traces and scoring exist; full risk-suite execution, human approvals and complete reviewer reconstruction remain open.</td>
+</tr>
+<tr>
+<td>BRD T1/T2: session traceability and protected review</td>
+<td>Partial</td>
+<td>Per-run evidence exists; joined session playback, staff access scopes and approved retention do not.</td>
+</tr>
+<tr>
+<td>BRD E1/E2/E3/E4: calibrated evaluation and critical gates</td>
+<td>Partial</td>
+<td>Binary checks and judge scores exist, but broad human-reviewed exemplars, holdouts and full critical coverage are missing.</td>
+</tr>
+<tr>
+<td>Agent Review Admin US-01 through US-04</td>
+<td>Mostly pending</td>
+<td>A lightweight operations view exists; staff roles, session search, review notes, protected exports and configurable alert delivery are not complete.</td>
+</tr>
+</tbody>
+</table>
+<p>The BRD asks for evidence-based yes/no questions and human calibration. The current
+judge provides pass/fail and 1–5 opinions, but those scores alone do not satisfy
+that calibration requirement. Local application inserts also do not establish a
+tamper-proof compliance archive.</p>
+<h2>Recommended implementation order</h2>
+<table>
+<thead>
+<tr>
+<th>Order</th>
+<th>Next work</th>
+<th>Why it comes next</th>
+<th>Completion evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Strengthen answer verification and fix RG-056 retrieval</td>
+<td>Close known truthfulness gaps before adding free-form model replies.</td>
+<td>Wrong facts with valid citations are blocked; the unchanged failure reproduces and then passes with the right policy.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Make post-session review useful</td>
+<td>Prevent an undifferentiated queue from hiding real problems.</td>
+<td>Normal, unknown-quality and critical-failure sessions are distinguishable; review ownership and completion are recorded.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Agree and human-review the evaluation baseline</td>
+<td>Ensure the tests describe intended behavior.</td>
+<td>Keep original RG and BOW suites separate; approve label revisions and expected outcomes with provenance.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Execute the original 100 risk cases and the 100 BOW cases</td>
+<td>Measure actual coverage instead of equating imports with tests.</td>
+<td>Every case has a result or explicit block; all designated critical assertions pass. Add adversarial and multi-turn regression coverage.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Join evidence and add the read-only reviewer workspace</td>
+<td>Make failures explainable and actionable.</td>
+<td>Staff-scoped search, one-session timeline, source/tool evidence, notes and safe playback. Connect optional aggregate monitoring across public and private routes.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Broaden semantic evaluation and verify LangSmith</td>
+<td>Measure answer quality and hosted trace delivery separately.</td>
+<td>Human-reviewed references, calibrated judge agreement, verified cloud read-back and documented minimal outbound fields. Cloud verification needs the key.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Add authoritative priority, callback and approved contact services</td>
+<td>Give supported commitments rather than invented wait times.</td>
+<td>Backend-assigned priority, accountable queue and verified callback/fallback events.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Consider live chat model and hosted deployment</td>
+<td>Increase complexity only after the checks and evidence work.</td>
+<td>Controlled pilot, cost/latency results, failure fallback, rollback and explicit data/privacy decisions.</td>
+</tr>
+</tbody>
+</table>
+<p>Orders 1 and 2 can be completed locally without cloud credentials. Several later
+steps can progress in parallel once their own prerequisites are satisfied. Adding
+vector search, voice, long-term agent memory or more independent AI agents is not
+necessary for these next steps.</p>
+<h2>Product decisions still needed</h2>
+<p>Agree the demo acceptance scope and the authoritative test-suite versions. Assign
+who approves sample policies and evaluation answers, who owns urgent incidents,
+and which queues/contact channels the app may display. Define retention for
+original reports versus minimized review evidence. Before real customers, select
+the actual identity/case/banking services and approve privacy, service targets,
+incident response and rollout gates. Do not invent business success baselines.</p>
+<p>For the learning demo, missing real banking services should stay explicitly
+simulated. For production, they become prerequisites; they are not small UI tasks.</p>
+<h2>Verification and evidence</h2>
+<ul>
+<li>Fresh review-time test execution: 250 main tests run, 249 passed and one skipped;
+13 fixture tests passed. Combined: <strong>262 passed, one skipped</strong>.</li>
+<li>Latest saved browser check: <strong>46 passed</strong>, no recorded browser exceptions. It is
+a smoke check, not a full accessibility or usability assessment.</li>
+<li>Security journey report: <strong>8 of 8 passed</strong> in
+security results.</li>
+<li>Versioned mock banking run: <strong>39 of 40 passed</strong>, release decision <code>BLOCKED</code>, in
+regression summary.</li>
+<li>Completed three-case public semantic pilot: all three judge grades passed;
+retrieval recall, precision and faithfulness were approximately 1.0 in this small
+sample. See pilot summary.
+Answers and evidence changed together, and this pilot predates later security/QA
+changes. It is not fresh qualification of the current whole application.</li>
+<li>Review-time local configuration: Nebius key present; LangSmith key and optional
+monitoring database absent; cloud tracing flags off. Keys were not displayed
+and no provider request was made for this review.</li>
+<li>App and operations landing pages responded locally on ports 8765 and 8766.
+A reachable landing page does not establish complete operational coverage.</li>
+<li>Review snapshot: 98 local reply-review records, 22 completed audit jobs, and
+22 <code>NEEDS_REVIEW</code> post-session decisions. Counts change with use and are not
+customer-resolution metrics.</li>
+</ul>
+<p>Source requirements: PRD v0.4,
+Observability BRD,
+customer UX specification,
+Agent Review Admin specification,
+Resolution and QA, and
+security routing.</p>
+<p>Implementation evidence: <code>web.py</code>, <code>workflow.py</code>, <code>conversation.py</code>, <code>backend.py</code>,
+<code>bow_backend.py</code>, <code>bow_knowledge.py</code>, <code>customer_review.py</code>, <code>review_flow.py</code>,
+<code>security_routing.py</code>, <code>security_evaluation.py</code>, <code>evaluation.py</code>, <code>dashboard.py</code>,
+<code>monitoring.py</code>, <code>semantic_evaluation.py</code>, <code>ragas_eval.py</code>, <code>judges.py</code>,
+<code>cloud_verify.py</code>, and <code>pyproject.toml</code> under the project root/package as applicable.</p>
+</main></body></html>

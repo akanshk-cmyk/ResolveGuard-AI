@@ -1,0 +1,3578 @@
+{
+  "web.sqlite3": {
+    "events": [
+      {
+        "kind": "report",
+        "owner": "CUST-001",
+        "request_key": "turn-f9336d98e6691f6074728f971105f82e7739b3487199425a048278270f3de472",
+        "payload_hash": "511148bf2b4daee3d472780a9ec49a6a11cb3737f7657e412727d29cda4b330b",
+        "event_id": "DEMO-REPORT-b81f29d72acef96c",
+        "payload": {
+          "original_statement": "I do not recognize this debit and want a human",
+          "reported_transaction_ids": [
+            "TXN-001-01"
+          ]
+        },
+        "result": {
+          "status": "OK",
+          "report_capture_status": "CAPTURED",
+          "regulatory_notice_status": "REVIEW_REQUIRED",
+          "reported_at": "2026-10-30T23:12:58.386732+00:00",
+          "verification_status": "VERIFIED",
+          "investigation_status": "NOT_STARTED",
+          "customer_confirmation_status": "UNCONFIRMED",
+          "event_id": "DEMO-REPORT-b81f29d72acef96c",
+          "replayed": false
+        }
+      },
+      {
+        "kind": "handoff",
+        "owner": "CUST-001",
+        "request_key": "turn-f9336d98e6691f6074728f971105f82e7739b3487199425a048278270f3de472",
+        "payload_hash": "39f1e84d1e6b9468eb3edc4600eb2ac015550652f62a98b06df0772eb4734511",
+        "event_id": "DEMO-HANDOFF-22193a886177ea87",
+        "payload": {
+          "payload": {
+            "report_id": "DEMO-REPORT-b81f29d72acef96c"
+          },
+          "queue": "FRAUD_OPERATIONS"
+        },
+        "result": {
+          "status": "OK",
+          "handoff_status": "ACKNOWLEDGED",
+          "queue": "FRAUD_OPERATIONS",
+          "alternate_route": false,
+          "payload": {
+            "report_id": "DEMO-REPORT-b81f29d72acef96c"
+          },
+          "event_id": "DEMO-HANDOFF-22193a886177ea87",
+          "replayed": false
+        }
+      },
+      {
+        "kind": "report",
+        "owner": "CUST-001",
+        "request_key": "turn-baccadf8204b70083766055bf432fb948ea8361c8eb998b74de3afb9865dd286",
+        "payload_hash": "65165a96d02136941f635ae4e14432ff7fd712736471ee6634b932a15ca2844f",
+        "event_id": "DEMO-REPORT-e6e8989326c2e977",
+        "payload": {
+          "original_statement": "I was charged twice for the same debit-card purchase; help me report the error.",
+          "reported_transaction_ids": [
+            "TXN-DEMO-63"
+          ]
+        },
+        "result": {
+          "status": "OK",
+          "report_capture_status": "CAPTURED",
+          "regulatory_notice_status": "REVIEW_REQUIRED",
+          "reported_at": "2026-10-30T23:13:59.073622+00:00",
+          "verification_status": "VERIFIED",
+          "investigation_status": "NOT_STARTED",
+          "customer_confirmation_status": "UNCONFIRMED",
+          "event_id": "DEMO-REPORT-e6e8989326c2e977",
+          "replayed": false
+        }
+      },
+      {
+        "kind": "handoff",
+        "owner": "CUST-001",
+        "request_key": "turn-baccadf8204b70083766055bf432fb948ea8361c8eb998b74de3afb9865dd286",
+        "payload_hash": "810993e952afb29678681ac53917e2595d5ce2989de8e4d11db7e3e8a753d225",
+        "event_id": "DEMO-HANDOFF-57f135263ea2fca6",
+        "payload": {
+          "payload": {
+            "report_id": "DEMO-REPORT-e6e8989326c2e977"
+          },
+          "queue": "FRAUD_OPERATIONS"
+        },
+        "result": {
+          "status": "OK",
+          "handoff_status": "ACKNOWLEDGED",
+          "queue": "FRAUD_OPERATIONS",
+          "alternate_route": false,
+          "payload": {
+            "report_id": "DEMO-REPORT-e6e8989326c2e977"
+          },
+          "event_id": "DEMO-HANDOFF-57f135263ea2fca6",
+          "replayed": false
+        }
+      },
+      {
+        "kind": "report",
+        "owner": "CUST-001",
+        "request_key": "turn-607c557cf1fc38b46bd37720159ad98aedf4fdf6366160e308f22d1b2abb37fd",
+        "payload_hash": "65165a96d02136941f635ae4e14432ff7fd712736471ee6634b932a15ca2844f",
+        "event_id": "DEMO-REPORT-030a30603f63ddde",
+        "payload": {
+          "original_statement": "I was charged twice for the same debit-card purchase; help me report the error.",
+          "reported_transaction_ids": [
+            "TXN-DEMO-63"
+          ]
+        },
+        "result": {
+          "status": "OK",
+          "report_capture_status": "CAPTURED",
+          "regulatory_notice_status": "REVIEW_REQUIRED",
+          "reported_at": "2026-10-30T23:19:53.368013+00:00",
+          "verification_status": "VERIFIED",
+          "investigation_status": "NOT_STARTED",
+          "customer_confirmation_status": "UNCONFIRMED",
+          "event_id": "DEMO-REPORT-030a30603f63ddde",
+          "replayed": false
+        }
+      },
+      {
+        "kind": "handoff",
+        "owner": "CUST-001",
+        "request_key": "turn-607c557cf1fc38b46bd37720159ad98aedf4fdf6366160e308f22d1b2abb37fd",
+        "payload_hash": "2c1068a04af74794c4885a58724ee09b379b41105f39ebc688c9ef3f0b1b9946",
+        "event_id": "DEMO-HANDOFF-48291f13a4f4403e",
+        "payload": {
+          "payload": {
+            "report_id": "DEMO-REPORT-030a30603f63ddde"
+          },
+          "queue": "FRAUD_OPERATIONS"
+        },
+        "result": {
+          "status": "OK",
+          "handoff_status": "ACKNOWLEDGED",
+          "queue": "FRAUD_OPERATIONS",
+          "alternate_route": false,
+          "payload": {
+            "report_id": "DEMO-REPORT-030a30603f63ddde"
+          },
+          "event_id": "DEMO-HANDOFF-48291f13a4f4403e",
+          "replayed": false
+        }
+      }
+    ],
+    "turns": [
+      {
+        "thread_id": "thread-caaf6252689a99e63c2c25f2d91ea9c4",
+        "request_key": "495ce6b4-b2ff-4883-9b17-1aec95571f35",
+        "payload": {
+          "account_id": null,
+          "action": "message",
+          "case_id": null,
+          "draft_id": null,
+          "message": "Show the details of the transaction I selected",
+          "product": "DEBIT_CHECKING",
+          "request_key": "495ce6b4-b2ff-4883-9b17-1aec95571f35",
+          "transaction_ids": [
+            "TXN-001-01"
+          ]
+        },
+        "payload_hash": "1321771f412d779272b4da8497308dc4cd477093e0efd28cc00abea6e7b08b8b",
+        "result": {
+          "route": {
+            "primary_intent": "TRANSACTION_INQUIRY",
+            "potential_fraud_error": false,
+            "human_requested": false,
+            "urgent": false
+          },
+          "response": "TXN-001-01: $45.99 USD, POSTED, DEMO GROCERY, 2026-10-11.\nDemo guidance [POL-TRAN-002:demo-v1:1]: If a customer does not recognize a debit-card transaction, preserve the statement and route through the approved error-intake workflow; do not require specific magic words.\nDemo guidance [POL-TRAN-001:demo-v1:1]: Posted transactions appear in transaction history after processing. A pending authorization is not a final posted charge.",
+          "response_state": "NO_ACTION",
+          "report": {},
+          "case": {},
+          "handoff": {},
+          "records": [
+            {
+              "transaction_id": "TXN-001-01",
+              "posted_on": "2026-10-11",
+              "merchant": "DEMO GROCERY",
+              "amount_cents": 4599,
+              "currency": "USD",
+              "status": "POSTED",
+              "kind": "transaction"
+            }
+          ],
+          "citations": [
+            "POL-TRAN-002:demo-v1:1",
+            "POL-TRAN-001:demo-v1:1"
+          ],
+          "model_context": {
+            "route": {
+              "primary_intent": "TRANSACTION_INQUIRY",
+              "potential_fraud_error": false,
+              "human_requested": false,
+              "urgent": false
+            },
+            "records": [
+              {
+                "transaction_id": "TXN-001-01",
+                "posted_on": "2026-10-11",
+                "merchant": "DEMO GROCERY",
+                "amount_cents": 4599,
+                "currency": "USD",
+                "status": "POSTED",
+                "kind": "transaction"
+              }
+            ],
+            "policies": [
+              {
+                "chunk_id": "POL-TRAN-002:demo-v1:1",
+                "text": "If a customer does not recognize a debit-card transaction, preserve the statement and route through the approved error-intake workflow; do not require specific magic words.",
+                "version": "demo-v1"
+              },
+              {
+                "chunk_id": "POL-TRAN-001:demo-v1:1",
+                "text": "Posted transactions appear in transaction history after processing. A pending authorization is not a final posted charge.",
+                "version": "demo-v1"
+              }
+            ],
+            "report": {},
+            "case": {},
+            "handoff": {}
+          },
+          "tools": [
+            {
+              "name": "get_transaction",
+              "status": "OK",
+              "reason_code": "ALLOW"
+            },
+            {
+              "name": "search_approved_policy",
+              "status": "OK",
+              "reason_code": null
+            }
+          ],
+          "errors": [],
+          "output_verified": true,
+          "execution_mode": "MOCK",
+          "engine": "langgraph",
+          "input_tokens": null,
+          "output_tokens": null,
+          "model_cost_usd": 0.0,
+          "cost_status": "MOCK_NO_PROVIDER_CALLS",
+          "trace": {
+            "trace_id": "f61cb4cf-681c-4b72-a6db-f9111d75089f",
+            "metadata": {
+              "agent_version": "workflow-v2-continuity",
+              "prompt_version": "mock-rules-v4",
+              "contract_version": "pydantic-boundaries-v1",
+              "model": "mock-rules-v4",
+              "intended_live_model": "zai-org/GLM-5.3-Flash",
+              "engine": "langgraph",
+              "environment": "synthetic-offline"
+            },
+            "spans": [
+              {
+                "id": "cbd78205-5875-425f-980b-365315155f09",
+                "parent_id": null,
+                "name": "resolveguard.journey",
+                "run_type": "chain",
+                "inputs": {
+                  "message": "Show the details of the transaction I selected",
+                  "selected_transactions": [
+                    "TXN-001-01"
+                  ]
+                },
+                "outputs": {
+                  "route": {
+                    "primary_intent": "TRANSACTION_INQUIRY",
+                    "potential_fraud_error": false,
+                    "human_requested": false,
+                    "urgent": false
+                  },
+                  "response_state": "NO_ACTION",
+                  "errors": [],
+                  "execution_mode": "MOCK"
+                },
+                "start_time": "2026-10-30T23:12:45.861384+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:12:45.866092+00:00",
+                "latency_ms": 4.7
+              },
+              {
+                "id": "a29045f8-dd37-49aa-bc30-41c7d199c693",
+                "parent_id": "cbd78205-5875-425f-980b-365315155f09",
+                "name": "classify",
+                "run_type": "chain",
+                "inputs": {
+                  "intent": null
+                },
+                "outputs": {
+                  "response_state": "UNVERIFIED",
+                  "error_codes": [],
+                  "record_count": 0
+                },
+                "start_time": "2026-10-30T23:12:45.863316+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:12:45.863429+00:00",
+                "latency_ms": 0.111
+              },
+              {
+                "id": "f4c8f1f8-6591-432d-8dbc-54c625f20dc1",
+                "parent_id": "a29045f8-dd37-49aa-bc30-41c7d199c693",
+                "name": "mock.classify",
+                "run_type": "llm",
+                "inputs": {
+                  "message": "Show the details of the transaction I selected"
+                },
+                "outputs": {
+                  "primary_intent": "TRANSACTION_INQUIRY",
+                  "potential_fraud_error": false,
+                  "human_requested": false,
+                  "urgent": false
+                },
+                "start_time": "2026-10-30T23:12:45.863348+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:12:45.863414+00:00",
+                "latency_ms": 0.066
+              },
+              {
+                "id": "127414f9-61b9-477b-8ba9-61da96767bf1",
+                "parent_id": "cbd78205-5875-425f-980b-365315155f09",
+                "name": "capture",
+                "run_type": "chain",
+                "inputs": {
+                  "intent": "TRANSACTION_INQUIRY"
+                },
+                "outputs": {
+                  "response_state": "UNVERIFIED",
+                  "error_codes": [],
+                  "record_count": 0
+                },
+                "start_time": "2026-10-30T23:12:45.863740+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:12:45.863750+00:00",
+                "latency_ms": 0.009
+              },
+              {
+                "id": "d6adc876-2961-4d24-b575-96d9982aee54",
+                "parent_id": "cbd78205-5875-425f-980b-365315155f09",
+                "name": "lookup",
+                "run_type": "chain",
+                "inputs": {
+                  "intent": "TRANSACTION_INQUIRY"
+                },
+                "outputs": {
+                  "response_state": "UNVERIFIED",
+                  "error_codes": [],
+                  "record_count": 1
+                },
+                "start_time": "2026-10-30T23:12:45.864044+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:12:45.864156+00:00",
+                "latency_ms": 0.111
+              },
+              {
+                "id": "bab41f28-8554-4d9e-b921-e8e2843ba77b",
+                "parent_id": "d6adc876-2961-4d24-b575-96d9982aee54",
+                "name": "get_transaction",
+                "run_type": "tool",
+                "inputs": {
+                  "transaction_id": "TXN-001-01"
+                },
+                "outputs": {
+                  "status": "OK",
+                  "reason_code": "ALLOW",
+                  "data": {
+                    "transaction_id": "TXN-001-01",
+                    "posted_on": "2026-10-11",
+                    "merchant": "DEMO GROCERY",
+                    "amount_cents": 4599,
+                    "currency": "USD",
+                    "status": "POSTED"
+                  }
+                },
+                "start_time": "2026-10-30T23:12:45.864057+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:12:45.864146+00:00",
+                "latency_ms": 0.088
+              },
+              {
+                "id": "a1061ef6-7f0c-493f-98b7-9e6dc8fb780b",
+                "parent_id": "cbd78205-5875-425f-980b-365315155f09",
+                "name": "retrieve",
+                "run_type": "chain",
+                "inputs": {
+                  "intent": "TRANSACTION_INQUIRY"
+                },
+                "outputs": {
+                  "response_state": "UNVERIFIED",
+                  "error_codes": [],
+                  "record_count": 1
+                },
+                "start_time": "2026-10-30T23:12:45.864377+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:12:45.864877+00:00",
+                "latency_ms": 0.499
+              },
+              {
+                "id": "39d2ab04-5bf5-4d08-96db-d2b0b70f12d7",
+                "parent_id": "a1061ef6-7f0c-493f-98b7-9e6dc8fb780b",
+                "name": "search_approved_policy",
+                "run_type": "tool",
+                "inputs": {},
+                "outputs": {
+                  "status": "OK",
+                  "chunks": [
+                    {
+                      "doc_id": "POL-TRAN-002",
+                      "title": "Unrecognized transaction",
+                      "version": "demo-v1",
+                      "product": "DEBIT_CHECKING",
+                      "jurisdiction": "US",
+                      "effective_date": "2026-01-01",
+                      "expires_at": null,
+                      "approval_status": "APPROVED_FOR_SYNTHETIC_TEST",
+                      "chunk_id": "POL-TRAN-002:demo-v1:1",
+                      "section": "Unrecognized transaction",
+                      "text": "If a customer does not recognize a debit-card transaction, preserve the statement and route through the approved error-intake workflow; do not require specific magic words.",
+                      "token_count_approx": 25,
+                      "oversize_preserved": false,
+                      "score": 0.36098
+                    },
+                    {
+                      "doc_id": "POL-TRAN-001",
+                      "title": "Posted versus pending",
+                      "version": "demo-v1",
+                      "product": "ALL",
+                      "jurisdiction": "US",
+                      "effective_date": "2026-01-01",
+                      "expires_at": null,
+                      "approval_status": "APPROVED_FOR_SYNTHETIC_TEST",
+                      "chunk_id": "POL-TRAN-001:demo-v1:1",
+                      "section": "Posted versus pending",
+                      "text": "Posted transactions appear in transaction history after processing. A pending authorization is not a final posted charge.",
+                      "token_count_approx": 17,
+                      "oversize_preserved": false,
+                      "score": 0.25
+                    }
+                  ]
+                },
+                "start_time": "2026-10-30T23:12:45.864385+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:12:45.864860+00:00",
+                "latency_ms": 0.477
+              },
+              {
+                "id": "c8a20878-e56b-49f3-9356-dcbbdfc59d47",
+                "parent_id": "cbd78205-5875-425f-980b-365315155f09",
+                "name": "handoff",
+                "run_type": "chain",
+                "inputs": {
+                  "intent": "TRANSACTION_INQUIRY"
+                },
+                "outputs": {
+                  "response_state": "UNVERIFIED",
+                  "error_codes": [],
+                  "record_count": 1
+                },
+                "start_time": "2026-10-30T23:12:45.865152+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:12:45.865163+00:00",
+                "latency_ms": 0.009
+              },
+              {
+                "id": "b5378ef3-71d4-4e24-a4b8-11293a6e5b50",
+                "parent_id": "cbd78205-5875-425f-980b-365315155f09",
+                "name": "compose",
+                "run_type": "chain",
+                "inputs": {
+                  "intent": "TRANSACTION_INQUIRY"
+                },
+                "outputs": {
+                  "response_state": "NO_ACTION",
+                  "error_codes": [],
+                  "record_count": 1
+                },
+                "start_time": "2026-10-30T23:12:45.865382+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:12:45.865671+00:00",
+                "latency_ms": 0.287
+              },
+              {
+                "id": "138a06a5-81bb-4ded-bd44-5c2f7693e280",
+                "parent_id": "b5378ef3-71d4-4e24-a4b8-11293a6e5b50",
+                "name": "template.explain",
+                "run_type": "chain",
+                "inputs": {
+                  "route": {
+                    "primary_intent": "TRANSACTION_INQUIRY",
+                    "potential_fraud_error": false,
+                    "human_requested": false,
+                    "urgent": false
+                  },
+                  "records": [
+                    {
+                      "transaction_id": "TXN-001-01",
+                      "posted_on": "2026-10-11",
+                      "merchant": "DEMO GROCERY",
+                      "amount_cents": 4599,
+                      "currency": "USD",
+                      "status": "POSTED",
+                      "kind": "transaction"
+                    }
+                  ],
+                  "policies": [
+                    {
+                      "chunk_id": "POL-TRAN-002:demo-v1:1",
+                      "text": "If a customer does not recognize a debit-card transaction, preserve the statement and route through the approved error-intake workflow; do not require specific magic words.",
+                      "version": "demo-v1"
+                    },
+                    {
+                      "chunk_id": "POL-TRAN-001:demo-v1:1",
+                      "text": "Posted transactions appear in transaction history after processing. A pending authorization is not a final posted charge.",
+                      "version": "demo-v1"
+                    }
+                  ],
+                  "report": {},
+                  "case": {},
+                  "handoff": {}
+                },
+                "outputs": {
+                  "response": "TXN-001-01: $45.99 USD, POSTED, DEMO GROCERY, 2026-10-11.\nDemo guidance [POL-TRAN-002:demo-v1:1]: If a customer does not recognize a debit-card transaction, preserve the statement and route through the approved error-intake workflow; do not require specific magic words.\nDemo guidance [POL-TRAN-001:demo-v1:1]: Posted transactions appear in transaction history after processing. A pending authorization is not a final posted charge.",
+                  "mock": true,
+                  "usage": {
+                    "input_tokens": null,
+                    "output_tokens": null
+                  }
+                },
+                "start_time": "2026-10-30T23:12:45.865574+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:12:45.865662+00:00",
+                "latency_ms": 0.087
+              },
+              {
+                "id": "49c2de53-7f74-4c83-[REDACTED]",
+                "parent_id": "cbd78205-5875-425f-980b-365315155f09",
+                "name": "verify",
+                "run_type": "chain",
+                "inputs": {
+                  "intent": "TRANSACTION_INQUIRY"
+                },
+                "outputs": {
+                  "response_state": "NO_ACTION",
+                  "error_codes": [],
+                  "record_count": 1
+                },
+                "start_time": "2026-10-30T23:12:45.865871+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:12:45.865948+00:00",
+                "latency_ms": 0.076
+              }
+            ]
+          },
+          "thread_id": "thread-caaf6252689a99e63c2c25f2d91ea9c4"
+        }
+      },
+      {
+        "thread_id": "thread-caaf6252689a99e63c2c25f2d91ea9c4",
+        "request_key": "356c1aa8-c3a9-4087-880d-91b41805abe2",
+        "payload": {
+          "account_id": null,
+          "action": "message",
+          "case_id": null,
+          "draft_id": null,
+          "message": "I do not recognize this debit and want a human",
+          "product": "DEBIT_CHECKING",
+          "request_key": "356c1aa8-c3a9-4087-880d-91b41805abe2",
+          "transaction_ids": [
+            "TXN-001-01"
+          ]
+        },
+        "payload_hash": "c55b644989e2db6de339afec75808336cb72f5363bec3a68cc8d19f9d1f529ef",
+        "result": {
+          "route": {
+            "primary_intent": "FRAUD_ERROR_REPORT",
+            "potential_fraud_error": true,
+            "human_requested": true,
+            "urgent": false
+          },
+          "response": "Your report was captured as DEMO-REPORT-b81f29d72acef96c.\nLegal notice status is under review; an investigation or card block is not confirmed.\nTXN-001-01: $45.99 USD, POSTED, DEMO GROCERY, 2026-10-11.\nDemo guidance [POL-TRAN-002:demo-v1:1]: If a customer does not recognize a debit-card transaction, preserve the statement and route through the approved error-intake workflow; do not require specific magic words.\nDemo guidance [POL-FRAUD-001:demo-v1:1]: Suspected ongoing unauthorized debit-card activity must be routed to an approved fraud-protection channel. Do not claim a card was blocked unless the bank tool confirms it.\nThe simulated FRAUD_OPERATIONS queue acknowledged the handoff.",
+          "response_state": "CAPTURED_REVIEW",
+          "report": {
+            "status": "OK",
+            "report_capture_status": "CAPTURED",
+            "regulatory_notice_status": "REVIEW_REQUIRED",
+            "reported_at": "2026-10-30T23:12:58.386732+00:00",
+            "verification_status": "VERIFIED",
+            "investigation_status": "NOT_STARTED",
+            "customer_confirmation_status": "UNCONFIRMED",
+            "event_id": "DEMO-REPORT-b81f29d72acef96c",
+            "replayed": false
+          },
+          "case": {},
+          "handoff": {
+            "status": "OK",
+            "handoff_status": "ACKNOWLEDGED",
+            "queue": "FRAUD_OPERATIONS",
+            "alternate_route": false,
+            "payload": {
+              "report_id": "DEMO-REPORT-b81f29d72acef96c"
+            },
+            "event_id": "DEMO-HANDOFF-22193a886177ea87",
+            "replayed": false
+          },
+          "records": [
+            {
+              "transaction_id": "TXN-001-01",
+              "posted_on": "2026-10-11",
+              "merchant": "DEMO GROCERY",
+              "amount_cents": 4599,
+              "currency": "USD",
+              "status": "POSTED",
+              "kind": "transaction"
+            }
+          ],
+          "citations": [
+            "POL-TRAN-002:demo-v1:1",
+            "POL-FRAUD-001:demo-v1:1",
+            "POL-DEMO-LIMIT:demo-extension-v1:1",
+            "POL-COMP-001:demo-v1:1"
+          ],
+          "model_context": {
+            "route": {
+              "primary_intent": "FRAUD_ERROR_REPORT",
+              "potential_fraud_error": true,
+              "human_requested": true,
+              "urgent": false
+            },
+            "records": [
+              {
+                "transaction_id": "TXN-001-01",
+                "posted_on": "2026-10-11",
+                "merchant": "DEMO GROCERY",
+                "amount_cents": 4599,
+                "currency": "USD",
+                "status": "POSTED",
+                "kind": "transaction"
+              }
+            ],
+            "policies": [
+              {
+                "chunk_id": "POL-TRAN-002:demo-v1:1",
+                "text": "If a customer does not recognize a debit-card transaction, preserve the statement and route through the approved error-intake workflow; do not require specific magic words.",
+                "version": "demo-v1"
+              },
+              {
+                "chunk_id": "POL-FRAUD-001:demo-v1:1",
+                "text": "Suspected ongoing unauthorized debit-card activity must be routed to an approved fraud-protection channel. Do not claim a card was blocked unless the bank tool confirms it.",
+                "version": "demo-v1"
+              },
+              {
+                "chunk_id": "POL-DEMO-LIMIT:demo-extension-v1:1",
+                "text": "Fictional demo policy: debit-card purchases have a $1000 daily limit. This invented limit is only for synthetic evaluation.",
+                "version": "demo-extension-v1"
+              },
+              {
+                "chunk_id": "POL-COMP-001:demo-v1:1",
+                "text": "A customer complaint must not be discarded because the assistant could not complete a restricted data lookup. Preserve and route according to approved bank procedures.",
+                "version": "demo-v1"
+              }
+            ],
+            "report": {
+              "status": "OK",
+              "report_capture_status": "CAPTURED",
+              "regulatory_notice_status": "REVIEW_REQUIRED",
+              "reported_at": "2026-10-30T23:12:58.386732+00:00",
+              "verification_status": "VERIFIED",
+              "investigation_status": "NOT_STARTED",
+              "customer_confirmation_status": "UNCONFIRMED",
+              "event_id": "DEMO-REPORT-b81f29d72acef96c",
+              "replayed": false
+            },
+            "case": {},
+            "handoff": {
+              "status": "OK",
+              "handoff_status": "ACKNOWLEDGED",
+              "queue": "FRAUD_OPERATIONS",
+              "alternate_route": false,
+              "event_id": "DEMO-HANDOFF-22193a886177ea87",
+              "replayed": false
+            }
+          },
+          "tools": [
+            {
+              "name": "record_issue_intake",
+              "status": "OK",
+              "reason_code": null
+            },
+            {
+              "name": "get_transaction",
+              "status": "OK",
+              "reason_code": "ALLOW"
+            },
+            {
+              "name": "search_approved_policy",
+              "status": "OK",
+              "reason_code": null
+            },
+            {
+              "name": "handoff_to_human",
+              "status": "OK",
+              "reason_code": null
+            }
+          ],
+          "errors": [],
+          "output_verified": true,
+          "execution_mode": "MOCK",
+          "engine": "langgraph",
+          "input_tokens": null,
+          "output_tokens": null,
+          "model_cost_usd": 0.0,
+          "cost_status": "MOCK_NO_PROVIDER_CALLS",
+          "trace": {
+            "trace_id": "af47c0ec-261b-46f7-bf77-0cc0d95566d5",
+            "metadata": {
+              "agent_version": "workflow-v2-continuity",
+              "prompt_version": "mock-rules-v4",
+              "contract_version": "pydantic-boundaries-v1",
+              "model": "mock-rules-v4",
+              "intended_live_model": "zai-org/GLM-5.3-Flash",
+              "engine": "langgraph",
+              "environment": "synthetic-offline"
+            },
+            "spans": [
+              {
+                "id": "ae3e1fff-4f9f-408b-bb52-2a488599adfc",
+                "parent_id": null,
+                "name": "resolveguard.journey",
+                "run_type": "chain",
+                "inputs": {
+                  "message": "I do not recognize this debit and want a human",
+                  "selected_transactions": [
+                    "TXN-001-01"
+                  ]
+                },
+                "outputs": {
+                  "route": {
+                    "primary_intent": "FRAUD_ERROR_REPORT",
+                    "potential_fraud_error": true,
+                    "human_requested": true,
+                    "urgent": false
+                  },
+                  "response_state": "CAPTURED_REVIEW",
+                  "errors": [],
+                  "execution_mode": "MOCK"
+                },
+                "start_time": "2026-10-30T23:12:58.450553+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:12:58.508539+00:00",
+                "latency_ms": 57.976
+              },
+              {
+                "id": "cf495963-e538-4374-a88d-3d36ff0b1a9f",
+                "parent_id": "ae3e1fff-4f9f-408b-bb52-2a488599adfc",
+                "name": "classify",
+                "run_type": "chain",
+                "inputs": {
+                  "intent": null
+                },
+                "outputs": {
+                  "response_state": "UNVERIFIED",
+                  "error_codes": [],
+                  "record_count": 0
+                },
+                "start_time": "2026-10-30T23:12:58.456970+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:12:58.457278+00:00",
+                "latency_ms": 0.303
+              },
+              {
+                "id": "b4cc6aa5-41bc-4871-897f-357532cf1644",
+                "parent_id": "cf495963-e538-4374-a88d-3d36ff0b1a9f",
+                "name": "mock.classify",
+                "run_type": "llm",
+                "inputs": {
+                  "message": "I do not recognize this debit and want a human"
+                },
+                "outputs": {
+                  "primary_intent": "FRAUD_ERROR_REPORT",
+                  "potential_fraud_error": true,
+                  "human_requested": true,
+                  "urgent": false
+                },
+                "start_time": "2026-10-30T23:12:58.457068+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:12:58.457240+00:00",
+                "latency_ms": 0.171
+              },
+              {
+                "id": "b1d45c2e-78e4-4f66-8344-4957d1edd6fe",
+                "parent_id": "ae3e1fff-4f9f-408b-bb52-2a488599adfc",
+                "name": "capture",
+                "run_type": "chain",
+                "inputs": {
+                  "intent": "FRAUD_ERROR_REPORT"
+                },
+                "outputs": {
+                  "response_state": "UNVERIFIED",
+                  "error_codes": [],
+                  "record_count": 0
+                },
+                "start_time": "2026-10-30T23:12:58.457893+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:12:58.471038+00:00",
+                "latency_ms": 13.144
+              },
+              {
+                "id": "e96dc27a-52f5-45d0-9a13-648828329080",
+                "parent_id": "b1d45c2e-78e4-4f66-8344-4957d1edd6fe",
+                "name": "record_issue_intake",
+                "run_type": "tool",
+                "inputs": {},
+                "outputs": {
+                  "status": "OK",
+                  "report_capture_status": "CAPTURED",
+                  "regulatory_notice_status": "REVIEW_REQUIRED",
+                  "reported_at": "2026-10-30T23:12:58.386732+00:00",
+                  "verification_status": "VERIFIED",
+                  "investigation_status": "NOT_STARTED",
+                  "customer_confirmation_status": "UNCONFIRMED",
+                  "event_id": "DEMO-REPORT-b81f29d72acef96c",
+                  "replayed": false
+                },
+                "start_time": "2026-10-30T23:12:58.457921+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:12:58.470966+00:00",
+                "latency_ms": 13.061
+              },
+              {
+                "id": "80a88bcc-02fc-4a5e-a5e3-62c127b30326",
+                "parent_id": "ae3e1fff-4f9f-408b-bb52-2a488599adfc",
+                "name": "lookup",
+                "run_type": "chain",
+                "inputs": {
+                  "intent": "FRAUD_ERROR_REPORT"
+                },
+                "outputs": {
+                  "response_state": "UNVERIFIED",
+                  "error_codes": [],
+                  "record_count": 1
+                },
+                "start_time": "2026-10-30T23:12:58.472551+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:12:58.473062+00:00",
+                "latency_ms": 0.503
+              },
+              {
+                "id": "40702236-cb2f-45e5-91f6-93786895fae0",
+                "parent_id": "80a88bcc-02fc-4a5e-a5e3-62c127b30326",
+                "name": "get_transaction",
+                "run_type": "tool",
+                "inputs": {
+                  "transaction_id": "TXN-001-01"
+                },
+                "outputs": {
+                  "status": "OK",
+                  "reason_code": "ALLOW",
+                  "data": {
+                    "transaction_id": "TXN-001-01",
+                    "posted_on": "2026-10-11",
+                    "merchant": "DEMO GROCERY",
+                    "amount_cents": 4599,
+                    "currency": "USD",
+                    "status": "POSTED"
+                  }
+                },
+                "start_time": "2026-10-30T23:12:58.472617+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:12:58.473001+00:00",
+                "latency_ms": 0.387
+              },
+              {
+                "id": "70b74214-177a-44ce-8693-eb5254bc32c8",
+                "parent_id": "ae3e1fff-4f9f-408b-bb52-2a488599adfc",
+                "name": "retrieve",
+                "run_type": "chain",
+                "inputs": {
+                  "intent": "FRAUD_ERROR_REPORT"
+                },
+                "outputs": {
+                  "response_state": "UNVERIFIED",
+                  "error_codes": [],
+                  "record_count": 1
+                },
+                "start_time": "2026-10-30T23:12:58.474081+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:12:58.476761+00:00",
+                "latency_ms": 2.681
+              },
+              {
+                "id": "34b8b2bc-e264-4a44-a365-640220aaba0c",
+                "parent_id": "70b74214-177a-44ce-8693-eb5254bc32c8",
+                "name": "search_approved_policy",
+                "run_type": "tool",
+                "inputs": {},
+                "outputs": {
+                  "status": "OK",
+                  "chunks": [
+                    {
+                      "doc_id": "POL-TRAN-002",
+                      "title": "Unrecognized transaction",
+                      "version": "demo-v1",
+                      "product": "DEBIT_CHECKING",
+                      "jurisdiction": "US",
+                      "effective_date": "2026-01-01",
+                      "expires_at": null,
+                      "approval_status": "APPROVED_FOR_SYNTHETIC_TEST",
+                      "chunk_id": "POL-TRAN-002:demo-v1:1",
+                      "section": "Unrecognized transaction",
+                      "text": "If a customer does not recognize a debit-card transaction, preserve the statement and route through the approved error-intake workflow; do not require specific magic words.",
+                      "token_count_approx": 25,
+                      "oversize_preserved": false,
+                      "score": 0.787382
+                    },
+                    {
+                      "doc_id": "POL-FRAUD-001",
+                      "title": "Urgent fraud routing",
+                      "version": "demo-v1",
+                      "product": "DEBIT_CHECKING",
+                      "jurisdiction": "US",
+                      "effective_date": "2026-01-01",
+                      "expires_at": null,
+                      "approval_status": "APPROVED_FOR_SYNTHETIC_TEST",
+                      "chunk_id": "POL-FRAUD-001:demo-v1:1",
+                      "section": "Urgent fraud routing",
+                      "text": "Suspected ongoing unauthorized debit-card activity must be routed to an approved fraud-protection channel. Do not claim a card was blocked unless the bank tool confirms it.",
+                      "token_count_approx": 26,
+                      "oversize_preserved": false,
+                      "score": 0.408248
+                    },
+                    {
+                      "doc_id": "POL-DEMO-LIMIT",
+                      "title": "Debit-card purchase limits",
+                      "version": "demo-extension-v1",
+                      "product": "DEBIT_CHECKING",
+                      "jurisdiction": "US",
+                      "effective_date": "2026-01-01",
+                      "expires_at": null,
+                      "approval_status": "APPROVED_FOR_SYNTHETIC_TEST",
+                      "chunk_id": "POL-DEMO-LIMIT:demo-extension-v1:1",
+                      "section": "Debit-card purchase limits",
+                      "text": "Fictional demo policy: debit-card purchases have a $1000 daily limit. This invented limit is only for synthetic evaluation.",
+                      "token_count_approx": 18,
+                      "oversize_preserved": false,
+                      "score": 0.388435
+                    },
+                    {
+                      "doc_id": "POL-COMP-001",
+                      "title": "Complaint recognition",
+                      "version": "demo-v1",
+                      "product": "ALL",
+                      "jurisdiction": "US",
+                      "effective_date": "2026-01-01",
+                      "expires_at": null,
+                      "approval_status": "APPROVED_FOR_SYNTHETIC_TEST",
+                      "chunk_id": "POL-COMP-001:demo-v1:1",
+                      "section": "Complaint recognition",
+                      "text": "A customer complaint must not be discarded because the assistant could not complete a restricted data lookup. Preserve and route according to approved bank procedures.",
+                      "token_count_approx": 25,
+                      "oversize_preserved": false,
+                      "score": 0.36098
+                    }
+                  ]
+                },
+                "start_time": "2026-10-30T23:12:58.474122+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:12:58.476579+00:00",
+                "latency_ms": 2.466
+              },
+              {
+                "id": "ea31a269-7e3d-4367-bf8f-3b799b31639d",
+                "parent_id": "ae3e1fff-4f9f-408b-bb52-2a488599adfc",
+                "name": "handoff",
+                "run_type": "chain",
+                "inputs": {
+                  "intent": "FRAUD_ERROR_REPORT"
+                },
+                "outputs": {
+                  "response_state": "UNVERIFIED",
+                  "error_codes": [],
+                  "record_count": 1
+                },
+                "start_time": "2026-10-30T23:12:58.477826+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:12:58.504057+00:00",
+                "latency_ms": 26.224
+              },
+              {
+                "id": "0a9e8579-f0d1-4a38-9d8d-108a5a9b1510",
+                "parent_id": "ea31a269-7e3d-4367-bf8f-3b799b31639d",
+                "name": "handoff_to_human",
+                "run_type": "tool",
+                "inputs": {},
+                "outputs": {
+                  "status": "OK",
+                  "handoff_status": "ACKNOWLEDGED",
+                  "queue": "FRAUD_OPERATIONS",
+                  "alternate_route": false,
+                  "payload": {
+                    "report_id": "DEMO-REPORT-b81f29d72acef96c"
+                  },
+                  "event_id": "DEMO-HANDOFF-22193a886177ea87",
+                  "replayed": false
+                },
+                "start_time": "2026-10-30T23:12:58.477858+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:12:58.504006+00:00",
+                "latency_ms": 26.16
+              },
+              {
+                "id": "4ddacee7-ad59-4693-9d7b-19763ef19430",
+                "parent_id": "ae3e1fff-4f9f-408b-bb52-2a488599adfc",
+                "name": "compose",
+                "run_type": "chain",
+                "inputs": {
+                  "intent": "FRAUD_ERROR_REPORT"
+                },
+                "outputs": {
+                  "response_state": "CAPTURED_REVIEW",
+                  "error_codes": [],
+                  "record_count": 1
+                },
+                "start_time": "2026-10-30T23:12:58.504900+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:12:58.506764+00:00",
+                "latency_ms": 1.861
+              },
+              {
+                "id": "2f76ce75-ef86-4e22-83b7-06754e32bdd5",
+                "parent_id": "4ddacee7-ad59-4693-9d7b-19763ef19430",
+                "name": "template.explain",
+                "run_type": "chain",
+                "inputs": {
+                  "route": {
+                    "primary_intent": "FRAUD_ERROR_REPORT",
+                    "potential_fraud_error": true,
+                    "human_requested": true,
+                    "urgent": false
+                  },
+                  "records": [
+                    {
+                      "transaction_id": "TXN-001-01",
+                      "posted_on": "2026-10-11",
+                      "merchant": "DEMO GROCERY",
+                      "amount_cents": 4599,
+                      "currency": "USD",
+                      "status": "POSTED",
+                      "kind": "transaction"
+                    }
+                  ],
+                  "policies": [
+                    {
+                      "chunk_id": "POL-TRAN-002:demo-v1:1",
+                      "text": "If a customer does not recognize a debit-card transaction, preserve the statement and route through the approved error-intake workflow; do not require specific magic words.",
+                      "version": "demo-v1"
+                    },
+                    {
+                      "chunk_id": "POL-FRAUD-001:demo-v1:1",
+                      "text": "Suspected ongoing unauthorized debit-card activity must be routed to an approved fraud-protection channel. Do not claim a card was blocked unless the bank tool confirms it.",
+                      "version": "demo-v1"
+                    },
+                    {
+                      "chunk_id": "POL-DEMO-LIMIT:demo-extension-v1:1",
+                      "text": "Fictional demo policy: debit-card purchases have a $1000 daily limit. This invented limit is only for synthetic evaluation.",
+                      "version": "demo-extension-v1"
+                    },
+                    {
+                      "chunk_id": "POL-COMP-001:demo-v1:1",
+                      "text": "A customer complaint must not be discarded because the assistant could not complete a restricted data lookup. Preserve and route according to approved bank procedures.",
+                      "version": "demo-v1"
+                    }
+                  ],
+                  "report": {
+                    "status": "OK",
+                    "report_capture_status": "CAPTURED",
+                    "regulatory_notice_status": "REVIEW_REQUIRED",
+                    "reported_at": "2026-10-30T23:12:58.386732+00:00",
+                    "verification_status": "VERIFIED",
+                    "investigation_status": "NOT_STARTED",
+                    "customer_confirmation_status": "UNCONFIRMED",
+                    "event_id": "DEMO-REPORT-b81f29d72acef96c",
+                    "replayed": false
+                  },
+                  "case": {},
+                  "handoff": {
+                    "status": "OK",
+                    "handoff_status": "ACKNOWLEDGED",
+                    "queue": "FRAUD_OPERATIONS",
+                    "alternate_route": false,
+                    "event_id": "DEMO-HANDOFF-22193a886177ea87",
+                    "replayed": false
+                  }
+                },
+                "outputs": {
+                  "response": "Your report was captured as DEMO-REPORT-b81f29d72acef96c.\nLegal notice status is under review; an investigation or card block is not confirmed.\nTXN-001-01: $45.99 USD, POSTED, DEMO GROCERY, 2026-10-11.\nDemo guidance [POL-TRAN-002:demo-v1:1]: If a customer does not recognize a debit-card transaction, preserve the statement and route through the approved error-intake workflow; do not require specific magic words.\nDemo guidance [POL-FRAUD-001:demo-v1:1]: Suspected ongoing unauthorized debit-card activity must be routed to an approved fraud-protection channel. Do not claim a card was blocked unless the bank tool confirms it.\nThe simulated FRAUD_OPERATIONS queue acknowledged the handoff.",
+                  "mock": true,
+                  "usage": {
+                    "input_tokens": null,
+                    "output_tokens": null
+                  }
+                },
+                "start_time": "2026-10-30T23:12:58.506229+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:12:58.506716+00:00",
+                "latency_ms": 0.479
+              },
+              {
+                "id": "a82d335f-f36e-4cb4-8d6f-5861acc7cba1",
+                "parent_id": "ae3e1fff-4f9f-408b-bb52-2a488599adfc",
+                "name": "verify",
+                "run_type": "chain",
+                "inputs": {
+                  "intent": "FRAUD_ERROR_REPORT"
+                },
+                "outputs": {
+                  "response_state": "CAPTURED_REVIEW",
+                  "error_codes": [],
+                  "record_count": 1
+                },
+                "start_time": "2026-10-30T23:12:58.507540+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:12:58.507926+00:00",
+                "latency_ms": 0.383
+              }
+            ]
+          },
+          "thread_id": "thread-caaf6252689a99e63c2c25f2d91ea9c4"
+        }
+      },
+      {
+        "thread_id": "thread-caaf6252689a99e63c2c25f2d91ea9c4",
+        "request_key": "5278d3a0-74ee-43c4-b060-a10f0d00366d",
+        "payload": {
+          "account_id": null,
+          "action": "message",
+          "case_id": null,
+          "draft_id": null,
+          "message": "Please open a support case about a fee on my account",
+          "product": "DEBIT_CHECKING",
+          "request_key": "5278d3a0-74ee-43c4-b060-a10f0d00366d",
+          "transaction_ids": [
+            "TXN-001-01"
+          ]
+        },
+        "payload_hash": "4c79c5420b553451a7765b9534dd94a0970b68b6ab2f7888f4721bfe7bb0fa6d",
+        "result": {
+          "route": {
+            "primary_intent": "SUPPORT_CASE_REQUEST",
+            "potential_fraud_error": false,
+            "human_requested": false,
+            "urgent": false
+          },
+          "response": "Review this case summary and select Confirm submission or Cancel. No case has been created.",
+          "response_state": "CONFIRMATION_REQUIRED",
+          "report": {},
+          "case": {
+            "status": "CONFIRMATION_REQUIRED"
+          },
+          "handoff": {},
+          "records": [],
+          "citations": [
+            "POL-ERR-002:demo-v1:1",
+            "POL-CASE-001:demo-v1:1",
+            "POL-CASE-002:demo-v1:1",
+            "POL-AUTH-001:demo-v1:1"
+          ],
+          "model_context": {
+            "route": {
+              "primary_intent": "SUPPORT_CASE_REQUEST",
+              "potential_fraud_error": false,
+              "human_requested": false,
+              "urgent": false
+            },
+            "records": [],
+            "policies": [
+              {
+                "chunk_id": "POL-ERR-002:demo-v1:1",
+                "text": "A customer support case identifier does not independently establish whether a legally qualifying electronic-funds-transfer error notice was received.",
+                "version": "demo-v1"
+              },
+              {
+                "chunk_id": "POL-CASE-001:demo-v1:1",
+                "text": "Supported synthetic statuses: OPEN, IN_REVIEW, WAITING_FOR_CUSTOMER, RESOLVED, CLOSED. Do not equate CLOSED to customer satisfaction or error resolution.",
+                "version": "demo-v1"
+              },
+              {
+                "chunk_id": "POL-CASE-002:demo-v1:1",
+                "text": "If a case creation call times out, reconcile by idempotency key before retrying and do not tell the customer the case exists without backend confirmation.",
+                "version": "demo-v1"
+              },
+              {
+                "chunk_id": "POL-AUTH-001:demo-v1:1",
+                "text": "Account-specific information requires an active authenticated session and current server-side permission for the exact resource and requested fields.",
+                "version": "demo-v1"
+              }
+            ],
+            "report": {},
+            "case": {
+              "status": "CONFIRMATION_REQUIRED"
+            },
+            "handoff": {}
+          },
+          "tools": [
+            {
+              "name": "create_support_case",
+              "status": "CONFIRMATION_REQUIRED",
+              "reason_code": null
+            },
+            {
+              "name": "search_approved_policy",
+              "status": "OK",
+              "reason_code": null
+            }
+          ],
+          "errors": [],
+          "output_verified": true,
+          "execution_mode": "MOCK",
+          "engine": "langgraph",
+          "input_tokens": null,
+          "output_tokens": null,
+          "model_cost_usd": 0.0,
+          "cost_status": "MOCK_NO_PROVIDER_CALLS",
+          "trace": {
+            "trace_id": "c7ce3a20-538c-4c9b-bcbc-5f4fc0f856ea",
+            "metadata": {
+              "agent_version": "workflow-v2-continuity",
+              "prompt_version": "mock-rules-v4",
+              "contract_version": "pydantic-boundaries-v1",
+              "model": "mock-rules-v4",
+              "intended_live_model": "zai-org/GLM-5.3-Flash",
+              "engine": "langgraph",
+              "environment": "synthetic-offline"
+            },
+            "spans": [
+              {
+                "id": "766115bf-f186-48e9-a9a1-5fe56bd044f9",
+                "parent_id": null,
+                "name": "resolveguard.journey",
+                "run_type": "chain",
+                "inputs": {
+                  "message": "Please open a support case about a fee on my account",
+                  "selected_transactions": [
+                    "TXN-001-01"
+                  ]
+                },
+                "outputs": {
+                  "route": {
+                    "primary_intent": "SUPPORT_CASE_REQUEST",
+                    "potential_fraud_error": false,
+                    "human_requested": false,
+                    "urgent": false
+                  },
+                  "response_state": "CONFIRMATION_REQUIRED",
+                  "errors": [],
+                  "execution_mode": "MOCK"
+                },
+                "start_time": "2026-10-30T23:13:05.209780+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:13:05.220008+00:00",
+                "latency_ms": 10.218
+              },
+              {
+                "id": "5fb35ee2-06bb-4d4e-b98d-23d55667f40b",
+                "parent_id": "766115bf-f186-48e9-a9a1-5fe56bd044f9",
+                "name": "classify",
+                "run_type": "chain",
+                "inputs": {
+                  "intent": null
+                },
+                "outputs": {
+                  "response_state": "UNVERIFIED",
+                  "error_codes": [],
+                  "record_count": 0
+                },
+                "start_time": "2026-10-30T23:13:05.213731+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:13:05.214011+00:00",
+                "latency_ms": 0.277
+              },
+              {
+                "id": "41715a70-2cff-4a35-a5ad-c5c42ad24546",
+                "parent_id": "5fb35ee2-06bb-4d4e-b98d-23d55667f40b",
+                "name": "mock.classify",
+                "run_type": "llm",
+                "inputs": {
+                  "message": "Please open a support case about a fee on my account"
+                },
+                "outputs": {
+                  "primary_intent": "SUPPORT_CASE_REQUEST",
+                  "potential_fraud_error": false,
+                  "human_requested": false,
+                  "urgent": false
+                },
+                "start_time": "2026-10-30T23:13:05.213811+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:13:05.213978+00:00",
+                "latency_ms": 0.168
+              },
+              {
+                "id": "00fcfd0e-e95c-407e-873c-c3c8ec797ce7",
+                "parent_id": "766115bf-f186-48e9-a9a1-5fe56bd044f9",
+                "name": "capture",
+                "run_type": "chain",
+                "inputs": {
+                  "intent": "SUPPORT_CASE_REQUEST"
+                },
+                "outputs": {
+                  "response_state": "UNVERIFIED",
+                  "error_codes": [],
+                  "record_count": 0
+                },
+                "start_time": "2026-10-30T23:13:05.214469+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:13:05.214491+00:00",
+                "latency_ms": 0.019
+              },
+              {
+                "id": "8c9861c4-15b7-4ce4-a1ac-aaba03f51db5",
+                "parent_id": "766115bf-f186-48e9-a9a1-5fe56bd044f9",
+                "name": "lookup",
+                "run_type": "chain",
+                "inputs": {
+                  "intent": "SUPPORT_CASE_REQUEST"
+                },
+                "outputs": {
+                  "response_state": "UNVERIFIED",
+                  "error_codes": [],
+                  "record_count": 0
+                },
+                "start_time": "2026-10-30T23:13:05.215751+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:13:05.215899+00:00",
+                "latency_ms": 0.143
+              },
+              {
+                "id": "729f4b32-e175-4f8f-b6e6-59b9337e70a1",
+                "parent_id": "8c9861c4-15b7-4ce4-a1ac-aaba03f51db5",
+                "name": "create_support_case",
+                "run_type": "tool",
+                "inputs": {},
+                "outputs": {
+                  "status": "CONFIRMATION_REQUIRED"
+                },
+                "start_time": "2026-10-30T23:13:05.215773+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:13:05.215872+00:00",
+                "latency_ms": 0.099
+              },
+              {
+                "id": "604b31a0-f866-44c6-ab8e-84290f5fc537",
+                "parent_id": "766115bf-f186-48e9-a9a1-5fe56bd044f9",
+                "name": "retrieve",
+                "run_type": "chain",
+                "inputs": {
+                  "intent": "SUPPORT_CASE_REQUEST"
+                },
+                "outputs": {
+                  "response_state": "UNVERIFIED",
+                  "error_codes": [],
+                  "record_count": 0
+                },
+                "start_time": "2026-10-30T23:13:05.216412+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:13:05.217440+00:00",
+                "latency_ms": 1.026
+              },
+              {
+                "id": "3895fa9e-6d81-4a85-99e5-4e8c4efc331a",
+                "parent_id": "604b31a0-f866-44c6-ab8e-84290f5fc537",
+                "name": "search_approved_policy",
+                "run_type": "tool",
+                "inputs": {},
+                "outputs": {
+                  "status": "OK",
+                  "chunks": [
+                    {
+                      "doc_id": "POL-ERR-002",
+                      "title": "Case versus notice",
+                      "version": "demo-v1",
+                      "product": "ALL",
+                      "jurisdiction": "US",
+                      "effective_date": "2026-01-01",
+                      "expires_at": null,
+                      "approval_status": "APPROVED_FOR_SYNTHETIC_TEST",
+                      "chunk_id": "POL-ERR-002:demo-v1:1",
+                      "section": "Case versus notice",
+                      "text": "A customer support case identifier does not independently establish whether a legally qualifying electronic-funds-transfer error notice was received.",
+                      "token_count_approx": 18,
+                      "oversize_preserved": false,
+                      "score": 0.61785
+                    },
+                    {
+                      "doc_id": "POL-CASE-001",
+                      "title": "Case statuses",
+                      "version": "demo-v1",
+                      "product": "ALL",
+                      "jurisdiction": "US",
+                      "effective_date": "2026-01-01",
+                      "expires_at": null,
+                      "approval_status": "APPROVED_FOR_SYNTHETIC_TEST",
+                      "chunk_id": "POL-CASE-001:demo-v1:1",
+                      "section": "Case statuses",
+                      "text": "Supported synthetic statuses: OPEN, IN_REVIEW, WAITING_FOR_CUSTOMER, RESOLVED, CLOSED. Do not equate CLOSED to customer satisfaction or error resolution.",
+                      "token_count_approx": 18,
+                      "oversize_preserved": false,
+                      "score": 0.471405
+                    },
+                    {
+                      "doc_id": "POL-CASE-002",
+                      "title": "Case creation uncertainty",
+                      "version": "demo-v1",
+                      "product": "ALL",
+                      "jurisdiction": "US",
+                      "effective_date": "2026-01-01",
+                      "expires_at": null,
+                      "approval_status": "APPROVED_FOR_SYNTHETIC_TEST",
+                      "chunk_id": "POL-CASE-002:demo-v1:1",
+                      "section": "Case creation uncertainty",
+                      "text": "If a case creation call times out, reconcile by idempotency key before retrying and do not tell the customer the case exists without backend confirmation.",
+                      "token_count_approx": 25,
+                      "oversize_preserved": false,
+                      "score": 0.437591
+                    },
+                    {
+                      "doc_id": "POL-AUTH-001",
+                      "title": "Customer account scope",
+                      "version": "demo-v1",
+                      "product": "ALL",
+                      "jurisdiction": "US",
+                      "effective_date": "2026-01-01",
+                      "expires_at": null,
+                      "approval_status": "APPROVED_FOR_SYNTHETIC_TEST",
+                      "chunk_id": "POL-AUTH-001:demo-v1:1",
+                      "section": "Customer account scope",
+                      "text": "Account-specific information requires an active authenticated session and current server-side permission for the exact resource and requested fields.",
+                      "token_count_approx": 18,
+                      "oversize_preserved": false,
+                      "score": 0.399079
+                    }
+                  ]
+                },
+                "start_time": "2026-10-30T23:13:05.216433+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:13:05.217404+00:00",
+                "latency_ms": 0.973
+              },
+              {
+                "id": "01245265-ed49-49d4-82ca-ab31ba77056e",
+                "parent_id": "766115bf-f186-48e9-a9a1-5fe56bd044f9",
+                "name": "handoff",
+                "run_type": "chain",
+                "inputs": {
+                  "intent": "SUPPORT_CASE_REQUEST"
+                },
+                "outputs": {
+                  "response_state": "UNVERIFIED",
+                  "error_codes": [],
+                  "record_count": 0
+                },
+                "start_time": "2026-10-30T23:13:05.217905+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:13:05.217927+00:00",
+                "latency_ms": 0.019
+              },
+              {
+                "id": "be43a571-6aed-479f-b289-3bd93369c094",
+                "parent_id": "766115bf-f186-48e9-a9a1-5fe56bd044f9",
+                "name": "compose",
+                "run_type": "chain",
+                "inputs": {
+                  "intent": "SUPPORT_CASE_REQUEST"
+                },
+                "outputs": {
+                  "response_state": "CONFIRMATION_REQUIRED",
+                  "error_codes": [],
+                  "record_count": 0
+                },
+                "start_time": "2026-10-30T23:13:05.218408+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:13:05.219179+00:00",
+                "latency_ms": 0.768
+              },
+              {
+                "id": "7c57a99b-1fe8-455e-a5f7-f3afb8332125",
+                "parent_id": "be43a571-6aed-479f-b289-3bd93369c094",
+                "name": "template.explain",
+                "run_type": "chain",
+                "inputs": {
+                  "route": {
+                    "primary_intent": "SUPPORT_CASE_REQUEST",
+                    "potential_fraud_error": false,
+                    "human_requested": false,
+                    "urgent": false
+                  },
+                  "records": [],
+                  "policies": [
+                    {
+                      "chunk_id": "POL-ERR-002:demo-v1:1",
+                      "text": "A customer support case identifier does not independently establish whether a legally qualifying electronic-funds-transfer error notice was received.",
+                      "version": "demo-v1"
+                    },
+                    {
+                      "chunk_id": "POL-CASE-001:demo-v1:1",
+                      "text": "Supported synthetic statuses: OPEN, IN_REVIEW, WAITING_FOR_CUSTOMER, RESOLVED, CLOSED. Do not equate CLOSED to customer satisfaction or error resolution.",
+                      "version": "demo-v1"
+                    },
+                    {
+                      "chunk_id": "POL-CASE-002:demo-v1:1",
+                      "text": "If a case creation call times out, reconcile by idempotency key before retrying and do not tell the customer the case exists without backend confirmation.",
+                      "version": "demo-v1"
+                    },
+                    {
+                      "chunk_id": "POL-AUTH-001:demo-v1:1",
+                      "text": "Account-specific information requires an active authenticated session and current server-side permission for the exact resource and requested fields.",
+                      "version": "demo-v1"
+                    }
+                  ],
+                  "report": {},
+                  "case": {
+                    "status": "CONFIRMATION_REQUIRED"
+                  },
+                  "handoff": {}
+                },
+                "outputs": {
+                  "response": "Review and confirm the case submission before it is created.\nDemo guidance [POL-ERR-002:demo-v1:1]: A customer support case identifier does not independently establish whether a legally qualifying electronic-funds-transfer error notice was received.\nDemo guidance [POL-CASE-001:demo-v1:1]: Supported synthetic statuses: OPEN, IN_REVIEW, WAITING_FOR_CUSTOMER, RESOLVED, CLOSED. Do not equate CLOSED to customer satisfaction or error resolution.",
+                  "mock": true,
+                  "usage": {
+                    "input_tokens": null,
+                    "output_tokens": null
+                  }
+                },
+                "start_time": "2026-10-30T23:13:05.218980+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:13:05.219153+00:00",
+                "latency_ms": 0.172
+              },
+              {
+                "id": "1d85ee9a-89f4-425d-b7a3-e0d8ac2ae078",
+                "parent_id": "766115bf-f186-48e9-a9a1-5fe56bd044f9",
+                "name": "verify",
+                "run_type": "chain",
+                "inputs": {
+                  "intent": "SUPPORT_CASE_REQUEST"
+                },
+                "outputs": {
+                  "response_state": "CONFIRMATION_REQUIRED",
+                  "error_codes": [],
+                  "record_count": 0
+                },
+                "start_time": "2026-10-30T23:13:05.219556+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:13:05.219711+00:00",
+                "latency_ms": 0.153
+              }
+            ]
+          },
+          "draft": {
+            "draft_id": "DRAFT-4524b0baec60d9c5aa96c13d",
+            "summary": "Please open a support case about a fee on my account",
+            "account_id": "[REDACTED]",
+            "expires_at": "2026-10-30T23:43:05.177136+00:00"
+          },
+          "thread_id": "thread-caaf6252689a99e63c2c25f2d91ea9c4"
+        }
+      },
+      {
+        "thread_id": "thread-7de5ee034096ed9f16828933a2d6b3a7",
+        "request_key": "2a7d1784-e10a-497f-80fb-fdfabb95c191",
+        "payload": {
+          "account_id": null,
+          "action": "message",
+          "case_id": null,
+          "draft_id": null,
+          "message": "I was charged twice for the same debit-card purchase; help me report the error.",
+          "product": "DEBIT_CHECKING",
+          "request_key": "2a7d1784-e10a-497f-80fb-fdfabb95c191",
+          "transaction_ids": [
+            "TXN-DEMO-63"
+          ]
+        },
+        "payload_hash": "acf4c935985889535be9ceb23be9e338c8f95a7bed4f18c5f551cdb5ce659827",
+        "result": {
+          "route": {
+            "primary_intent": "FRAUD_ERROR_REPORT",
+            "potential_fraud_error": true,
+            "human_requested": false,
+            "urgent": false
+          },
+          "response": "Your report was captured as DEMO-REPORT-e6e8989326c2e977.\nLegal notice status is under review; an investigation or card block is not confirmed.\nTXN-DEMO-63: $63.00 USD, PENDING, DEMO CARD PURCHASE, 2026-10-20.\nDemo guidance [POL-DEMO-LIMIT:demo-extension-v1:1]: Fictional demo policy: debit-card purchases have a $1000 daily limit. This invented limit is only for synthetic evaluation.\nDemo guidance [POL-TRAN-002:demo-v1:1]: If a customer does not recognize a debit-card transaction, preserve the statement and route through the approved error-intake workflow; do not require specific magic words.\nThe simulated FRAUD_OPERATIONS queue acknowledged the handoff.",
+          "response_state": "CAPTURED_REVIEW",
+          "report": {
+            "status": "OK",
+            "report_capture_status": "CAPTURED",
+            "regulatory_notice_status": "REVIEW_REQUIRED",
+            "reported_at": "2026-10-30T23:13:59.073622+00:00",
+            "verification_status": "VERIFIED",
+            "investigation_status": "NOT_STARTED",
+            "customer_confirmation_status": "UNCONFIRMED",
+            "event_id": "DEMO-REPORT-e6e8989326c2e977",
+            "replayed": false
+          },
+          "case": {},
+          "handoff": {
+            "status": "OK",
+            "handoff_status": "ACKNOWLEDGED",
+            "queue": "FRAUD_OPERATIONS",
+            "alternate_route": false,
+            "payload": {
+              "report_id": "DEMO-REPORT-e6e8989326c2e977"
+            },
+            "event_id": "DEMO-HANDOFF-57f135263ea2fca6",
+            "replayed": false
+          },
+          "records": [
+            {
+              "transaction_id": "TXN-DEMO-63",
+              "posted_on": "2026-10-20",
+              "merchant": "DEMO CARD PURCHASE",
+              "amount_cents": 6300,
+              "currency": "USD",
+              "status": "PENDING",
+              "kind": "transaction"
+            }
+          ],
+          "citations": [
+            "POL-DEMO-LIMIT:demo-extension-v1:1",
+            "POL-TRAN-002:demo-v1:1",
+            "POL-FRAUD-001:demo-v1:1",
+            "POL-CASE-001:demo-v1:1"
+          ],
+          "model_context": {
+            "route": {
+              "primary_intent": "FRAUD_ERROR_REPORT",
+              "potential_fraud_error": true,
+              "human_requested": false,
+              "urgent": false
+            },
+            "records": [
+              {
+                "transaction_id": "TXN-DEMO-63",
+                "posted_on": "2026-10-20",
+                "merchant": "DEMO CARD PURCHASE",
+                "amount_cents": 6300,
+                "currency": "USD",
+                "status": "PENDING",
+                "kind": "transaction"
+              }
+            ],
+            "policies": [
+              {
+                "chunk_id": "POL-DEMO-LIMIT:demo-extension-v1:1",
+                "text": "Fictional demo policy: debit-card purchases have a $1000 daily limit. This invented limit is only for synthetic evaluation.",
+                "version": "demo-extension-v1"
+              },
+              {
+                "chunk_id": "POL-TRAN-002:demo-v1:1",
+                "text": "If a customer does not recognize a debit-card transaction, preserve the statement and route through the approved error-intake workflow; do not require specific magic words.",
+                "version": "demo-v1"
+              },
+              {
+                "chunk_id": "POL-FRAUD-001:demo-v1:1",
+                "text": "Suspected ongoing unauthorized debit-card activity must be routed to an approved fraud-protection channel. Do not claim a card was blocked unless the bank tool confirms it.",
+                "version": "demo-v1"
+              },
+              {
+                "chunk_id": "POL-CASE-001:demo-v1:1",
+                "text": "Supported synthetic statuses: OPEN, IN_REVIEW, WAITING_FOR_CUSTOMER, RESOLVED, CLOSED. Do not equate CLOSED to customer satisfaction or error resolution.",
+                "version": "demo-v1"
+              }
+            ],
+            "report": {
+              "status": "OK",
+              "report_capture_status": "CAPTURED",
+              "regulatory_notice_status": "REVIEW_REQUIRED",
+              "reported_at": "2026-10-30T23:13:59.073622+00:00",
+              "verification_status": "VERIFIED",
+              "investigation_status": "NOT_STARTED",
+              "customer_confirmation_status": "UNCONFIRMED",
+              "event_id": "DEMO-REPORT-e6e8989326c2e977",
+              "replayed": false
+            },
+            "case": {},
+            "handoff": {
+              "status": "OK",
+              "handoff_status": "ACKNOWLEDGED",
+              "queue": "FRAUD_OPERATIONS",
+              "alternate_route": false,
+              "event_id": "DEMO-HANDOFF-57f135263ea2fca6",
+              "replayed": false
+            }
+          },
+          "tools": [
+            {
+              "name": "record_issue_intake",
+              "status": "OK",
+              "reason_code": null
+            },
+            {
+              "name": "get_transaction",
+              "status": "OK",
+              "reason_code": "ALLOW"
+            },
+            {
+              "name": "search_approved_policy",
+              "status": "OK",
+              "reason_code": null
+            },
+            {
+              "name": "handoff_to_human",
+              "status": "OK",
+              "reason_code": null
+            }
+          ],
+          "errors": [],
+          "output_verified": true,
+          "execution_mode": "MOCK",
+          "engine": "langgraph",
+          "input_tokens": null,
+          "output_tokens": null,
+          "model_cost_usd": 0.0,
+          "cost_status": "MOCK_NO_PROVIDER_CALLS",
+          "trace": {
+            "trace_id": "b3940ae2-bb98-42db-8df8-ff630807f5d0",
+            "metadata": {
+              "agent_version": "workflow-v2-continuity",
+              "prompt_version": "mock-rules-v4",
+              "contract_version": "pydantic-boundaries-v1",
+              "model": "mock-rules-v4",
+              "intended_live_model": "zai-org/GLM-5.3-Flash",
+              "engine": "langgraph",
+              "environment": "synthetic-offline"
+            },
+            "spans": [
+              {
+                "id": "f3db0aab-4865-4af8-8c3e-a81a2d3d15f7",
+                "parent_id": null,
+                "name": "resolveguard.journey",
+                "run_type": "chain",
+                "inputs": {
+                  "message": "I was charged twice for the same debit-card purchase; help me report the error.",
+                  "selected_transactions": [
+                    "TXN-DEMO-63"
+                  ]
+                },
+                "outputs": {
+                  "route": {
+                    "primary_intent": "FRAUD_ERROR_REPORT",
+                    "potential_fraud_error": true,
+                    "human_requested": false,
+                    "urgent": false
+                  },
+                  "response_state": "CAPTURED_REVIEW",
+                  "errors": [],
+                  "execution_mode": "MOCK"
+                },
+                "start_time": "2026-10-30T23:13:59.149648+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:13:59.189537+00:00",
+                "latency_ms": 39.875
+              },
+              {
+                "id": "86f58ccb-91ce-4c6e-9cf6-f5451265eebb",
+                "parent_id": "f3db0aab-4865-4af8-8c3e-a81a2d3d15f7",
+                "name": "classify",
+                "run_type": "chain",
+                "inputs": {
+                  "intent": null
+                },
+                "outputs": {
+                  "response_state": "UNVERIFIED",
+                  "error_codes": [],
+                  "record_count": 0
+                },
+                "start_time": "2026-10-30T23:13:59.154796+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:13:59.155073+00:00",
+                "latency_ms": 0.273
+              },
+              {
+                "id": "efac81f0-6baf-49e0-8d8c-ab7aa564581e",
+                "parent_id": "86f58ccb-91ce-4c6e-9cf6-f5451265eebb",
+                "name": "mock.classify",
+                "run_type": "llm",
+                "inputs": {
+                  "message": "I was charged twice for the same debit-card purchase; help me report the error."
+                },
+                "outputs": {
+                  "primary_intent": "FRAUD_ERROR_REPORT",
+                  "potential_fraud_error": true,
+                  "human_requested": false,
+                  "urgent": false
+                },
+                "start_time": "2026-10-30T23:13:59.154894+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:13:59.155041+00:00",
+                "latency_ms": 0.146
+              },
+              {
+                "id": "576c4a98-07c4-42fa-bee0-20b257d2fae0",
+                "parent_id": "f3db0aab-4865-4af8-8c3e-a81a2d3d15f7",
+                "name": "capture",
+                "run_type": "chain",
+                "inputs": {
+                  "intent": "FRAUD_ERROR_REPORT"
+                },
+                "outputs": {
+                  "response_state": "UNVERIFIED",
+                  "error_codes": [],
+                  "record_count": 0
+                },
+                "start_time": "2026-10-30T23:13:59.155561+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:13:59.166649+00:00",
+                "latency_ms": 11.085
+              },
+              {
+                "id": "22c38597-f0ca-4800-b7f6-3f205c452e4a",
+                "parent_id": "576c4a98-07c4-42fa-bee0-20b257d2fae0",
+                "name": "record_issue_intake",
+                "run_type": "tool",
+                "inputs": {},
+                "outputs": {
+                  "status": "OK",
+                  "report_capture_status": "CAPTURED",
+                  "regulatory_notice_status": "REVIEW_REQUIRED",
+                  "reported_at": "2026-10-30T23:13:59.073622+00:00",
+                  "verification_status": "VERIFIED",
+                  "investigation_status": "NOT_STARTED",
+                  "customer_confirmation_status": "UNCONFIRMED",
+                  "event_id": "DEMO-REPORT-e6e8989326c2e977",
+                  "replayed": false
+                },
+                "start_time": "2026-10-30T23:13:59.155584+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:13:59.166598+00:00",
+                "latency_ms": 11.023
+              },
+              {
+                "id": "a2bb65c8-a970-40ad-bbe8-23e2d9067f94",
+                "parent_id": "f3db0aab-4865-4af8-8c3e-a81a2d3d15f7",
+                "name": "lookup",
+                "run_type": "chain",
+                "inputs": {
+                  "intent": "FRAUD_ERROR_REPORT"
+                },
+                "outputs": {
+                  "response_state": "UNVERIFIED",
+                  "error_codes": [],
+                  "record_count": 1
+                },
+                "start_time": "2026-10-30T23:13:59.167479+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:13:59.167712+00:00",
+                "latency_ms": 0.228
+              },
+              {
+                "id": "aeb56120-975b-4b20-b903-b9ff760418db",
+                "parent_id": "a2bb65c8-a970-40ad-bbe8-23e2d9067f94",
+                "name": "get_transaction",
+                "run_type": "tool",
+                "inputs": {
+                  "transaction_id": "TXN-DEMO-63"
+                },
+                "outputs": {
+                  "status": "OK",
+                  "reason_code": "ALLOW",
+                  "data": {
+                    "transaction_id": "TXN-DEMO-63",
+                    "posted_on": "2026-10-20",
+                    "merchant": "DEMO CARD PURCHASE",
+                    "amount_cents": 6300,
+                    "currency": "USD",
+                    "status": "PENDING"
+                  }
+                },
+                "start_time": "2026-10-30T23:13:59.167510+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:13:59.167690+00:00",
+                "latency_ms": 0.18
+              },
+              {
+                "id": "4773ffc2-b0db-4b1b-bf0c-46ccdee5517b",
+                "parent_id": "f3db0aab-4865-4af8-8c3e-a81a2d3d15f7",
+                "name": "retrieve",
+                "run_type": "chain",
+                "inputs": {
+                  "intent": "FRAUD_ERROR_REPORT"
+                },
+                "outputs": {
+                  "response_state": "UNVERIFIED",
+                  "error_codes": [],
+                  "record_count": 1
+                },
+                "start_time": "2026-10-30T23:13:59.168116+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:13:59.168995+00:00",
+                "latency_ms": 0.877
+              },
+              {
+                "id": "e3268c05-12f8-470d-8bee-4e9c377b4320",
+                "parent_id": "4773ffc2-b0db-4b1b-bf0c-46ccdee5517b",
+                "name": "search_approved_policy",
+                "run_type": "tool",
+                "inputs": {},
+                "outputs": {
+                  "status": "OK",
+                  "chunks": [
+                    {
+                      "doc_id": "POL-DEMO-LIMIT",
+                      "title": "Debit-card purchase limits",
+                      "version": "demo-extension-v1",
+                      "product": "DEBIT_CHECKING",
+                      "jurisdiction": "US",
+                      "effective_date": "2026-01-01",
+                      "expires_at": null,
+                      "approval_status": "APPROVED_FOR_SYNTHETIC_TEST",
+                      "chunk_id": "POL-DEMO-LIMIT:demo-extension-v1:1",
+                      "section": "Debit-card purchase limits",
+                      "text": "Fictional demo policy: debit-card purchases have a $1000 daily limit. This invented limit is only for synthetic evaluation.",
+                      "token_count_approx": 18,
+                      "oversize_preserved": false,
+                      "score": 1.006285
+                    },
+                    {
+                      "doc_id": "POL-TRAN-002",
+                      "title": "Unrecognized transaction",
+                      "version": "demo-v1",
+                      "product": "DEBIT_CHECKING",
+                      "jurisdiction": "US",
+                      "effective_date": "2026-01-01",
+                      "expires_at": null,
+                      "approval_status": "APPROVED_FOR_SYNTHETIC_TEST",
+                      "chunk_id": "POL-TRAN-002:demo-v1:1",
+                      "section": "Unrecognized transaction",
+                      "text": "If a customer does not recognize a debit-card transaction, preserve the statement and route through the approved error-intake workflow; do not require specific magic words.",
+                      "token_count_approx": 25,
+                      "oversize_preserved": false,
+                      "score": 0.639602
+                    },
+                    {
+                      "doc_id": "POL-FRAUD-001",
+                      "title": "Urgent fraud routing",
+                      "version": "demo-v1",
+                      "product": "DEBIT_CHECKING",
+                      "jurisdiction": "US",
+                      "effective_date": "2026-01-01",
+                      "expires_at": null,
+                      "approval_status": "APPROVED_FOR_SYNTHETIC_TEST",
+                      "chunk_id": "POL-FRAUD-001:demo-v1:1",
+                      "section": "Urgent fraud routing",
+                      "text": "Suspected ongoing unauthorized debit-card activity must be routed to an approved fraud-protection channel. Do not claim a card was blocked unless the bank tool confirms it.",
+                      "token_count_approx": 26,
+                      "oversize_preserved": false,
+                      "score": 0.549736
+                    },
+                    {
+                      "doc_id": "POL-CASE-001",
+                      "title": "Case statuses",
+                      "version": "demo-v1",
+                      "product": "ALL",
+                      "jurisdiction": "US",
+                      "effective_date": "2026-01-01",
+                      "expires_at": null,
+                      "approval_status": "APPROVED_FOR_SYNTHETIC_TEST",
+                      "chunk_id": "POL-CASE-001:demo-v1:1",
+                      "section": "Case statuses",
+                      "text": "Supported synthetic statuses: OPEN, IN_REVIEW, WAITING_FOR_CUSTOMER, RESOLVED, CLOSED. Do not equate CLOSED to customer satisfaction or error resolution.",
+                      "token_count_approx": 18,
+                      "oversize_preserved": false,
+                      "score": 0.235702
+                    }
+                  ]
+                },
+                "start_time": "2026-10-30T23:13:59.168134+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:13:59.168964+00:00",
+                "latency_ms": 0.832
+              },
+              {
+                "id": "8fdb834a-1334-4438-bb22-f207d0d16acc",
+                "parent_id": "f3db0aab-4865-4af8-8c3e-a81a2d3d15f7",
+                "name": "handoff",
+                "run_type": "chain",
+                "inputs": {
+                  "intent": "FRAUD_ERROR_REPORT"
+                },
+                "outputs": {
+                  "response_state": "UNVERIFIED",
+                  "error_codes": [],
+                  "record_count": 1
+                },
+                "start_time": "2026-10-30T23:13:59.169426+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:13:59.185478+00:00",
+                "latency_ms": 16.054
+              },
+              {
+                "id": "d7490697-3038-47d0-9f72-6ae611228447",
+                "parent_id": "8fdb834a-1334-4438-bb22-f207d0d16acc",
+                "name": "handoff_to_human",
+                "run_type": "tool",
+                "inputs": {},
+                "outputs": {
+                  "status": "OK",
+                  "handoff_status": "ACKNOWLEDGED",
+                  "queue": "FRAUD_OPERATIONS",
+                  "alternate_route": false,
+                  "payload": {
+                    "report_id": "DEMO-REPORT-e6e8989326c2e977"
+                  },
+                  "event_id": "DEMO-HANDOFF-57f135263ea2fca6",
+                  "replayed": false
+                },
+                "start_time": "2026-10-30T23:13:59.169442+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:13:59.185415+00:00",
+                "latency_ms": 15.99
+              },
+              {
+                "id": "638c85e2-8669-4302-a1ec-8fed094acc90",
+                "parent_id": "f3db0aab-4865-4af8-8c3e-a81a2d3d15f7",
+                "name": "compose",
+                "run_type": "chain",
+                "inputs": {
+                  "intent": "FRAUD_ERROR_REPORT"
+                },
+                "outputs": {
+                  "response_state": "CAPTURED_REVIEW",
+                  "error_codes": [],
+                  "record_count": 1
+                },
+                "start_time": "2026-10-30T23:13:59.186507+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:13:59.188220+00:00",
+                "latency_ms": 1.706
+              },
+              {
+                "id": "ecc18857-cc6d-4916-9d3a-129df674cc6a",
+                "parent_id": "638c85e2-8669-4302-a1ec-8fed094acc90",
+                "name": "template.explain",
+                "run_type": "chain",
+                "inputs": {
+                  "route": {
+                    "primary_intent": "FRAUD_ERROR_REPORT",
+                    "potential_fraud_error": true,
+                    "human_requested": false,
+                    "urgent": false
+                  },
+                  "records": [
+                    {
+                      "transaction_id": "TXN-DEMO-63",
+                      "posted_on": "2026-10-20",
+                      "merchant": "DEMO CARD PURCHASE",
+                      "amount_cents": 6300,
+                      "currency": "USD",
+                      "status": "PENDING",
+                      "kind": "transaction"
+                    }
+                  ],
+                  "policies": [
+                    {
+                      "chunk_id": "POL-DEMO-LIMIT:demo-extension-v1:1",
+                      "text": "Fictional demo policy: debit-card purchases have a $1000 daily limit. This invented limit is only for synthetic evaluation.",
+                      "version": "demo-extension-v1"
+                    },
+                    {
+                      "chunk_id": "POL-TRAN-002:demo-v1:1",
+                      "text": "If a customer does not recognize a debit-card transaction, preserve the statement and route through the approved error-intake workflow; do not require specific magic words.",
+                      "version": "demo-v1"
+                    },
+                    {
+                      "chunk_id": "POL-FRAUD-001:demo-v1:1",
+                      "text": "Suspected ongoing unauthorized debit-card activity must be routed to an approved fraud-protection channel. Do not claim a card was blocked unless the bank tool confirms it.",
+                      "version": "demo-v1"
+                    },
+                    {
+                      "chunk_id": "POL-CASE-001:demo-v1:1",
+                      "text": "Supported synthetic statuses: OPEN, IN_REVIEW, WAITING_FOR_CUSTOMER, RESOLVED, CLOSED. Do not equate CLOSED to customer satisfaction or error resolution.",
+                      "version": "demo-v1"
+                    }
+                  ],
+                  "report": {
+                    "status": "OK",
+                    "report_capture_status": "CAPTURED",
+                    "regulatory_notice_status": "REVIEW_REQUIRED",
+                    "reported_at": "2026-10-30T23:13:59.073622+00:00",
+                    "verification_status": "VERIFIED",
+                    "investigation_status": "NOT_STARTED",
+                    "customer_confirmation_status": "UNCONFIRMED",
+                    "event_id": "DEMO-REPORT-e6e8989326c2e977",
+                    "replayed": false
+                  },
+                  "case": {},
+                  "handoff": {
+                    "status": "OK",
+                    "handoff_status": "ACKNOWLEDGED",
+                    "queue": "FRAUD_OPERATIONS",
+                    "alternate_route": false,
+                    "event_id": "DEMO-HANDOFF-57f135263ea2fca6",
+                    "replayed": false
+                  }
+                },
+                "outputs": {
+                  "response": "Your report was captured as DEMO-REPORT-e6e8989326c2e977.\nLegal notice status is under review; an investigation or card block is not confirmed.\nTXN-DEMO-63: $63.00 USD, PENDING, DEMO CARD PURCHASE, 2026-10-20.\nDemo guidance [POL-DEMO-LIMIT:demo-extension-v1:1]: Fictional demo policy: debit-card purchases have a $1000 daily limit. This invented limit is only for synthetic evaluation.\nDemo guidance [POL-TRAN-002:demo-v1:1]: If a customer does not recognize a debit-card transaction, preserve the statement and route through the approved error-intake workflow; do not require specific magic words.\nThe simulated FRAUD_OPERATIONS queue acknowledged the handoff.",
+                  "mock": true,
+                  "usage": {
+                    "input_tokens": null,
+                    "output_tokens": null
+                  }
+                },
+                "start_time": "2026-10-30T23:13:59.187811+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:13:59.188183+00:00",
+                "latency_ms": 0.366
+              },
+              {
+                "id": "ce872c96-2ae4-43dc-854a-2d22d9178176",
+                "parent_id": "f3db0aab-4865-4af8-8c3e-a81a2d3d15f7",
+                "name": "verify",
+                "run_type": "chain",
+                "inputs": {
+                  "intent": "FRAUD_ERROR_REPORT"
+                },
+                "outputs": {
+                  "response_state": "CAPTURED_REVIEW",
+                  "error_codes": [],
+                  "record_count": 1
+                },
+                "start_time": "2026-10-30T23:13:59.188828+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:13:59.189129+00:00",
+                "latency_ms": 0.298
+              }
+            ]
+          },
+          "thread_id": "thread-7de5ee034096ed9f16828933a2d6b3a7"
+        }
+      },
+      {
+        "thread_id": "thread-6ce51f388b5ac9b1a0273c0df9faaeef",
+        "request_key": "copy-screenshot-check",
+        "payload": {
+          "account_id": null,
+          "action": "message",
+          "case_id": null,
+          "draft_id": null,
+          "message": "I was charged twice for the same debit-card purchase; help me report the error.",
+          "product": "DEBIT_CHECKING",
+          "request_key": "copy-screenshot-check",
+          "transaction_ids": [
+            "TXN-DEMO-63"
+          ]
+        },
+        "payload_hash": "6c7123977061b25309cbe74ad2b0987128d68701b626e45e5772d08555e777e4",
+        "result": {
+          "route": {
+            "primary_intent": "FRAUD_ERROR_REPORT",
+            "potential_fraud_error": true,
+            "human_requested": false,
+            "urgent": false
+          },
+          "response": "Your report was captured as DEMO-REPORT-030a30603f63ddde.\nLegal notice status is under review; an investigation or card block is not confirmed.\nTXN-DEMO-63: $63.00 USD, PENDING, DEMO CARD PURCHASE, 2026-10-20.\nDemo guidance [POL-DEMO-LIMIT:demo-extension-v1:1]: Fictional demo policy: debit-card purchases have a $1000 daily limit. This invented limit is only for synthetic evaluation.\nDemo guidance [POL-TRAN-002:demo-v1:1]: If a customer does not recognize a debit-card transaction, preserve the statement and route through the approved error-intake workflow; do not require specific magic words.\nThe simulated FRAUD_OPERATIONS queue acknowledged the handoff.",
+          "response_state": "CAPTURED_REVIEW",
+          "report": {
+            "status": "OK",
+            "report_capture_status": "CAPTURED",
+            "regulatory_notice_status": "REVIEW_REQUIRED",
+            "reported_at": "2026-10-30T23:19:53.368013+00:00",
+            "verification_status": "VERIFIED",
+            "investigation_status": "NOT_STARTED",
+            "customer_confirmation_status": "UNCONFIRMED",
+            "event_id": "DEMO-REPORT-030a30603f63ddde",
+            "replayed": false
+          },
+          "case": {},
+          "handoff": {
+            "status": "OK",
+            "handoff_status": "ACKNOWLEDGED",
+            "queue": "FRAUD_OPERATIONS",
+            "alternate_route": false,
+            "payload": {
+              "report_id": "DEMO-REPORT-030a30603f63ddde"
+            },
+            "event_id": "DEMO-HANDOFF-48291f13a4f4403e",
+            "replayed": false
+          },
+          "records": [
+            {
+              "transaction_id": "TXN-DEMO-63",
+              "posted_on": "2026-10-20",
+              "merchant": "DEMO CARD PURCHASE",
+              "amount_cents": 6300,
+              "currency": "USD",
+              "status": "PENDING",
+              "kind": "transaction"
+            }
+          ],
+          "citations": [
+            "POL-DEMO-LIMIT:demo-extension-v1:1",
+            "POL-TRAN-002:demo-v1:1",
+            "POL-FRAUD-001:demo-v1:1",
+            "POL-CASE-001:demo-v1:1"
+          ],
+          "model_context": {
+            "route": {
+              "primary_intent": "FRAUD_ERROR_REPORT",
+              "potential_fraud_error": true,
+              "human_requested": false,
+              "urgent": false
+            },
+            "records": [
+              {
+                "transaction_id": "TXN-DEMO-63",
+                "posted_on": "2026-10-20",
+                "merchant": "DEMO CARD PURCHASE",
+                "amount_cents": 6300,
+                "currency": "USD",
+                "status": "PENDING",
+                "kind": "transaction"
+              }
+            ],
+            "policies": [
+              {
+                "chunk_id": "POL-DEMO-LIMIT:demo-extension-v1:1",
+                "text": "Fictional demo policy: debit-card purchases have a $1000 daily limit. This invented limit is only for synthetic evaluation.",
+                "version": "demo-extension-v1"
+              },
+              {
+                "chunk_id": "POL-TRAN-002:demo-v1:1",
+                "text": "If a customer does not recognize a debit-card transaction, preserve the statement and route through the approved error-intake workflow; do not require specific magic words.",
+                "version": "demo-v1"
+              },
+              {
+                "chunk_id": "POL-FRAUD-001:demo-v1:1",
+                "text": "Suspected ongoing unauthorized debit-card activity must be routed to an approved fraud-protection channel. Do not claim a card was blocked unless the bank tool confirms it.",
+                "version": "demo-v1"
+              },
+              {
+                "chunk_id": "POL-CASE-001:demo-v1:1",
+                "text": "Supported synthetic statuses: OPEN, IN_REVIEW, WAITING_FOR_CUSTOMER, RESOLVED, CLOSED. Do not equate CLOSED to customer satisfaction or error resolution.",
+                "version": "demo-v1"
+              }
+            ],
+            "report": {
+              "status": "OK",
+              "report_capture_status": "CAPTURED",
+              "regulatory_notice_status": "REVIEW_REQUIRED",
+              "reported_at": "2026-10-30T23:19:53.368013+00:00",
+              "verification_status": "VERIFIED",
+              "investigation_status": "NOT_STARTED",
+              "customer_confirmation_status": "UNCONFIRMED",
+              "event_id": "DEMO-REPORT-030a30603f63ddde",
+              "replayed": false
+            },
+            "case": {},
+            "handoff": {
+              "status": "OK",
+              "handoff_status": "ACKNOWLEDGED",
+              "queue": "FRAUD_OPERATIONS",
+              "alternate_route": false,
+              "event_id": "DEMO-HANDOFF-48291f13a4f4403e",
+              "replayed": false
+            }
+          },
+          "tools": [
+            {
+              "name": "record_issue_intake",
+              "status": "OK",
+              "reason_code": null
+            },
+            {
+              "name": "get_transaction",
+              "status": "OK",
+              "reason_code": "ALLOW"
+            },
+            {
+              "name": "search_approved_policy",
+              "status": "OK",
+              "reason_code": null
+            },
+            {
+              "name": "handoff_to_human",
+              "status": "OK",
+              "reason_code": null
+            }
+          ],
+          "errors": [],
+          "output_verified": true,
+          "execution_mode": "MOCK",
+          "engine": "langgraph",
+          "input_tokens": null,
+          "output_tokens": null,
+          "model_cost_usd": 0.0,
+          "cost_status": "MOCK_NO_PROVIDER_CALLS",
+          "trace": {
+            "trace_id": "e5bb5d68-91db-41b6-abfc-1e271678c66d",
+            "metadata": {
+              "agent_version": "workflow-v2-continuity",
+              "prompt_version": "mock-rules-v4",
+              "contract_version": "pydantic-boundaries-v1",
+              "model": "mock-rules-v4",
+              "intended_live_model": "zai-org/GLM-5.3-Flash",
+              "engine": "langgraph",
+              "environment": "synthetic-offline"
+            },
+            "spans": [
+              {
+                "id": "8c35d097-bbe8-4101-ae15-90e5d10a3fbb",
+                "parent_id": null,
+                "name": "resolveguard.journey",
+                "run_type": "chain",
+                "inputs": {
+                  "message": "I was charged twice for the same debit-card purchase; help me report the error.",
+                  "selected_transactions": [
+                    "TXN-DEMO-63"
+                  ]
+                },
+                "outputs": {
+                  "route": {
+                    "primary_intent": "FRAUD_ERROR_REPORT",
+                    "potential_fraud_error": true,
+                    "human_requested": false,
+                    "urgent": false
+                  },
+                  "response_state": "CAPTURED_REVIEW",
+                  "errors": [],
+                  "execution_mode": "MOCK"
+                },
+                "start_time": "2026-10-30T23:19:54.206170+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:19:54.238412+00:00",
+                "latency_ms": 32.237
+              },
+              {
+                "id": "601c0ba3-1b7f-4f7b-9943-a572eb23b8ac",
+                "parent_id": "8c35d097-bbe8-4101-ae15-90e5d10a3fbb",
+                "name": "classify",
+                "run_type": "chain",
+                "inputs": {
+                  "intent": null
+                },
+                "outputs": {
+                  "response_state": "UNVERIFIED",
+                  "error_codes": [],
+                  "record_count": 0
+                },
+                "start_time": "2026-10-30T23:19:54.208844+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:19:54.208995+00:00",
+                "latency_ms": 0.148
+              },
+              {
+                "id": "4d5e7f22-a342-4d1f-aa5b-3777eff8709b",
+                "parent_id": "601c0ba3-1b7f-4f7b-9943-a572eb23b8ac",
+                "name": "mock.classify",
+                "run_type": "llm",
+                "inputs": {
+                  "message": "I was charged twice for the same debit-card purchase; help me report the error."
+                },
+                "outputs": {
+                  "primary_intent": "FRAUD_ERROR_REPORT",
+                  "potential_fraud_error": true,
+                  "human_requested": false,
+                  "urgent": false
+                },
+                "start_time": "2026-10-30T23:19:54.208895+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:19:54.208977+00:00",
+                "latency_ms": 0.083
+              },
+              {
+                "id": "fdb14d89-ea93-4511-8ccf-db1a1724f416",
+                "parent_id": "8c35d097-bbe8-4101-ae15-90e5d10a3fbb",
+                "name": "capture",
+                "run_type": "chain",
+                "inputs": {
+                  "intent": "FRAUD_ERROR_REPORT"
+                },
+                "outputs": {
+                  "response_state": "UNVERIFIED",
+                  "error_codes": [],
+                  "record_count": 0
+                },
+                "start_time": "2026-10-30T23:19:54.209520+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:19:54.219818+00:00",
+                "latency_ms": 10.293
+              },
+              {
+                "id": "49b60a78-3345-46cd-a543-a590634be043",
+                "parent_id": "fdb14d89-ea93-4511-8ccf-db1a1724f416",
+                "name": "record_issue_intake",
+                "run_type": "tool",
+                "inputs": {},
+                "outputs": {
+                  "status": "OK",
+                  "report_capture_status": "CAPTURED",
+                  "regulatory_notice_status": "REVIEW_REQUIRED",
+                  "reported_at": "2026-10-30T23:19:53.368013+00:00",
+                  "verification_status": "VERIFIED",
+                  "investigation_status": "NOT_STARTED",
+                  "customer_confirmation_status": "UNCONFIRMED",
+                  "event_id": "DEMO-REPORT-030a30603f63ddde",
+                  "replayed": false
+                },
+                "start_time": "2026-10-30T23:19:54.209556+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:19:54.219776+00:00",
+                "latency_ms": 10.227
+              },
+              {
+                "id": "dcdae9ac-df26-49a5-9d9f-87ff677d1fd0",
+                "parent_id": "8c35d097-bbe8-4101-ae15-90e5d10a3fbb",
+                "name": "lookup",
+                "run_type": "chain",
+                "inputs": {
+                  "intent": "FRAUD_ERROR_REPORT"
+                },
+                "outputs": {
+                  "response_state": "UNVERIFIED",
+                  "error_codes": [],
+                  "record_count": 1
+                },
+                "start_time": "2026-10-30T23:19:54.220650+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:19:54.220934+00:00",
+                "latency_ms": 0.28
+              },
+              {
+                "id": "45fa5826-8843-4f78-b9db-a7de93f4168c",
+                "parent_id": "dcdae9ac-df26-49a5-9d9f-87ff677d1fd0",
+                "name": "get_transaction",
+                "run_type": "tool",
+                "inputs": {
+                  "transaction_id": "TXN-DEMO-63"
+                },
+                "outputs": {
+                  "status": "OK",
+                  "reason_code": "ALLOW",
+                  "data": {
+                    "transaction_id": "TXN-DEMO-63",
+                    "posted_on": "2026-10-20",
+                    "merchant": "DEMO CARD PURCHASE",
+                    "amount_cents": 6300,
+                    "currency": "USD",
+                    "status": "PENDING"
+                  }
+                },
+                "start_time": "2026-10-30T23:19:54.220681+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:19:54.220910+00:00",
+                "latency_ms": 0.23
+              },
+              {
+                "id": "05b510c9-d802-4d57-96cd-32039b18fa66",
+                "parent_id": "8c35d097-bbe8-4101-ae15-90e5d10a3fbb",
+                "name": "retrieve",
+                "run_type": "chain",
+                "inputs": {
+                  "intent": "FRAUD_ERROR_REPORT"
+                },
+                "outputs": {
+                  "response_state": "UNVERIFIED",
+                  "error_codes": [],
+                  "record_count": 1
+                },
+                "start_time": "2026-10-30T23:19:54.221344+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:19:54.222457+00:00",
+                "latency_ms": 1.111
+              },
+              {
+                "id": "cbc8d749-1c2a-48f0-80f2-1d96884d005c",
+                "parent_id": "05b510c9-d802-4d57-96cd-32039b18fa66",
+                "name": "search_approved_policy",
+                "run_type": "tool",
+                "inputs": {},
+                "outputs": {
+                  "status": "OK",
+                  "chunks": [
+                    {
+                      "doc_id": "POL-DEMO-LIMIT",
+                      "title": "Debit-card purchase limits",
+                      "version": "demo-extension-v1",
+                      "product": "DEBIT_CHECKING",
+                      "jurisdiction": "US",
+                      "effective_date": "2026-01-01",
+                      "expires_at": null,
+                      "approval_status": "APPROVED_FOR_SYNTHETIC_TEST",
+                      "chunk_id": "POL-DEMO-LIMIT:demo-extension-v1:1",
+                      "section": "Debit-card purchase limits",
+                      "text": "Fictional demo policy: debit-card purchases have a $1000 daily limit. This invented limit is only for synthetic evaluation.",
+                      "token_count_approx": 18,
+                      "oversize_preserved": false,
+                      "score": 1.006285
+                    },
+                    {
+                      "doc_id": "POL-TRAN-002",
+                      "title": "Unrecognized transaction",
+                      "version": "demo-v1",
+                      "product": "DEBIT_CHECKING",
+                      "jurisdiction": "US",
+                      "effective_date": "2026-01-01",
+                      "expires_at": null,
+                      "approval_status": "APPROVED_FOR_SYNTHETIC_TEST",
+                      "chunk_id": "POL-TRAN-002:demo-v1:1",
+                      "section": "Unrecognized transaction",
+                      "text": "If a customer does not recognize a debit-card transaction, preserve the statement and route through the approved error-intake workflow; do not require specific magic words.",
+                      "token_count_approx": 25,
+                      "oversize_preserved": false,
+                      "score": 0.639602
+                    },
+                    {
+                      "doc_id": "POL-FRAUD-001",
+                      "title": "Urgent fraud routing",
+                      "version": "demo-v1",
+                      "product": "DEBIT_CHECKING",
+                      "jurisdiction": "US",
+                      "effective_date": "2026-01-01",
+                      "expires_at": null,
+                      "approval_status": "APPROVED_FOR_SYNTHETIC_TEST",
+                      "chunk_id": "POL-FRAUD-001:demo-v1:1",
+                      "section": "Urgent fraud routing",
+                      "text": "Suspected ongoing unauthorized debit-card activity must be routed to an approved fraud-protection channel. Do not claim a card was blocked unless the bank tool confirms it.",
+                      "token_count_approx": 26,
+                      "oversize_preserved": false,
+                      "score": 0.549736
+                    },
+                    {
+                      "doc_id": "POL-CASE-001",
+                      "title": "Case statuses",
+                      "version": "demo-v1",
+                      "product": "ALL",
+                      "jurisdiction": "US",
+                      "effective_date": "2026-01-01",
+                      "expires_at": null,
+                      "approval_status": "APPROVED_FOR_SYNTHETIC_TEST",
+                      "chunk_id": "POL-CASE-001:demo-v1:1",
+                      "section": "Case statuses",
+                      "text": "Supported synthetic statuses: OPEN, IN_REVIEW, WAITING_FOR_CUSTOMER, RESOLVED, CLOSED. Do not equate CLOSED to customer satisfaction or error resolution.",
+                      "token_count_approx": 18,
+                      "oversize_preserved": false,
+                      "score": 0.235702
+                    }
+                  ]
+                },
+                "start_time": "2026-10-30T23:19:54.221360+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:19:54.222420+00:00",
+                "latency_ms": 1.064
+              },
+              {
+                "id": "753285ae-90aa-40d4-aa72-3f50b3f50d79",
+                "parent_id": "8c35d097-bbe8-4101-ae15-90e5d10a3fbb",
+                "name": "handoff",
+                "run_type": "chain",
+                "inputs": {
+                  "intent": "FRAUD_ERROR_REPORT"
+                },
+                "outputs": {
+                  "response_state": "UNVERIFIED",
+                  "error_codes": [],
+                  "record_count": 1
+                },
+                "start_time": "2026-10-30T23:19:54.222888+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:19:54.235903+00:00",
+                "latency_ms": 13.015
+              },
+              {
+                "id": "81866533-d9e6-44fc-8b82-efaee4089fd0",
+                "parent_id": "753285ae-90aa-40d4-aa72-3f50b3f50d79",
+                "name": "handoff_to_human",
+                "run_type": "tool",
+                "inputs": {},
+                "outputs": {
+                  "status": "OK",
+                  "handoff_status": "ACKNOWLEDGED",
+                  "queue": "FRAUD_OPERATIONS",
+                  "alternate_route": false,
+                  "payload": {
+                    "report_id": "DEMO-REPORT-030a30603f63ddde"
+                  },
+                  "event_id": "DEMO-HANDOFF-48291f13a4f4403e",
+                  "replayed": false
+                },
+                "start_time": "2026-10-30T23:19:54.222905+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:19:54.235859+00:00",
+                "latency_ms": 12.967
+              },
+              {
+                "id": "43058274-4134-4e46-a8fd-23afada68ec2",
+                "parent_id": "8c35d097-bbe8-4101-ae15-90e5d10a3fbb",
+                "name": "compose",
+                "run_type": "chain",
+                "inputs": {
+                  "intent": "FRAUD_ERROR_REPORT"
+                },
+                "outputs": {
+                  "response_state": "CAPTURED_REVIEW",
+                  "error_codes": [],
+                  "record_count": 1
+                },
+                "start_time": "2026-10-30T23:19:54.236562+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:19:54.237594+00:00",
+                "latency_ms": 1.029
+              },
+              {
+                "id": "32e39b50-574c-4ef7-9cc8-2d8a22cad34d",
+                "parent_id": "43058274-4134-4e46-a8fd-23afada68ec2",
+                "name": "template.explain",
+                "run_type": "chain",
+                "inputs": {
+                  "route": {
+                    "primary_intent": "FRAUD_ERROR_REPORT",
+                    "potential_fraud_error": true,
+                    "human_requested": false,
+                    "urgent": false
+                  },
+                  "records": [
+                    {
+                      "transaction_id": "TXN-DEMO-63",
+                      "posted_on": "2026-10-20",
+                      "merchant": "DEMO CARD PURCHASE",
+                      "amount_cents": 6300,
+                      "currency": "USD",
+                      "status": "PENDING",
+                      "kind": "transaction"
+                    }
+                  ],
+                  "policies": [
+                    {
+                      "chunk_id": "POL-DEMO-LIMIT:demo-extension-v1:1",
+                      "text": "Fictional demo policy: debit-card purchases have a $1000 daily limit. This invented limit is only for synthetic evaluation.",
+                      "version": "demo-extension-v1"
+                    },
+                    {
+                      "chunk_id": "POL-TRAN-002:demo-v1:1",
+                      "text": "If a customer does not recognize a debit-card transaction, preserve the statement and route through the approved error-intake workflow; do not require specific magic words.",
+                      "version": "demo-v1"
+                    },
+                    {
+                      "chunk_id": "POL-FRAUD-001:demo-v1:1",
+                      "text": "Suspected ongoing unauthorized debit-card activity must be routed to an approved fraud-protection channel. Do not claim a card was blocked unless the bank tool confirms it.",
+                      "version": "demo-v1"
+                    },
+                    {
+                      "chunk_id": "POL-CASE-001:demo-v1:1",
+                      "text": "Supported synthetic statuses: OPEN, IN_REVIEW, WAITING_FOR_CUSTOMER, RESOLVED, CLOSED. Do not equate CLOSED to customer satisfaction or error resolution.",
+                      "version": "demo-v1"
+                    }
+                  ],
+                  "report": {
+                    "status": "OK",
+                    "report_capture_status": "CAPTURED",
+                    "regulatory_notice_status": "REVIEW_REQUIRED",
+                    "reported_at": "2026-10-30T23:19:53.368013+00:00",
+                    "verification_status": "VERIFIED",
+                    "investigation_status": "NOT_STARTED",
+                    "customer_confirmation_status": "UNCONFIRMED",
+                    "event_id": "DEMO-REPORT-030a30603f63ddde",
+                    "replayed": false
+                  },
+                  "case": {},
+                  "handoff": {
+                    "status": "OK",
+                    "handoff_status": "ACKNOWLEDGED",
+                    "queue": "FRAUD_OPERATIONS",
+                    "alternate_route": false,
+                    "event_id": "DEMO-HANDOFF-48291f13a4f4403e",
+                    "replayed": false
+                  }
+                },
+                "outputs": {
+                  "response": "Your report was captured as DEMO-REPORT-030a30603f63ddde.\nLegal notice status is under review; an investigation or card block is not confirmed.\nTXN-DEMO-63: $63.00 USD, PENDING, DEMO CARD PURCHASE, 2026-10-20.\nDemo guidance [POL-DEMO-LIMIT:demo-extension-v1:1]: Fictional demo policy: debit-card purchases have a $1000 daily limit. This invented limit is only for synthetic evaluation.\nDemo guidance [POL-TRAN-002:demo-v1:1]: If a customer does not recognize a debit-card transaction, preserve the statement and route through the approved error-intake workflow; do not require specific magic words.\nThe simulated FRAUD_OPERATIONS queue acknowledged the handoff.",
+                  "mock": true,
+                  "usage": {
+                    "input_tokens": null,
+                    "output_tokens": null
+                  }
+                },
+                "start_time": "2026-10-30T23:19:54.237352+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:19:54.237572+00:00",
+                "latency_ms": 0.217
+              },
+              {
+                "id": "a63f18d7-c57b-4590-a4eb-d98f7aaf67f8",
+                "parent_id": "8c35d097-bbe8-4101-ae15-90e5d10a3fbb",
+                "name": "verify",
+                "run_type": "chain",
+                "inputs": {
+                  "intent": "FRAUD_ERROR_REPORT"
+                },
+                "outputs": {
+                  "response_state": "CAPTURED_REVIEW",
+                  "error_codes": [],
+                  "record_count": 1
+                },
+                "start_time": "2026-10-30T23:19:54.237946+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:19:54.238133+00:00",
+                "latency_ms": 0.185
+              }
+            ]
+          },
+          "thread_id": "thread-6ce51f388b5ac9b1a0273c0df9faaeef"
+        }
+      },
+      {
+        "thread_id": "thread-2ec8dbcf472b512fa1b003f89ab0a189",
+        "request_key": "85d24958-fe10-4c71-b28a-2e9ba2a1a36b",
+        "payload": {
+          "account_id": null,
+          "action": "message",
+          "case_id": null,
+          "draft_id": null,
+          "message": "Show the details of the transaction I selected",
+          "product": "DEBIT_CHECKING",
+          "request_key": "85d24958-fe10-4c71-b28a-2e9ba2a1a36b",
+          "transaction_ids": []
+        },
+        "payload_hash": "4343078a8641eca3c46cb53b04bf78a0c592a947d2871160a35ec760b729807d",
+        "result": {
+          "route": {
+            "primary_intent": "TRANSACTION_INQUIRY",
+            "potential_fraud_error": false,
+            "human_requested": false,
+            "urgent": false
+          },
+          "response": "Select the transaction or case to look up through the secure application.\nDemo guidance [POL-TRAN-002:demo-v1:1]: If a customer does not recognize a debit-card transaction, preserve the statement and route through the approved error-intake workflow; do not require specific magic words.\nDemo guidance [POL-TRAN-001:demo-v1:1]: Posted transactions appear in transaction history after processing. A pending authorization is not a final posted charge.",
+          "response_state": "CLARIFICATION_REQUIRED",
+          "report": {},
+          "case": {},
+          "handoff": {},
+          "records": [],
+          "citations": [
+            "POL-TRAN-002:demo-v1:1",
+            "POL-TRAN-001:demo-v1:1"
+          ],
+          "model_context": {
+            "route": {
+              "primary_intent": "TRANSACTION_INQUIRY",
+              "potential_fraud_error": false,
+              "human_requested": false,
+              "urgent": false
+            },
+            "records": [],
+            "policies": [
+              {
+                "chunk_id": "POL-TRAN-002:demo-v1:1",
+                "text": "If a customer does not recognize a debit-card transaction, preserve the statement and route through the approved error-intake workflow; do not require specific magic words.",
+                "version": "demo-v1"
+              },
+              {
+                "chunk_id": "POL-TRAN-001:demo-v1:1",
+                "text": "Posted transactions appear in transaction history after processing. A pending authorization is not a final posted charge.",
+                "version": "demo-v1"
+              }
+            ],
+            "report": {},
+            "case": {},
+            "handoff": {}
+          },
+          "tools": [
+            {
+              "name": "search_approved_policy",
+              "status": "OK",
+              "reason_code": null
+            }
+          ],
+          "errors": [],
+          "output_verified": true,
+          "execution_mode": "MOCK",
+          "engine": "langgraph",
+          "input_tokens": null,
+          "output_tokens": null,
+          "model_cost_usd": 0.0,
+          "cost_status": "MOCK_NO_PROVIDER_CALLS",
+          "trace": {
+            "trace_id": "664c60b5-2e3f-42c6-bf3d-50ab2e979b83",
+            "metadata": {
+              "agent_version": "workflow-v2-continuity",
+              "prompt_version": "mock-rules-v4",
+              "contract_version": "pydantic-boundaries-v1",
+              "model": "mock-rules-v4",
+              "intended_live_model": "zai-org/GLM-5.3-Flash",
+              "engine": "langgraph",
+              "environment": "synthetic-offline"
+            },
+            "spans": [
+              {
+                "id": "89ef2c07-33a0-4c89-9a48-833422213baf",
+                "parent_id": null,
+                "name": "resolveguard.journey",
+                "run_type": "chain",
+                "inputs": {
+                  "message": "Show the details of the transaction I selected",
+                  "selected_transactions": []
+                },
+                "outputs": {
+                  "route": {
+                    "primary_intent": "TRANSACTION_INQUIRY",
+                    "potential_fraud_error": false,
+                    "human_requested": false,
+                    "urgent": false
+                  },
+                  "response_state": "CLARIFICATION_REQUIRED",
+                  "errors": [],
+                  "execution_mode": "MOCK"
+                },
+                "start_time": "2026-10-30T23:20:40.009847+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:20:40.024848+00:00",
+                "latency_ms": 14.986
+              },
+              {
+                "id": "fa21bef1-d1f4-4174-b388-acdbee635430",
+                "parent_id": "89ef2c07-33a0-4c89-9a48-833422213baf",
+                "name": "classify",
+                "run_type": "chain",
+                "inputs": {
+                  "intent": null
+                },
+                "outputs": {
+                  "response_state": "UNVERIFIED",
+                  "error_codes": [],
+                  "record_count": 0
+                },
+                "start_time": "2026-10-30T23:20:40.016335+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:20:40.016676+00:00",
+                "latency_ms": 0.336
+              },
+              {
+                "id": "0201b6cc-6074-4e06-b696-d3d3d79e97ea",
+                "parent_id": "fa21bef1-d1f4-4174-b388-acdbee635430",
+                "name": "mock.classify",
+                "run_type": "llm",
+                "inputs": {
+                  "message": "Show the details of the transaction I selected"
+                },
+                "outputs": {
+                  "primary_intent": "TRANSACTION_INQUIRY",
+                  "potential_fraud_error": false,
+                  "human_requested": false,
+                  "urgent": false
+                },
+                "start_time": "2026-10-30T23:20:40.016443+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:20:40.016635+00:00",
+                "latency_ms": 0.191
+              },
+              {
+                "id": "ca842359-f88d-4033-8ecb-aeea6a5cb7b5",
+                "parent_id": "89ef2c07-33a0-4c89-9a48-833422213baf",
+                "name": "capture",
+                "run_type": "chain",
+                "inputs": {
+                  "intent": "TRANSACTION_INQUIRY"
+                },
+                "outputs": {
+                  "response_state": "UNVERIFIED",
+                  "error_codes": [],
+                  "record_count": 0
+                },
+                "start_time": "2026-10-30T23:20:40.017310+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:20:40.017342+00:00",
+                "latency_ms": 0.028
+              },
+              {
+                "id": "75116137-13c9-4c8a-bb9f-aea0718e2c5c",
+                "parent_id": "89ef2c07-33a0-4c89-9a48-833422213baf",
+                "name": "lookup",
+                "run_type": "chain",
+                "inputs": {
+                  "intent": "TRANSACTION_INQUIRY"
+                },
+                "outputs": {
+                  "response_state": "UNVERIFIED",
+                  "error_codes": [],
+                  "record_count": 0
+                },
+                "start_time": "2026-10-30T23:20:40.018240+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:20:40.018275+00:00",
+                "latency_ms": 0.03
+              },
+              {
+                "id": "7a2de19d-148d-4ce9-aac6-51cea22a12f1",
+                "parent_id": "89ef2c07-33a0-4c89-9a48-833422213baf",
+                "name": "retrieve",
+                "run_type": "chain",
+                "inputs": {
+                  "intent": "TRANSACTION_INQUIRY"
+                },
+                "outputs": {
+                  "response_state": "UNVERIFIED",
+                  "error_codes": [],
+                  "record_count": 0
+                },
+                "start_time": "2026-10-30T23:20:40.020518+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:20:40.021599+00:00",
+                "latency_ms": 1.073
+              },
+              {
+                "id": "d1536934-8673-4695-ad16-1f63631173fd",
+                "parent_id": "7a2de19d-148d-4ce9-aac6-51cea22a12f1",
+                "name": "search_approved_policy",
+                "run_type": "tool",
+                "inputs": {},
+                "outputs": {
+                  "status": "OK",
+                  "chunks": [
+                    {
+                      "doc_id": "POL-TRAN-002",
+                      "title": "Unrecognized transaction",
+                      "version": "demo-v1",
+                      "product": "DEBIT_CHECKING",
+                      "jurisdiction": "US",
+                      "effective_date": "2026-01-01",
+                      "expires_at": null,
+                      "approval_status": "APPROVED_FOR_SYNTHETIC_TEST",
+                      "chunk_id": "POL-TRAN-002:demo-v1:1",
+                      "section": "Unrecognized transaction",
+                      "text": "If a customer does not recognize a debit-card transaction, preserve the statement and route through the approved error-intake workflow; do not require specific magic words.",
+                      "token_count_approx": 25,
+                      "oversize_preserved": false,
+                      "score": 0.36098
+                    },
+                    {
+                      "doc_id": "POL-TRAN-001",
+                      "title": "Posted versus pending",
+                      "version": "demo-v1",
+                      "product": "ALL",
+                      "jurisdiction": "US",
+                      "effective_date": "2026-01-01",
+                      "expires_at": null,
+                      "approval_status": "APPROVED_FOR_SYNTHETIC_TEST",
+                      "chunk_id": "POL-TRAN-001:demo-v1:1",
+                      "section": "Posted versus pending",
+                      "text": "Posted transactions appear in transaction history after processing. A pending authorization is not a final posted charge.",
+                      "token_count_approx": 17,
+                      "oversize_preserved": false,
+                      "score": 0.25
+                    }
+                  ]
+                },
+                "start_time": "2026-10-30T23:20:40.020554+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:20:40.021554+00:00",
+                "latency_ms": 1.002
+              },
+              {
+                "id": "c6b20f3b-37bd-4edb-abab-eef4d5a86e71",
+                "parent_id": "89ef2c07-33a0-4c89-9a48-833422213baf",
+                "name": "handoff",
+                "run_type": "chain",
+                "inputs": {
+                  "intent": "TRANSACTION_INQUIRY"
+                },
+                "outputs": {
+                  "response_state": "UNVERIFIED",
+                  "error_codes": [],
+                  "record_count": 0
+                },
+                "start_time": "2026-10-30T23:20:40.022319+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:20:40.022348+00:00",
+                "latency_ms": 0.024
+              },
+              {
+                "id": "d421f78c-8c48-4fe1-8d79-45c31863e5ab",
+                "parent_id": "89ef2c07-33a0-4c89-9a48-833422213baf",
+                "name": "compose",
+                "run_type": "chain",
+                "inputs": {
+                  "intent": "TRANSACTION_INQUIRY"
+                },
+                "outputs": {
+                  "response_state": "CLARIFICATION_REQUIRED",
+                  "error_codes": [],
+                  "record_count": 0
+                },
+                "start_time": "2026-10-30T23:20:40.022986+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:20:40.023670+00:00",
+                "latency_ms": 0.679
+              },
+              {
+                "id": "dd06f7a1-692c-4b92-98c9-ead7caf8cf0a",
+                "parent_id": "d421f78c-8c48-4fe1-8d79-45c31863e5ab",
+                "name": "template.explain",
+                "run_type": "chain",
+                "inputs": {
+                  "route": {
+                    "primary_intent": "TRANSACTION_INQUIRY",
+                    "potential_fraud_error": false,
+                    "human_requested": false,
+                    "urgent": false
+                  },
+                  "records": [],
+                  "policies": [
+                    {
+                      "chunk_id": "POL-TRAN-002:demo-v1:1",
+                      "text": "If a customer does not recognize a debit-card transaction, preserve the statement and route through the approved error-intake workflow; do not require specific magic words.",
+                      "version": "demo-v1"
+                    },
+                    {
+                      "chunk_id": "POL-TRAN-001:demo-v1:1",
+                      "text": "Posted transactions appear in transaction history after processing. A pending authorization is not a final posted charge.",
+                      "version": "demo-v1"
+                    }
+                  ],
+                  "report": {},
+                  "case": {},
+                  "handoff": {}
+                },
+                "outputs": {
+                  "response": "Select the transaction or case to look up through the secure application.\nDemo guidance [POL-TRAN-002:demo-v1:1]: If a customer does not recognize a debit-card transaction, preserve the statement and route through the approved error-intake workflow; do not require specific magic words.\nDemo guidance [POL-TRAN-001:demo-v1:1]: Posted transactions appear in transaction history after processing. A pending authorization is not a final posted charge.",
+                  "mock": true,
+                  "usage": {
+                    "input_tokens": null,
+                    "output_tokens": null
+                  }
+                },
+                "start_time": "2026-10-30T23:20:40.023390+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:20:40.023613+00:00",
+                "latency_ms": 0.22
+              },
+              {
+                "id": "44bed194-a3dd-4858-9fea-00c0ca5c2ade",
+                "parent_id": "89ef2c07-33a0-4c89-9a48-833422213baf",
+                "name": "verify",
+                "run_type": "chain",
+                "inputs": {
+                  "intent": "TRANSACTION_INQUIRY"
+                },
+                "outputs": {
+                  "response_state": "CLARIFICATION_REQUIRED",
+                  "error_codes": [],
+                  "record_count": 0
+                },
+                "start_time": "2026-10-30T23:20:40.024223+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:20:40.024421+00:00",
+                "latency_ms": 0.196
+              }
+            ]
+          },
+          "thread_id": "thread-2ec8dbcf472b512fa1b003f89ab0a189"
+        }
+      },
+      {
+        "thread_id": "thread-2ec8dbcf472b512fa1b003f89ab0a189",
+        "request_key": "317218c5-c628-457b-a8c9-468cb6a98532",
+        "payload": {
+          "account_id": null,
+          "action": "message",
+          "case_id": null,
+          "draft_id": null,
+          "message": "Show the details of the transaction I selected",
+          "product": "DEBIT_CHECKING",
+          "request_key": "317218c5-c628-457b-a8c9-468cb6a98532",
+          "transaction_ids": [
+            "TXN-001-03"
+          ]
+        },
+        "payload_hash": "41f2f14076d576b1e5c4088a2522c6e83192f0e91b5ad678780f7175df8c1e2a",
+        "result": {
+          "route": {
+            "primary_intent": "TRANSACTION_INQUIRY",
+            "potential_fraud_error": false,
+            "human_requested": false,
+            "urgent": false
+          },
+          "response": "TXN-001-03: $450.00 USD, POSTED, DEMO ONLINE STORE, 2026-10-13.\nDemo guidance [POL-TRAN-002:demo-v1:1]: If a customer does not recognize a debit-card transaction, preserve the statement and route through the approved error-intake workflow; do not require specific magic words.\nDemo guidance [POL-TRAN-001:demo-v1:1]: Posted transactions appear in transaction history after processing. A pending authorization is not a final posted charge.",
+          "response_state": "NO_ACTION",
+          "report": {},
+          "case": {},
+          "handoff": {},
+          "records": [
+            {
+              "transaction_id": "TXN-001-03",
+              "posted_on": "2026-10-13",
+              "merchant": "DEMO ONLINE STORE",
+              "amount_cents": 45000,
+              "currency": "USD",
+              "status": "POSTED",
+              "kind": "transaction"
+            }
+          ],
+          "citations": [
+            "POL-TRAN-002:demo-v1:1",
+            "POL-TRAN-001:demo-v1:1"
+          ],
+          "model_context": {
+            "route": {
+              "primary_intent": "TRANSACTION_INQUIRY",
+              "potential_fraud_error": false,
+              "human_requested": false,
+              "urgent": false
+            },
+            "records": [
+              {
+                "transaction_id": "TXN-001-03",
+                "posted_on": "2026-10-13",
+                "merchant": "DEMO ONLINE STORE",
+                "amount_cents": 45000,
+                "currency": "USD",
+                "status": "POSTED",
+                "kind": "transaction"
+              }
+            ],
+            "policies": [
+              {
+                "chunk_id": "POL-TRAN-002:demo-v1:1",
+                "text": "If a customer does not recognize a debit-card transaction, preserve the statement and route through the approved error-intake workflow; do not require specific magic words.",
+                "version": "demo-v1"
+              },
+              {
+                "chunk_id": "POL-TRAN-001:demo-v1:1",
+                "text": "Posted transactions appear in transaction history after processing. A pending authorization is not a final posted charge.",
+                "version": "demo-v1"
+              }
+            ],
+            "report": {},
+            "case": {},
+            "handoff": {}
+          },
+          "tools": [
+            {
+              "name": "get_transaction",
+              "status": "OK",
+              "reason_code": "ALLOW"
+            },
+            {
+              "name": "search_approved_policy",
+              "status": "OK",
+              "reason_code": null
+            }
+          ],
+          "errors": [],
+          "output_verified": true,
+          "execution_mode": "MOCK",
+          "engine": "langgraph",
+          "input_tokens": null,
+          "output_tokens": null,
+          "model_cost_usd": 0.0,
+          "cost_status": "MOCK_NO_PROVIDER_CALLS",
+          "trace": {
+            "trace_id": "92f6b954-6547-48dc-9f88-fd41b4cea52d",
+            "metadata": {
+              "agent_version": "workflow-v2-continuity",
+              "prompt_version": "mock-rules-v4",
+              "contract_version": "pydantic-boundaries-v1",
+              "model": "mock-rules-v4",
+              "intended_live_model": "zai-org/GLM-5.3-Flash",
+              "engine": "langgraph",
+              "environment": "synthetic-offline"
+            },
+            "spans": [
+              {
+                "id": "87e37068-bbf8-4635-b0aa-e47e36ed4141",
+                "parent_id": null,
+                "name": "resolveguard.journey",
+                "run_type": "chain",
+                "inputs": {
+                  "message": "Show the details of the transaction I selected",
+                  "selected_transactions": [
+                    "TXN-001-03"
+                  ]
+                },
+                "outputs": {
+                  "route": {
+                    "primary_intent": "TRANSACTION_INQUIRY",
+                    "potential_fraud_error": false,
+                    "human_requested": false,
+                    "urgent": false
+                  },
+                  "response_state": "NO_ACTION",
+                  "errors": [],
+                  "execution_mode": "MOCK"
+                },
+                "start_time": "2026-10-30T23:20:50.762996+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:20:50.775653+00:00",
+                "latency_ms": 12.64
+              },
+              {
+                "id": "8cbadff9-1b75-4332-b954-fa2d784ad858",
+                "parent_id": "87e37068-bbf8-4635-b0aa-e47e36ed4141",
+                "name": "classify",
+                "run_type": "chain",
+                "inputs": {
+                  "intent": null
+                },
+                "outputs": {
+                  "response_state": "UNVERIFIED",
+                  "error_codes": [],
+                  "record_count": 0
+                },
+                "start_time": "2026-10-30T23:20:50.769101+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:20:50.769411+00:00",
+                "latency_ms": 0.305
+              },
+              {
+                "id": "55bb129b-4e04-4932-ac28-bd020442abc5",
+                "parent_id": "8cbadff9-1b75-4332-b954-fa2d784ad858",
+                "name": "mock.classify",
+                "run_type": "llm",
+                "inputs": {
+                  "message": "Show the details of the transaction I selected"
+                },
+                "outputs": {
+                  "primary_intent": "TRANSACTION_INQUIRY",
+                  "potential_fraud_error": false,
+                  "human_requested": false,
+                  "urgent": false
+                },
+                "start_time": "2026-10-30T23:20:50.769199+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:20:50.769372+00:00",
+                "latency_ms": 0.173
+              },
+              {
+                "id": "00d5bb42-1cec-404b-bec4-6d78b2798d0f",
+                "parent_id": "87e37068-bbf8-4635-b0aa-e47e36ed4141",
+                "name": "capture",
+                "run_type": "chain",
+                "inputs": {
+                  "intent": "TRANSACTION_INQUIRY"
+                },
+                "outputs": {
+                  "response_state": "UNVERIFIED",
+                  "error_codes": [],
+                  "record_count": 0
+                },
+                "start_time": "2026-10-30T23:20:50.769992+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:20:50.770023+00:00",
+                "latency_ms": 0.026
+              },
+              {
+                "id": "7ad317f0-7900-4f51-aed6-b3c403e00210",
+                "parent_id": "87e37068-bbf8-4635-b0aa-e47e36ed4141",
+                "name": "lookup",
+                "run_type": "chain",
+                "inputs": {
+                  "intent": "TRANSACTION_INQUIRY"
+                },
+                "outputs": {
+                  "response_state": "UNVERIFIED",
+                  "error_codes": [],
+                  "record_count": 1
+                },
+                "start_time": "2026-10-30T23:20:50.770785+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:20:50.771100+00:00",
+                "latency_ms": 0.311
+              },
+              {
+                "id": "9a2df49d-0b1d-44d4-8854-68423c8c8759",
+                "parent_id": "7ad317f0-7900-4f51-aed6-b3c403e00210",
+                "name": "get_transaction",
+                "run_type": "tool",
+                "inputs": {
+                  "transaction_id": "TXN-001-03"
+                },
+                "outputs": {
+                  "status": "OK",
+                  "reason_code": "ALLOW",
+                  "data": {
+                    "transaction_id": "TXN-001-03",
+                    "posted_on": "2026-10-13",
+                    "merchant": "DEMO ONLINE STORE",
+                    "amount_cents": 45000,
+                    "currency": "USD",
+                    "status": "POSTED"
+                  }
+                },
+                "start_time": "2026-10-30T23:20:50.770830+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:20:50.771063+00:00",
+                "latency_ms": 0.234
+              },
+              {
+                "id": "790bfc18-87da-4058-adce-c871c949e2cf",
+                "parent_id": "87e37068-bbf8-4635-b0aa-e47e36ed4141",
+                "name": "retrieve",
+                "run_type": "chain",
+                "inputs": {
+                  "intent": "TRANSACTION_INQUIRY"
+                },
+                "outputs": {
+                  "response_state": "UNVERIFIED",
+                  "error_codes": [],
+                  "record_count": 1
+                },
+                "start_time": "2026-10-30T23:20:50.771696+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:20:50.772662+00:00",
+                "latency_ms": 0.964
+              },
+              {
+                "id": "e369b19a-245c-45b8-99f8-5c040c68ad01",
+                "parent_id": "790bfc18-87da-4058-adce-c871c949e2cf",
+                "name": "search_approved_policy",
+                "run_type": "tool",
+                "inputs": {},
+                "outputs": {
+                  "status": "OK",
+                  "chunks": [
+                    {
+                      "doc_id": "POL-TRAN-002",
+                      "title": "Unrecognized transaction",
+                      "version": "demo-v1",
+                      "product": "DEBIT_CHECKING",
+                      "jurisdiction": "US",
+                      "effective_date": "2026-01-01",
+                      "expires_at": null,
+                      "approval_status": "APPROVED_FOR_SYNTHETIC_TEST",
+                      "chunk_id": "POL-TRAN-002:demo-v1:1",
+                      "section": "Unrecognized transaction",
+                      "text": "If a customer does not recognize a debit-card transaction, preserve the statement and route through the approved error-intake workflow; do not require specific magic words.",
+                      "token_count_approx": 25,
+                      "oversize_preserved": false,
+                      "score": 0.36098
+                    },
+                    {
+                      "doc_id": "POL-TRAN-001",
+                      "title": "Posted versus pending",
+                      "version": "demo-v1",
+                      "product": "ALL",
+                      "jurisdiction": "US",
+                      "effective_date": "2026-01-01",
+                      "expires_at": null,
+                      "approval_status": "APPROVED_FOR_SYNTHETIC_TEST",
+                      "chunk_id": "POL-TRAN-001:demo-v1:1",
+                      "section": "Posted versus pending",
+                      "text": "Posted transactions appear in transaction history after processing. A pending authorization is not a final posted charge.",
+                      "token_count_approx": 17,
+                      "oversize_preserved": false,
+                      "score": 0.25
+                    }
+                  ]
+                },
+                "start_time": "2026-10-30T23:20:50.771719+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:20:50.772623+00:00",
+                "latency_ms": 0.905
+              },
+              {
+                "id": "8269547e-6c6e-4e22-a52c-8c64589292a2",
+                "parent_id": "87e37068-bbf8-4635-b0aa-e47e36ed4141",
+                "name": "handoff",
+                "run_type": "chain",
+                "inputs": {
+                  "intent": "TRANSACTION_INQUIRY"
+                },
+                "outputs": {
+                  "response_state": "UNVERIFIED",
+                  "error_codes": [],
+                  "record_count": 1
+                },
+                "start_time": "2026-10-30T23:20:50.773252+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:20:50.773272+00:00",
+                "latency_ms": 0.013
+              },
+              {
+                "id": "bed8d0df-30b4-4a69-b994-ddf1a326efc1",
+                "parent_id": "87e37068-bbf8-4635-b0aa-e47e36ed4141",
+                "name": "compose",
+                "run_type": "chain",
+                "inputs": {
+                  "intent": "TRANSACTION_INQUIRY"
+                },
+                "outputs": {
+                  "response_state": "NO_ACTION",
+                  "error_codes": [],
+                  "record_count": 1
+                },
+                "start_time": "2026-10-30T23:20:50.773665+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:20:50.774405+00:00",
+                "latency_ms": 0.741
+              },
+              {
+                "id": "5a03eb62-fc73-4080-863d-5c96f5e9b590",
+                "parent_id": "bed8d0df-30b4-4a69-b994-ddf1a326efc1",
+                "name": "template.explain",
+                "run_type": "chain",
+                "inputs": {
+                  "route": {
+                    "primary_intent": "TRANSACTION_INQUIRY",
+                    "potential_fraud_error": false,
+                    "human_requested": false,
+                    "urgent": false
+                  },
+                  "records": [
+                    {
+                      "transaction_id": "TXN-001-03",
+                      "posted_on": "2026-10-13",
+                      "merchant": "DEMO ONLINE STORE",
+                      "amount_cents": 45000,
+                      "currency": "USD",
+                      "status": "POSTED",
+                      "kind": "transaction"
+                    }
+                  ],
+                  "policies": [
+                    {
+                      "chunk_id": "POL-TRAN-002:demo-v1:1",
+                      "text": "If a customer does not recognize a debit-card transaction, preserve the statement and route through the approved error-intake workflow; do not require specific magic words.",
+                      "version": "demo-v1"
+                    },
+                    {
+                      "chunk_id": "POL-TRAN-001:demo-v1:1",
+                      "text": "Posted transactions appear in transaction history after processing. A pending authorization is not a final posted charge.",
+                      "version": "demo-v1"
+                    }
+                  ],
+                  "report": {},
+                  "case": {},
+                  "handoff": {}
+                },
+                "outputs": {
+                  "response": "TXN-001-03: $450.00 USD, POSTED, DEMO ONLINE STORE, 2026-10-13.\nDemo guidance [POL-TRAN-002:demo-v1:1]: If a customer does not recognize a debit-card transaction, preserve the statement and route through the approved error-intake workflow; do not require specific magic words.\nDemo guidance [POL-TRAN-001:demo-v1:1]: Posted transactions appear in transaction history after processing. A pending authorization is not a final posted charge.",
+                  "mock": true,
+                  "usage": {
+                    "input_tokens": null,
+                    "output_tokens": null
+                  }
+                },
+                "start_time": "2026-10-30T23:20:50.773970+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:20:50.774365+00:00",
+                "latency_ms": 0.403
+              },
+              {
+                "id": "a043b171-c855-430b-85cc-aab69345af05",
+                "parent_id": "87e37068-bbf8-4635-b0aa-e47e36ed4141",
+                "name": "verify",
+                "run_type": "chain",
+                "inputs": {
+                  "intent": "TRANSACTION_INQUIRY"
+                },
+                "outputs": {
+                  "response_state": "NO_ACTION",
+                  "error_codes": [],
+                  "record_count": 1
+                },
+                "start_time": "2026-10-30T23:20:50.775030+00:00",
+                "error": null,
+                "end_time": "2026-10-30T23:20:50.775249+00:00",
+                "latency_ms": 0.214
+              }
+            ]
+          },
+          "thread_id": "thread-2ec8dbcf472b512fa1b003f89ab0a189"
+        }
+      }
+    ],
+    "drafts": [
+      {
+        "draft_id": "DRAFT-4524b0baec60d9c5aa96c13d",
+        "thread_id": "thread-caaf6252689a99e63c2c25f2d91ea9c4",
+        "owner": "CUST-001",
+        "payload": {
+          "message": "Please open a support case about a fee on my account",
+          "request_key": "DRAFT-4524b0baec60d9c5aa96c13d",
+          "session_id": "SESS-001",
+          "transaction_ids": [
+            "TXN-001-01"
+          ],
+          "case_id": null,
+          "account_id": "ACC-001",
+          "confirmed": true,
+          "service_id": "resolveguard-agent",
+          "product": "DEBIT_CHECKING",
+          "jurisdiction": "US"
+        },
+        "expires_at": "2026-10-30T23:43:05.177136+00:00",
+        "status": "PENDING",
+        "result": null
+      }
+    ],
+    "conversation_threads": [
+      {
+        "thread_id": "thread-caaf6252689a99e63c2c25f2d91ea9c4",
+        "owner": "CUST-001"
+      },
+      {
+        "thread_id": "thread-7de5ee034096ed9f16828933a2d6b3a7",
+        "owner": "CUST-001"
+      },
+      {
+        "thread_id": "thread-6ce51f388b5ac9b1a0273c0df9faaeef",
+        "owner": "CUST-001"
+      },
+      {
+        "thread_id": "thread-2ec8dbcf472b512fa1b003f89ab0a189",
+        "owner": "CUST-001"
+      }
+    ],
+    "browser_sessions": {
+      "count": 3,
+      "note": "Cookies, token hashes and browser bindings excluded."
+    }
+  },
+  "demo.sqlite3": {
+    "events": [
+      {
+        "kind": "report",
+        "owner": "CUST-001",
+        "request_key": "demo-report-1",
+        "payload_hash": "5e3e99526bcb11d53684345f7f0afd31460e98ca6d5711d42634d2b728dd6a8f",
+        "event_id": "DEMO-REPORT-cbfa172a5d190ade",
+        "payload": {
+          "original_statement": "I did not authorize this debit and want a human",
+          "reported_transaction_ids": [
+            "TXN-001-01"
+          ]
+        },
+        "result": {
+          "status": "OK",
+          "report_capture_status": "CAPTURED",
+          "regulatory_notice_status": "REVIEW_REQUIRED",
+          "reported_at": "2026-10-30T13:00:00Z",
+          "verification_status": "VERIFIED",
+          "investigation_status": "NOT_STARTED",
+          "customer_confirmation_status": "UNCONFIRMED",
+          "event_id": "DEMO-REPORT-cbfa172a5d190ade",
+          "replayed": false
+        }
+      },
+      {
+        "kind": "handoff",
+        "owner": "CUST-001",
+        "request_key": "demo-report-1",
+        "payload_hash": "31ecaa9c08f861bd5379c6da57c76d28019386930dc4b80912acd8254c7dbd4c",
+        "event_id": "DEMO-HANDOFF-23fcf0b8de807db3",
+        "payload": {
+          "payload": {
+            "report_id": "DEMO-REPORT-cbfa172a5d190ade"
+          },
+          "queue": "FRAUD_OPERATIONS"
+        },
+        "result": {
+          "status": "OK",
+          "handoff_status": "ACKNOWLEDGED",
+          "queue": "FRAUD_OPERATIONS",
+          "alternate_route": false,
+          "payload": {
+            "report_id": "DEMO-REPORT-cbfa172a5d190ade"
+          },
+          "event_id": "DEMO-HANDOFF-23fcf0b8de807db3",
+          "replayed": false
+        }
+      }
+    ],
+    "browser_sessions": {
+      "count": 0,
+      "note": "Cookies, token hashes and browser bindings excluded."
+    }
+  }
+}

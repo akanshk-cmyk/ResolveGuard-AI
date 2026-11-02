@@ -1,0 +1,48 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "One clean welcome and four quick actions",
+      "passed": true
+    },
+    {
+      "name": "Startup is guest with no account cards or outcome",
+      "passed": true
+    },
+    {
+      "name": "Composer is focused and quick actions enabled",
+      "passed": true
+    },
+    {
+      "name": "New conversation revokes identity and clears pending state",
+      "passed": true
+    },
+    {
+      "name": "New conversation removes old output and restores landing",
+      "passed": true
+    },
+    {
+      "name": "Reset failure blocks sending and old-identity polling",
+      "passed": true
+    },
+    {
+      "name": "New conversation safely retries failed initialization",
+      "passed": true
+    },
+    {
+      "name": "Startup requests no saved reply or model response",
+      "passed": true
+    },
+    {
+      "name": "Page reload starts guest without restoring old output",
+      "passed": true
+    },
+    {
+      "name": "Guest landing has no mobile horizontal overflow",
+      "passed": true
+    }
+  ],
+  "browser_errors": [],
+  "model_calls_made": false,
+  "scope": "Synthetic local onboarding and reset"
+}

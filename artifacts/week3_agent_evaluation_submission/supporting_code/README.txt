@@ -1,0 +1,1 @@
+Current relevant code snapshot, not a recovered historical checkout. Historical paired code fingerprint is in evidence/comparison.json. Run the full application only from the original project with its uv environment. The evidence-analysis notebook is self-contained and never calls the agent or provider.

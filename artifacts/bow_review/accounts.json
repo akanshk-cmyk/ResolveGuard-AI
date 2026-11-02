@@ -1,0 +1,110 @@
+[
+  {
+    "account_id": "BOW-ACC-001",
+    "customer_id": "BOW-CUST-001",
+    "product_id": "BOW-CHK-001",
+    "status": "OPEN",
+    "currency": "USD",
+    "masked_display": "••0001",
+    "bank_id": "BOW"
+  },
+  {
+    "account_id": "BOW-ACC-002",
+    "customer_id": "BOW-CUST-002",
+    "product_id": "BOW-CHK-002",
+    "status": "OPEN",
+    "currency": "USD",
+    "masked_display": "••0002",
+    "bank_id": "BOW"
+  },
+  {
+    "account_id": "BOW-ACC-003",
+    "customer_id": "BOW-CUST-003",
+    "product_id": "BOW-CHK-003",
+    "status": "OPEN",
+    "currency": "USD",
+    "masked_display": "••0003",
+    "bank_id": "BOW"
+  },
+  {
+    "account_id": "BOW-ACC-004",
+    "customer_id": "BOW-CUST-004",
+    "product_id": "BOW-SAV-001",
+    "status": "OPEN",
+    "currency": "USD",
+    "masked_display": "••0004",
+    "bank_id": "BOW"
+  },
+  {
+    "account_id": "BOW-ACC-005",
+    "customer_id": "BOW-CUST-005",
+    "product_id": "BOW-SAV-002",
+    "status": "OPEN",
+    "currency": "USD",
+    "masked_display": "••0005",
+    "bank_id": "BOW"
+  },
+  {
+    "account_id": "BOW-ACC-006",
+    "customer_id": "BOW-CUST-006",
+    "product_id": "BOW-SAV-003",
+    "status": "OPEN",
+    "currency": "USD",
+    "masked_display": "••0006",
+    "bank_id": "BOW"
+  },
+  {
+    "account_id": "BOW-ACC-007",
+    "customer_id": "BOW-CUST-007",
+    "product_id": "BOW-CHK-001",
+    "status": "OPEN",
+    "currency": "USD",
+    "masked_display": "••0007",
+    "bank_id": "BOW"
+  },
+  {
+    "account_id": "BOW-ACC-008",
+    "customer_id": "BOW-CUST-008",
+    "product_id": "BOW-CHK-002",
+    "status": "OPEN",
+    "currency": "USD",
+    "masked_display": "••0008",
+    "bank_id": "BOW"
+  },
+  {
+    "account_id": "BOW-ACC-009",
+    "customer_id": "BOW-CUST-009",
+    "product_id": "BOW-CHK-003",
+    "status": "OPEN",
+    "currency": "USD",
+    "masked_display": "••0009",
+    "bank_id": "BOW"
+  },
+  {
+    "account_id": "BOW-ACC-010",
+    "customer_id": "BOW-CUST-010",
+    "product_id": "BOW-SAV-001",
+    "status": "OPEN",
+    "currency": "USD",
+    "masked_display": "••0010",
+    "bank_id": "BOW"
+  },
+  {
+    "account_id": "BOW-ACC-011",
+    "customer_id": "BOW-CUST-011",
+    "product_id": "BOW-SAV-002",
+    "status": "OPEN",
+    "currency": "USD",
+    "masked_display": "••0011",
+    "bank_id": "BOW"
+  },
+  {
+    "account_id": "BOW-ACC-012",
+    "customer_id": "BOW-CUST-012",
+    "product_id": "BOW-SAV-003",
+    "status": "OPEN",
+    "currency": "USD",
+    "masked_display": "••0012",
+    "bank_id": "BOW"
+  }
+]

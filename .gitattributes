@@ -1,0 +1,3 @@
+# Preserve fixture/source hashes and frozen UI bytes across clone platforms.
+# Existing files deliberately retain their captured line endings.
+* -text

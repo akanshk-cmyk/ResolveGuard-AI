@@ -1,0 +1,16 @@
+[
+  {
+    "service_id": "resolveguard-agent",
+    "allowed_tools": [
+      "search_approved_policy",
+      "get_transaction",
+      "get_case_status",
+      "record_error_report",
+      "handoff_to_human",
+      "get_session_assurance",
+      "check_authority"
+    ],
+    "may_impersonate_principal": false,
+    "requires_acting_context": true
+  }
+]

@@ -1,0 +1,5 @@
+{
+  "status": "Observed mock failures only; human root-cause annotation required",
+  "clusters": [],
+  "improvements": "Not applied; preserve this run as mock diagnostic evidence, not a live model baseline."
+}

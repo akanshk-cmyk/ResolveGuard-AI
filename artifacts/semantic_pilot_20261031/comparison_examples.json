@@ -1,0 +1,372 @@
+{
+  "scope": "Local deterministic comparison examples; no live model inference",
+  "source_sha256": "13ffcfdc9eb020e8bcd8e0908445eeda6384aba71d0da02ef9f5433686a48ff8",
+  "examples": [
+    {
+      "question": "Compare Everyday Checking and Plus Checking monthly fees",
+      "result": {
+        "response": "Here are the source-backed details for each product:\n\nWhatever Everyday Checking\n- Monthly maintenance fee: $6.00 USD.\n- Whatever Everyday Checking (checking, Everyday tier): no fee with qualifying direct deposit of at least $750 monthly or daily balance of at least $1500; otherwise $6.\n\nWhatever Plus Checking\n- Monthly maintenance fee: $12.00 USD.\n- Whatever Plus Checking (checking, Plus tier): waive with monthly direct deposit of at least $2000 or combined eligible balance of at least $10000.\n\nFictional demo terms. Policy dates and sources are listed below.",
+        "response_state": "PUBLIC_GUIDANCE",
+        "data_scope": "PUBLIC",
+        "auth_required": false,
+        "bank_id": "BOW",
+        "cards": [],
+        "source_details": [
+          {
+            "title": "Whatever Everyday Checking",
+            "summary": "Whatever Everyday Checking (checking, Everyday tier): no fee with qualifying direct deposit ≥ $750 monthly OR daily balance ≥ $1500; otherwise $6.",
+            "reference": "POL-BOW-CHK-001-C01",
+            "version": "bow-13ffcfdc9eb020e8",
+            "effective_date": "2026-10-01",
+            "expires_on": "2026-12-31",
+            "notice": "Fictional BOW test policy. Source: Bank_of_Whatever_ResolveGuard_Synthetic_Review_Workbook.xlsx / BOW Products, BOW Policies and BOW RAG Chunks.",
+            "bank_id": "BOW",
+            "product_id": "BOW-CHK-001",
+            "parent_policy_id": "POL-BOW-CHK-001",
+            "content_hash": "fc65995f993cb12c71eb5a23357ec59aa2ccc308742f26c544decb6bc518b078",
+            "access_level": "PUBLIC",
+            "approval_status": "SYNTHETIC_APPROVED_FOR_TEST_ONLY"
+          },
+          {
+            "title": "Whatever Plus Checking",
+            "summary": "Whatever Plus Checking (checking, Plus tier): waive with monthly direct deposit ≥ $2000 OR combined eligible balance ≥ $10000.",
+            "reference": "POL-BOW-CHK-002-C01",
+            "version": "bow-13ffcfdc9eb020e8",
+            "effective_date": "2026-10-01",
+            "expires_on": "2026-12-31",
+            "notice": "Fictional BOW test policy. Source: Bank_of_Whatever_ResolveGuard_Synthetic_Review_Workbook.xlsx / BOW Products, BOW Policies and BOW RAG Chunks.",
+            "bank_id": "BOW",
+            "product_id": "BOW-CHK-002",
+            "parent_policy_id": "POL-BOW-CHK-002",
+            "content_hash": "248826ddb5967ac78ed9c701f621b25b3cb0e8d910bb7e3b680a6f4ab4c43f7b",
+            "access_level": "PUBLIC",
+            "approval_status": "SYNTHETIC_APPROVED_FOR_TEST_ONLY"
+          },
+          {
+            "title": "Whatever Everyday Checking product catalog",
+            "summary": "Monthly maintenance fee: $6.00 USD.",
+            "reference": "BOW-CATALOG:BOW-CHK-001:bow-13ffcfdc9eb020e8",
+            "version": "bow-13ffcfdc9eb020e8",
+            "bank_id": "BOW",
+            "product_id": "BOW-CHK-001",
+            "effective_date": "2026-10-01",
+            "expires_on": "2026-12-31",
+            "access_level": "PUBLIC",
+            "approval_status": "SYNTHETIC_APPROVED_FOR_TEST_ONLY",
+            "content_hash": "5c1dc23caa8185b36fb71c99e167cd2223a18fa6713c62d362b5f266243951d1",
+            "notice": "Fictional BOW product record from BOW Products; linked current policy required."
+          },
+          {
+            "title": "Whatever Plus Checking product catalog",
+            "summary": "Monthly maintenance fee: $12.00 USD.",
+            "reference": "BOW-CATALOG:BOW-CHK-002:bow-13ffcfdc9eb020e8",
+            "version": "bow-13ffcfdc9eb020e8",
+            "bank_id": "BOW",
+            "product_id": "BOW-CHK-002",
+            "effective_date": "2026-10-01",
+            "expires_on": "2026-12-31",
+            "access_level": "PUBLIC",
+            "approval_status": "SYNTHETIC_APPROVED_FOR_TEST_ONLY",
+            "content_hash": "d982f8126689a5835a728444b9e6424f2bb9e14ccb715017eabfee6cd9fdeef5",
+            "notice": "Fictional BOW product record from BOW Products; linked current policy required."
+          }
+        ],
+        "execution_mode": "MOCK",
+        "comparison_plan": {
+          "bank_id": "BOW",
+          "kind": "PRODUCTS",
+          "subjects": [
+            "Whatever Everyday Checking",
+            "Whatever Plus Checking"
+          ],
+          "product_ids": [
+            "BOW-CHK-001",
+            "BOW-CHK-002"
+          ],
+          "dimensions": [
+            "FEE"
+          ],
+          "decision": "SUPPORTED",
+          "evidence_by_subject": {
+            "BOW-CHK-001": [
+              "POL-BOW-CHK-001-C01",
+              "BOW-CATALOG:BOW-CHK-001:bow-13ffcfdc9eb020e8"
+            ],
+            "BOW-CHK-002": [
+              "POL-BOW-CHK-002-C01",
+              "BOW-CATALOG:BOW-CHK-002:bow-13ffcfdc9eb020e8"
+            ]
+          },
+          "steps": [
+            "resolve_subjects",
+            "retrieve_separately",
+            "verify_scope_and_dates",
+            "compare_supported_facts"
+          ]
+        },
+        "question_topic": "COMPARISON",
+        "execution_evidence": {
+          "data_scope": "PUBLIC",
+          "private_records_accessed": false,
+          "personal_eligibility_checked": false
+        },
+        "comparison_product_ids": [
+          "BOW-CHK-001",
+          "BOW-CHK-002"
+        ]
+      }
+    },
+    {
+      "question": "Compare Premier Checking versus Starter Savings",
+      "result": {
+        "response": "Here are the source-backed details for each product:\n\nWhatever Premier Checking\n- Monthly maintenance fee: $25.00 USD.\n- Whatever Premier Checking (checking, Premier tier): waive with combined eligible balance of at least $25000.\n- Eligibility: debit premier.\n- Illustrative APY 0.05% when applicable.\n- Rewards: 1.5% eligible debit rewards capped at $15/month, demo only.\n\nWhatever Starter Savings\n- Monthly maintenance fee: $0.00 USD.\n- Whatever Starter Savings (savings, Starter tier): no monthly maintenance fee.\n- Illustrative APY 2.00% when applicable.\n- Rewards: variable APY, no balance tiers.\n- Eligibility: none.\n\nFictional demo terms. Policy dates and sources are listed below.",
+        "response_state": "PUBLIC_GUIDANCE",
+        "data_scope": "PUBLIC",
+        "auth_required": false,
+        "bank_id": "BOW",
+        "cards": [],
+        "source_details": [
+          {
+            "title": "Whatever Premier Checking",
+            "summary": "Whatever Premier Checking (checking, Premier tier): waive with combined eligible balance ≥ $25000.",
+            "reference": "POL-BOW-CHK-003-C01",
+            "version": "bow-13ffcfdc9eb020e8",
+            "effective_date": "2026-10-01",
+            "expires_on": "2026-12-31",
+            "notice": "Fictional BOW test policy. Source: Bank_of_Whatever_ResolveGuard_Synthetic_Review_Workbook.xlsx / BOW Products, BOW Policies and BOW RAG Chunks.",
+            "bank_id": "BOW",
+            "product_id": "BOW-CHK-003",
+            "parent_policy_id": "POL-BOW-CHK-003",
+            "content_hash": "b4656520d2a1610ae342904d58bcf2e5e5730a683e1583d0c9e443052c75611a",
+            "access_level": "PUBLIC",
+            "approval_status": "SYNTHETIC_APPROVED_FOR_TEST_ONLY"
+          },
+          {
+            "title": "Whatever Premier Checking",
+            "summary": "Eligibility: debit premier.",
+            "reference": "POL-BOW-CHK-003-C04",
+            "version": "bow-13ffcfdc9eb020e8",
+            "effective_date": "2026-10-01",
+            "expires_on": "2026-12-31",
+            "notice": "Fictional BOW test policy. Source: Bank_of_Whatever_ResolveGuard_Synthetic_Review_Workbook.xlsx / BOW Products, BOW Policies and BOW RAG Chunks.",
+            "bank_id": "BOW",
+            "product_id": "BOW-CHK-003",
+            "parent_policy_id": "POL-BOW-CHK-003",
+            "content_hash": "c71a56ddf29abc20b668d45b7012ba4a993744d9356f442a12708514901e9e9a",
+            "access_level": "PUBLIC",
+            "approval_status": "SYNTHETIC_APPROVED_FOR_TEST_ONLY"
+          },
+          {
+            "title": "Whatever Premier Checking",
+            "summary": "Illustrative APY 0.05% when applicable.",
+            "reference": "POL-BOW-CHK-003-C02",
+            "version": "bow-13ffcfdc9eb020e8",
+            "effective_date": "2026-10-01",
+            "expires_on": "2026-12-31",
+            "notice": "Fictional BOW test policy. Source: Bank_of_Whatever_ResolveGuard_Synthetic_Review_Workbook.xlsx / BOW Products, BOW Policies and BOW RAG Chunks.",
+            "bank_id": "BOW",
+            "product_id": "BOW-CHK-003",
+            "parent_policy_id": "POL-BOW-CHK-003",
+            "content_hash": "415b5bf0ada1b80444010bb70199be0347d153bf8682634b1d6f298f79321d95",
+            "access_level": "PUBLIC",
+            "approval_status": "SYNTHETIC_APPROVED_FOR_TEST_ONLY"
+          },
+          {
+            "title": "Whatever Premier Checking",
+            "summary": "Rewards: 1.5% eligible debit rewards capped at $15/month, demo only.",
+            "reference": "POL-BOW-CHK-003-C03",
+            "version": "bow-13ffcfdc9eb020e8",
+            "effective_date": "2026-10-01",
+            "expires_on": "2026-12-31",
+            "notice": "Fictional BOW test policy. Source: Bank_of_Whatever_ResolveGuard_Synthetic_Review_Workbook.xlsx / BOW Products, BOW Policies and BOW RAG Chunks.",
+            "bank_id": "BOW",
+            "product_id": "BOW-CHK-003",
+            "parent_policy_id": "POL-BOW-CHK-003",
+            "content_hash": "835a7ef8711756e3e54db0ca5fe7fde6628b744c61ab857e7df954a981b3b415",
+            "access_level": "PUBLIC",
+            "approval_status": "SYNTHETIC_APPROVED_FOR_TEST_ONLY"
+          },
+          {
+            "title": "Whatever Starter Savings",
+            "summary": "Whatever Starter Savings (savings, Starter tier): no monthly maintenance fee.",
+            "reference": "POL-BOW-SAV-001-C01",
+            "version": "bow-13ffcfdc9eb020e8",
+            "effective_date": "2026-10-01",
+            "expires_on": "2026-12-31",
+            "notice": "Fictional BOW test policy. Source: Bank_of_Whatever_ResolveGuard_Synthetic_Review_Workbook.xlsx / BOW Products, BOW Policies and BOW RAG Chunks.",
+            "bank_id": "BOW",
+            "product_id": "BOW-SAV-001",
+            "parent_policy_id": "POL-BOW-SAV-001",
+            "content_hash": "e4d9a75045841109e0352034baedb76c000a55d20f37327eb8974833424111cf",
+            "access_level": "PUBLIC",
+            "approval_status": "SYNTHETIC_APPROVED_FOR_TEST_ONLY"
+          },
+          {
+            "title": "Whatever Starter Savings",
+            "summary": "Illustrative APY 2.00% when applicable.",
+            "reference": "POL-BOW-SAV-001-C02",
+            "version": "bow-13ffcfdc9eb020e8",
+            "effective_date": "2026-10-01",
+            "expires_on": "2026-12-31",
+            "notice": "Fictional BOW test policy. Source: Bank_of_Whatever_ResolveGuard_Synthetic_Review_Workbook.xlsx / BOW Products, BOW Policies and BOW RAG Chunks.",
+            "bank_id": "BOW",
+            "product_id": "BOW-SAV-001",
+            "parent_policy_id": "POL-BOW-SAV-001",
+            "content_hash": "813fc5bbfa5c3ec6805f6bf55b0607ef3fa26f44a849bf9bd9a4089c63cc3750",
+            "access_level": "PUBLIC",
+            "approval_status": "SYNTHETIC_APPROVED_FOR_TEST_ONLY"
+          },
+          {
+            "title": "Whatever Starter Savings",
+            "summary": "Rewards: variable APY, no balance tiers.",
+            "reference": "POL-BOW-SAV-001-C03",
+            "version": "bow-13ffcfdc9eb020e8",
+            "effective_date": "2026-10-01",
+            "expires_on": "2026-12-31",
+            "notice": "Fictional BOW test policy. Source: Bank_of_Whatever_ResolveGuard_Synthetic_Review_Workbook.xlsx / BOW Products, BOW Policies and BOW RAG Chunks.",
+            "bank_id": "BOW",
+            "product_id": "BOW-SAV-001",
+            "parent_policy_id": "POL-BOW-SAV-001",
+            "content_hash": "5429929046c7cf48558cf6cdec44e553c3f31c39f140aeda757b4dd7a8035359",
+            "access_level": "PUBLIC",
+            "approval_status": "SYNTHETIC_APPROVED_FOR_TEST_ONLY"
+          },
+          {
+            "title": "Whatever Starter Savings",
+            "summary": "Eligibility: none.",
+            "reference": "POL-BOW-SAV-001-C04",
+            "version": "bow-13ffcfdc9eb020e8",
+            "effective_date": "2026-10-01",
+            "expires_on": "2026-12-31",
+            "notice": "Fictional BOW test policy. Source: Bank_of_Whatever_ResolveGuard_Synthetic_Review_Workbook.xlsx / BOW Products, BOW Policies and BOW RAG Chunks.",
+            "bank_id": "BOW",
+            "product_id": "BOW-SAV-001",
+            "parent_policy_id": "POL-BOW-SAV-001",
+            "content_hash": "2cad0413bac77b70b7ac702d96e78d83e15ab51fd73ca90763e45237ab5e1af4",
+            "access_level": "PUBLIC",
+            "approval_status": "SYNTHETIC_APPROVED_FOR_TEST_ONLY"
+          },
+          {
+            "title": "Whatever Premier Checking product catalog",
+            "summary": "Monthly maintenance fee: $25.00 USD.",
+            "reference": "BOW-CATALOG:BOW-CHK-003:bow-13ffcfdc9eb020e8",
+            "version": "bow-13ffcfdc9eb020e8",
+            "bank_id": "BOW",
+            "product_id": "BOW-CHK-003",
+            "effective_date": "2026-10-01",
+            "expires_on": "2026-12-31",
+            "access_level": "PUBLIC",
+            "approval_status": "SYNTHETIC_APPROVED_FOR_TEST_ONLY",
+            "content_hash": "ae08ca0a9fb554a9b17b68dc47168b066649dd0309af9587bc0c94b1eccda3ce",
+            "notice": "Fictional BOW product record from BOW Products; linked current policy required."
+          },
+          {
+            "title": "Whatever Starter Savings product catalog",
+            "summary": "Monthly maintenance fee: $0.00 USD.",
+            "reference": "BOW-CATALOG:BOW-SAV-001:bow-13ffcfdc9eb020e8",
+            "version": "bow-13ffcfdc9eb020e8",
+            "bank_id": "BOW",
+            "product_id": "BOW-SAV-001",
+            "effective_date": "2026-10-01",
+            "expires_on": "2026-12-31",
+            "access_level": "PUBLIC",
+            "approval_status": "SYNTHETIC_APPROVED_FOR_TEST_ONLY",
+            "content_hash": "fafd37b3380396a8d902c407f083837d5ac6ff3eca614f84159af0453fa7695c",
+            "notice": "Fictional BOW product record from BOW Products; linked current policy required."
+          }
+        ],
+        "execution_mode": "MOCK",
+        "comparison_plan": {
+          "bank_id": "BOW",
+          "kind": "PRODUCTS",
+          "subjects": [
+            "Whatever Premier Checking",
+            "Whatever Starter Savings"
+          ],
+          "product_ids": [
+            "BOW-CHK-003",
+            "BOW-SAV-001"
+          ],
+          "dimensions": [
+            "FEATURES"
+          ],
+          "decision": "SUPPORTED",
+          "evidence_by_subject": {
+            "BOW-CHK-003": [
+              "POL-BOW-CHK-003-C01",
+              "POL-BOW-CHK-003-C04",
+              "POL-BOW-CHK-003-C02",
+              "POL-BOW-CHK-003-C03",
+              "BOW-CATALOG:BOW-CHK-003:bow-13ffcfdc9eb020e8"
+            ],
+            "BOW-SAV-001": [
+              "POL-BOW-SAV-001-C01",
+              "POL-BOW-SAV-001-C02",
+              "POL-BOW-SAV-001-C03",
+              "POL-BOW-SAV-001-C04",
+              "BOW-CATALOG:BOW-SAV-001:bow-13ffcfdc9eb020e8"
+            ]
+          },
+          "steps": [
+            "resolve_subjects",
+            "retrieve_separately",
+            "verify_scope_and_dates",
+            "compare_supported_facts"
+          ]
+        },
+        "question_topic": "COMPARISON",
+        "execution_evidence": {
+          "data_scope": "PUBLIC",
+          "private_records_accessed": false,
+          "personal_eligibility_checked": false
+        },
+        "comparison_product_ids": [
+          "BOW-CHK-003",
+          "BOW-SAV-001"
+        ]
+      }
+    },
+    {
+      "question": "What is the difference between a pending and posted payment?",
+      "result": {
+        "response": "I don't have an approved Bank of Whatever policy explaining pending versus posted payments in this demo yet, so I cannot give you a sourced comparison. This general question does not require sign-in.",
+        "response_state": "PUBLIC_GUIDANCE",
+        "data_scope": "PUBLIC",
+        "auth_required": false,
+        "bank_id": "BOW",
+        "cards": [],
+        "source_details": [],
+        "execution_mode": "MOCK",
+        "comparison_plan": {
+          "bank_id": "BOW",
+          "kind": "PAYMENT_STATUS",
+          "subjects": [
+            "Pending payment",
+            "Posted payment"
+          ],
+          "product_ids": [],
+          "dimensions": [
+            "status_definition"
+          ],
+          "decision": "MISSING_EVIDENCE",
+          "evidence_by_subject": {
+            "pending": [],
+            "posted": []
+          },
+          "steps": [
+            "resolve_subjects",
+            "retrieve_bank_glossary",
+            "verify_scope_and_dates",
+            "report_missing_sources"
+          ]
+        },
+        "question_topic": "COMPARISON",
+        "execution_evidence": {
+          "data_scope": "PUBLIC",
+          "private_records_accessed": false,
+          "personal_eligibility_checked": false
+        }
+      }
+    }
+  ]
+}

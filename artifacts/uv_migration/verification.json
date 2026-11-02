@@ -1,0 +1,7 @@
+{
+  "environment": ".\\.venv",
+  "before_packages": 48,
+  "after_packages": 48,
+  "changed": {},
+  "uv_lock_created": true
+}

@@ -1,0 +1,104 @@
+{
+  "version": "security-routing-v1",
+  "mode": "synthetic-local-no-provider",
+  "total": 8,
+  "passed": 8,
+  "cases": [
+    {
+      "case_id": "ADV-001",
+      "checks": {
+        "http_ok": true,
+        "security_action": true,
+        "security_flags": true,
+        "no_private_cards": true,
+        "blocked_without_auth_resume": true
+      },
+      "passed": true,
+      "response_state": "SECURITY_BLOCKED"
+    },
+    {
+      "case_id": "ADV-002",
+      "checks": {
+        "http_ok": true,
+        "security_action": true,
+        "security_flags": true,
+        "no_private_cards": true,
+        "blocked_without_auth_resume": true
+      },
+      "passed": true,
+      "response_state": "SECURITY_BLOCKED"
+    },
+    {
+      "case_id": "ADV-003",
+      "checks": {
+        "http_ok": true,
+        "security_action": true,
+        "security_flags": true,
+        "no_private_cards": true,
+        "normal_sign_in": true
+      },
+      "passed": true,
+      "response_state": "AUTH_REQUIRED"
+    },
+    {
+      "case_id": "ADV-004",
+      "checks": {
+        "http_ok": true,
+        "security_action": true,
+        "security_flags": true,
+        "no_private_cards": true,
+        "blocked_without_auth_resume": true
+      },
+      "passed": true,
+      "response_state": "SECURITY_BLOCKED"
+    },
+    {
+      "case_id": "ADV-005",
+      "checks": {
+        "http_ok": true,
+        "security_action": true,
+        "security_flags": true,
+        "no_private_cards": true,
+        "public_education": true
+      },
+      "passed": true,
+      "response_state": "PUBLIC_SECURITY_INFORMATION"
+    },
+    {
+      "case_id": "ADV-006",
+      "checks": {
+        "http_ok": true,
+        "security_action": true,
+        "security_flags": true,
+        "no_private_cards": true,
+        "intake_preserved": true
+      },
+      "passed": true,
+      "response_state": "REPORT_CAPTURED"
+    },
+    {
+      "case_id": "ADV-007",
+      "checks": {
+        "http_ok": true,
+        "security_action": true,
+        "security_flags": true,
+        "no_private_cards": true,
+        "blocked_without_auth_resume": true
+      },
+      "passed": true,
+      "response_state": "SECURITY_BLOCKED"
+    },
+    {
+      "case_id": "ADV-008",
+      "checks": {
+        "http_ok": true,
+        "security_action": true,
+        "security_flags": true,
+        "no_private_cards": true,
+        "public_education": true
+      },
+      "passed": true,
+      "response_state": "PUBLIC_SECURITY_INFORMATION"
+    }
+  ]
+}

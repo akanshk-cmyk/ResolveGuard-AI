@@ -1,0 +1,307 @@
+{
+  "status": "COMPLETE",
+  "active_case": null,
+  "completed_cases": 1,
+  "total_cases": 1,
+  "rows": [
+    {
+      "case_id": "SEM-011",
+      "product_id": "BOW-CARD-002",
+      "user_input": "What are the rewards for Whatever Debit Plus?",
+      "response": "Rewards for Whatever Debit Plus: 1% on eligible debit purchases, capped at $8/month.\n\nDemo terms, effective October 1, 2026.",
+      "reference": "Whatever Debit Plus: 1% on eligible debit purchases, capped at $8/month. Fictional terms effective October 1, 2026.",
+      "retrieved_contexts": [
+        "{\"evidence_type\": \"PRODUCT_CATALOG\", \"product_name\": \"Whatever Debit Plus\", \"title\": \"Whatever Debit Plus product catalog\", \"summary\": \"Whatever Debit Plus: no annual card fee. Rewards: 1% on eligible debit purchases, capped at $8/month. Eligibility: linked Plus Checking.\", \"reference\": \"BOW-CATALOG:BOW-CARD-002:bow-13ffcfdc9eb020e8\", \"version\": \"bow-13ffcfdc9eb020e8\", \"bank_id\": \"BOW\", \"product_id\": \"BOW-CARD-002\", \"effective_date\": \"2026-10-01\", \"expires_on\": \"2026-12-31\", \"access_level\": \"PUBLIC\", \"approval_status\": \"SYNTHETIC_APPROVED_FOR_TEST_ONLY\", \"content_hash\": \"4435525f848291a8d1bc8d65c91253ec2edc8d9d30dcd1d36e897346e2982abf\", \"record\": {\"product_id\": \"BOW-CARD-002\", \"product_name\": \"Whatever Debit Plus\", \"product_type\": \"debit_card\", \"tier\": \"Plus\", \"monthly_fee_cents_or_annual_card_fee_cents\": 0, \"currency\": \"USD\", \"waiver_or_fee_terms\": \"no annual card fee\", \"illustrative_apy_percent\": \"0.00\", \"reward_structure\": \"1% on eligible debit purchases, capped at $8/month\", \"eligibility\": \"linked Plus Checking\", \"access_level\": \"PUBLIC\", \"effective_date\": \"2026-10-01\"}, \"notice\": \"Fictional BOW product record from BOW Products; linked current policy required.\"}",
+        "{\"product_name\": \"Whatever Debit Plus\", \"chunk_id\": \"POL-BOW-CARD-002-C03\", \"bank_id\": \"BOW\", \"product_id\": \"BOW-CARD-002\", \"effective_date\": \"2026-10-01\", \"expires_on\": \"2026-12-31\", \"approval_status\": \"SYNTHETIC_APPROVED_FOR_TEST_ONLY\", \"chunk_text\": \"Rewards: 1% on eligible debit purchases, capped at $8/month.\"}"
+      ],
+      "retrieved_chunk_ids": [
+        "BOW-CATALOG:BOW-CARD-002:bow-13ffcfdc9eb020e8",
+        "POL-BOW-CARD-002-C03"
+      ],
+      "reference_chunk_ids": [
+        "POL-BOW-CARD-002-C01",
+        "POL-BOW-CARD-002-C02",
+        "POL-BOW-CARD-002-C03",
+        "POL-BOW-CARD-002-C04"
+      ],
+      "execution_context": {
+        "data_scope": "PUBLIC",
+        "private_records_accessed": false,
+        "personal_eligibility_checked": false
+      },
+      "bank_product_isolation": true,
+      "authorization": "[REDACTED]",
+      "status": "OK",
+      "ragas": {
+        "context_recall": {
+          "status": "OK",
+          "score": 1.0,
+          "evidence": [
+            {
+              "schema": "ContextRecallOutput",
+              "verdict": {
+                "classifications": [
+                  {
+                    "statement": "Whatever Debit Plus: 1% on eligible debit purchases, capped at $8/month.",
+                    "reason": "The context explicitly states the reward structure for Whatever Debit Plus: \"Rewards: 1% on eligible debit purchases, capped at $8/month.\" This appears in both the product catalog summary and the policy chunk text, so the statement is directly attributable to the context.",
+                    "attributed": 1
+                  },
+                  {
+                    "statement": "Fictional terms effective October 1, 2026.",
+                    "reason": "The context contains an effective_date of \"2026-10-01\" (October 1, 2026) and a notice stating \"Fictional BOW product record from BOW Products\", which supports both the fictional nature of the terms and the effective date mentioned in the statement.",
+                    "attributed": 1
+                  }
+                ]
+              }
+            }
+          ],
+          "attempts": [
+            {
+              "status": "OK",
+              "score": 1.0,
+              "evidence": [
+                {
+                  "schema": "ContextRecallOutput",
+                  "verdict": {
+                    "classifications": [
+                      {
+                        "statement": "Whatever Debit Plus: 1% on eligible debit purchases, capped at $8/month.",
+                        "reason": "The context explicitly states the reward structure for Whatever Debit Plus: \"Rewards: 1% on eligible debit purchases, capped at $8/month.\" This appears in both the product catalog summary and the policy chunk text, so the statement is directly attributable to the context.",
+                        "attributed": 1
+                      },
+                      {
+                        "statement": "Fictional terms effective October 1, 2026.",
+                        "reason": "The context contains an effective_date of \"2026-10-01\" (October 1, 2026) and a notice stating \"Fictional BOW product record from BOW Products\", which supports both the fictional nature of the terms and the effective date mentioned in the statement.",
+                        "attributed": 1
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "context_precision": {
+          "status": "OK",
+          "score": 0.99999999995,
+          "evidence": [
+            {
+              "schema": "ContextPrecisionOutput",
+              "verdict": {
+                "reason": "The provided context was useful in arriving at the given answer. The context is a product catalog record for Whatever Debit Plus that explicitly states the reward structure as \"1% on eligible debit purchases, capped at $8/month\", which directly matches the answer. The context also includes the effective date of 2026-10-01, which supports the answer's mention of terms effective October 1, 2026.",
+                "verdict": 1
+              }
+            },
+            {
+              "schema": "ContextPrecisionOutput",
+              "verdict": {
+                "reason": "The provided context was useful in arriving at the given answer. The context explicitly states the rewards for Whatever Debit Plus as \"1% on eligible debit purchases, capped at $8/month\", which directly matches the answer. Additionally, the context's effective_date of \"2026-10-01\" supports the answer's mention of terms effective October 1, 2026.",
+                "verdict": 1
+              }
+            }
+          ],
+          "attempts": [
+            {
+              "status": "OK",
+              "score": 0.99999999995,
+              "evidence": [
+                {
+                  "schema": "ContextPrecisionOutput",
+                  "verdict": {
+                    "reason": "The provided context was useful in arriving at the given answer. The context is a product catalog record for Whatever Debit Plus that explicitly states the reward structure as \"1% on eligible debit purchases, capped at $8/month\", which directly matches the answer. The context also includes the effective date of 2026-10-01, which supports the answer's mention of terms effective October 1, 2026.",
+                    "verdict": 1
+                  }
+                },
+                {
+                  "schema": "ContextPrecisionOutput",
+                  "verdict": {
+                    "reason": "The provided context was useful in arriving at the given answer. The context explicitly states the rewards for Whatever Debit Plus as \"1% on eligible debit purchases, capped at $8/month\", which directly matches the answer. Additionally, the context's effective_date of \"2026-10-01\" supports the answer's mention of terms effective October 1, 2026.",
+                    "verdict": 1
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "faithfulness": {
+          "status": "OK",
+          "score": 0.5,
+          "evidence": [
+            {
+              "schema": "StatementGeneratorOutput",
+              "verdict": {
+                "statements": [
+                  "Whatever Debit Plus offers rewards of 1% on eligible debit purchases.",
+                  "The rewards for Whatever Debit Plus are capped at $8 per month.",
+                  "The terms for Whatever Debit Plus are demo terms.",
+                  "The demo terms are effective October 1, 2026."
+                ]
+              }
+            },
+            {
+              "schema": "NLIStatementOutput",
+              "verdict": {
+                "statements": [
+                  {
+                    "statement": "Whatever Debit Plus offers rewards of 1% on eligible debit purchases.",
+                    "reason": "The context explicitly states in both the product catalog summary and the chunk text: 'Rewards: 1% on eligible debit purchases, capped at $8/month' for Whatever Debit Plus.",
+                    "verdict": 1
+                  },
+                  {
+                    "statement": "The rewards for Whatever Debit Plus are capped at $8 per month.",
+                    "reason": "The context explicitly states the reward structure as '1% on eligible debit purchases, capped at $8/month', which directly supports the $8 monthly cap.",
+                    "verdict": 1
+                  },
+                  {
+                    "statement": "The terms for Whatever Debit Plus are demo terms.",
+                    "reason": "The context does not mention 'demo terms' anywhere. While the approval status is 'SYNTHETIC_APPROVED_FOR_TEST_ONLY' and the notice describes it as a 'Fictional BOW product record', the term 'demo terms' is never used and cannot be directly inferred.",
+                    "verdict": 0
+                  },
+                  {
+                    "statement": "The demo terms are effective October 1, 2026.",
+                    "reason": "The context does not mention 'demo terms'. Although the product's effective_date is 2026-10-01, this applies to the product record itself, not to 'demo terms', which are never referenced in the context.",
+                    "verdict": 0
+                  }
+                ]
+              }
+            }
+          ],
+          "attempts": [
+            {
+              "status": "OK",
+              "score": 0.5,
+              "evidence": [
+                {
+                  "schema": "StatementGeneratorOutput",
+                  "verdict": {
+                    "statements": [
+                      "Whatever Debit Plus offers rewards of 1% on eligible debit purchases.",
+                      "The rewards for Whatever Debit Plus are capped at $8 per month.",
+                      "The terms for Whatever Debit Plus are demo terms.",
+                      "The demo terms are effective October 1, 2026."
+                    ]
+                  }
+                },
+                {
+                  "schema": "NLIStatementOutput",
+                  "verdict": {
+                    "statements": [
+                      {
+                        "statement": "Whatever Debit Plus offers rewards of 1% on eligible debit purchases.",
+                        "reason": "The context explicitly states in both the product catalog summary and the chunk text: 'Rewards: 1% on eligible debit purchases, capped at $8/month' for Whatever Debit Plus.",
+                        "verdict": 1
+                      },
+                      {
+                        "statement": "The rewards for Whatever Debit Plus are capped at $8 per month.",
+                        "reason": "The context explicitly states the reward structure as '1% on eligible debit purchases, capped at $8/month', which directly supports the $8 monthly cap.",
+                        "verdict": 1
+                      },
+                      {
+                        "statement": "The terms for Whatever Debit Plus are demo terms.",
+                        "reason": "The context does not mention 'demo terms' anywhere. While the approval status is 'SYNTHETIC_APPROVED_FOR_TEST_ONLY' and the notice describes it as a 'Fictional BOW product record', the term 'demo terms' is never used and cannot be directly inferred.",
+                        "verdict": 0
+                      },
+                      {
+                        "statement": "The demo terms are effective October 1, 2026.",
+                        "reason": "The context does not mention 'demo terms'. Although the product's effective_date is 2026-10-01, this applies to the product record itself, not to 'demo terms', which are never referenced in the context.",
+                        "verdict": 0
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ],
+          "evidence_scope": "retrieved_policies_and_execution_state"
+        },
+        "answer_relevance": {
+          "status": "OK",
+          "score": 0.9938422141471651,
+          "evidence": [
+            {
+              "schema": "AnswerRelevanceOutput",
+              "verdict": {
+                "question": "What are the rewards for the Whatever Debit Plus card?",
+                "noncommittal": 0
+              }
+            },
+            {
+              "schema": "AnswerRelevanceOutput",
+              "verdict": {
+                "question": "What are the rewards for Whatever Debit Plus?",
+                "noncommittal": 0
+              }
+            },
+            {
+              "schema": "AnswerRelevanceOutput",
+              "verdict": {
+                "question": "What are the rewards for Whatever Debit Plus?",
+                "noncommittal": 0
+              }
+            }
+          ],
+          "attempts": [
+            {
+              "status": "OK",
+              "score": 0.9938422141471651,
+              "evidence": [
+                {
+                  "schema": "AnswerRelevanceOutput",
+                  "verdict": {
+                    "question": "What are the rewards for the Whatever Debit Plus card?",
+                    "noncommittal": 0
+                  }
+                },
+                {
+                  "schema": "AnswerRelevanceOutput",
+                  "verdict": {
+                    "question": "What are the rewards for Whatever Debit Plus?",
+                    "noncommittal": 0
+                  }
+                },
+                {
+                  "schema": "AnswerRelevanceOutput",
+                  "verdict": {
+                    "question": "What are the rewards for Whatever Debit Plus?",
+                    "noncommittal": 0
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "judge": {
+        "rubric_version": "banking-support-v2-access-evidence",
+        "model": "zai-org/GLM-5.3-Flash",
+        "grade": {
+          "tone_empathy": {
+            "score": 5,
+            "passed": true,
+            "reasoning": "Direct, neutral answer to a factual product question; clearly labeled demo terms with effective date; no false reassurance or overpromising."
+          },
+          "policy_compliance": {
+            "score": 5,
+            "passed": true,
+            "reasoning": "Rewards (1% capped at $8/month), product name, and Oct 1, 2026 effective date match both catalog and policy chunk exactly; no unsupported fee, refund, or regulatory claims."
+          },
+          "guardrail_integrity": {
+            "score": 5,
+            "passed": true,
+            "reasoning": "PUBLIC data_scope requires no sign-in; no restricted tools called, no personal data or eligibility claims, and no injected instructions present in evidence."
+          },
+          "passed": true
+        },
+        "usage": {
+          "input_tokens": 890,
+          "output_tokens": 1302
+        },
+        "attempts": [
+          {
+            "status": "OK"
+          }
+        ]
+      }
+    }
+  ]
+}

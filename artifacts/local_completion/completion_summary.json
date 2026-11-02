@@ -1,0 +1,84 @@
+{
+  "scope": "local synthetic demo; not production qualification",
+  "main_tests": {
+    "run": 272,
+    "passed": 271,
+    "skipped": 1
+  },
+  "fixture_tests_passed": 13,
+  "browser_checks_passed": {
+    "customer": 48,
+    "operations": 7,
+    "reviewer": 10
+  },
+  "security_cases_passed": 8,
+  "suite_reports": {
+    "original": {
+      "run_type": "MOCK_SMOKE_NOT_LIVE_MODEL_BASELINE",
+      "engine": "langgraph",
+      "dataset_version": "original-100-local-bindings-v2",
+      "dataset_sha256": "67689ecebd11ed3f5aeba54d9176137ee709a6d69cf7e28a7bf3b2473896d078",
+      "cases_executed": 100,
+      "unique_cases": 100,
+      "metrics": {
+        "intent_accuracy": 1.0,
+        "deterministic_journey_pass_rate": 1.0,
+        "fraud_recall": 1.0,
+        "critical_cases_all_assertions_passed": 84,
+        "critical_case_runs": 84,
+        "p95_local_mock_latency_ms": 33.78,
+        "model_cost_usd": 0.0,
+        "token_usage": null
+      },
+      "failure_counts": {},
+      "human_review_pending": 100,
+      "demo_release_decision": "BLOCKED",
+      "blocking_reasons": [
+        "Mock responses do not establish GLM quality, live latency or provider cost",
+        "Human labels and semantic outputs require review",
+        "Source prompt authorship / LLM-generated proportion unverified"
+      ],
+      "code_sha256": "c215be3fa1baf9e74fc2be382ab86dd033aa2d5950b3571b81692fc140ef7d37",
+      "fixture_sha256": "f399e649d845c1ac5ed7e7d670f61850895e295f8ac1f0d3335d306906fb3a2d"
+    },
+    "bow": {
+      "suite": "BOW-100-local-v1",
+      "source_sha256": "13ffcfdc9eb020e8bcd8e0908445eeda6384aba71d0da02ef9f5433686a48ff8",
+      "cases_executed": 100,
+      "passed": 100,
+      "human_review_pending": 100,
+      "release_decision": "BLOCKED_PENDING_HUMAN_QUALIFICATION",
+      "source_contract_conflicts": 16,
+      "run_type": "MOCK_SYNTHETIC_WEB_CONTRACTS",
+      "dataset_sha256": "b4e6fde4875f8721f60563ed97dc5e82e1427f125dda7b3b9a885a2dcd89ac35",
+      "fixture_sha256": "13ffcfdc9eb020e8bcd8e0908445eeda6384aba71d0da02ef9f5433686a48ff8",
+      "code_sha256": "c215be3fa1baf9e74fc2be382ab86dd033aa2d5950b3571b81692fc140ef7d37",
+      "metrics": {
+        "deterministic_journey_pass_rate": 1.0,
+        "intent_accuracy": null,
+        "fraud_recall": 1.0,
+        "p95_local_mock_latency_ms": 301.253,
+        "model_cost_usd": 0.0,
+        "token_usage": null
+      },
+      "failure_counts": {}
+    }
+  },
+  "semantic_cases_measured": 12,
+  "semantic_judge_passed": 12,
+  "faithfulness_flags": [
+    "SEM-003",
+    "SEM-011"
+  ],
+  "human_reference_approval": "PENDING",
+  "excluded": [
+    "LangSmith Cloud",
+    "Replit deployment",
+    "real bank integrations"
+  ],
+  "urls": {
+    "customer": "http://127.0.0.1:8765",
+    "reviewer": "http://127.0.0.1:8766/reviewer",
+    "report": "http://127.0.0.1:8769/completion.html"
+  }
+}

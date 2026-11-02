@@ -1,0 +1,144 @@
+{
+  "version": "bow-public-semantic-expanded-v2-focused-references",
+  "review_status": "PENDING",
+  "source_sha256": "13ffcfdc9eb020e8bcd8e0908445eeda6384aba71d0da02ef9f5433686a48ff8",
+  "as_of": "2026-10-31",
+  "cases": [
+    {
+      "case_id": "SEM-001",
+      "product_id": "BOW-CHK-001",
+      "question": "What is the monthly maintenance fee for Whatever Everyday Checking?",
+      "reference": "Whatever Everyday Checking has a fictional $6 monthly maintenance fee. It is waived with qualifying monthly direct deposit of at least $750 or a daily balance of at least $1,500.",
+      "reference_chunk_ids": [
+        "POL-BOW-CHK-001-C01"
+      ]
+    },
+    {
+      "case_id": "SEM-002",
+      "product_id": "BOW-CHK-001",
+      "question": "How can I waive the monthly fee for Whatever Everyday Checking?",
+      "reference": "The fictional monthly fee for Whatever Everyday Checking is waived with qualifying direct deposit of at least $750 monthly OR daily balance of at least $1,500.",
+      "reference_chunk_ids": [
+        "POL-BOW-CHK-001-C01"
+      ]
+    },
+    {
+      "case_id": "SEM-003",
+      "product_id": "BOW-SAV-001",
+      "question": "What is the savings interest rate for Whatever Starter Savings?",
+      "reference": "Whatever Starter Savings has an illustrative variable APY of 2.00%. These are fictional demonstration terms effective October 1, 2026, not a real offer.",
+      "reference_chunk_ids": [
+        "POL-BOW-SAV-001-C02",
+        "POL-BOW-SAV-001-C03"
+      ]
+    },
+    {
+      "case_id": "SEM-004",
+      "product_id": "BOW-CHK-002",
+      "question": "What is the monthly maintenance fee for Whatever Plus Checking?",
+      "reference": "Whatever Plus Checking has a fictional monthly maintenance fee of $12.00 USD. waive with monthly direct deposit \u2265 $2000 OR combined eligible balance \u2265 $10000. Fictional terms effective October 1, 2026.",
+      "reference_chunk_ids": [
+        "POL-BOW-CHK-002-C01",
+        "POL-BOW-CHK-002-C02",
+        "POL-BOW-CHK-002-C03",
+        "POL-BOW-CHK-002-C04"
+      ]
+    },
+    {
+      "case_id": "SEM-005",
+      "product_id": "BOW-CHK-003",
+      "question": "What is the monthly maintenance fee for Whatever Premier Checking?",
+      "reference": "Whatever Premier Checking has a fictional monthly maintenance fee of $25.00 USD. waive with combined eligible balance \u2265 $25000. Fictional terms effective October 1, 2026.",
+      "reference_chunk_ids": [
+        "POL-BOW-CHK-003-C01",
+        "POL-BOW-CHK-003-C02",
+        "POL-BOW-CHK-003-C03",
+        "POL-BOW-CHK-003-C04"
+      ]
+    },
+    {
+      "case_id": "SEM-006",
+      "product_id": "BOW-CHK-002",
+      "question": "How can I waive the monthly fee for Whatever Plus Checking?",
+      "reference": "Whatever Plus Checking: waive with monthly direct deposit \u2265 $2000 OR combined eligible balance \u2265 $10000. Fictional terms effective October 1, 2026.",
+      "reference_chunk_ids": [
+        "POL-BOW-CHK-002-C01",
+        "POL-BOW-CHK-002-C02",
+        "POL-BOW-CHK-002-C03",
+        "POL-BOW-CHK-002-C04"
+      ]
+    },
+    {
+      "case_id": "SEM-007",
+      "product_id": "BOW-CHK-003",
+      "question": "How can I waive the monthly fee for Whatever Premier Checking?",
+      "reference": "Whatever Premier Checking: waive with combined eligible balance \u2265 $25000. Fictional terms effective October 1, 2026.",
+      "reference_chunk_ids": [
+        "POL-BOW-CHK-003-C01",
+        "POL-BOW-CHK-003-C02",
+        "POL-BOW-CHK-003-C03",
+        "POL-BOW-CHK-003-C04"
+      ]
+    },
+    {
+      "case_id": "SEM-008",
+      "product_id": "BOW-SAV-002",
+      "question": "What is the savings APY for Whatever High-Five Savings?",
+      "reference": "Whatever High-Five Savings has illustrative variable APY 3.20%. variable APY applies to balances below $10000; 3.50% on $10000+. no monthly fee. Fictional terms effective October 1, 2026.",
+      "reference_chunk_ids": [
+        "POL-BOW-SAV-002-C01",
+        "POL-BOW-SAV-002-C02",
+        "POL-BOW-SAV-002-C03",
+        "POL-BOW-SAV-002-C04"
+      ]
+    },
+    {
+      "case_id": "SEM-009",
+      "product_id": "BOW-SAV-003",
+      "question": "What is the savings APY for Whatever Premier Savings?",
+      "reference": "Whatever Premier Savings has illustrative variable APY 3.65%. variable APY, relationship conditions apply. no monthly fee; Premier Checking relationship eligibility. Fictional terms effective October 1, 2026.",
+      "reference_chunk_ids": [
+        "POL-BOW-SAV-003-C01",
+        "POL-BOW-SAV-003-C02",
+        "POL-BOW-SAV-003-C03",
+        "POL-BOW-SAV-003-C04"
+      ]
+    },
+    {
+      "case_id": "SEM-010",
+      "product_id": "BOW-CARD-001",
+      "question": "What are the rewards for Whatever Debit?",
+      "reference": "Whatever Debit: no rewards. Fictional terms effective October 1, 2026.",
+      "reference_chunk_ids": [
+        "POL-BOW-CARD-001-C01",
+        "POL-BOW-CARD-001-C02",
+        "POL-BOW-CARD-001-C03",
+        "POL-BOW-CARD-001-C04"
+      ]
+    },
+    {
+      "case_id": "SEM-011",
+      "product_id": "BOW-CARD-001",
+      "question": "What are the rewards for Whatever Debit Plus?",
+      "reference": "Whatever Debit: no rewards. Fictional terms effective October 1, 2026.",
+      "reference_chunk_ids": [
+        "POL-BOW-CARD-001-C01",
+        "POL-BOW-CARD-001-C02",
+        "POL-BOW-CARD-001-C03",
+        "POL-BOW-CARD-001-C04"
+      ]
+    },
+    {
+      "case_id": "SEM-012",
+      "product_id": "BOW-CARD-003",
+      "question": "What are the rewards for Whatever Premier Debit?",
+      "reference": "Whatever Premier Debit: 1.5% eligible debit, capped $15/month. Fictional terms effective October 1, 2026.",
+      "reference_chunk_ids": [
+        "POL-BOW-CARD-003-C01",
+        "POL-BOW-CARD-003-C02",
+        "POL-BOW-CARD-003-C03",
+        "POL-BOW-CARD-003-C04"
+      ]
+    }
+  ]
+}

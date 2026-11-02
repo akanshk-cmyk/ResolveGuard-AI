@@ -1,0 +1,20 @@
+{
+  "main_tests": {
+    "run": 321,
+    "passed": 320,
+    "skipped": 1
+  },
+  "fixtures_passed": 13,
+  "original100": 100,
+  "original100_critical_passed": 84,
+  "bow100": 100,
+  "bow_trace_linked": 100,
+  "human22_automated": 22,
+  "human_reassessment": "PENDING",
+  "reference_conflicts": 16,
+  "calibration_human_pairs": 0,
+  "calibration_status": "PENDING_HUMAN_CALIBRATION",
+  "qualification": "BLOCKED_PENDING_HUMAN_REFERENCES_AND_PROVENANCE",
+  "reply_mode": "all",
+  "scope": "Synthetic local verification; not live-provider qualification"
+}

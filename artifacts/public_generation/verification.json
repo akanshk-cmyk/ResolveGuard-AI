@@ -1,0 +1,19 @@
+{
+  "scope": "constrained public framing, not unrestricted policy paraphrasing",
+  "runtime_reply_mode": "off",
+  "external_provider_calls_performed": false,
+  "new_generation_tests": 14,
+  "main_tests": {"run": 286, "passed": 285, "skipped": 1},
+  "fixture_tests_passed": 13,
+  "browser_checks_passed": {"customer": 48, "operations": 8, "reviewer": 10},
+  "default_off_baselines": {"original": "100/100", "BOW": "100/100"},
+  "provider_validation": "FakeProvider and HTTP MockTransport; no live latency claim",
+  "limits": [
+    "Policy paragraphs remain immutable; model chooses approved framing",
+    "Only single-product public BOW replies are eligible",
+    "Private replies, comparisons and action confirmations retain controlled wording",
+    "Human reference approvals and source-contract conflicts remain pending",
+    "LangSmith Cloud, Replit deployment and real banking integrations remain excluded"
+  ],
+  "runbook": "docs/LIVE_PUBLIC_REPLIES.md"
+}

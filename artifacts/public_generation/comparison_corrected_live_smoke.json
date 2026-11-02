@@ -1,0 +1,16 @@
+{
+  "feature": "comparison",
+  "reply_mode": "all",
+  "response_state": "PUBLIC_GUIDANCE",
+  "generation": {
+    "outcome": "FALLBACK",
+    "failure_code": "TIMEOUT",
+    "error_type": "TimeoutError",
+    "returned_model": null,
+    "generation_latency_ms": 5027.463,
+    "input_tokens": null,
+    "output_tokens": null
+  },
+  "initial_measurement": "all_features_live_smoke.json",
+  "technical_change": "Output allowance 512 to 1024; total deadline remains five seconds"
+}

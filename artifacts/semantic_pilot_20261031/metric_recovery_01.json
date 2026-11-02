@@ -1,0 +1,88 @@
+{
+  "status": "ERROR",
+  "scope": "Technical metric recovery only; no valid low scores retried",
+  "rows": [
+    {
+      "case_id": "SEM-001",
+      "ragas": {
+        "faithfulness": {
+          "status": "ERROR",
+          "score": null,
+          "error_type": "IncompleteOutputException",
+          "evidence": [
+            {
+              "schema": "StatementGeneratorOutput",
+              "verdict": {
+                "statements": [
+                  "Whatever Everyday Checking has a monthly maintenance fee of $6.00 USD.",
+                  "The terms are demo terms, effective October 1, 2026."
+                ]
+              }
+            }
+          ],
+          "attempts": [
+            {
+              "status": "ERROR",
+              "score": null,
+              "error_type": "IncompleteOutputException",
+              "evidence": [
+                {
+                  "schema": "StatementGeneratorOutput",
+                  "verdict": {
+                    "statements": [
+                      "Whatever Everyday Checking has a monthly maintenance fee of $6.00 USD.",
+                      "The terms are demo terms, effective October 1, 2026."
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "status": "ERROR",
+              "score": null,
+              "error_type": "IncompleteOutputException",
+              "evidence": [
+                {
+                  "schema": "StatementGeneratorOutput",
+                  "verdict": {
+                    "statements": [
+                      "Whatever Everyday Checking has a monthly maintenance fee of $6.00 USD.",
+                      "The terms are demo terms, effective October 1, 2026."
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "usage": [
+    {
+      "http_status": 200,
+      "model": "zai-org/GLM-5.3-Flash",
+      "input_tokens": 530,
+      "output_tokens": 274
+    },
+    {
+      "http_status": 200,
+      "model": "zai-org/GLM-5.3-Flash",
+      "input_tokens": 1180,
+      "output_tokens": 4096
+    },
+    {
+      "http_status": 200,
+      "model": "zai-org/GLM-5.3-Flash",
+      "input_tokens": 530,
+      "output_tokens": 281
+    },
+    {
+      "http_status": 200,
+      "model": "zai-org/GLM-5.3-Flash",
+      "input_tokens": 1180,
+      "output_tokens": 4096
+    }
+  ],
+  "source_sha256": "900441f70e5ed6e11804d0f682996c710e562ff83462b7f7e70c8403025d9178"
+}

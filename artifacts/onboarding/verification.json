@@ -1,0 +1,12 @@
+{
+  "feature": "Clean welcome and fresh guest initialization",
+  "main_tests": {"run": 309, "passed": 308, "skipped": 1},
+  "fixture_tests_passed": 13,
+  "browser_checks_passed": 10,
+  "startup_restores_prior_response": false,
+  "startup_calls_model": false,
+  "new_conversation_enters_guest_mode": true,
+  "reset_preserves_reports_and_audit_history": true,
+  "reset_failure_blocks_old_identity_polling": true,
+  "documentation": "docs/CLEAN_CHAT_ONBOARDING.md"
+}

@@ -1,0 +1,22 @@
+[
+  {
+    "delegation_id": "BOW-DEL-001",
+    "representative_id": "BOW-REP-001",
+    "customer_id": "BOW-CUST-001",
+    "account_id": "BOW-ACC-001",
+    "allowed_action": "CASE_STATUS",
+    "status": "ACTIVE",
+    "expires_at": "2026-11-30T00:00:00+00:00",
+    "synthetic": true
+  },
+  {
+    "delegation_id": "BOW-DEL-002",
+    "representative_id": "BOW-REP-002",
+    "customer_id": "BOW-CUST-002",
+    "account_id": "BOW-ACC-002",
+    "allowed_action": "TRANSACTION_READ",
+    "status": "REVOKED",
+    "expires_at": "2026-11-30T00:00:00+00:00",
+    "synthetic": true
+  }
+]

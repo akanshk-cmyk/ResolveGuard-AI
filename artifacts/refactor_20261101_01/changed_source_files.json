@@ -1,0 +1,97 @@
+[
+  {
+    "file": "resolveguard/account_views.py",
+    "before_sha256": null,
+    "after_sha256": "02ba78bc520c74919c6ee9cc3403d505d587fc816421da5a51c6d970c9570c52"
+  },
+  {
+    "file": "resolveguard/calibration_eval.py",
+    "before_sha256": "35753880584008c00cf1234625f70df54bb5b64909380c3da09ba69930c60be5",
+    "after_sha256": "d648456d53d41141b665d8f184f7696d36a2e9f8a33c3e7c5d4dbcdbf9aed131"
+  },
+  {
+    "file": "resolveguard/configuration.py",
+    "before_sha256": null,
+    "after_sha256": "362313814e1ef8e2abc75029c23dd609b2ca1b448842e2a99edb577b62a27007"
+  },
+  {
+    "file": "resolveguard/eval_config.py",
+    "before_sha256": "31fe646a979ff6b6747cf81d11ad9aa21bb17f5395a4113508e9207ab28de85c",
+    "after_sha256": "65c32964e96f35ff5498db8bae4e6b014b506673fd71da81ba97f0aa47d5debd"
+  },
+  {
+    "file": "resolveguard/nebius.py",
+    "before_sha256": "a7820ccbd8c81123ab16cc812336502091a57175d7aa27ad8bc2d9a8cf9dab54",
+    "after_sha256": "45481fb554d928a12a1b264eda70d98da55f214d6851167006a4a3c32be82348"
+  },
+  {
+    "file": "resolveguard/public_conversation.py",
+    "before_sha256": null,
+    "after_sha256": "23df72760d64beeb8cc2a8db0692d360c1295f860a72ab03c60e615228c6edec"
+  },
+  {
+    "file": "resolveguard/ragas_eval.py",
+    "before_sha256": "efec37d3ec53fb1ca978fac8d90d15099cf4a1f74ff91da4e01c4fd2d75451e2",
+    "after_sha256": "35654a9f84e2bb888bd2b2b2f58d3f5f86580a45678adc451f44a09973f1191b"
+  },
+  {
+    "file": "resolveguard/reply_generation.py",
+    "before_sha256": "5732f7a85219f8a42c33951bcabde749cc6fb0184ec334edd4df0521fefd3fdf",
+    "after_sha256": "60fe6f5c7f05a91977ad6fa2c28e968c3d49ca2e5f8f7064f1d1333c74a7b9d3"
+  },
+  {
+    "file": "resolveguard/semantic_evaluation.py",
+    "before_sha256": "12f54f61baa690ba60ceffdf1f246faaca7b43b32231cfef88005dd909540537",
+    "after_sha256": "b112053e5e7476a4184ca76b6f464f5a846931c56a45325567e7109530a37300"
+  },
+  {
+    "file": "resolveguard/web.py",
+    "before_sha256": "94ce2fe6858b9236f44a4a2d53bf35db7606a3f10478033edfdc0db76f3e4ee1",
+    "after_sha256": "cb45fd9863fdc3d59e21dc3dda2c667e8c0ff13b174fe42ebb11ab1f3cffaf0e"
+  },
+  {
+    "file": "resolveguard/web_contracts.py",
+    "before_sha256": null,
+    "after_sha256": "3955497378e73780589529d2e00e3b81b0a37e6583a956270c88c92e4635895f"
+  },
+  {
+    "file": "resolveguard/web_storage.py",
+    "before_sha256": null,
+    "after_sha256": "4d3dc246aff77549017fc21caf5e0f24f880a00b9853edca7a93ddbf759bfd49"
+  },
+  {
+    "file": "tests/test_refactor_contracts.py",
+    "before_sha256": null,
+    "after_sha256": "0308913f215950d3c0913b13332c24c16ffa21e0511f6d5651896a17de1fff45"
+  },
+  {
+    "file": "tests/fixtures/web_asset_sha256.json",
+    "before_sha256": null,
+    "after_sha256": "ec623644cf89675dd7b95b02606316b51aac4485f327b868f2a28132688a8557"
+  },
+  {
+    "file": "tests/fixtures/web_openapi.json",
+    "before_sha256": null,
+    "after_sha256": "085c0f09b6c57af713dc53c125dbb1d551e34fa65b7ae44c3857b161b33108eb"
+  },
+  {
+    "file": "tools/repository_checks.py",
+    "before_sha256": null,
+    "after_sha256": "93bcdd09c38f46876dcee6101be695ffe2263151a8b3959decb4bd61ba529403"
+  },
+  {
+    "file": ".github/workflows/checks.yml",
+    "before_sha256": null,
+    "after_sha256": "61cfa64612b3da38d636c7f8e36dfd0be6d467a19804842ee9f52aa7f53bd44b"
+  },
+  {
+    "file": "README.md",
+    "before_sha256": "d2e5c019d6c56435b16654b20f6f7bfc7bc37aa5513227cf5aec71a1decb96b8",
+    "after_sha256": "83232d97153afd47963320258bf5e595e727ab0891d5085bd369efb4f055dc3b"
+  },
+  {
+    "file": ".gitignore",
+    "before_sha256": "e7ceee2c0d4879a3692891d6b7bc98427f3aa85bd1f8d533a637fcdbeb0381e8",
+    "after_sha256": "b025fa5d49459ae6e5474cab270327752def132a941c9dc3070ce34341c9326a"
+  }
+]

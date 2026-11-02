@@ -1,0 +1,51 @@
+{
+  "audit_date": "2026-11-01",
+  "app_code_modified": false,
+  "accepted_checks_reply_mode": "off",
+  "accepted_checks_cloud_tracing": false,
+  "unit_tests": {
+    "run": 309,
+    "passed": 308,
+    "skipped": 1
+  },
+  "fixture_tests": {
+    "run": 13,
+    "passed": 13
+  },
+  "original100": {
+    "passed": 99,
+    "failed": [
+      {
+        "case_id": "RG-087",
+        "failed_checks": [
+          "human_flag",
+          "response_state",
+          "no_unexpected_record"
+        ]
+      }
+    ],
+    "critical_passed": 83,
+    "critical_total": 84,
+    "execution_modes": {
+      "MOCK": 99,
+      "SYNTHETIC_EMERGENCY": 1
+    },
+    "summary_execution_mode_bug": true
+  },
+  "bow100": {
+    "passed": 100,
+    "source_contract_conflicts": 16,
+    "traces_saved": 78,
+    "case_trace_links_present": false
+  },
+  "security_cases_passed": 8,
+  "human22": {
+    "PASS": 14,
+    "PARTIAL_PASS": 2,
+    "FAIL": 6
+  },
+  "mandatory_prd_rows": 23,
+  "matrix_rows": 98,
+  "overall": "NOT_COMPLETE_QUALIFICATION_BLOCKED",
+  "initial_inherited_configuration_test_launch": "Interrupted; excluded from accepted evidence; provider activity not independently reconciled"
+}

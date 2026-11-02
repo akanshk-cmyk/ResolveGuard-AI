@@ -1,0 +1,3 @@
+﻿delegation_id,representative_id,customer_id,account_id,allowed_action,status,expires_at,synthetic
+BOW-DEL-001,BOW-REP-001,BOW-CUST-001,BOW-ACC-001,CASE_STATUS,ACTIVE,2026-11-30T00:00:00+00:00,True
+BOW-DEL-002,BOW-REP-002,BOW-CUST-002,BOW-ACC-002,TRANSACTION_READ,REVOKED,2026-11-30T00:00:00+00:00,True

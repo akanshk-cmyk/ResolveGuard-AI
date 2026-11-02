@@ -1,0 +1,9 @@
+{
+  "files_checked": 168,
+  "python_syntax_errors": [],
+  "credential_pattern_findings": [],
+  "unsafe_example_key_names": [],
+  "missing_ignore_rules": [],
+  "scope": "Source/config/docs and known credential patterns only; not universal PII detection or a vulnerability database audit",
+  "status": "PASS"
+}

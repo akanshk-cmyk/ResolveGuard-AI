@@ -1,0 +1,2 @@
+﻿event_id,session_id,principal_id,verified,expires_at,issuer,review_origin
+DEMO-AUTH-001,SESS-STEPUP,CUST-001,True,2026-12-01T00:00:00Z,DEMO-IAM,Added during implementation

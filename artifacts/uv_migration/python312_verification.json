@@ -1,0 +1,11 @@
+{
+  "python_version": "3.12.15",
+  "environment": ".\\.venv",
+  "changed_existing_package_versions": {},
+  "removed_packages": [
+    "pip"
+  ],
+  "installed_packages": 105,
+  "uv_lock_sha256": "3c07f8c09abcc02fc610f088eb18fa8eaaafb1b84f6d5298466094ca31a70ed6",
+  "rollback_directory_removed": true
+}

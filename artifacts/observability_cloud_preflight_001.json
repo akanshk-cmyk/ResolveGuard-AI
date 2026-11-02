@@ -1,0 +1,8 @@
+{
+  "status": "NOT_VERIFIED",
+  "dataset_sha256": "cc84db145a9e624fc3f5fa165f17225f7c9ccd341984c3b3c934b450b5b69905",
+  "cases": 3,
+  "provider": "MOCK",
+  "uploaded_content": "No prompts or financial records; execution structure and boolean checks only",
+  "error_type": "RuntimeError"
+}

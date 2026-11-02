@@ -1,0 +1,162 @@
+{
+  "originals_retained_privately": true,
+  "application_data_test_prompt_files_byte_preserved": 140,
+  "changes": [
+    {
+      "file": "ResolveGuard_AI_BRD_Agent_Observability_v1.0.pdf",
+      "original_sha256": "858907219ea31e7297423a57e7c4642afaffebce196e302dfd41bf19ba2c00d6",
+      "public_sha256": "e990cf6f3f9c79780ad221b326da00171e93b964f32b28c95d3da3e1739a1853",
+      "type": "PDF_AUTHOR_METADATA_REMOVED_PAGE_BYTES_PRESERVED"
+    },
+    {
+      "file": "ResolveGuard_AI_Final_PRD_v0.4_Risk_Remediated.pdf",
+      "original_sha256": "6bfae84f97c62d0a1def027dc4f0156bbbb84c4b62215ba05a5b09d5859b4b30",
+      "public_sha256": "1825d2b991723e319d94bee68f366f1687c070d39abc789f6e687eb8a1dd0e10",
+      "type": "PDF_AUTHOR_METADATA_REMOVED_PAGE_BYTES_PRESERVED"
+    },
+    {
+      "file": "artifacts/audit_20261101/ResolveGuard_Audit.md",
+      "original_sha256": "a811cf8d6017f93cfbb93b00d180ff162ee05107511757dcba18a37868d993b0",
+      "public_sha256": "b2164fb3cd0016baea03cfbdb8cd688ee1e7705a4d3c31e94f87e886f432abcd",
+      "type": "LOCAL_PATH_REDACTED_OR_AUTHORING_INPUT_PARAMETERIZED"
+    },
+    {
+      "file": "artifacts/audit_20261101/index.html",
+      "original_sha256": "edd47c358cbb4460af93069cef8196b908a3658e9aaa302061669f6727e1177a",
+      "public_sha256": "90a0c79a7ca7298f180bb1cd6d477b62249d9d9e959a173a60e78cdfa54a9817",
+      "type": "LOCAL_PATH_REDACTED_OR_AUTHORING_INPUT_PARAMETERIZED"
+    },
+    {
+      "file": "artifacts/bow_workbook_inspection.json",
+      "original_sha256": "55a332fc4bd2f45c1f45a4f642738bfd1cdfff899445150d22532049db03bc4b",
+      "public_sha256": "156619adbb7dc039597aafccdaa82e28cdb3924ff1bf1cca2dacb4fae665e6ce",
+      "type": "LOCAL_PATH_REDACTED_OR_AUTHORING_INPUT_PARAMETERIZED"
+    },
+    {
+      "file": "artifacts/bow_workbook_inspection_latest.json",
+      "original_sha256": "85764d51333eda182983eabdf2523862d5ca78082e197e59e2eaceb0805d6c98",
+      "public_sha256": "466e310b3bf16ee91a0733e7f05bc39157bd578a3b571010e3d066b7a4bb6af2",
+      "type": "LOCAL_PATH_REDACTED_OR_AUTHORING_INPUT_PARAMETERIZED"
+    },
+    {
+      "file": "artifacts/human_review_received/817cb87ce51af0d4/Received_Human_Review.xlsx!xl/workbook.xml",
+      "original_sha256": "4b176d7c359817f244d9dc850f3060a55d95b9aba1251a5d61b524e66bab31cb",
+      "public_sha256": "6d600bc1fa8005b0064bea1781100f4b8ecc380d8317b721430693b7180a1444",
+      "type": "LOCAL_PATH_REDACTED_OR_AUTHORING_INPUT_PARAMETERIZED"
+    },
+    {
+      "file": "artifacts/human_review_received/817cb87ce51af0d4/Received_Human_Review.xlsx!docProps/core.xml",
+      "original_sha256": "3a1002be879069778f7203c9e905a1336d5c7b3ce051e018f444143940adb0e7",
+      "public_sha256": "8794b7ced6d921e00b2544c28e93182c29ddde5f93f51bd5462469baa28f97b2",
+      "type": "OFFICE_AUTHOR_METADATA_REMOVED"
+    },
+    {
+      "file": "artifacts/human_review_received/817cb87ce51af0d4/Received_Human_Review.xlsx",
+      "original_sha256": "817cb87ce51af0d4429098b0e6ba09931a6e6482f15ab43939c266630856f628",
+      "public_sha256": "acabf5f1fde206c31c880599906ca2cd6f903c469a4fb2a6369cf31197a715d7",
+      "type": "REDACTED_ARCHIVE_OR_OFFICE_COPY"
+    },
+    {
+      "file": "artifacts/refactor_20261101_01/baseline_checks.json",
+      "original_sha256": "308f7589afc1b7314c1595528a92a9788b333e69263e2e20df7fb142abafa2f9",
+      "public_sha256": "1d0ac9be50e1d021359747f05f83601558ab0495926784d0023510c9574da66e",
+      "type": "LOCAL_PATH_REDACTED_OR_AUTHORING_INPUT_PARAMETERIZED"
+    },
+    {
+      "file": "artifacts/refactor_20261101_01/final_checks.json",
+      "original_sha256": "0800aa47448268dcccabcdfe531b4f7bd2bf7a0275728c2de6be50e0ec4055cd",
+      "public_sha256": "154a8abfd5ff5fce3213c2908f9d01e8d4be52a2d7e406aedf34c3f2183b3b93",
+      "type": "LOCAL_PATH_REDACTED_OR_AUTHORING_INPUT_PARAMETERIZED"
+    },
+    {
+      "file": "artifacts/refactor_20261101_01/source_checkpoint.zip!tools/build_final_project_report.py",
+      "original_sha256": "46ddb46d43f8b8267f5030a09e8fdf9ac449e1774579eaee53c181ec86e241d0",
+      "public_sha256": "1d812ff089b0c8730869ba871a10d215854417ad5eb0b0a1e58a549584ec1686",
+      "type": "LOCAL_PATH_REDACTED_OR_AUTHORING_INPUT_PARAMETERIZED"
+    },
+    {
+      "file": "artifacts/refactor_20261101_01/source_checkpoint.zip",
+      "original_sha256": "ae9b41459a122574ce1c8f2a29c483957e92a74d7b92ad5b130142b72306b84a",
+      "public_sha256": "8a10de1e76f2df5d6ede457ef095ed1439334798527843801f7dc9a9b806eeff",
+      "type": "REDACTED_ARCHIVE_OR_OFFICE_COPY"
+    },
+    {
+      "file": "artifacts/uv_migration/python312_verification.json",
+      "original_sha256": "bdf0aa79e054f042724c48ffaf5e386bc704b5bc6bee8719ed89fdbe047919ec",
+      "public_sha256": "4a11158a5ab2cc46de5e231e5155f1f01a4708b323319d51223f7884a2ea866e",
+      "type": "LOCAL_PATH_REDACTED_OR_AUTHORING_INPUT_PARAMETERIZED"
+    },
+    {
+      "file": "artifacts/uv_migration/verification.json",
+      "original_sha256": "9e842eec4689310a4f82fe6deec88d70b51b194c72dc2dfa429b05936ffd4c2a",
+      "public_sha256": "5c74e200b0b31705c8e77968a1f6e1e06c4bcee5dbce37f7becce354acfc83f6",
+      "type": "LOCAL_PATH_REDACTED_OR_AUTHORING_INPUT_PARAMETERIZED"
+    },
+    {
+      "file": "docs/OBSERVABILITY_RUNBOOK.md",
+      "original_sha256": "0fb7ff429dc8bd15a98fcc7f549fe84da778f7be7652d5d4838807cf713f19f2",
+      "public_sha256": "e459363b3ba445142d9a5f917f9832974d6c85b323071b31c45ff6b3bc53d133",
+      "type": "LOCAL_PATH_REDACTED_OR_AUTHORING_INPUT_PARAMETERIZED"
+    },
+    {
+      "file": "submission/ResolveGuard_AI_Final_Submission.zip!ResolveGuard_AI_BRD_Agent_Observability_v1.0.pdf",
+      "original_sha256": "858907219ea31e7297423a57e7c4642afaffebce196e302dfd41bf19ba2c00d6",
+      "public_sha256": "e990cf6f3f9c79780ad221b326da00171e93b964f32b28c95d3da3e1739a1853",
+      "type": "DUPLICATE_REDACTED_COPY"
+    },
+    {
+      "file": "submission/ResolveGuard_AI_Final_Submission.zip!ResolveGuard_AI_Final_PRD_v0.4_Risk_Remediated.pdf",
+      "original_sha256": "6bfae84f97c62d0a1def027dc4f0156bbbb84c4b62215ba05a5b09d5859b4b30",
+      "public_sha256": "1825d2b991723e319d94bee68f366f1687c070d39abc789f6e687eb8a1dd0e10",
+      "type": "DUPLICATE_REDACTED_COPY"
+    },
+    {
+      "file": "submission/ResolveGuard_AI_Final_Submission.zip!artifacts/audit_20261101/ResolveGuard_Audit.md",
+      "original_sha256": "a811cf8d6017f93cfbb93b00d180ff162ee05107511757dcba18a37868d993b0",
+      "public_sha256": "b2164fb3cd0016baea03cfbdb8cd688ee1e7705a4d3c31e94f87e886f432abcd",
+      "type": "DUPLICATE_REDACTED_COPY"
+    },
+    {
+      "file": "submission/ResolveGuard_AI_Final_Submission.zip!artifacts/human_review_received/817cb87ce51af0d4/Received_Human_Review.xlsx",
+      "original_sha256": "817cb87ce51af0d4429098b0e6ba09931a6e6482f15ab43939c266630856f628",
+      "public_sha256": "acabf5f1fde206c31c880599906ca2cd6f903c469a4fb2a6369cf31197a715d7",
+      "type": "DUPLICATE_REDACTED_COPY"
+    },
+    {
+      "file": "submission/ResolveGuard_AI_Final_Submission.zip!artifacts/remediation_20261101/tests_final.log",
+      "original_sha256": "a83372084bbe3514b3530dd7edc774f3651dceca429ba476774a1bed435364b7",
+      "public_sha256": "a0412a7128ec7a2b79bdb3096a76aaedb29f621c3af4a024f2c0391da4b3f653",
+      "type": "LOCAL_PATH_REDACTED_OR_AUTHORING_INPUT_PARAMETERIZED"
+    },
+    {
+      "file": "submission/ResolveGuard_AI_Final_Submission.zip!docs/OBSERVABILITY_RUNBOOK.md",
+      "original_sha256": "0fb7ff429dc8bd15a98fcc7f549fe84da778f7be7652d5d4838807cf713f19f2",
+      "public_sha256": "e459363b3ba445142d9a5f917f9832974d6c85b323071b31c45ff6b3bc53d133",
+      "type": "DUPLICATE_REDACTED_COPY"
+    },
+    {
+      "file": "submission/ResolveGuard_AI_Final_Submission.zip",
+      "original_sha256": "91a881240d3343d6bfe4c47b7e7533868b461b03be7f5b6b25cda821e25308fb",
+      "public_sha256": "fac8c97fea8687b0166646f62f26a2ab4767038530e489f49aa0d6a5326f8471",
+      "type": "REDACTED_ARCHIVE_OR_OFFICE_COPY"
+    },
+    {
+      "file": "submission/archive/before_human_review_reconciliation/docs/OBSERVABILITY_RUNBOOK.md",
+      "original_sha256": "8753d18c407fe075304233b7e122b10e0120c2d89740df452b0cd3d07f152631",
+      "public_sha256": "9aeb4b3ec7ee1600a92bac8728f7afe5a3bac8fb7c272315a42ba2d948455906",
+      "type": "LOCAL_PATH_REDACTED_OR_AUTHORING_INPUT_PARAMETERIZED"
+    },
+    {
+      "file": "submission/final_project_summary/PDF_RENDER.json",
+      "original_sha256": "a50073a7dd7097e73db59ac4c14d09b22e50f58e3551aeac3919a935ddc03a3e",
+      "public_sha256": "2448066969695633f6b74f64983323015fbd4503e6b3c86c89b978d8ff62cdb2",
+      "type": "LOCAL_PATH_REDACTED_OR_AUTHORING_INPUT_PARAMETERIZED"
+    },
+    {
+      "file": "tools/build_final_project_report.py",
+      "original_sha256": "46ddb46d43f8b8267f5030a09e8fdf9ac449e1774579eaee53c181ec86e241d0",
+      "public_sha256": "1d812ff089b0c8730869ba871a10d215854417ad5eb0b0a1e58a549584ec1686",
+      "type": "DUPLICATE_REDACTED_COPY"
+    }
+  ]
+}

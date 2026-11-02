@@ -1,0 +1,74 @@
+[
+  {
+    "customer_id": "BOW-CUST-001",
+    "display_name": "Demo Customer 01",
+    "kyc_status": "SYNTHETIC_VERIFIED",
+    "synthetic": true
+  },
+  {
+    "customer_id": "BOW-CUST-002",
+    "display_name": "Demo Customer 02",
+    "kyc_status": "SYNTHETIC_VERIFIED",
+    "synthetic": true
+  },
+  {
+    "customer_id": "BOW-CUST-003",
+    "display_name": "Demo Customer 03",
+    "kyc_status": "SYNTHETIC_VERIFIED",
+    "synthetic": true
+  },
+  {
+    "customer_id": "BOW-CUST-004",
+    "display_name": "Demo Customer 04",
+    "kyc_status": "SYNTHETIC_VERIFIED",
+    "synthetic": true
+  },
+  {
+    "customer_id": "BOW-CUST-005",
+    "display_name": "Demo Customer 05",
+    "kyc_status": "REVIEW",
+    "synthetic": true
+  },
+  {
+    "customer_id": "BOW-CUST-006",
+    "display_name": "Demo Customer 06",
+    "kyc_status": "SYNTHETIC_VERIFIED",
+    "synthetic": true
+  },
+  {
+    "customer_id": "BOW-CUST-007",
+    "display_name": "Demo Customer 07",
+    "kyc_status": "SYNTHETIC_VERIFIED",
+    "synthetic": true
+  },
+  {
+    "customer_id": "BOW-CUST-008",
+    "display_name": "Demo Customer 08",
+    "kyc_status": "SYNTHETIC_VERIFIED",
+    "synthetic": true
+  },
+  {
+    "customer_id": "BOW-CUST-009",
+    "display_name": "Demo Customer 09",
+    "kyc_status": "SYNTHETIC_VERIFIED",
+    "synthetic": true
+  },
+  {
+    "customer_id": "BOW-CUST-010",
+    "display_name": "Demo Customer 10",
+    "kyc_status": "REVIEW",
+    "synthetic": true
+  },
+  {
+    "customer_id": "BOW-CUST-011",
+    "display_name": "Demo Customer 11",
+    "kyc_status": "SYNTHETIC_VERIFIED",
+    "synthetic": true
+  },
+  {
+    "customer_id": "BOW-CUST-012",
+    "display_name": "Demo Customer 12",
+    "kyc_status": "SYNTHETIC_VERIFIED",
+    "synthetic": true
+  }
+]

@@ -1,0 +1,30 @@
+{
+  "run_type": "MOCK_SMOKE_NOT_LIVE_MODEL_BASELINE",
+  "engine": "langgraph",
+  "dataset_version": "original-100-local-bindings-v1",
+  "dataset_sha256": "e9de25845b21c78b8e35cbe32f97be416af532a03e8ee421f451639a070a365d",
+  "cases_executed": 100,
+  "unique_cases": 100,
+  "metrics": {
+    "intent_accuracy": 0.96,
+    "deterministic_journey_pass_rate": 0.82,
+    "fraud_recall": 1.0,
+    "critical_cases_all_assertions_passed": 66,
+    "critical_case_runs": 84,
+    "p95_local_mock_latency_ms": 55.73,
+    "model_cost_usd": 0.0,
+    "token_usage": null
+  },
+  "failure_counts": {
+    "routing_exact": 4,
+    "response_state": 18
+  },
+  "human_review_pending": 100,
+  "demo_release_decision": "BLOCKED",
+  "blocking_reasons": [
+    "Mock responses do not establish GLM quality, live latency or provider cost",
+    "Human labels and semantic outputs require review",
+    "Source prompt authorship / LLM-generated proportion unverified",
+    "Critical mock scenario assertions failed"
+  ]
+}

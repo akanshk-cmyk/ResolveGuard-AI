@@ -1,0 +1,62 @@
+[
+  {
+    "name": "public_tests",
+    "command": [
+      "python",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_public_conversation.py",
+      "-q"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 4.875,
+    "tests_run": 11,
+    "skipped": 0,
+    "log": "artifacts/refactor_20261101_01/step3_public_tests.log",
+    "passed": 11
+  },
+  {
+    "name": "guest_tests",
+    "command": [
+      "python",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_guest_first.py",
+      "-q"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 9.156,
+    "tests_run": 19,
+    "skipped": 0,
+    "log": "artifacts/refactor_20261101_01/step3_guest_tests.log",
+    "passed": 19
+  },
+  {
+    "name": "web_tests",
+    "command": [
+      "python",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_web.py",
+      "-q"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 7.469,
+    "tests_run": 14,
+    "skipped": 0,
+    "log": "artifacts/refactor_20261101_01/step3_web_tests.log",
+    "passed": 14
+  }
+]

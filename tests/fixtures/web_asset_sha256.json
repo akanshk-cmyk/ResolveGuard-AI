@@ -1,0 +1,16 @@
+{
+  "static/agent-avatar.css": "8d2794060e62a41b2805d98ba0e6021407dfb2a7529d0be6624da0cec71270cf",
+  "static/app.js": "1461fda01a7ca782309cebe9ea8cadfd5e39fb40898a3b043edc8a9c052cf174",
+  "static/bow-guide.css": "09d068c9c6abd059b0178368298d157de2b72cbf1d127b01f7616d0d2504f652",
+  "static/customer-ui.css": "06f59e84c9eed9aedf8814308a7d13163e5f97908810ff5b7e0a3a20edaf3d46",
+  "static/guest-first.css": "a89a70b41180851450c6cc8536d264ae48332cab86be61a722fec2ed5f206f4e",
+  "static/index.html": "12a33f77b35ef7ab3e0b64263c4850ba4eaa561e8962f06960b1e1aa8136c974",
+  "static/onboarding.css": "bf03fb04eca0101822e925b073062fd35499f6149af1bc3392ce19a17143d3bb",
+  "static/operations.css": "b7e6e53808800bb9612f8f5f59fbd532fee56d183d57aa9e00c1068fe5017e02",
+  "static/operations.html": "275e3e07d8d70b6ce3d36eda675d83ca4e84e0cd1ba2e3c2a8fb4018592a50e5",
+  "static/operations.js": "347154431a0f602832b3e1a15d636cdeb3deeb310d7411c6c0f11ed31b548137",
+  "static/reviewer.html": "dc6245fd716dc8563246ed3dfbb95a5a76431336a1eee18ddf4314fddde7ac04",
+  "static/reviewer.js": "658324a800d4d586e6d030634abb4498f170a8ee6c4ae97550dfa7d99dd62b4f",
+  "static/style.css": "c0280c707faeeb0b2ab889dd089ac5e75566ecfb63f9841607f9abf29aab4178",
+  "static/images/resolveguard-agent.png": "c527d01b7e1f66db2df353e4b87cdc3de585aff136c64c9ffc39dd51538919ee"
+}
