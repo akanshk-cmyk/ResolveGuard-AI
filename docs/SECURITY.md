@@ -20,4 +20,4 @@ Historical source copies, prompt fixtures, reports and human feedback are eviden
 
 ## Operational limits
 
-Regex masking, append-only SQLite and polling alerts do not replace production privacy controls, immutable archives, IAM, retention policies or real-time response. Hosted LangSmith, Replit deployment and real banking remain deferred. CI is credential-free, read-only and does not deploy; its first hosted run is not yet verified.
+Regex masking, append-only SQLite and polling alerts do not replace production privacy controls, immutable archives, IAM, retention policies or real-time response. Hosted LangSmith, Replit deployment and real banking remain deferred. CI is credential-free, read-only and does not deploy; its [first hosted run](https://github.com/akanshk-cmyk/ResolveGuard-AI/actions/runs/41398641024) passed. This is not a production security certification.

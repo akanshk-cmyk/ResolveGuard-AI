@@ -11,3 +11,7 @@ The optional final-report authoring utility now accepts RESOLVEGUARD_HANDOUT_PAT
 Nested source checkpoints and submission ZIPs are likewise public derivatives. Their checksum manifests are refreshed where affected. Recreating an exact original-source attestation requires the privately retained original, not a metadata-clean public workbook. Generated report-copy metadata is not new human approval or evaluation execution.
 
 The security audit document describes the pre-cleanup findings. This release addresses its user-home/workspace path and author/editor metadata findings; it does not assert universal security or production readiness. Synthetic dummy credentials used in tests and localhost binding addresses are retained intentionally. No live bank integration or cloud tracing qualification is implied.
+
+## Hosted verification
+
+The first GitHub Actions run passed: https://github.com/akanshk-cmyk/ResolveGuard-AI/actions/runs/41398641024. Public repository, main commit and README were read back without credentials. Historical documents retain their earlier evidence-snapshot status; this hosted check does not establish LangSmith Cloud or real-bank deployment.

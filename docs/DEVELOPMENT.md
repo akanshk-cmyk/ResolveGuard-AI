@@ -46,7 +46,7 @@ The root source documents and demo folders retain their current paths because co
 
 ## CI and documentation
 
-`.github/workflows/checks.yml` prepares locked Windows/Python 3.12 tests and local original/BOW evaluations with cloud/reply generation disabled. It has read-only repository permissions and no deployment, credentials or artifact publishing step. Local commands are verified separately; the GitHub workflow itself has not run because publication is pending.
+`.github/workflows/checks.yml` prepares locked Windows/Python 3.12 tests and local original/BOW evaluations with cloud/reply generation disabled. It has read-only repository permissions and no deployment, credentials or artifact publishing step. Local commands are verified separately; the [first hosted workflow run](https://github.com/akanshk-cmyk/ResolveGuard-AI/actions/runs/41398641024) also passed after publication.
 
 Start with [audit](CODEBASE_AUDIT.md), [plan](REFACTOR_PLAN.md), [architecture](ARCHITECTURE.md), [evaluation](EVALUATION.md), [security](SECURITY.md), and [change log](REFACTOR_CHANGELOG.md). Canonical human receipt: `submission/human_review_reconciliation/REVIEW_STATUS.json`. Final report deliverables: `submission/final_project_summary/delivery/`.
 

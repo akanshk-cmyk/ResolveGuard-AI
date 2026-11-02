@@ -4,6 +4,8 @@
 
 Helping banking customers find accurate answers, report issues safely, and understand verified next steps.
 
+[![CI](https://github.com/akanshk-cmyk/ResolveGuard-AI/actions/workflows/checks.yml/badge.svg)](https://github.com/akanshk-cmyk/ResolveGuard-AI/actions/workflows/checks.yml)
+
 ![Python 3.12](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white)
 ![Synthetic banking](https://img.shields.io/badge/Scope-synthetic_banking-176B63)
 ![Qualification pending](https://img.shields.io/badge/Evaluation-qualification_pending-orange)
@@ -14,7 +16,7 @@ Helping banking customers find accurate answers, report issues safely, and under
 
 [Development](docs/DEVELOPMENT.md) | [Current module architecture](docs/ARCHITECTURE.md) | [Evaluation guide](docs/EVALUATION.md) | [Security boundaries](docs/SECURITY.md) | [Refactor audit](docs/CODEBASE_AUDIT.md) | [Refactor results](docs/REFACTOR_REPORT.md) | [Final project report](submission/final_project_summary/delivery/ResolveGuard_Final_Project_Summary_Report.docx)
 
-**Repository maintenance:** the scoped refactor retained the captured HTTP schema and all UI asset bytes. The current post-refactor suite has 326 passing main tests, one skip, and 13 passing fixture tests; both local 100-case suites retained their checked outcomes. See the [change log](docs/REFACTOR_CHANGELOG.md) for before/after evidence and remaining debt. Historical metrics below stay tied to their original runs; existing submission ZIPs are pre-refactor snapshots. GitHub Actions checks are prepared, not yet verified on a hosted runner.
+**Repository maintenance:** the scoped refactor retained the captured HTTP schema and all UI asset bytes. The current post-refactor suite has 326 passing main tests, one skip, and 13 passing fixture tests; both local 100-case suites retained their checked outcomes. See the [change log](docs/REFACTOR_CHANGELOG.md) for before/after evidence and remaining debt. Historical metrics below stay tied to their original runs; existing submission ZIPs are pre-refactor snapshots. GitHub Actions checks passed on the [first hosted run](https://github.com/akanshk-cmyk/ResolveGuard-AI/actions/runs/41398641024).
 
 > **Evidence snapshot: November 1, 2026.** Synthetic banking portfolio / own-use-case submission. Human reviews were supplied in chat and Excel and are recorded. Historical mock-rule improvements and separate live-provider evaluations are reported separately. The app runs locally; there is no published demo or verified LangSmith Cloud evidence. Qualification and matched-response judge calibration remain open. Badges describe scope, not CI status.
 
