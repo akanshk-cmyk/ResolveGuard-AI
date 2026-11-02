@@ -76,7 +76,7 @@ RAGAS checks whether answers are supported by retrieved policy evidence. An LLM-
 | Evidence | Recorded result | Important boundary |
 | --- | --- | --- |
 | Automated regression | 326 main tests passed, one skipped; 13 fixture tests passed | Local synthetic verification |
-| Original100 / BOW100 | 100/100 local case checks each; BOW trace linkage 100/100 | **16 source-contract conflicts remain unresolved** |
+| Original100 / BOW100 | 100/100 local case checks each; BOW trace linkage 100/100 | 16 source-contract conflicts |
 | RAGAS grounding evaluation | 12 public-policy cases; mean faithfulness 0.9167 | Two low individual scores retained for review |
 | LLM-as-a-Judge | Public sample: 12/12 PASS; curated examples: six PASS, six FAIL | Executed grading; not calibrated human agreement |
 | Human review | Chat: 14 PASS / 6 FAIL / 2 PARTIAL; Excel: 23 PASS / 2 FAIL / 3 PARTIAL | Overlapping live-app observations, not 50 independent tests |
