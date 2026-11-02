@@ -2,16 +2,15 @@
 
 **Clear banking answers. Protected account information. Verified next steps.**
 
-[![CI](https://github.com/akanshk-cmyk/ResolveGuard-AI/actions/workflows/checks.yml/badge.svg)](https://github.com/akanshk-cmyk/ResolveGuard-AI/actions/workflows/checks.yml)
-![Python 3.12](https://img.shields.io/badge/Python-3.12-3776AB)
-
 ResolveGuard AI is a banking support assistant that helps customers find account terms, ask about payments, report unfamiliar charges, and understand support-case status. It addresses a common problem: a chatbot can sound helpful while choosing the wrong policy, exposing private information, or claiming a request succeeded without evidence.
 
 Customers can ask public questions as guests. Personal records require sign-in and backend permission checks. The prototype combines policy search, defined workflows, synthetic banking tools, and response verification. Its evaluation process examines the complete interaction, including what was saved, accessed, and communicated—not just whether the answer sounds convincing.
 
 Everything runs against **Bank of Whatever**, a fictional bank. No real customer accounts, financial transactions, or bank integrations are involved.
 
-**Live demo:** [Insert Live Demo Link] · **Video:** [Insert Video Walkthrough Link] · **Project report:** [Insert Project Report Link]
+<img width="1791" height="866" alt="image" src="https://github.com/user-attachments/assets/1953000d-9a6f-461f-b27f-89eed9e642e1" />
+<img width="1787" height="840" alt="image" src="https://github.com/user-attachments/assets/a307e587-9b3d-42cc-a559-cb4a7518b310" />
+
 
 ## Why it matters
 
